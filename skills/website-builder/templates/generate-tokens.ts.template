@@ -1,0 +1,49 @@
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+
+const ROOT = resolve(dirname(new URL(import.meta.url).pathname), '..');
+const charter = JSON.parse(readFileSync(resolve(ROOT, 'src/brand/charter.json'), 'utf-8'));
+
+// --- CSS custom properties (Tier 1 — brand primitives) ---
+const cssLines: string[] = ['/* Auto-generated from charter.json — do not edit manually */', ':root {'];
+
+// Colors
+for (const [key, value] of Object.entries(charter.colors as Record<string, string>)) {
+  cssLines.push(`  --brand-$${kebab(key)}: $${value};`);
+}
+
+// Fonts
+for (const [role, font] of Object.entries(charter.fonts as Record<string, { family: string; fallback: string; weight: string }>)) {
+  cssLines.push(`  --brand-font-$${role}: '$${font.family}', $${font.fallback};`);
+  cssLines.push(`  --brand-font-$${role}-weight: $${font.weight};`);
+}
+
+cssLines.push('}');
+
+const cssOut = resolve(ROOT, 'src/styles/brand-tokens.css');
+mkdirSync(dirname(cssOut), { recursive: true });
+writeFileSync(cssOut, cssLines.join('\n') + '\n');
+
+// --- TypeScript module ---
+const tsLines: string[] = [
+  '/* Auto-generated from charter.json — do not edit manually */',
+  '',
+  `export const colors = $${JSON.stringify(charter.colors, null, 2)} as const;`,
+  '',
+  'export const fonts = {',
+];
+
+for (const [role, font] of Object.entries(charter.fonts as Record<string, { family: string; fallback: string; weight: string }>)) {
+  tsLines.push(`  $${role}: { family: "'$${font.family}', $${font.fallback}", weight: "$${font.weight}" },`);
+}
+tsLines.push('} as const;');
+
+const tsOut = resolve(ROOT, 'src/lib/tokens.ts');
+mkdirSync(dirname(tsOut), { recursive: true });
+writeFileSync(tsOut, tsLines.join('\n') + '\n');
+
+console.log('Generated brand-tokens.css and tokens.ts');
+
+function kebab(s: string): string {
+  return s.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+}

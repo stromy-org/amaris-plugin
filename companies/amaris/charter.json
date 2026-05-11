@@ -1,0 +1,252 @@
+{
+  "slug": "amaris",
+  "meta": {
+    "tier": 1,
+    "type": "client"
+  },
+  "identity": {
+    "name": "Amaris Consulting",
+    "shortName": "Amaris",
+    "tagline": "Make it happen, together.",
+    "domain": "amaris.com",
+    "twitter": "@amaris",
+    "parent": "Mantu"
+  },
+  "description": {
+    "short": "A global technology consulting firm offering solutions and guidance to businesses.",
+    "long": "Amaris Consulting is an independent technology and management consulting firm and a wholly-owned subsidiary of Mantu. With 7,600+ consultants across 60+ countries on 5 continents, Amaris helps businesses grow through expert advisory, project delivery, and technology enablement."
+  },
+  "stats": {
+    "employees": "7,600+",
+    "countries": "60+",
+    "continents": "5",
+    "clients": "1,000+"
+  },
+  "values": [
+    "Pioneer Spirit",
+    "Trust",
+    "Care",
+    "Performance",
+    "Independence"
+  ],
+  "positioning": {
+    "mission": "Helping businesses grow is the reason we wake up every day",
+    "promise": "Their success is our success",
+    "philosophy": "Make it happen, together"
+  },
+  "businessLines": [
+    "Life Sciences",
+    "IS & Digital",
+    "Telecom",
+    "Engineering",
+    "Centers of Excellence"
+  ],
+  "industries": [
+    "Consumer & Retail",
+    "Energy, Resources & Utilities",
+    "Financial Services",
+    "Healthcare",
+    "Telecommunications, Media & Entertainment",
+    "Transportation & Defense"
+  ],
+  "colors": {
+    "primary": "#272674",
+    "secondary": "#f5e2da",
+    "accent": "#4182ff",
+    "text": "#494951",
+    "background": "#ffffff",
+    "sectorColors": {
+      "lifeSciences": "#7ddeb8",
+      "engineering": "#b880ff",
+      "telecom": "#ffdd77",
+      "digital": "#4182ff"
+    },
+    "gradient": {
+      "midnight": "linear-gradient(135deg, #020381 0%, #2874fc 100%)"
+    }
+  },
+  "typography": {
+    "heading": {
+      "family": "General Sans",
+      "cssName": "GeneralSans",
+      "weight": "600",
+      "style": "Semibold"
+    },
+    "body": {
+      "family": "General Sans",
+      "cssName": "GeneralSans",
+      "weight": "400",
+      "style": "Regular",
+      "fallback": "sans-serif",
+      "baseSize": "18px"
+    },
+    "medium": {
+      "family": "General Sans",
+      "cssName": "GeneralSans",
+      "weight": "500",
+      "style": "Medium"
+    },
+    "accent": {
+      "family": "Quicksand",
+      "weight": "300-700",
+      "note": "Secondary font used in Elementor blocks"
+    },
+    "fontFiles": {
+      "web": "fonts/web/",
+      "css": "fonts/web/general-sans.css",
+      "otf": "fonts/otf/",
+      "variable": "fonts/ttf/GeneralSans-Variable.ttf",
+      "license": "Fontshare Free For Personal & Commercial Use"
+    }
+  },
+  "logos": {
+    "primary": "logos/logo.svg",
+    "primaryBlue": "logos/logo-blue.svg",
+    "favicon": "logos/favicon-32.png",
+    "appIcon180": "logos/apple-touch-icon.png",
+    "appIcon192": "logos/favicon-192.png",
+    "appIcon270": "logos/favicon-270.png",
+    "notes": "Primary SVG uses currentColor stroke — renders white on dark backgrounds, navy on light. No separate white variant needed.",
+    "png": "logos/logo-black.png",
+    "mark": "logos/favicon-192.png"
+  },
+  "images": {
+    "overlay": {
+      "color": "primary",
+      "opacity": 0.55
+    },
+    "logoVariantOnImage": "white",
+    "catalog": [
+      {
+        "file": "images/photo-cover-01.png",
+        "roles": [
+          "cover"
+        ],
+        "mood": "bold",
+        "orientation": "landscape",
+        "source_page": "/"
+      },
+      {
+        "file": "images/photo-cover-02.webp",
+        "roles": [
+          "cover"
+        ],
+        "mood": "abstract-tech",
+        "orientation": "landscape",
+        "source_page": "/",
+        "notes": "Fiber/telecom abstract"
+      },
+      {
+        "file": "images/photo-cover-03.webp",
+        "roles": [
+          "cover"
+        ],
+        "mood": "bold",
+        "orientation": "landscape",
+        "source_page": "/"
+      },
+      {
+        "file": "images/photo-cover-04.png",
+        "roles": [
+          "cover"
+        ],
+        "mood": "bold",
+        "orientation": "landscape",
+        "source_page": "/"
+      },
+      {
+        "file": "images/photo-cover-05.jpg",
+        "roles": [
+          "cover"
+        ],
+        "mood": "technology",
+        "orientation": "landscape",
+        "source_page": "/client-stories/",
+        "notes": "AI/chatbot consulting"
+      },
+      {
+        "file": "images/photo-closing-01.png",
+        "roles": [
+          "closing"
+        ],
+        "mood": "aspirational",
+        "orientation": "landscape",
+        "source_page": "/about-us/"
+      },
+      {
+        "file": "images/photo-divider-01.png",
+        "roles": [
+          "divider"
+        ],
+        "mood": "professional",
+        "orientation": "landscape",
+        "source_page": "/amaris-in-action/",
+        "notes": "Software engineering / AI"
+      },
+      {
+        "file": "images/photo-section-01.png",
+        "roles": [
+          "section"
+        ],
+        "mood": "research",
+        "orientation": "landscape",
+        "source_page": "/amaris-in-action/"
+      },
+      {
+        "file": "images/photo-section-02.png",
+        "roles": [
+          "section"
+        ],
+        "mood": "technology",
+        "orientation": "landscape",
+        "source_page": "/amaris-in-action/",
+        "notes": "AI / software testing"
+      },
+      {
+        "file": "images/photo-section-03.png",
+        "roles": [
+          "section"
+        ],
+        "mood": "inclusive",
+        "orientation": "landscape",
+        "source_page": "/amaris-in-action/",
+        "notes": "Digital transformation / inclusion"
+      },
+      {
+        "file": "images/graphic-mockup-01.png",
+        "roles": [
+          "section"
+        ],
+        "mood": "branded",
+        "orientation": "landscape",
+        "source_page": "/insights/",
+        "notes": "Thought leadership report cover — already in brand blue, use without overlay"
+      }
+    ]
+  },
+  "presentation": {
+    "aspectRatio": "16:9",
+    "slideMargin": "40pt",
+    "titleMargin": "60pt",
+    "contentMargin": "40pt"
+  },
+  "pptxAssets": {
+    "gradients": {
+      "dark": "pptx-assets/gradient-dark.png",
+      "accent": "pptx-assets/gradient-accent.png",
+      "midnight": "pptx-assets/gradient-midnight.png"
+    },
+    "overlays": {
+      "photo-cover-01": "pptx-assets/overlays/photo-cover-01-overlay.jpg",
+      "photo-cover-02": "pptx-assets/overlays/photo-cover-02-overlay.jpg",
+      "photo-cover-03": "pptx-assets/overlays/photo-cover-03-overlay.jpg",
+      "photo-cover-04": "pptx-assets/overlays/photo-cover-04-overlay.jpg",
+      "photo-cover-05": "pptx-assets/overlays/photo-cover-05-overlay.jpg",
+      "photo-closing-01": "pptx-assets/overlays/photo-closing-01-overlay.jpg",
+      "photo-divider-01": "pptx-assets/overlays/photo-divider-01-overlay.jpg",
+      "photo-section-01": "pptx-assets/overlays/photo-section-01-overlay.jpg",
+      "photo-section-02": "pptx-assets/overlays/photo-section-02-overlay.jpg",
+      "photo-section-03": "pptx-assets/overlays/photo-section-03-overlay.jpg"
+    }
+  }
+}

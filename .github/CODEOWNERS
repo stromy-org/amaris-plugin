@@ -1,0 +1,4 @@
+# Plugin IP protection — restrict changes to critical files
+LICENSE @{{ github_org }}/core
+.claude-plugin/ @{{ github_org }}/core
+skills/*/LICENSE.txt @{{ github_org }}/core

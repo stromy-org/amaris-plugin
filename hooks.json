@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "test -d \"${CLAUDE_PLUGIN_ROOT}/node_modules\" || echo '{\"message\": \"Node deps missing. Run: cd ${CLAUDE_PLUGIN_ROOT} && npm install\"}'"
+          },
+          {
+            "type": "command",
+            "command": "test -d \"${CLAUDE_PLUGIN_ROOT}/.venv\" || echo '{\"message\": \"Python deps missing. Run: cd ${CLAUDE_PLUGIN_ROOT} && uv sync\"}'"
+          }
+        ]
+      }
+    ]
+  }
+}

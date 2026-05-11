@@ -1,0 +1,159 @@
+{
+  "skill_name": "website-builder",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Build a website for Duke Strategies. Their charter is at client-data/clients/dukestrategies/charter.json. They're a public affairs consultancy with a 'ruler' archetype — authoritative, premium, institutional. Skip the style board phase and go straight to scaffolding and core page generation.",
+      "expected_output": "A scaffolded Astro website at clients/duke-strategies/duke-strategies-website/ with brand tokens, config files, homepage, about, services, case studies, and contact pages. Charter-driven design with ruler archetype defaults.",
+      "assertions": [
+        {
+          "name": "scaffold_directory_structure",
+          "description": "Target directory exists with src/brand/, src/styles/, src/components/, src/pages/, src/layouts/, src/content/, scripts/, .claude/skills/website-maintain/",
+          "type": "file_exists",
+          "check": "glob clients/duke-strategies/duke-strategies-website/src/pages/index.astro"
+        },
+        {
+          "name": "brand_tokens_css_generated",
+          "description": "src/styles/brand-tokens.css contains --brand-primary with the Duke Strategies coral (#FF7F66)",
+          "type": "content_check"
+        },
+        {
+          "name": "charter_json_copied",
+          "description": "src/brand/charter.json exists and contains Duke Strategies brand data",
+          "type": "file_exists"
+        },
+        {
+          "name": "package_json_valid",
+          "description": "package.json has astro, @astrojs/mdx, @astrojs/sitemap, tailwindcss, @tailwindcss/vite dependencies",
+          "type": "content_check"
+        },
+        {
+          "name": "astro_config_has_site_url",
+          "description": "astro.config.mjs references dukestrategies.com as the site URL",
+          "type": "content_check"
+        },
+        {
+          "name": "homepage_has_sections",
+          "description": "Homepage index.astro imports and renders multiple section components (hero, services, case studies, CTA)",
+          "type": "content_check"
+        },
+        {
+          "name": "global_css_has_tier2_tokens",
+          "description": "src/styles/global.css contains semantic Tier 2 tokens (--surface-*, --text-*, or @theme block)",
+          "type": "content_check"
+        },
+        {
+          "name": "base_layout_exists",
+          "description": "src/layouts/BaseLayout.astro exists with HTML shell, meta tags, and CSS imports",
+          "type": "content_check"
+        },
+        {
+          "name": "website_maintain_skill_generated",
+          "description": ".claude/skills/website-maintain/SKILL.md exists with Duke Strategies specific content",
+          "type": "file_exists"
+        },
+        {
+          "name": "deploy_workflow_exists",
+          "description": ".github/workflows/deploy.yml exists with GitHub Pages deployment config",
+          "type": "file_exists"
+        },
+        {
+          "name": "bootstrap_version_exists",
+          "description": ".claude/bootstrap-version.json exists with bootstrap_source: stromy-org/website-builder",
+          "type": "content_check"
+        },
+        {
+          "name": "build_succeeds",
+          "description": "npm install && npm run build completes without errors",
+          "type": "command_check"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "I want to build a website for a creative agency called Chromatic Labs. They don't have a charter yet — their brand colors are electric blue (#2563EB) and hot pink (#EC4899) on dark backgrounds (#0F172A). They use Space Grotesk for headings and Inter for body. They're playful, experimental, boundary-pushing — a 'creator' archetype. They want a blog, portfolio, about page, and contact form via Formspree. Deploy to Vercel at chromaticlabs.io.",
+      "expected_output": "A new charter.json created with the provided brand data and creator archetype website config, followed by a scaffolded website with the creative/experimental design direction.",
+      "assertions": [
+        {
+          "name": "charter_created_or_extended",
+          "description": "A charter.json exists with the provided colors, fonts, and website.archetype: creator",
+          "type": "content_check"
+        },
+        {
+          "name": "scaffold_directory_exists",
+          "description": "Website directory created with standard Astro structure",
+          "type": "file_exists"
+        },
+        {
+          "name": "creator_archetype_design",
+          "description": "Design reflects creator archetype defaults — experimental layout, bold typography, creative motion",
+          "type": "content_check"
+        },
+        {
+          "name": "dark_background_in_tokens",
+          "description": "Brand tokens CSS uses #0F172A for background color",
+          "type": "content_check"
+        },
+        {
+          "name": "formspree_contact_form",
+          "description": "Contact page includes Formspree form integration",
+          "type": "content_check"
+        },
+        {
+          "name": "vercel_deployment_config",
+          "description": "Deployment config targets Vercel (vercel.json or astro.config with vercel adapter)",
+          "type": "content_check"
+        },
+        {
+          "name": "blog_collection_configured",
+          "description": "Content collection config includes blog with proper schema",
+          "type": "content_check"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Scaffold a website for Duke Strategies using the charter at client-data/clients/dukestrategies/charter.json. Use github-pages platform with netlify-forms for the contact form.",
+      "expected_output": "The scaffold script should reject this combination with a clear error message about netlify-forms not being compatible with github-pages.",
+      "assertions": [
+        {
+          "name": "deployment_compat_error",
+          "description": "Error message indicates netlify-forms is not compatible with github-pages platform",
+          "type": "content_check"
+        },
+        {
+          "name": "scaffold_not_created",
+          "description": "No website directory created — the scaffold was rejected before file generation",
+          "type": "file_exists"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Generate three style board directions for a law firm called Hartwell & Associates. They have a sage archetype — trustworthy, knowledgeable, measured. Colors: navy (#1E3A5F), gold (#C5A55A), cream (#FAF8F5). Fonts: Playfair Display headings, Source Sans Pro body.",
+      "expected_output": "Three distinct HTML style board files showing different visual interpretations of the sage archetype with the law firm's brand. Each should have meaningfully different layout, typography treatment, and texture approaches.",
+      "assertions": [
+        {
+          "name": "three_boards_created",
+          "description": "Three separate HTML style board files generated in the workspace",
+          "type": "file_exists"
+        },
+        {
+          "name": "boards_use_brand_colors",
+          "description": "All three boards reference the navy (#1E3A5F) and gold (#C5A55A) palette",
+          "type": "content_check"
+        },
+        {
+          "name": "boards_are_visually_distinct",
+          "description": "Each board specifies different layout density, typography expression, or texture choices",
+          "type": "content_check"
+        },
+        {
+          "name": "boards_are_valid_html",
+          "description": "Each board is a self-contained HTML file that can be opened in a browser",
+          "type": "content_check"
+        }
+      ]
+    }
+  ]
+}

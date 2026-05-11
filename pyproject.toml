@@ -1,0 +1,18 @@
+[project]
+name = "amaris-consulting"
+version = "0.1.0"
+description = "Claude Code plugin for Amaris Consulting branded deliverables and brand tools"
+requires-python = ">=3.11"
+dependencies = [
+    "Pillow>=12.2.0",
+    "cairosvg>=2.7",
+    "defusedxml>=0.7",
+    "lxml>=6.1.0",
+    "openpyxl>=3.1",
+    "pdf2image>=1.16",
+    "pdfplumber>=0.10",
+    "pypdf>=6.10.2",
+    "pypdfium2>=4.0",
+    "python-pptx>=0.6",
+    "reportlab>=4.0",
+]

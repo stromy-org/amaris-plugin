@@ -1,0 +1,16 @@
+# Changes here will be overwritten by Copier; DO NOT edit manually.
+_commit: 0230c11
+_src_path: /Users/williammasquelier/Repositories/stromy-org/scaffolds/claude-plugin-template
+author_name: Stromy
+client_name: Amaris Consulting
+client_slug: amaris
+description: Claude Code plugin for Amaris Consulting branded deliverables and brand
+    tools
+github_org: stromy-org
+include_mcp: false
+include_node: true
+include_python: true
+plugin_name: Amaris Consulting Deliverables
+plugin_slug: amaris-consulting
+skill_slug: example
+version: 0.1.0
