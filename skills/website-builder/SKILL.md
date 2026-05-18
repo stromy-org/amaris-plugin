@@ -679,22 +679,12 @@ object-fit: cover` behind a relative container.
 
 ### Generate website-maintain skill
 
-The canonical skill lives in `stromy-org/.claude/skills/website-maintain/SKILL.md` and
-is rendered into each website repo via `scripts/sync-website-skill.sh`. Do NOT manually
-write a website-maintain skill.
-
-Instead:
-1. Add the new repo to the `WEBSITE_REPOS` array in `stromy-org/scripts/sync-website-skill.sh`
-   (format: `"repo_relative_path|client_slug|site_name|site_url|dev_port"`)
-2. Run the sync script from the stromy-org root:
-   ```bash
-   bash scripts/sync-website-skill.sh --dry-run   # verify output
-   bash scripts/sync-website-skill.sh             # write and commit
-   ```
-
-The script reads the new site's `charter.json` for font/color values, detects collection
-names from `content.config.ts`, and injects them into the canonical SKILL.md template
-zones. The result is committed to the new repo automatically.
+The canonical `website-maintain` skill lives in
+`scaffolds/astro-website-template/template/skills/website-maintain/` and is
+propagated into each website satellite via `scripts/sync-maintainer-skills.sh`
+(routed by `scripts/sync.sh maintainer-skills`). Do NOT manually write a
+website-maintain skill — let the maintainer-skills pipeline render it on the
+next sync.
 
 ### Generate CLAUDE.md and AGENTS.md
 
