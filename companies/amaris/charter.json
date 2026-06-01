@@ -54,7 +54,12 @@
     "secondary": "#f5e2da",
     "accent": "#4182ff",
     "text": "#494951",
+    "textLight": "#6c757d",
     "background": "#ffffff",
+    "surface": "#f8f9fa",
+    "success": "#7ddeb8",
+    "warning": "#ffdd77",
+    "error": "#ff4d4d",
     "sectorColors": {
       "lifeSciences": "#7ddeb8",
       "engineering": "#b880ff",
