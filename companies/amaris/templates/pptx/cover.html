@@ -1,0 +1,98 @@
+<!--
+  Amaris Consulting — PPTX cover slide anchor template (HTML page shell).
+  Consumed by the `pptx` / `pptx-hd` render-anchors mode.
+
+  Encodes the brand-consistent visible frame only. Slide body layout is the
+  LLM's creative space — anchors are a brand-consistency reference, not a
+  prescriptive deck.
+
+  Build script injects:
+    {{HERO_URL}}        — absolute file:// URL to images/<cover photo> (optional)
+    {{LOGO_WHITE_URL}}  — absolute file:// URL to logos/logo-white.svg
+    {{TITLE}}           — slide title
+    {{SUBTITLE}}        — one-sentence subtitle (optional)
+    {{OVERLINE}}        — short uppercase label (optional)
+    {{TOKENS_CSS}}      — full contents of tokens.css
+    {{FONT_FACES}}      — @font-face declarations / Google Fonts @import
+    {{CONFIDENTIALITY}} — confidentiality text from boilerplate.json (may be empty)
+    {{DATE}}            — render date
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{TOKENS_CSS}}
+{{FONT_FACES}}
+
+html, body { margin: 0; padding: 0; }
+body {
+  width: 1280px; height: 720px;
+  color: #fff;
+  background:
+    linear-gradient(120deg, rgba(39,39,116,0.92) 0%, rgba(39,39,116,0.70) 55%, rgba(39,39,116,0.55) 100%),
+    url("{{HERO_URL}}") center/cover;
+  font-family: var(--font-display, var(--font-heading));
+  position: relative;
+  overflow: hidden;
+}
+/* Amaris geometric accent — thin blush rule echoing the wordmark baseline */
+.accent-rule {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 6px;
+  background: var(--color-secondary, #EBC4B4);
+}
+.logo  { position: absolute; top: 52px; left: 64px; }
+.logo img { height: 42pt; width: auto; }
+.block { position: absolute; bottom: 120px; left: 64px; right: 64px; max-width: 960px; }
+.overline {
+  font-family: var(--font-mono, monospace);
+  font-size: 11pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-secondary, #EBC4B4);
+  margin-bottom: 18pt;
+}
+h1 {
+  font-family: var(--font-display, var(--font-heading));
+  font-weight: var(--font-weight-semibold, 600);
+  font-size: 54pt;
+  line-height: 1.06;
+  margin: 0;
+  color: #fff;
+}
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 16pt;
+  opacity: 0.88;
+  margin-top: 20pt;
+  max-width: 78%;
+}
+.meta {
+  position: absolute;
+  bottom: 34px;
+  left: 64px;
+  right: 64px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9pt;
+  opacity: 0.72;
+  display: flex;
+  justify-content: space-between;
+}
+</style>
+</head>
+<body>
+  <div class="accent-rule"></div>
+  <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
+  <div class="block">
+    <div class="overline">{{OVERLINE}}</div>
+    <h1>{{TITLE}}</h1>
+    <p class="subtitle">{{SUBTITLE}}</p>
+  </div>
+  <div class="meta">
+    <span>{{CONFIDENTIALITY}}</span>
+    <span>{{DATE}}</span>
+  </div>
+</body>
+</html>

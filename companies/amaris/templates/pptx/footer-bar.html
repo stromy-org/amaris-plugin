@@ -1,0 +1,30 @@
+<!--
+  Amaris Consulting — PPTX footer-bar fragment.
+  Standalone HTML snippet for embedding into any LLM-authored content slide
+  that wants the brand-consistent footer without inheriting the rest of the
+  content.html frame.
+
+  Injected: {{LOGO_MONO_URL}} {{CLIENT_NAME}} {{CONFIDENTIALITY}}
+            {{PAGE}} {{PAGES}}
+-->
+<div class="footer-bar" style="
+  position: absolute;
+  bottom: 18px;
+  left: 64px;
+  right: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 8pt;
+  color: var(--color-text-light, #6c757d);
+">
+  <div style="display: flex; align-items: center; gap: 10pt;">
+    <img src="{{LOGO_MONO_URL}}" alt="Amaris Consulting" style="height: 14pt; width: auto; opacity: 0.8;">
+    <span>{{CLIENT_NAME}}</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 10pt;">
+    <span>{{CONFIDENTIALITY}}</span>
+    <span>{{PAGE}} / {{PAGES}}</span>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<!--
+  Amaris Consulting — PPTX section-divider anchor template.
+  Consumed by `pptx` / `pptx-hd` render-anchors mode.
+
+  Injected: {{HERO_URL}} {{LOGO_WHITE_URL}} {{SECTION_NUMBER}} {{SECTION_TITLE}}
+            {{TOKENS_CSS}} {{FONT_FACES}} {{CONFIDENTIALITY}}
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{TOKENS_CSS}}
+{{FONT_FACES}}
+
+html, body { margin: 0; padding: 0; }
+body {
+  width: 1280px; height: 720px;
+  color: #fff;
+  background: var(--color-primary, #272774);
+  font-family: var(--font-display, var(--font-heading));
+  position: relative;
+  overflow: hidden;
+}
+/* Optional hero photo, dimmed under an indigo wash for legibility */
+.hero {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(rgba(39,39,116,0.78), rgba(39,39,116,0.78)),
+    url("{{HERO_URL}}") center/cover;
+}
+.section-number {
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  font-family: var(--font-mono, monospace);
+  font-size: 14pt;
+  color: var(--color-secondary, #EBC4B4);
+  letter-spacing: 0.24em;
+}
+.section-title {
+  position: absolute;
+  top: 50%;
+  left: 64px;
+  right: 64px;
+  transform: translateY(-50%);
+  font-family: var(--font-display, var(--font-heading));
+  font-weight: var(--font-weight-semibold, 600);
+  font-size: 60pt;
+  line-height: 1.08;
+  color: #fff;
+  max-width: 960px;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 96px; height: 6px;
+  margin-top: 28px;
+  background: var(--color-secondary, #EBC4B4);
+}
+.logo  { position: absolute; bottom: 44px; left: 64px; }
+.logo img { height: 28pt; width: auto; opacity: 0.85; }
+.meta {
+  position: absolute;
+  bottom: 36px;
+  right: 64px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9pt;
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+  <div class="hero"></div>
+  <div class="section-number">{{SECTION_NUMBER}}</div>
+  <div class="section-title">{{SECTION_TITLE}}</div>
+  <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
+  <div class="meta">{{CONFIDENTIALITY}}</div>
+</body>
+</html>

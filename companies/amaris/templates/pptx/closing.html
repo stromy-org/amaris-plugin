@@ -1,0 +1,81 @@
+<!--
+  Amaris Consulting — PPTX closing slide anchor template.
+  Consumed by `pptx` / `pptx-hd` render-anchors mode.
+
+  Injected: {{HERO_URL}} {{LOGO_WHITE_URL}} {{CLIENT_NAME}}
+            {{CONTACT_EMAIL}} {{CONTACT_WEBSITE}} {{CTA_TEXT}}
+            {{TOKENS_CSS}} {{FONT_FACES}} {{CONFIDENTIALITY}}
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{TOKENS_CSS}}
+{{FONT_FACES}}
+
+html, body { margin: 0; padding: 0; }
+body {
+  width: 1280px; height: 720px;
+  color: #fff;
+  background:
+    linear-gradient(125deg, rgba(39,39,116,0.95) 0%, rgba(39,39,116,0.78) 100%),
+    url("{{HERO_URL}}") center/cover;
+  font-family: var(--font-display, var(--font-heading));
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo { margin-bottom: 40pt; }
+.logo img { height: 52pt; width: auto; }
+.cta {
+  font-family: var(--font-display, var(--font-heading));
+  font-weight: var(--font-weight-semibold, 600);
+  font-size: 40pt;
+  line-height: 1.15;
+  text-align: center;
+  color: #fff;
+  max-width: 920px;
+  margin: 0 64px;
+}
+.cta::after {
+  content: "";
+  display: block;
+  width: 96px; height: 6px;
+  margin: 28px auto 0;
+  background: var(--color-secondary, #EBC4B4);
+}
+.contact {
+  font-family: var(--font-mono, monospace);
+  font-size: 11pt;
+  letter-spacing: 0.14em;
+  margin-top: 30pt;
+  opacity: 0.88;
+  text-align: center;
+}
+.meta {
+  position: absolute;
+  bottom: 26px;
+  left: 64px;
+  right: 64px;
+  font-family: var(--font-mono, monospace);
+  font-size: 9pt;
+  opacity: 0.6;
+  display: flex;
+  justify-content: space-between;
+}
+</style>
+</head>
+<body>
+  <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
+  <div class="cta">{{CTA_TEXT}}</div>
+  <div class="contact">{{CONTACT_EMAIL}} &nbsp;·&nbsp; {{CONTACT_WEBSITE}}</div>
+  <div class="meta">
+    <span>{{CLIENT_NAME}}</span>
+    <span>{{CONFIDENTIALITY}}</span>
+  </div>
+</body>
+</html>

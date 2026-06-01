@@ -1,0 +1,27 @@
+{
+  "client": {
+    "name": "Amaris Consulting",
+    "legalName": "Amaris Consulting Sàrl",
+    "tagline": "Make it happen, together.",
+    "campaignTagline": "Your stepping stone",
+    "website": "amaris.com"
+  },
+  "about": {
+    "short": "Amaris Consulting is an independent technology and management consulting firm, part of the Mantu group, helping businesses grow across Life Sciences, IS & Digital, Telecom, and Engineering.",
+    "long": "Amaris Consulting is an independent technology and management consulting firm and a wholly-owned brand of the Mantu group. Founded in Geneva in 2007, Amaris brings together more than 7,600 consultants across over 60 countries on 5 continents. We partner with our clients to deliver expert advisory, project delivery, and technology enablement — combining global reach with local proximity to make ambitious projects happen.",
+    "mission": "Helping businesses grow is the reason we wake up every day. We aim to be positive agents of change. We care about finding and delivering the right solution for our clients. Their success is our success."
+  },
+  "footer": {
+    "deck": "Amaris Consulting  ·  Confidential  ·  {{year}}",
+    "doc": "Amaris Consulting Sàrl  ·  Confidential — Not for distribution  ·  {{page}}/{{pages}}",
+    "pdf": "© {{year}} Amaris Consulting Sàrl  ·  amaris.com"
+  },
+  "confidentiality": "This document is confidential and intended solely for the named recipient. It may not be reproduced or distributed, in whole or in part, without the prior written consent of Amaris Consulting.",
+  "copyright": "© {{year}} Amaris Consulting Sàrl. All rights reserved.",
+  "legalDisclaimer": "All content in this document — including designs, images, logos, media, text, icons, and graphs — is the sole and exclusive property of Amaris Consulting and its affiliates. It is provided for information purposes only; Amaris Consulting accepts no liability for decisions taken on the basis of its contents.",
+  "contact": {
+    "website": "amaris.com",
+    "press": "press@amaris.com",
+    "linkedin": "linkedin.com/company/amaris"
+  }
+}
