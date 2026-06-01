@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Amaris Consulting — Email Signature</title>
+<style>
+  body {
+    background: #F5E2DA;
+    margin: 0;
+    padding: 40px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 {
+    font-family: 'Century Gothic', 'General Sans', Arial, sans-serif;
+    font-weight: 600;
+    color: #272774;
+    font-size: 26px;
+    margin: 0 0 4px;
+  }
+  .sub {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin: 0 0 28px;
+  }
+  .panel {
+    background: #FFFFFF;
+    border: 1px solid #EBC4B4;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+  }
+  .panel h2 {
+    font-family: 'Century Gothic', 'General Sans', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #272774;
+    margin: 0 0 16px;
+  }
+  .copy-btn {
+    background: #272774;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  .copy-btn:hover { background: #3a3a99; }
+
+  /* ---------- SIGNATURE itself — Outlook-safe, inline-styled ---------- */
+  table.sig {
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #272774;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  table.sig td { vertical-align: top; padding: 0; }
+  table.sig .left {
+    border-right: 2px solid #272774;
+    padding-right: 18px;
+  }
+  table.sig .right { padding-left: 18px; }
+  table.sig .name {
+    font-family: Georgia, 'Century Gothic', serif;
+    font-weight: normal;
+    font-size: 18px;
+    color: #272774;
+    margin: 0;
+    line-height: 1.15;
+  }
+  table.sig .role {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin: 2px 0 10px;
+  }
+  table.sig .company {
+    font-size: 15px;
+    font-weight: bold;
+    color: #272774;
+    margin: 0;
+  }
+  table.sig .company-caption {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin: 2px 0 8px;
+  }
+  table.sig .meta { font-size: 12px; color: #272774; }
+  table.sig .meta a { color: #272774; text-decoration: none; }
+  table.sig .accent { color: #EBC4B4; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Amaris Consulting — Email Signature</h1>
+    <p class="sub">Outlook-safe HTML · indigo #272774 · blush #EBC4B4</p>
+
+    <div class="panel">
+      <h2>Default signature</h2>
+      <table class="sig" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td class="left">
+            <!-- Amaris three-arch monogram, drawn inline for client-safe rendering -->
+            <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block">
+              <g fill="none" stroke="#272774" stroke-width="2" stroke-linecap="round">
+                <path d="M4 38 L13 8 L22 38"/>
+                <path d="M22 38 L31 8 L40 38"/>
+                <line x1="8" y1="26" x2="36" y2="26"/>
+              </g>
+              <circle cx="31" cy="6" r="3" fill="#EBC4B4"/>
+            </svg>
+          </td>
+          <td class="right">
+            <p class="name">Rebeca Elmúdesi</p>
+            <p class="role">Digital Content Creator Specialist</p>
+            <p class="company">Amaris Consulting</p>
+            <p class="company-caption">MAKE IT HAPPEN, TOGETHER</p>
+            <div class="meta">
+              <div>E&nbsp;&nbsp;<a href="mailto:mariarebeca.elmudesi@amaris.com">mariarebeca.elmudesi@amaris.com</a></div>
+              <div>W&nbsp;&nbsp;<a href="https://amaris.com">amaris.com</a></div>
+              <div>in&nbsp;&nbsp;<a href="https://www.linkedin.com/in/rebeca-elm%C3%BAdesi-4b6910223/">LinkedIn</a></div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <button class="copy-btn" data-target="sig-default">COPY HTML</button>
+    </div>
+  </div>
+</body>
+</html>

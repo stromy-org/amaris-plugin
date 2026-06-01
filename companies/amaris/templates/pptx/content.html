@@ -1,0 +1,86 @@
+<!--
+  Amaris Consulting — PPTX content slide anchor template (FRAME ONLY).
+  Consumed by `pptx` / `pptx-hd` render-anchors mode.
+
+  Encodes ONLY the brand-consistent frame — margins, header strip, footer bar,
+  page-number position. The body zone is intentionally empty; the LLM authoring
+  a real deck fills it with whatever layout the content requires. Do NOT add
+  prescriptive body layout here.
+
+  Injected: {{LOGO_MONO_URL}} {{CLIENT_NAME}} {{CONFIDENTIALITY}}
+            {{PAGE}} {{PAGES}} {{TOKENS_CSS}} {{FONT_FACES}}
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{TOKENS_CSS}}
+{{FONT_FACES}}
+
+html, body { margin: 0; padding: 0; }
+body {
+  width: 1280px; height: 720px;
+  background: var(--color-background, #fff);
+  color: var(--color-text, #272774);
+  font-family: var(--font-body, system-ui, sans-serif);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Brand header strip — thin indigo band with a blush tick at the left margin */
+.brand-strip {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--color-primary, #272774);
+}
+.brand-strip::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 64px;
+  width: 88px; height: 4px;
+  background: var(--color-secondary, #EBC4B4);
+}
+
+/* Body zone — LLM creative space. Anchor leaves this empty. */
+.body-zone {
+  position: absolute;
+  top: 64px;
+  left: 64px;
+  right: 64px;
+  bottom: 56px;
+}
+
+/* Footer bar — brand-consistent across every content slide */
+.footer-bar {
+  position: absolute;
+  bottom: 18px;
+  left: 64px;
+  right: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 8pt;
+  color: var(--color-text-light, #6c757d);
+}
+.footer-bar img { height: 14pt; width: auto; opacity: 0.8; }
+.footer-left, .footer-right { display: flex; align-items: center; gap: 10pt; }
+</style>
+</head>
+<body>
+  <div class="brand-strip"></div>
+  <div class="body-zone"><!-- LLM fills this --></div>
+  <div class="footer-bar">
+    <div class="footer-left">
+      <img src="{{LOGO_MONO_URL}}" alt="Amaris Consulting">
+      <span>{{CLIENT_NAME}}</span>
+    </div>
+    <div class="footer-right">
+      <span>{{CONFIDENTIALITY}}</span>
+      <span>{{PAGE}} / {{PAGES}}</span>
+    </div>
+  </div>
+</body>
+</html>

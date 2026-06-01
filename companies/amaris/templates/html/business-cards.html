@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Amaris Consulting — Business Cards</title>
+<style>
+  body {
+    background: #F5E2DA;
+    margin: 0;
+    padding: 40px 20px;
+    font-family: 'Century Gothic', 'General Sans', Arial, sans-serif;
+    color: #272774;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  h1 { font-weight: 600; font-size: 24px; margin: 0 0 4px; }
+  .sub { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #6c757d; margin: 0 0 32px; }
+  .row { display: flex; gap: 28px; flex-wrap: wrap; }
+
+  /* Standard 85mm × 55mm card at 3.78px/mm ≈ 321 × 208 px */
+  .card {
+    width: 321px; height: 208px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(39,39,116,0.18);
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  /* FRONT — indigo field, white wordmark, blush rule */
+  .front {
+    background: #272774;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .front .mark {
+    text-align: center;
+  }
+  .front .wordmark {
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: 0.04em;
+  }
+  .front .caption {
+    font-size: 9px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: #EBC4B4;
+    margin-top: 8px;
+  }
+  .front .rule {
+    width: 64px; height: 4px;
+    background: #EBC4B4;
+    margin: 14px auto 0;
+  }
+
+  /* BACK — white field, contact details */
+  .back {
+    background: #fff;
+    padding: 24px 26px;
+    box-sizing: border-box;
+  }
+  .back .name { font-weight: 600; font-size: 18px; margin: 0; }
+  .back .role { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #6c757d; margin: 4px 0 18px; }
+  .back .meta { font-family: Arial, sans-serif; font-size: 11px; line-height: 1.7; }
+  .back .meta a { color: #272774; text-decoration: none; }
+  .back .accent-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #EBC4B4; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Amaris Consulting — Business Cards</h1>
+    <p class="sub">85 × 55 mm · indigo #272774 · blush #EBC4B4 · Century Gothic</p>
+
+    <div class="row">
+      <!-- FRONT -->
+      <div class="card front">
+        <div class="mark">
+          <div class="wordmark">amaris</div>
+          <div class="caption">Consulting</div>
+          <div class="rule"></div>
+        </div>
+      </div>
+
+      <!-- BACK -->
+      <div class="card back">
+        <div class="accent-bar"></div>
+        <p class="name">Rebeca Elmúdesi</p>
+        <p class="role">Digital Content Creator Specialist</p>
+        <div class="meta">
+          <div>mariarebeca.elmudesi@amaris.com</div>
+          <div><a href="https://amaris.com">amaris.com</a></div>
+          <div>Make it happen, together.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

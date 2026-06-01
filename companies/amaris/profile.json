@@ -1,0 +1,46 @@
+{
+  "company": {
+    "name": "Amaris Consulting",
+    "legalName": "Amaris Consulting Sàrl",
+    "shortName": "Amaris",
+    "tagline": "Make it happen, together.",
+    "description": "Amaris Consulting is an independent technology and management consulting firm and a wholly-owned brand of the Mantu group. Founded in Geneva in 2007 by two engineers, a lawyer and a financial expert, Amaris helps businesses grow through expert advisory, project delivery, and technology enablement across Life Sciences, Information Systems & Digital, Telecom, and Engineering.",
+    "founded": 2007,
+    "parent": "Mantu",
+    "headquarters": {
+      "street": "Place de la Gare 4",
+      "city": "Chêne-Bourg",
+      "region": "Geneva",
+      "postalCode": "1225",
+      "country": "Switzerland"
+    },
+    "registration": {
+      "number": "CHE-113.375.102",
+      "registry": "Commercial Registry of the Canton of Geneva",
+      "entity": "Amaris Consulting Sàrl"
+    },
+    "website": "https://amaris.com",
+    "email": "press@amaris.com",
+    "phone": null,
+    "linkedin": "https://www.linkedin.com/company/amaris",
+    "scale": {
+      "consultants": "7,600+",
+      "countries": "60+",
+      "continents": 5
+    }
+  },
+  "businessLines": [
+    { "id": "bl-001", "name": "Life Sciences", "description": "Advisory and project delivery across pharma, biotech, and medical devices — from R&D and clinical operations to regulatory compliance and manufacturing." },
+    { "id": "bl-002", "name": "Information Systems & Digital", "description": "Digital transformation, software engineering, data, cloud, and cybersecurity programmes that modernise the enterprise technology stack." },
+    { "id": "bl-003", "name": "Telecom", "description": "Network engineering, deployment, and optimisation services for telecom operators and equipment vendors." },
+    { "id": "bl-004", "name": "Engineering", "description": "Multi-sector engineering consulting spanning industrialisation, systems engineering, and product development." }
+  ],
+  "industries": [
+    "Consumer & Retail",
+    "Energy, Resources & Utilities",
+    "Financial Services",
+    "Healthcare",
+    "Telecommunications, Media & Entertainment",
+    "Transportation & Defense"
+  ]
+}
