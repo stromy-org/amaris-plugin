@@ -50,18 +50,28 @@
 
 ## Typography
 
-**Primary typeface: General Sans** (Fontshare — free commercial licence)
+**Primary typeface: Century Gothic** (system font — macOS default, Microsoft Office default on Windows)
 
 | Weight | Use |
 |--------|-----|
-| Regular 400 | Body text, captions |
-| Medium 500 | UI labels, emphasis |
-| Semibold 600 | Headings, CTAs, slide titles |
-| Bold 700 | Display/hero text |
+| Regular 400 | Body text, captions, sub-headings |
+| Bold 700 | Headings, slide titles, CTAs, display/hero text |
 
-Variable TTF available for web use. Full WOFF2 set included in `fonts/web/`.
+Century Gothic ships with two weights only (Regular and Bold). Do not specify
+Medium 500, Semibold 600, or other intermediate weights — they will silently
+fall back to Regular in PowerPoint, Word, and most browsers. Use Bold (700)
+wherever you need emphasis above body weight.
 
-**Secondary typeface: Quicksand** — used in select page blocks; not a primary brand font.
+No font files need to be embedded or distributed: Century Gothic is preinstalled
+on macOS and on Windows machines with any Office install. PDFs and PPTX files
+created with Century Gothic render identically on the presenter's machine
+without any setup.
+
+CSS fallback stack: `'Century Gothic', 'CenturyGothic', 'Avenir Next', 'Futura', 'Apple SD Gothic Neo', sans-serif`.
+
+**Secondary typeface: Quicksand** — used in select web Elementor blocks only; not a primary brand font for slides, docs, or PDFs.
+
+**Legacy:** General Sans files in `fonts/web/` remain as historical assets but are no longer the brand font. New deliverables use Century Gothic.
 
 **Base size:** 18px body · 48px h1 · 36px h2
 

@@ -33,15 +33,18 @@
   --gradient-dark:         linear-gradient(135deg, #272674 0%, #000000 100%);
   --gradient-accent:       linear-gradient(135deg, #4182ff 0%, #272674 100%);
 
-  /* Typography */
-  --font-heading:          'GeneralSans', 'General Sans', sans-serif;
-  --font-body:             'GeneralSans', 'General Sans', sans-serif;
+  /* Typography
+     Primary brand font: Century Gothic (system font on macOS/Windows, no embed needed).
+     Century Gothic ships with two weights only (Regular 400, Bold 700) — do not
+     rely on intermediate weights. */
+  --font-heading:          'Century Gothic', 'CenturyGothic', 'Avenir Next', 'Futura', 'Apple SD Gothic Neo', sans-serif;
+  --font-body:             'Century Gothic', 'CenturyGothic', 'Avenir Next', 'Futura', 'Apple SD Gothic Neo', sans-serif;
   --font-accent:           'Quicksand', sans-serif;
   --font-mono:             'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
 
   --font-weight-regular:   400;
-  --font-weight-medium:    500;
-  --font-weight-semibold:  600;
+  --font-weight-medium:    700;  /* Century Gothic has no true medium — alias to bold */
+  --font-weight-semibold:  700;  /* Same — alias to bold */
   --font-weight-bold:      700;
 
   --font-size-base:        18px;
