@@ -75,7 +75,8 @@
       "family": "Century Gothic",
       "cssName": "Century Gothic",
       "weight": "700",
-      "style": "Bold"
+      "style": "Bold",
+      "embedFamily": "General Sans"
     },
     "body": {
       "family": "Century Gothic",
@@ -83,24 +84,35 @@
       "weight": "400",
       "style": "Regular",
       "fallback": "'CenturyGothic', 'Avenir Next', 'Futura', 'Apple SD Gothic Neo', sans-serif",
-      "baseSize": "18px"
+      "baseSize": "18px",
+      "embedFamily": "General Sans"
     },
     "medium": {
       "family": "Century Gothic",
       "cssName": "Century Gothic",
       "weight": "700",
       "style": "Bold",
-      "note": "Century Gothic only ships in Regular and Bold across Office; use Bold for medium emphasis."
+      "note": "Century Gothic only ships in Regular and Bold across Office; use Bold for medium emphasis.",
+      "embedFamily": "General Sans"
     },
     "accent": {
       "family": "Quicksand",
       "weight": "300-700",
       "note": "Secondary font used in select Elementor blocks (web only)."
     },
-    "note": "Century Gothic is a system font on macOS and a default Microsoft Office font on Windows — no embedding required. It ships with two weights (Regular 400, Bold 700); avoid relying on intermediate weights.",
+    "note": "Century Gothic is the named brand face (licensed system/Office font, ships Regular 400 + Bold 700). It is relied on for client-side editing but cannot be embedded (non-redistributable). General Sans is the OFL embeddable substitute used by server-side render_* tools and web — see fontFiles + embedFamily.",
     "fontFiles": {
-      "web": "fonts/web/",
-      "note": "Legacy GeneralSans files remain available for web fallback contexts only; primary brand font is Century Gothic (system)."
+      "embed": "fonts/otf/ (+ fonts/ttf/) — General Sans, OFL, embeddable",
+      "web": "fonts/web/ — General Sans woff2",
+      "note": "Century Gothic (the named brand face) is a licensed system/Office font — present on the client's own machines but NOT redistributable, so it cannot be embedded server-side. General Sans is the OFL embeddable substitute: server-rendered deliverables embed it (self-contained everywhere); when the client edits on a licensed machine the named Century Gothic still resolves; web uses the General Sans woff2 set."
+    },
+    "embed": {
+      "general-sans-regular": "fonts/otf/GeneralSans-Regular.otf",
+      "general-sans-italic": "fonts/otf/GeneralSans-Italic.otf",
+      "general-sans-medium": "fonts/otf/GeneralSans-Medium.otf",
+      "general-sans-semibold": "fonts/otf/GeneralSans-Semibold.otf",
+      "general-sans-bold": "fonts/otf/GeneralSans-Bold.otf",
+      "general-sans-bolditalic": "fonts/otf/GeneralSans-BoldItalic.otf"
     }
   },
   "logos": {
