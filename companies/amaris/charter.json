@@ -72,36 +72,35 @@
   },
   "typography": {
     "heading": {
-      "family": "General Sans",
-      "cssName": "GeneralSans",
-      "weight": "600",
-      "style": "Semibold"
+      "family": "Century Gothic",
+      "cssName": "Century Gothic",
+      "weight": "700",
+      "style": "Bold"
     },
     "body": {
-      "family": "General Sans",
-      "cssName": "GeneralSans",
+      "family": "Century Gothic",
+      "cssName": "Century Gothic",
       "weight": "400",
       "style": "Regular",
-      "fallback": "sans-serif",
+      "fallback": "'CenturyGothic', 'Avenir Next', 'Futura', 'Apple SD Gothic Neo', sans-serif",
       "baseSize": "18px"
     },
     "medium": {
-      "family": "General Sans",
-      "cssName": "GeneralSans",
-      "weight": "500",
-      "style": "Medium"
+      "family": "Century Gothic",
+      "cssName": "Century Gothic",
+      "weight": "700",
+      "style": "Bold",
+      "note": "Century Gothic only ships in Regular and Bold across Office; use Bold for medium emphasis."
     },
     "accent": {
       "family": "Quicksand",
       "weight": "300-700",
-      "note": "Secondary font used in Elementor blocks"
+      "note": "Secondary font used in select Elementor blocks (web only)."
     },
+    "note": "Century Gothic is a system font on macOS and a default Microsoft Office font on Windows — no embedding required. It ships with two weights (Regular 400, Bold 700); avoid relying on intermediate weights.",
     "fontFiles": {
       "web": "fonts/web/",
-      "css": "fonts/web/general-sans.css",
-      "otf": "fonts/otf/",
-      "variable": "fonts/ttf/GeneralSans-Variable.ttf",
-      "license": "Fontshare Free For Personal & Commercial Use"
+      "note": "Legacy GeneralSans files remain available for web fallback contexts only; primary brand font is Century Gothic (system)."
     }
   },
   "logos": {
