@@ -10,10 +10,10 @@ This skill's full instructions are hosted on the `stromy-format` MCP server. Do 
 ## Loading instructions
 
 1. Read the main skill instructions:
-   → `ReadMcpResourceTool(server="stromy-format", uri="skill://mermaid/SKILL.md")`
+   → call the `fs_read` tool on the `stromy-format` MCP with `path="skills/mermaid/SKILL.md"`.
 
-2. Discover available reference files via the manifest, then read on demand:
-   → `ReadMcpResourceTool(server="stromy-format", uri="skill://mermaid/_manifest")`
-   → `ReadMcpResourceTool(server="stromy-format", uri="skill://mermaid/references/<file>")`
+2. Discover reference files (and any other skill assets), then read on demand:
+   → call `fs_list` with `path="skills/mermaid"` (and `path="skills/mermaid/references"`),
+   → call `fs_read` with `path="skills/mermaid/references/<file>"`.
 
-Follow the instructions returned by the MCP resource exactly.
+Follow the instructions returned by the MCP exactly.
