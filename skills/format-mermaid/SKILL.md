@@ -1,20 +1,20 @@
 ---
-name: pdf-hd
-description: "High-fidelity branded PDF creation using HTML-first design with the full web stack (CSS gradients, web fonts, SVG, paged-media CSS) rendered via Playwright (Chromium) or WeasyPrint. Deeply integrated with the client-data brand system (charter.json, tokens.css, manifest.json, hero images, guidelines.md, optional brand/fonts/). Use when asked to create branded proposals, executive briefs, brand books, policy reports, case studies, white papers, or any client-facing PDF where visual quality matters. Triggers on: 'create branded PDF', 'build proposal PDF', 'design a brief', 'brand book PDF', 'high quality PDF', 'HD PDF', 'magazine-style PDF', or any request for visually polished branded paginated output."
+name: format-mermaid
+description: "Creates Mermaid diagrams for Markdown-based documentation (GitHub, GitLab, wikis, blogs) and visual explanations. Supports 25+ diagram types including flowcharts, sequence/class/state diagrams, ERDs, Gantt charts, mindmaps, timelines, architecture views, Kanban boards, Sankey diagrams, and newer types (Wardley maps, Venn, Ishikawa). When the `mermaid` MCP is available, uses live browser preview and PNG/SVG/PDF export. Use this skill when users ask for Mermaid syntax, Markdown-renderable diagrams, visual architecture, or quick text-to-diagram output."
 ---
 
-# PDF-HD: High-Fidelity Branded PDFs (MCP-hosted skill)
+# Mermaid Diagrams (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `stromy-format` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
 
 ## Loading instructions
 
 1. Read the main skill instructions:
-   → call the `fs_read` tool on the `stromy-format` MCP with `path="skills/pdf-hd/SKILL.md"`.
+   → call the `fs_read` tool on the `stromy-format` MCP with `path="skills/format-mermaid/SKILL.md"`.
 
 2. Discover reference files (and any other skill assets), then read on demand:
-   → call `fs_list` with `path="skills/pdf-hd"` (and `path="skills/pdf-hd/references"`),
-   → call `fs_read` with `path="skills/pdf-hd/references/<file>"`.
+   → call `fs_list` with `path="skills/format-mermaid"` (and `path="skills/format-mermaid/references"`),
+   → call `fs_read` with `path="skills/format-mermaid/references/<file>"`.
 
 Follow the instructions returned by the MCP exactly.
 

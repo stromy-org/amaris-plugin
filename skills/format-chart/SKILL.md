@@ -1,20 +1,20 @@
 ---
-name: docx
-description: "Create, read, edit, and manipulate Word documents (.docx files). Triggers on any mention of 'Word doc', 'word document', '.docx', or requests to produce documents with formatting like tables of contents, headings, page numbers, headers/footers, or letterheads. Also use when extracting or reorganizing content from .docx files, inserting or replacing images, performing find-and-replace, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'brief', or 'template' as a Word file, use this skill. Reads brand data from `client-data/clients/<name>/charter.json` when a company is specified. Do NOT use for PDFs (use the `pdf` skill), spreadsheets (use `xlsx`), Google Docs, or coding tasks unrelated to document generation."
+name: format-chart
+description: "Render brand-aware data-visualisation charts using Plotly.js. The LLM authors any Plotly figure JSON (30+ chart types — waterfall, sankey, sunburst, treemap, funnel, parallel coords, calendar heatmap, candlestick, gauge, radar, themeRiver, marimekko-via-stacked, etc.) and this skill applies the client's brand theme from charter.plotly + tokens.css, then renders to PNG/SVG for embedding in PPTX/DOCX/PDF. Use whenever the user asks for a chart, data visualisation, plot, graph, KPI viz, or asks to add a quantitative visual to a deliverable. Defers to the `format-diagram` skill for structural visuals (process flows, org charts, stakeholder maps) — `chart` is purely numerical data-viz."
 ---
 
-# DOCX creation, editing, and analysis (MCP-hosted skill)
+# Chart — branded data visualisation (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `stromy-format` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
 
 ## Loading instructions
 
 1. Read the main skill instructions:
-   → call the `fs_read` tool on the `stromy-format` MCP with `path="skills/docx/SKILL.md"`.
+   → call the `fs_read` tool on the `stromy-format` MCP with `path="skills/format-chart/SKILL.md"`.
 
 2. Discover reference files (and any other skill assets), then read on demand:
-   → call `fs_list` with `path="skills/docx"` (and `path="skills/docx/references"`),
-   → call `fs_read` with `path="skills/docx/references/<file>"`.
+   → call `fs_list` with `path="skills/format-chart"` (and `path="skills/format-chart/references"`),
+   → call `fs_read` with `path="skills/format-chart/references/<file>"`.
 
 Follow the instructions returned by the MCP exactly.
 
