@@ -5,7 +5,7 @@
     {
       "ghsa": "GHSA-xxjr-mmjv-4gpg",
       "package": "lodash-es",
-      "reason": "Upstream chevrotain (via excalidraw → mermaid → langium) bundles vulnerable lodash-es. No fix available. Tracked for resolution by MCP migration of diagram skill (SCAFFOLDING_REFACTOR_PLAN §5).",
+      "reason": "Upstream chevrotain (via excalidraw → mermaid → langium) bundles vulnerable lodash-es. No fix available. Tracked for resolution by MCP migration of diagram skill.",
       "review_by": "2026-08-20"
     },
     {
