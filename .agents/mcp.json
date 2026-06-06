@@ -8,7 +8,7 @@
       "_consumed_by": ["claude", "codex", "gemini"],
       "_codex_via": "mcp-remote",
       "_gemini_via": "mcp-remote",
-      "_notes": "Hosted format skills (pptx, pptx-hd, docx, pdf, pdf-hd, xlsx, mermaid, diagram, chart, remotion-video). Fetched at runtime via ReadMcpResourceTool — see skills/<name>/SKILL.md stubs. Per-user OAuth via Microsoft Entra ID (handled by mcp-remote browser flow on first use)."
+      "_notes": "Hosted format skills (format-pptx, format-pptx-hd, format-docx, format-pdf, format-pdf-hd, format-xlsx, format-mermaid, format-diagram, format-chart, format-remotion-video). Fetched at runtime via fs_read — see skills/<name>/SKILL.md stubs. Per-user OAuth via Microsoft Entra ID (handled by mcp-remote browser flow on first use)."
     }
   }
 }

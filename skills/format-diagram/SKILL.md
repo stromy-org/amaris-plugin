@@ -1,20 +1,20 @@
 ---
-name: chart
-description: "Render brand-aware data-visualisation charts using Plotly.js. The LLM authors any Plotly figure JSON (30+ chart types — waterfall, sankey, sunburst, treemap, funnel, parallel coords, calendar heatmap, candlestick, gauge, radar, themeRiver, marimekko-via-stacked, etc.) and this skill applies the client's brand theme from charter.plotly + tokens.css, then renders to PNG/SVG for embedding in PPTX/DOCX/PDF. Use whenever the user asks for a chart, data visualisation, plot, graph, KPI viz, or asks to add a quantitative visual to a deliverable. Defers to the `diagram` skill for structural visuals (process flows, org charts, stakeholder maps) — `chart` is purely numerical data-viz."
+name: format-diagram
+description: "Generate branded, editable Excalidraw diagrams (process flows, architecture views, stakeholder maps, org charts, timelines, funnels, matrices, mind maps) and export as PNG/SVG for embedding in deliverables. Accepts native Excalidraw JSON or Mermaid syntax (via bridge). Reads charter.json + tokens.css for brand theming. Use when asked to create a diagram, draw a process flow, make an architecture diagram, visualize a workflow, create a stakeholder map, org chart, funnel diagram, timeline, or any structural visual."
 ---
 
-# Chart — branded data visualisation (MCP-hosted skill)
+# Diagram Skill — Branded Consulting-Quality Diagrams (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `stromy-format` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
 
 ## Loading instructions
 
 1. Read the main skill instructions:
-   → call the `fs_read` tool on the `stromy-format` MCP with `path="skills/chart/SKILL.md"`.
+   → call the `fs_read` tool on the `stromy-format` MCP with `path="skills/format-diagram/SKILL.md"`.
 
 2. Discover reference files (and any other skill assets), then read on demand:
-   → call `fs_list` with `path="skills/chart"` (and `path="skills/chart/references"`),
-   → call `fs_read` with `path="skills/chart/references/<file>"`.
+   → call `fs_list` with `path="skills/format-diagram"` (and `path="skills/format-diagram/references"`),
+   → call `fs_read` with `path="skills/format-diagram/references/<file>"`.
 
 Follow the instructions returned by the MCP exactly.
 
