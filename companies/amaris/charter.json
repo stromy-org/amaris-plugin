@@ -1,8 +1,9 @@
 {
   "slug": "amaris",
   "meta": {
-    "tier": 1,
-    "type": "client"
+    "tier": "producer",
+    "type": "client",
+    "displayName": "Amaris Consulting"
   },
   "identity": {
     "name": "Amaris Consulting",
@@ -56,6 +57,7 @@
     "text": "#494951",
     "textLight": "#6c757d",
     "background": "#ffffff",
+    "backgroundAlt": "#f8f9fa",
     "surface": "#f8f9fa",
     "success": "#7ddeb8",
     "warning": "#ffdd77",
@@ -70,7 +72,7 @@
       "midnight": "linear-gradient(135deg, #020381 0%, #2874fc 100%)"
     }
   },
-  "typography": {
+  "fonts": {
     "heading": {
       "family": "Century Gothic",
       "cssName": "Century Gothic",
