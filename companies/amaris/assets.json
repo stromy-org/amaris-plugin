@@ -1,0 +1,221 @@
+{
+  "version": "1.0",
+  "fonts": [
+    {
+      "family": "General Sans",
+      "weight": 700,
+      "style": "normal",
+      "sha256": "88bff1f629ba18f1342250753648b9e74196b8a2229fbf2f53d602d787fd23fc",
+      "mime": "font/otf",
+      "name": "GeneralSans-Bold.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 700,
+      "style": "italic",
+      "sha256": "6f94e46d463ff49032a4efa9adfbd48599eeb2a9e06c2932f696769958beb30e",
+      "mime": "font/otf",
+      "name": "GeneralSans-BoldItalic.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 200,
+      "style": "normal",
+      "sha256": "0704bd53b5aa975fa9768490b52870184da515bf5c2813b4806edc263736a3f9",
+      "mime": "font/otf",
+      "name": "GeneralSans-Extralight.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 200,
+      "style": "italic",
+      "sha256": "d4582abb35bd5ae85d6ae17245a5f840dd2487dda74ed3a509df60a0768670ac",
+      "mime": "font/otf",
+      "name": "GeneralSans-ExtralightItalic.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 400,
+      "style": "italic",
+      "sha256": "7409a475032d4a83fee4af9a586730c15a1c377f3faba38d2f0147af0d8900ff",
+      "mime": "font/otf",
+      "name": "GeneralSans-Italic.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 300,
+      "style": "normal",
+      "sha256": "6e4965d3b14bb02d4123cedaf87d2b4c3da7462a195d2e5d27f361f1fcd277a4",
+      "mime": "font/otf",
+      "name": "GeneralSans-Light.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 300,
+      "style": "italic",
+      "sha256": "5007719a739e657ee16b25f05172ce30563134d21d315193c50a2a204dfbd9c6",
+      "mime": "font/otf",
+      "name": "GeneralSans-LightItalic.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 500,
+      "style": "normal",
+      "sha256": "a4c6067d3415ab1ec2e17e6bd0406c0d3f7a28c707c5ddd85ca6458cabd3dbf0",
+      "mime": "font/otf",
+      "name": "GeneralSans-Medium.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 500,
+      "style": "italic",
+      "sha256": "f2d2e4279116ed8b3a6f61609658ef01e95c7e7d1f47d5d484243fb8638deeb0",
+      "mime": "font/otf",
+      "name": "GeneralSans-MediumItalic.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 400,
+      "style": "normal",
+      "sha256": "f5cfd05c1dafa77e944670528a81958f7c21b7517bafd2a8796a3aa17e56b9ce",
+      "mime": "font/otf",
+      "name": "GeneralSans-Regular.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 600,
+      "style": "normal",
+      "sha256": "6ad3ed9661df911b511135f494805704dea322dc2ae10a9620764f56df39c30b",
+      "mime": "font/otf",
+      "name": "GeneralSans-Semibold.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 600,
+      "style": "italic",
+      "sha256": "7d1393b5db4a2a89b07b78d1be844c45ef153c26c0ec5e4c62e02e2a7e1bbf57",
+      "mime": "font/otf",
+      "name": "GeneralSans-SemiboldItalic.otf"
+    },
+    {
+      "family": "General Sans Variable",
+      "weight": 700,
+      "style": "normal",
+      "sha256": "4b2539d9ed3367e8f55f7ddd369ab13e17bb279ff2eb7fdca6c713af13d4df84",
+      "mime": "font/ttf",
+      "name": "GeneralSans-Variable.ttf"
+    },
+    {
+      "family": "General Sans Variable",
+      "weight": 700,
+      "style": "italic",
+      "sha256": "4aa0c20dbb593ad82b41f090fbbc8efb1bfe3df85ca895c08092f77d467fea60",
+      "mime": "font/ttf",
+      "name": "GeneralSans-VariableItalic.ttf"
+    }
+  ],
+  "logos": [
+    {
+      "name": "apple-touch-icon.png",
+      "sha256": "938fb8820792769ed47c96ddcab3609b82f8dd28846361316520f28010f2c1da",
+      "mime": "image/png"
+    },
+    {
+      "name": "favicon-192.png",
+      "sha256": "04bd3fb7a4ae4eee78fbe7cb53d0507781c93b09df7380085df0a71ce819c0c6",
+      "mime": "image/png"
+    },
+    {
+      "name": "favicon-270.png",
+      "sha256": "1549e26bf14300f2d909ea1de45358be93702ed8c535fb190d05a91a221c494f",
+      "mime": "image/png"
+    },
+    {
+      "name": "favicon-32.png",
+      "sha256": "723c25e1833637f84b316821d03d9f8996e8bfb15a791ccadd4fe95ec3c18eb3",
+      "mime": "image/png"
+    },
+    {
+      "name": "logo-black.png",
+      "sha256": "f79059489433275dbd3895d1041986e6dda47308cfe53b665cbe68df7b8ec48d",
+      "mime": "image/png"
+    },
+    {
+      "name": "logo-blue.svg",
+      "sha256": "e589c30bdf55ce061d7063da8bc1a9b0ac614e5b11344709385569c07e1b011c",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "logo-white-tagline.png",
+      "sha256": "a55bc4be24816e822665b7f7a3fd2702af61e8843da3db913444fa2b2711cd97",
+      "mime": "image/png"
+    },
+    {
+      "name": "logo-white.svg",
+      "sha256": "6905c8cb175089a0e24b2ba8c09bcfb5e6dcf0960106e68ddba9b84e0c0de3cc",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "logo.svg",
+      "sha256": "bce772aab6bba75f98fce938260f6e573aa4dc032be86fff27e90b5ef9cd03eb",
+      "mime": "image/svg+xml"
+    }
+  ],
+  "images": [
+    {
+      "name": "graphic-mockup-01.png",
+      "sha256": "3b3029eed96715d94539093559b57d8c33f15d41c41060183d78d7dedb1467a2",
+      "mime": "image/png"
+    },
+    {
+      "name": "photo-closing-01.png",
+      "sha256": "b232d757168e030c68088bb726fe4f413ac58d9237e339dd418eb00e08fb6c47",
+      "mime": "image/png"
+    },
+    {
+      "name": "photo-cover-01.png",
+      "sha256": "16f689a68b08d1ce2b34e098c674ef705b3a0651dd08fb651d93d795c39d20b0",
+      "mime": "image/png"
+    },
+    {
+      "name": "photo-cover-02.webp",
+      "sha256": "6aa6f825a26e561de3efd8503b33ca1ce66e42815232829f2f37efdf6637b1e9",
+      "mime": "image/webp"
+    },
+    {
+      "name": "photo-cover-03.webp",
+      "sha256": "9053e41cea1ba7af05b6f17a13cd1b742ebf2268b84d9c6286453097aa00086b",
+      "mime": "image/webp"
+    },
+    {
+      "name": "photo-cover-04.png",
+      "sha256": "13011d1482b8e37f8aa8da4700f7ace9cbe86024e7d4ccccf493dcc1f69151fc",
+      "mime": "image/png"
+    },
+    {
+      "name": "photo-cover-05.jpg",
+      "sha256": "95c0d88900f5b8b62037985ed9e0f925ef3db0e2b1582149421b05f32bd18315",
+      "mime": "image/jpeg"
+    },
+    {
+      "name": "photo-divider-01.png",
+      "sha256": "844128101bb977dfc21b31a5ca88389a557e58c38507f685b0d609e21786e0dc",
+      "mime": "image/png"
+    },
+    {
+      "name": "photo-section-01.png",
+      "sha256": "03fc8c53dc20dbdc5a47ce5a51f96916609caca0ac5a28beb66bbf71fbb1d5cb",
+      "mime": "image/png"
+    },
+    {
+      "name": "photo-section-02.png",
+      "sha256": "449fae85866d803c4130967079f7f1aede7d6c87b61cafe6fa17a54325c497ad",
+      "mime": "image/png"
+    },
+    {
+      "name": "photo-section-03.png",
+      "sha256": "1b7a3393c33d768ea6284023e42c00ec188a83f9c9667ea6bc350c3cf36f5dd5",
+      "mime": "image/png"
+    }
+  ]
+}
