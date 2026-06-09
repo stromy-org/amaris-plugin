@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "amaris-consulting",
-  "version": "0.1.0",
-  "description": "Claude Code plugin for Amaris Consulting branded deliverables and brand tools",
+  "version": "0.2.0",
+  "description": "Claude Code plugin for Amaris Consulting branded deliverables, brand tools, and strategic deliverable planning",
   "author": {
     "name": "stromy-org"
   },
