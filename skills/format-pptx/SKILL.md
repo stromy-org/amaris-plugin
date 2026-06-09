@@ -1,6 +1,6 @@
 ---
 name: format-pptx
-description: "DEFAULT PPTX skill — presentation creation, editing, analysis. Use for any .pptx work that isn't an explicit high-stakes/premium/HD pitch deck (which goes to `format-pptx-hd`). Handles: (1) creating new presentations, (2) modifying/editing content, (3) working with layouts, (4) adding comments/speaker notes, (5) analysing existing decks. Consumes brand data from charter.json + tokens.css + boilerplate.json + templates/pptx/ HTML shells when present. Also supports `render-anchors` mode (materialises brand anchor templates from spec files)."
+description: "DEFAULT PPTX skill for **unbranded deck creation** and **editing / analysis / OOXML / comments / speaker-notes of any existing deck** (branded or not — in-place OOXML edits, not a branded render). For a **net-new branded deck**, use `format-pptx-hd` (server-rendered + brand-gated). This skill does not render a branded deck from scratch. Also supports `render-anchors` mode (materialises brand anchor templates from spec files)."
 ---
 
 # PPTX creation, editing, and analysis (MCP-hosted skill)
