@@ -6,6 +6,8 @@ client_name: Amaris Consulting
 client_slug: amaris
 description: Claude Code plugin for Amaris Consulting branded deliverables and brand
     tools
+enable_asset_broker: true
+enable_stromy_format: true
 github_org: stromy-org
 include_mcp: false
 include_node: true
