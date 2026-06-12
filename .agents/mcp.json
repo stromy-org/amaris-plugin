@@ -2,18 +2,14 @@
   "$schema": "https://gofastmcp.com/public/schemas/mcp-config.schema.json",
   "_notes": "Canonical MCP server config for amaris-plugin. Edit only this file. Run scripts/render-mcp.py to regenerate .mcp.json / .gemini/settings.json / .codex/config.toml / .vscode/mcp.json.",
   "servers": {
-    "deliverable-canvas": {
-      "transport": "http",
-      "url": "https://deliverable-canvas-mcp.salmonglacier-1282ede1.northeurope.azurecontainerapps.io/mcp",
-      "_consumed_by": ["claude", "codex", "gemini"],
-      "_codex_via": "mcp-remote",
-      "_gemini_via": "mcp-remote",
-      "_notes": "Shared canvas backend for strategic deliverables (proposal, messaging-framework, press-release). Per-user OAuth via Microsoft Entra ID (handled by mcp-remote browser flow). See infra-docs/ai/deliverable-canvas.md."
-    },
     "stromy-format": {
       "transport": "http",
       "url": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp",
-      "_consumed_by": ["claude", "codex", "gemini"],
+      "_consumed_by": [
+        "claude",
+        "codex",
+        "gemini"
+      ],
       "_codex_via": "mcp-remote",
       "_gemini_via": "mcp-remote",
       "_notes": "Hosted format skills (format-pptx, format-pptx-hd, format-docx, format-pdf, format-pdf-hd, format-xlsx, format-mermaid, format-diagram, format-chart, format-remotion-video). Fetched at runtime via fs_read — see skills/<name>/SKILL.md stubs. Per-user OAuth via Microsoft Entra ID (handled by mcp-remote browser flow on first use)."
@@ -32,7 +28,11 @@
         "MS365_MCP_TOKEN_CACHE_PATH": "${MS365_TOKEN_CACHE}",
         "MS365_MCP_SELECTED_ACCOUNT_PATH": "${MS365_SELECTED_ACCOUNT}"
       },
-      "_consumed_by": ["claude", "codex", "gemini"],
+      "_consumed_by": [
+        "claude",
+        "codex",
+        "gemini"
+      ],
       "_notes": "Tool-limited Microsoft 365 broker for deliverable delivery only: create an upload session, resolve the caller's OneDrive / SharePoint destination, and hand the credential-free uploadUrl to stromy-format's deliver_to push contract. Exported plugins keep the env vars portable per machine; do not hardcode operator-local cache paths here."
     }
   }

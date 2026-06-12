@@ -1,10 +1,6 @@
 {
   "_comment": "Rendered from .agents/mcp.json by scripts/render-mcp.py \u2014 DO NOT EDIT BY HAND. Edit .agents/mcp.json and re-run.",
   "mcpServers": {
-    "deliverable-canvas": {
-      "type": "http",
-      "url": "https://deliverable-canvas-mcp.salmonglacier-1282ede1.northeurope.azurecontainerapps.io/mcp"
-    },
     "stromy-format": {
       "type": "http",
       "url": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp"
