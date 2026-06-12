@@ -5,6 +5,10 @@
       "type": "http",
       "url": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp"
     },
+    "asset-broker": {
+      "type": "http",
+      "url": "https://asset-broker-mcp.redbeach-6781a121.northeurope.azurecontainerapps.io/mcp"
+    },
     "ms365": {
       "command": "npx",
       "args": [
