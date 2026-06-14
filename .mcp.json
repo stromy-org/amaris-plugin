@@ -8,20 +8,6 @@
     "asset-broker": {
       "type": "http",
       "url": "https://asset-broker-mcp.redbeach-6781a121.northeurope.azurecontainerapps.io/mcp"
-    },
-    "ms365": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@softeria/ms-365-mcp-server",
-        "--org-mode",
-        "--enabled-tools",
-        "^(create-upload-session|create-drive-item-share-link|get-current-user|list-drives|get-sharepoint-site|search-sharepoint-sites|get-sharepoint-site-by-path|list-sharepoint-site-drives)$"
-      ],
-      "env": {
-        "MS365_MCP_TOKEN_CACHE_PATH": "${MS365_TOKEN_CACHE}",
-        "MS365_MCP_SELECTED_ACCOUNT_PATH": "${MS365_SELECTED_ACCOUNT}"
-      }
     }
   }
 }

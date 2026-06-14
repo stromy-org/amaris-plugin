@@ -25,27 +25,6 @@
       "_codex_via": "mcp-remote",
       "_gemini_via": "mcp-remote",
       "_notes": "Authenticated client-asset broker — propose reviewed Amaris brand/charter edits as GitHub PRs (asset-editor skill, fetched via fs_read). Per-user OAuth via Microsoft Entra ID; the caller's client.amaris role scopes them to the Amaris surface. Requires the stromy-asset-broker GitHub App on client-data."
-    },
-    "ms365": {
-      "transport": "stdio",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@softeria/ms-365-mcp-server",
-        "--org-mode",
-        "--enabled-tools",
-        "^(create-upload-session|create-drive-item-share-link|get-current-user|list-drives|get-sharepoint-site|search-sharepoint-sites|get-sharepoint-site-by-path|list-sharepoint-site-drives)$"
-      ],
-      "env": {
-        "MS365_MCP_TOKEN_CACHE_PATH": "${MS365_TOKEN_CACHE}",
-        "MS365_MCP_SELECTED_ACCOUNT_PATH": "${MS365_SELECTED_ACCOUNT}"
-      },
-      "_consumed_by": [
-        "claude",
-        "codex",
-        "gemini"
-      ],
-      "_notes": "Tool-limited Microsoft 365 broker for deliverable delivery only: create an upload session, resolve the caller's OneDrive / SharePoint destination, and hand the credential-free uploadUrl to stromy-format's deliver_to push contract. Exported plugins keep the env vars portable per machine; do not hardcode operator-local cache paths here."
     }
   }
 }
