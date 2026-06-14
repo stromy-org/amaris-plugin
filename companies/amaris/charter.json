@@ -9,9 +9,26 @@
     "name": "Amaris Consulting",
     "shortName": "Amaris",
     "tagline": "Make it happen, together.",
+    "campaignTagline": "Your stepping stone.",
     "domain": "amaris.com",
     "twitter": "@amaris",
-    "parent": "Mantu"
+    "parent": "Mantu",
+    "essence": "A partner that turns ambition into concrete outcomes — grounded in human expertise, global reach, and a collaborative spirit that makes complex growth achievable.",
+    "positioning": "Independent global technology and management consulting subsidiary of Mantu, positioned between generalist system integrators and niche boutiques: broad enough to serve across industries and geographies, focused enough to embed real expertise at every engagement.",
+    "personalityTraits": [
+      "Ambitious but grounded",
+      "Collaborative and people-first",
+      "Pioneering without being reckless",
+      "Trusted advisor, not just vendor",
+      "Globally minded, locally committed"
+    ],
+    "personalityAxes": {
+      "formalCasual": 0.35,
+      "traditionalInnovative": 0.55,
+      "reservedExpressive": 0.3,
+      "analyticalIntuitive": 0.45,
+      "establishedRebellious": 0.35
+    }
   },
   "description": {
     "short": "A global technology consulting firm offering solutions and guidance to businesses.",
@@ -266,5 +283,110 @@
       "photo-section-02": "pptx-assets/overlays/photo-section-02-overlay.jpg",
       "photo-section-03": "pptx-assets/overlays/photo-section-03-overlay.jpg"
     }
+  },
+  "expression": {
+    "source": "co_created",
+    "confidence": "approved",
+    "status": "approved",
+    "principles": [
+      "Lead with expertise: substance before style — professional depth is never sacrificed for visual flair.",
+      "Human over abstract: favour real workplace photography with controlled treatment over illustration or pure abstraction.",
+      "Systematic clarity: a strict two-weight typographic system (Regular / Bold Century Gothic) enforces hierarchy without decorative variation.",
+      "Navy as foundation: dark indigo (#272674) anchors every composition; warmth and sector colour are deliberate relief, not competition.",
+      "Accent as signature: the thin blush/peach horizontal rule (4–6 px) is the single recurring decorative motif across all surfaces — use it consistently, not inventively.",
+      "Generous margins: 64 px (or 40 pt) interior margins create breathing room; content never crowds the frame.",
+      "Colour indexing by sector: accent colours carry semantic meaning (life-sciences green, engineering purple, telecom yellow, digital blue) — respect the mapping."
+    ],
+    "visualAxes": {
+      "density": "balanced",
+      "contrast": "high",
+      "symmetry": "controlled-asymmetry",
+      "geometry": "rectilinear",
+      "typeExpression": "systematic",
+      "imageTreatment": "documentary-muted",
+      "motifProminence": "accent",
+      "colorRhythm": "dark-light-indexed",
+      "ornament": "restrained"
+    },
+    "signatureElements": [
+      "Thin horizontal accent rule in blush/peach (#EBC4B4 / --color-secondary) anchoring top edge of cover and section-divider slides and left-margin tick on content slides.",
+      "Dark navy (#272674) full-field or gradient scrim over hero photographs at 55–78 % opacity, ensuring white-text legibility.",
+      "Century Gothic in Bold 700 only for all display/heading use — no intermediate weights.",
+      "White logo (currentColor SVG variant) positioned top-left on dark/image slides.",
+      "Monospace footer bar (8–9 pt) at slide bottom with logo mark, client name, confidentiality note, and page count.",
+      "Sector-indexed accent colours used exclusively as data/UI tags, not as background fields.",
+      "Midnight gradient (135 deg, #020381 → #2874fc) for hero/full-bleed alternative to flat navy.",
+      "Content-width constraint (985 px max on 1280 px canvas) maintaining lateral margin discipline."
+    ],
+    "antiPatterns": [
+      "Using sector accent colours as slide background fills or large colour blocks — they are semantic tags only.",
+      "Applying intermediate font weights (Medium 500, SemiBold 600) — Century Gothic has no true intermediate; these silently revert to Regular in Office.",
+      "Placing logos on low-contrast backgrounds without the prescribed indigo overlay.",
+      "Multiplying decorative motifs: the blush rule is singular; do not add additional lines, borders, or ornament.",
+      "Using Quicksand outside web Elementor contexts (it is a web-only secondary face, not a slide/document face).",
+      "Full-bleed photography without the navy overlay — raw photos break white-text legibility.",
+      "Expanding content beyond the 985 px / 64 px margin zone — crowding the frame."
+    ],
+    "requiredMotifs": [
+      "Thin blush/peach accent rule (4–6 px horizontal line) on every slide or page header.",
+      "Navy primary (#272674) as the dominant or key-field colour on every composition.",
+      "White Amaris wordmark on dark or photo backgrounds."
+    ],
+    "evidence": [
+      {
+        "path": "clients/amaris/guidelines.md",
+        "kind": "brand_guidelines",
+        "sourceAuthority": "co_created",
+        "confidence": "high",
+        "surface": "all",
+        "freshness": "current",
+        "note": "Synthesized from amaris.com public brand surface; Tier 4–6 for colours and typography, Tier 8 for photography."
+      },
+      {
+        "path": "clients/amaris/.build-history/source-Amaris-Consulting-Template.pptx",
+        "kind": "pptx_master",
+        "sourceAuthority": "client_supplied",
+        "confidence": "high",
+        "surface": "all",
+        "freshness": "current",
+        "note": "Official Amaris Consulting PowerPoint blank; user-supplied 2026-06-01. Confirms Century Gothic, #272774 primary, blush #EBC4B4 accent2, 'Your stepping stone' tagline, oversized-wordmark background motif, ~2,194 custom icon shapes."
+      },
+      {
+        "path": "clients/amaris/tokens.css",
+        "kind": "design_tokens",
+        "sourceAuthority": "co_created",
+        "confidence": "high",
+        "surface": "all",
+        "freshness": "current",
+        "note": "CSS custom-property token set generated from charter.json + live amaris.com :root vars. Confirms palette, typography scale, spacing, and layout widths."
+      },
+      {
+        "path": "clients/amaris/templates/pptx/cover.html",
+        "kind": "pptx_master",
+        "sourceAuthority": "co_created",
+        "confidence": "high",
+        "surface": "presentation",
+        "freshness": "current",
+        "note": "Co-created anchor template derived from official PPTX master. Encodes blush accent rule, navy scrim, white logo position, monospace overline, and 64 px margin discipline."
+      },
+      {
+        "path": "clients/amaris/templates/pptx/content.html",
+        "kind": "pptx_master",
+        "sourceAuthority": "co_created",
+        "confidence": "high",
+        "surface": "presentation",
+        "freshness": "current",
+        "note": "Content slide anchor. Encodes brand-strip (4 px navy + 88 px blush tick), footer-bar with logo mark, 64 px margins."
+      },
+      {
+        "path": "clients/amaris/templates/pptx/section-divider.html",
+        "kind": "pptx_master",
+        "sourceAuthority": "co_created",
+        "confidence": "high",
+        "surface": "presentation",
+        "freshness": "current",
+        "note": "Section-divider anchor. Confirms navy full-field or photo-with-indigo-wash, blush rule under section title, white logo bottom-left."
+      }
+    ]
   }
 }
