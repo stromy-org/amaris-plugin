@@ -13,18 +13,6 @@
       "_codex_via": "mcp-remote",
       "_gemini_via": "mcp-remote",
       "_notes": "Hosted format skills (format-pptx, format-pptx-hd, format-docx, format-pdf, format-pdf-hd, format-xlsx, format-mermaid, format-diagram, format-chart, format-remotion-video). Fetched at runtime via fs_read — see skills/<name>/SKILL.md stubs. Per-user OAuth via Microsoft Entra ID (handled by mcp-remote browser flow on first use)."
-    },
-    "asset-broker": {
-      "transport": "http",
-      "url": "https://asset-broker-mcp.redbeach-6781a121.northeurope.azurecontainerapps.io/mcp",
-      "_consumed_by": [
-        "claude",
-        "codex",
-        "gemini"
-      ],
-      "_codex_via": "mcp-remote",
-      "_gemini_via": "mcp-remote",
-      "_notes": "Authenticated client-asset broker — propose reviewed Amaris brand/charter edits as GitHub PRs (asset-editor skill, fetched via fs_read). Per-user OAuth via Microsoft Entra ID; the caller's client.amaris role scopes them to the Amaris surface. Requires the stromy-asset-broker GitHub App on client-data."
     }
   }
 }
