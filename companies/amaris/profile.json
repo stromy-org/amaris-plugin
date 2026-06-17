@@ -97,5 +97,23 @@
       "on": "2026-06-15",
       "note": "Added firmographics block (additive). Curated fields untouched."
     }
+  },
+  "stats": {
+    "employees": "7,600+",
+    "countries": "60+",
+    "continents": "5",
+    "clients": "1,000+"
+  },
+  "values": [
+    "Pioneer Spirit",
+    "Trust",
+    "Care",
+    "Performance",
+    "Independence"
+  ],
+  "positioning": {
+    "mission": "Helping businesses grow is the reason we wake up every day",
+    "promise": "Their success is our success",
+    "philosophy": "Make it happen, together"
   }
 }

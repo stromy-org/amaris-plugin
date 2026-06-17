@@ -1,9 +1,9 @@
 {
-  "slug": "amaris",
   "meta": {
     "tier": "producer",
     "type": "client",
-    "displayName": "Amaris Consulting"
+    "displayName": "Amaris Consulting",
+    "slug": "amaris"
   },
   "identity": {
     "name": "Amaris Consulting",
@@ -30,43 +30,6 @@
       "establishedRebellious": 0.35
     }
   },
-  "description": {
-    "short": "A global technology consulting firm offering solutions and guidance to businesses.",
-    "long": "Amaris Consulting is an independent technology and management consulting firm and a wholly-owned subsidiary of Mantu. With 7,600+ consultants across 60+ countries on 5 continents, Amaris helps businesses grow through expert advisory, project delivery, and technology enablement."
-  },
-  "stats": {
-    "employees": "7,600+",
-    "countries": "60+",
-    "continents": "5",
-    "clients": "1,000+"
-  },
-  "values": [
-    "Pioneer Spirit",
-    "Trust",
-    "Care",
-    "Performance",
-    "Independence"
-  ],
-  "positioning": {
-    "mission": "Helping businesses grow is the reason we wake up every day",
-    "promise": "Their success is our success",
-    "philosophy": "Make it happen, together"
-  },
-  "businessLines": [
-    "Life Sciences",
-    "IS & Digital",
-    "Telecom",
-    "Engineering",
-    "Centers of Excellence"
-  ],
-  "industries": [
-    "Consumer & Retail",
-    "Energy, Resources & Utilities",
-    "Financial Services",
-    "Healthcare",
-    "Telecommunications, Media & Entertainment",
-    "Transportation & Defense"
-  ],
   "colors": {
     "primary": "#272674",
     "secondary": "#f5e2da",
@@ -134,7 +97,7 @@
       "general-sans-bolditalic": "fonts/otf/GeneralSans-BoldItalic.otf"
     }
   },
-  "logos": {
+  "logo": {
     "primary": "logos/logo.svg",
     "primaryBlue": "logos/logo-blue.svg",
     "favicon": "logos/favicon-32.png",
