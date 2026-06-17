@@ -4,7 +4,7 @@ Instructions for Claude Code when working in this plugin repo.
 
 ## Overview
 
-amaris-consulting is a Claude Code plugin for Amaris Consulting. It is a **distribution artifact** — skills are authored in Cowork and cherry-picked here for client deployment.
+amaris-consulting is a Claude Code plugin for Amaris Consulting. It is a **distribution artifact** — skills are authored in Workspace Studio and cherry-picked here for client deployment.
 
 ## Repository Structure
 
@@ -12,7 +12,7 @@ amaris-consulting is a Claude Code plugin for Amaris Consulting. It is a **distr
 amaris-consulting/
 ├── .claude-plugin/
 │   └── plugin.json          # Plugin manifest
-├── skills/                   # Deliverable skills (from Cowork)
+├── skills/                   # Deliverable skills (from Workspace Studio)
 ├── companies/amaris/  # Brand data (charter, logos, colors)
 ├── src/                      # Shared workspace utilities
 │   ├── workspace.js
@@ -46,9 +46,9 @@ claude plugin validate .       # Validate plugin structure
 
 ## Updating Skills
 
-Skills are maintained in Cowork and cherry-picked into this plugin:
+Skills are maintained in Workspace Studio and cherry-picked into this plugin:
 
-1. Update the skill in `Cowork/.claude/skills/<skill-name>/`
+1. Update the skill in `workspace-studio/.claude/skills/<skill-name>/`
 2. Copy updated files to `skills/<skill-name>/`
 3. Re-apply portability transforms (`.claude/companies/` → `companies/`, etc.)
 4. Bump version in `.claude-plugin/plugin.json` and `package.json`
