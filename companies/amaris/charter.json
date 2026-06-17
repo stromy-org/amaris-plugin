@@ -381,6 +381,40 @@
           "ghostWordmarkMaxOpacity": 0.1,
           "dotMaxDiameterInches": 0.8
         }
+      },
+      "motion": {
+        "status": "approved",
+        "required": false,
+        "evidence": {
+          "tier": "derived",
+          "note": "No motion was captured from the static source PPTX. Derived from the brand's restraint principles (substance before style; systematic clarity; motif used with bounded discipline) and visualAxes (ornament: moderate, density: balanced) — Amaris leads with expertise, not flair, so motion is a quiet reveal/transition layer, never cinematic. Reference instance for the cross-surface motion dimension (PLAN_motion-capability)."
+        },
+        "tokens": [
+          "--motion-duration-reveal",
+          "--motion-duration-emphasize",
+          "--motion-duration-transition",
+          "--motion-duration-explain",
+          "--motion-ease",
+          "--motion-stagger",
+          "--motion-distance"
+        ],
+        "assets": [],
+        "spec": {
+          "intent_defaults": {
+            "reveal": "subtle",
+            "emphasize": "subtle",
+            "transition": "subtle",
+            "explain": "moderate"
+          },
+          "intensity": "subtle",
+          "entranceRhythm": "staggered",
+          "transitionFamily": "fade",
+          "allowedSurfaces": ["deck", "html-hd", "html-reveal", "website"],
+          "requiredFor": [],
+          "usageCaps": { "perView": 1 },
+          "tokenPrefix": "--motion-",
+          "rationale": "Fade + a short staggered entrance is the house idiom; the orbit arc may draw on a cover or divider as an 'explain' line-draw (one per view, echoing the motif family). prefers-reduced-motion collapses all of it to static. required:false keeps motion available but advisory — a static deck is never failed for omitting it."
+        }
       }
     },
     "evidence": [

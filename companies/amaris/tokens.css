@@ -84,4 +84,19 @@
   --gradient-canvas-light: linear-gradient(180deg, #ffffff 0%, #f5e2da 100%);
   --accent-warm:           #FBAE40;
   --accent-coral:          #F26B43;
+
+  /* Motion (PLAN_motion-capability — reference instance). Cross-surface
+     --motion-* family read by the format-motion primitives with neutral
+     var(--token, default) fallbacks. Amaris is a subtle-tier brand: durations
+     tightened below the neutral defaults, short travel, no cinematic timing.
+     prefers-reduced-motion always collapses these to static (handled by the
+     primitives, not the tokens). Intensity/intent live in
+     expression.visual_grammar.motion.spec. */
+  --motion-duration-reveal:     360ms;   /* entrance / reveal (neutral 420) */
+  --motion-duration-emphasize:  500ms;   /* emphasis pulse  (neutral 600)   */
+  --motion-duration-transition: 280ms;   /* state-to-state  (neutral 320)   */
+  --motion-duration-explain:   1100ms;   /* orbit-arc line-draw (neutral 1200) */
+  --motion-ease:               cubic-bezier(.22, .61, .36, 1);  /* systematic ease-out */
+  --motion-stagger:             60ms;    /* tight per-child step (neutral 70) */
+  --motion-distance:            12px;    /* small entrance travel (neutral 16) */
 }
