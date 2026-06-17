@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Amaris stepping-stone dots on an orbit arc" preserveAspectRatio="xMidYMid slice">
+  <!--
+    Stepping-stone dots: solid accent-colour "planet" dots sitting ON an orbit
+    arc, each with a soft outer glow. The literal visual of "Your stepping
+    stone." Dot fills default to the rotating decorative palette
+    (#4182ff blue, #7ddeb8 mint, #ffdd77 yellow); when inlined into a deck,
+    override each .dot-N fill with the matching orbit-dot token and the glow via
+    the orbit-dot-glow token. Cap: at most 3 dots per slide (bounded-ornament
+    rule). The glow is baked into the blur filter so it survives flattening into
+    PPTX/PDF raster.
+  -->
+  <defs>
+    <filter id="dot-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- The arc the stones sit on (hairline, currentColor) -->
+  <path d="M -120 820 A 1140 1140 0 0 1 1440 160"
+        fill="none" stroke="currentColor" stroke-width="0.9"
+        stroke-linecap="round" stroke-opacity="0.30"/>
+  <!-- Three stones spaced along the arc, glow then fill -->
+  <g class="stepping-stone">
+    <circle class="dot dot-1" cx="300" cy="430" r="26" fill="#4182ff" filter="url(#dot-glow)"/>
+    <circle class="dot dot-2" cx="690" cy="300" r="20" fill="#7ddeb8" filter="url(#dot-glow)"/>
+    <circle class="dot dot-3" cx="1010" cy="232" r="15" fill="#ffdd77" filter="url(#dot-glow)"/>
+  </g>
+</svg>

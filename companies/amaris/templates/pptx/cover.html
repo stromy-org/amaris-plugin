@@ -42,10 +42,25 @@ body {
   top: 0; left: 0;
   width: 100%; height: 6px;
   background: var(--color-secondary, #EBC4B4);
+  z-index: 2;
 }
-.logo  { position: absolute; top: 52px; left: 64px; }
+/* Orbit + stepping-stone motif layer — hairline arc + accent dots behind the
+   hero text. Bounded-ornament rule: <=2 arcs + <=3 dots. z-index 0 keeps it
+   under the title block; dots rotate the decorative palette + carry a glow. */
+.orbit-layer { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.orbit-layer svg { width: 100%; height: 100%; display: block; }
+.orbit-layer .arc {
+  fill: none;
+  stroke: var(--motif-arc-color-dark, rgba(255,255,255,0.30));
+  stroke-width: var(--motif-line-weight, 0.9px);
+  stroke-linecap: round;
+}
+.orbit-layer .stepping-stone .dot {
+  filter: drop-shadow(var(--orbit-dot-glow, 0 0 24px rgba(65,130,255,0.45)));
+}
+.logo  { position: absolute; top: 52px; left: 64px; z-index: 2; }
 .logo img { height: 42pt; width: auto; }
-.block { position: absolute; bottom: 120px; left: 64px; right: 64px; max-width: 960px; }
+.block { position: absolute; bottom: 120px; left: 64px; right: 64px; max-width: 960px; z-index: 2; }
 .overline {
   font-family: var(--font-mono, monospace);
   font-size: 11pt;
@@ -84,6 +99,16 @@ h1 {
 </head>
 <body>
   <div class="accent-rule"></div>
+  <!-- Orbit motif: 1 hairline arc + 2 stepping-stone dots (within the cap) -->
+  <div class="orbit-layer">
+    <svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="arc" d="M -120 820 A 1140 1140 0 0 1 1440 160"/>
+      <g class="stepping-stone">
+        <circle class="dot" cx="300" cy="430" r="22" fill="var(--orbit-dot-1, #4182ff)"/>
+        <circle class="dot" cx="690" cy="300" r="16" fill="var(--orbit-dot-2, #7ddeb8)"/>
+      </g>
+    </svg>
+  </div>
   <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
   <div class="block">
     <div class="overline">{{OVERLINE}}</div>

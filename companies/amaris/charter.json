@@ -42,6 +42,8 @@
     "success": "#7ddeb8",
     "warning": "#ffdd77",
     "error": "#ff4d4d",
+    "accentWarm": "#FBAE40",
+    "accentCoral": "#F26B43",
     "sectorColors": {
       "lifeSciences": "#7ddeb8",
       "engineering": "#b880ff",
@@ -49,7 +51,9 @@
       "digital": "#4182ff"
     },
     "gradient": {
-      "midnight": "linear-gradient(135deg, #020381 0%, #2874fc 100%)"
+      "midnight": "linear-gradient(135deg, #020381 0%, #2874fc 100%)",
+      "dark": "linear-gradient(135deg, #272674 0%, #000000 100%)",
+      "canvasLight": "linear-gradient(180deg, #ffffff 0%, #f5e2da 100%)"
     }
   },
   "fonts": {
@@ -256,7 +260,7 @@
       "Human over abstract: favour real workplace photography with controlled treatment over illustration or pure abstraction.",
       "Systematic clarity: a strict two-weight typographic system (Regular / Bold Century Gothic) enforces hierarchy without decorative variation.",
       "Navy as foundation: dark indigo (#272674) anchors every composition; warmth and sector colour are deliberate relief, not competition.",
-      "Accent as signature: the thin blush/peach horizontal rule (4–6 px) is the single recurring decorative motif across all surfaces — use it consistently, not inventively.",
+      "Motif as signature: the orbit + stepping-stone family (hairline arcs, accent-colour dots, ghost AMARIS wordmark, ring bullets) and the thin blush/peach rule are the recurring decorative motifs — both used with bounded discipline (≤2 arcs + ≤3 dots per slide; ghost wordmark ≤10 % opacity), never inventively, never a third family.",
       "Generous margins: 64 px (or 40 pt) interior margins create breathing room; content never crowds the frame.",
       "Colour indexing by sector: accent colours carry semantic meaning (life-sciences green, engineering purple, telecom yellow, digital blue) — respect the mapping."
     ],
@@ -269,7 +273,7 @@
       "imageTreatment": "documentary-muted",
       "motifProminence": "accent",
       "colorRhythm": "dark-light-indexed",
-      "ornament": "restrained"
+      "ornament": "moderate"
     },
     "signatureElements": [
       "Thin horizontal accent rule in blush/peach (#EBC4B4 / --color-secondary) anchoring top edge of cover and section-divider slides and left-margin tick on content slides.",
@@ -279,22 +283,106 @@
       "Monospace footer bar (8–9 pt) at slide bottom with logo mark, client name, confidentiality note, and page count.",
       "Sector-indexed accent colours used exclusively as data/UI tags, not as background fields.",
       "Midnight gradient (135 deg, #020381 → #2874fc) for hero/full-bleed alternative to flat navy.",
-      "Content-width constraint (985 px max on 1280 px canvas) maintaining lateral margin discipline."
+      "Content-width constraint (985 px max on 1280 px canvas) maintaining lateral margin discipline.",
+      "Orbit arc — hairline arc (--motif-line-weight, ~0.75–1 px) on a large off-canvas radius, 1–2 per slide, sweeping across cover and section-divider; white @ 25–40 % on dark, navy/blush @ 12–18 % on light.",
+      "Stepping-stone dot — solid accent-colour circle sitting on an orbit arc with a soft glow, rotating the non-semantic decorative palette (--orbit-dot-1..4: blue/mint/yellow/purple); the literal visual of the 'Your stepping stone' tagline.",
+      "Ghost wordmark — oversized outline AMARIS letterform bleeding off the right edge of content slides at ≤10 % opacity (--motif-ghost-opacity), navy/blush outline only.",
+      "Circle ring bullet — small outline ring with a navy numeral for numbered lists (bullet-ring asset), a vertical stack echoing the stepping-stone path."
     ],
     "antiPatterns": [
-      "Using sector accent colours as slide background fills or large colour blocks — they are semantic tags only.",
+      "Using sector accent colours as slide background fields or large colour blocks — they are semantic tags only in data/UI contexts. The decorative orbit dots (≤0.8 in dia) are exempt: they rotate the palette non-semantically and are never a background field.",
       "Applying intermediate font weights (Medium 500, SemiBold 600) — Century Gothic has no true intermediate; these silently revert to Regular in Office.",
       "Placing logos on low-contrast backgrounds without the prescribed indigo overlay.",
-      "Multiplying decorative motifs: the blush rule is singular; do not add additional lines, borders, or ornament.",
+      "Unbounded ornament: exceeding the motif cap (≤2 orbit arcs + ≤3 stepping-stone dots per slide; ghost wordmark ≤10 % opacity), or introducing a third decorative motif family beyond the orbit family and the blush rule.",
       "Using Quicksand outside web Elementor contexts (it is a web-only secondary face, not a slide/document face).",
       "Full-bleed photography without the navy overlay — raw photos break white-text legibility.",
       "Expanding content beyond the 985 px / 64 px margin zone — crowding the frame."
     ],
     "requiredMotifs": [
-      "Thin blush/peach accent rule (4–6 px horizontal line) on every slide or page header.",
-      "Navy primary (#272674) as the dominant or key-field colour on every composition.",
-      "White Amaris wordmark on dark or photo backgrounds."
+      "--motif-line-weight",
+      "orbit-layer",
+      "stepping-stone",
+      "ghost-wordmark",
+      "accent-rule"
     ],
+    "visual_grammar": {
+      "motifs": {
+        "name": "Orbit + Stepping-Stone",
+        "tagline": "Your stepping stone.",
+        "evidence": "Recovered from the official Amaris Consulting PowerPoint master (clients/amaris/.build-history/source-Amaris-Consulting-Template.pptx, SHA-256 match to the brand build source) and its rendered visual analysis: hairline orbit arcs, accent-colour planet dots on those arcs, an oversized ghost AMARIS wordmark, and outline-ring numbered bullets.",
+        "tokenPrefix": "--orbit-",
+        "tokenDependencies": [
+          "--motif-line-weight",
+          "--motif-arc-color-dark",
+          "--motif-arc-color-light",
+          "--motif-ghost-opacity",
+          "--orbit-dot-1",
+          "--orbit-dot-2",
+          "--orbit-dot-3",
+          "--orbit-dot-4",
+          "--orbit-dot-glow",
+          "--gradient-canvas-light"
+        ],
+        "assets": [
+          "assets/svg/motif-orbit.svg",
+          "assets/svg/motif-stepping-stones.svg",
+          "assets/svg/motif-wordmark-ghost.svg",
+          "assets/svg/pattern-orbit-tile.svg",
+          "assets/svg/bullet-ring.svg"
+        ],
+        "marks": [
+          {
+            "id": "orbit-arc",
+            "asset": "assets/svg/motif-orbit.svg",
+            "role": "transition / hero arc — hairline arc sweeping across the composition behind hero text",
+            "cssClass": "orbit-layer",
+            "surfaces": ["cover", "section-divider", "closing"]
+          },
+          {
+            "id": "stepping-stone",
+            "asset": "assets/svg/motif-stepping-stones.svg",
+            "role": "hero / cover accent — solid accent-colour dot sitting on an orbit arc, rotating the decorative palette",
+            "cssClass": "stepping-stone",
+            "surfaces": ["cover", "section-divider", "docx"],
+            "docxRaster": "templates/docx/orbit-corner-{light,dark}.png"
+          },
+          {
+            "id": "ghost-wordmark",
+            "asset": "assets/svg/motif-wordmark-ghost.svg",
+            "role": "content watermark — oversized outline AMARIS bleeding off the right edge at low opacity",
+            "cssClass": "ghost-wordmark",
+            "surfaces": ["content"]
+          },
+          {
+            "id": "bullet-ring",
+            "asset": "assets/svg/bullet-ring.svg",
+            "role": "numbered-list marker — outline ring with navy numeral for ordered lists",
+            "cssClass": "ring-bullet",
+            "surfaces": ["content", "docx"]
+          },
+          {
+            "id": "orbit-pattern",
+            "asset": "assets/svg/pattern-orbit-tile.svg",
+            "role": "large-fill / dominant background — tileable faint dot-on-arc field for full-bleed motif use",
+            "cssClass": "orbit-tile",
+            "surfaces": ["cover", "section-divider"]
+          }
+        ],
+        "roles": {
+          "cover": ["orbit-arc", "stepping-stone"],
+          "section-divider": ["orbit-arc", "stepping-stone"],
+          "content": ["ghost-wordmark", "bullet-ring"],
+          "closing": ["orbit-arc"]
+        },
+        "allowedSurfaces": ["pptx", "pdf", "html-reveal", "html-hd", "docx"],
+        "usageCaps": {
+          "maxArcsPerSlide": 2,
+          "maxDotsPerSlide": 3,
+          "ghostWordmarkMaxOpacity": 0.1,
+          "dotMaxDiameterInches": 0.8
+        }
+      }
+    },
     "evidence": [
       {
         "path": "clients/amaris/guidelines.md",

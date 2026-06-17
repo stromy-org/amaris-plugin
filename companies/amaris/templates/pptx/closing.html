@@ -29,8 +29,22 @@ body {
   align-items: center;
   justify-content: center;
 }
-.logo { margin-bottom: 40pt; }
+/* Orbit motif — two arcs framing the centred CTA (within the <=2 arc cap),
+   behind the content (flex children paint above the absolute layer). */
+.orbit-layer { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.orbit-layer svg { width: 100%; height: 100%; display: block; }
+.orbit-layer .arc {
+  fill: none;
+  stroke: var(--motif-arc-color-dark, rgba(255,255,255,0.30));
+  stroke-width: var(--motif-line-weight, 0.9px);
+  stroke-linecap: round;
+}
+.orbit-layer .stepping-stone .dot {
+  filter: drop-shadow(var(--orbit-dot-glow, 0 0 24px rgba(65,130,255,0.45)));
+}
+.logo { margin-bottom: 40pt; position: relative; z-index: 1; }
 .logo img { height: 52pt; width: auto; }
+.cta, .contact { position: relative; z-index: 1; }
 .cta {
   font-family: var(--font-display, var(--font-heading));
   font-weight: var(--font-weight-semibold, 600);
@@ -70,6 +84,16 @@ body {
 </style>
 </head>
 <body>
+  <!-- Orbit motif: 2 arcs framing the centre + 1 stepping-stone dot -->
+  <div class="orbit-layer">
+    <svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="arc" d="M -160 560 A 1280 1280 0 0 1 1180 -120"/>
+      <path class="arc" d="M 100 840 A 1280 1280 0 0 1 1440 160"/>
+      <g class="stepping-stone">
+        <circle class="dot" cx="1040" cy="120" r="16" fill="var(--orbit-dot-4, #b880ff)"/>
+      </g>
+    </svg>
+  </div>
   <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
   <div class="cta">{{CTA_TEXT}}</div>
   <div class="contact">{{CONTACT_EMAIL}} &nbsp;·&nbsp; {{CONTACT_WEBSITE}}</div>

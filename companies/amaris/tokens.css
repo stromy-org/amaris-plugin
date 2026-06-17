@@ -67,4 +67,21 @@
   --spacing-xl:            2.25rem;
   --spacing-2xl:           3.38rem;
   --spacing-3xl:           5.06rem;
+
+  /* Orbit / stepping-stone motif
+     Recovered from the official PPTX master (PLAN_amaris-motif-system). Generic
+     --motif-* primitives + brand-specific --orbit-* detail tokens; shared
+     renderers key only off --motif-* / motifProminence, never --orbit-*. */
+  --motif-line-weight:     0.9px;                    /* hairline arc stroke */
+  --motif-arc-color-dark:  rgba(255, 255, 255, 0.30);
+  --motif-arc-color-light: rgba(39, 38, 116, 0.14);
+  --motif-ghost-opacity:   0.08;
+  --orbit-dot-1:           #4182ff;                  /* blue   */
+  --orbit-dot-2:           #7ddeb8;                  /* mint   */
+  --orbit-dot-3:           #ffdd77;                  /* yellow */
+  --orbit-dot-4:           #b880ff;                  /* purple */
+  --orbit-dot-glow:        0 0 24px rgba(65, 130, 255, 0.45);
+  --gradient-canvas-light: linear-gradient(180deg, #ffffff 0%, #f5e2da 100%);
+  --accent-warm:           #FBAE40;
+  --accent-coral:          #F26B43;
 }

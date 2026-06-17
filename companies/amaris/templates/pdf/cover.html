@@ -1,0 +1,91 @@
+<!--
+  Amaris Consulting — PDF page shell (Cover).
+  Consumed by the `pdf-hd` skill / `render-anchors` mode. Build script injects:
+    {{HERO_URL}} {{LOGO_URL}} {{OVERLINE}} {{TITLE}} {{SUBTITLE}}
+    {{META_LEFT}} {{META_MID}} {{META_RIGHT}} {{TOKENS_CSS}} {{FONT_FACES}}
+  Carries the orbit + stepping-stone motif behind the title block. Pre-flatten
+  the orbit raster on render per the PDF-HD Chromium soft-mask lesson.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{TOKENS_CSS}}
+{{FONT_FACES}}
+
+@page { size: A4; margin: 0; }
+html, body { margin: 0; padding: 0; }
+body {
+  width: 210mm; height: 297mm;
+  color: #fff;
+  background:
+    linear-gradient(120deg, rgba(39,38,116,0.92) 0%, rgba(39,38,116,0.72) 55%, rgba(39,38,116,0.55) 100%),
+    url("{{HERO_URL}}") center/cover;
+  font-family: var(--font-body);
+  position: relative;
+  overflow: hidden;
+}
+.accent-rule {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 4mm;
+  background: var(--color-secondary, #f5e2da);
+  z-index: 2;
+}
+/* Orbit + stepping-stone motif layer (<=2 arcs + <=3 dots) */
+.orbit-layer { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.orbit-layer svg { width: 100%; height: 100%; display: block; }
+.orbit-layer .arc {
+  fill: none;
+  stroke: var(--motif-arc-color-dark, rgba(255,255,255,0.30));
+  stroke-width: var(--motif-line-weight, 0.9px);
+  stroke-linecap: round;
+}
+.orbit-layer .stepping-stone .dot {
+  filter: drop-shadow(var(--orbit-dot-glow, 0 0 18px rgba(65,130,255,0.45)));
+}
+.logo { position: absolute; top: 18mm; left: 18mm; z-index: 2; }
+.logo img { height: 32pt; }
+.block { position: absolute; bottom: 30mm; left: 18mm; right: 18mm; z-index: 2; }
+.overline {
+  font-family: var(--font-mono);
+  font-size: 9pt; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-secondary, #f5e2da); margin-bottom: 12pt;
+}
+h1 {
+  font-family: var(--font-display, var(--font-heading));
+  font-weight: var(--font-weight-bold, 700);
+  font-size: 44pt; line-height: 1.05; margin: 0; color: #fff; max-width: 72%;
+}
+.subtitle { font-size: 13pt; opacity: 0.85; max-width: 60%; margin-top: 16pt; }
+.meta {
+  position: absolute; bottom: 14mm; left: 18mm; right: 18mm; z-index: 2;
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: 8pt; opacity: 0.7;
+}
+</style>
+</head>
+<body>
+  <div class="accent-rule"></div>
+  <div class="orbit-layer">
+    <svg viewBox="0 0 794 1123" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="arc" d="M -80 980 A 900 900 0 0 1 900 220"/>
+      <g class="stepping-stone">
+        <circle class="dot" cx="200" cy="560" r="16" fill="var(--orbit-dot-1, #4182ff)"/>
+        <circle class="dot" cx="470" cy="400" r="12" fill="var(--orbit-dot-2, #7ddeb8)"/>
+      </g>
+    </svg>
+  </div>
+  <div class="logo"><img src="{{LOGO_URL}}" alt="Amaris Consulting"></div>
+  <div class="block">
+    <div class="overline">{{OVERLINE}}</div>
+    <h1>{{TITLE}}</h1>
+    <p class="subtitle">{{SUBTITLE}}</p>
+  </div>
+  <div class="meta">
+    <span>{{META_LEFT}}</span>
+    <span>{{META_MID}}</span>
+    <span>{{META_RIGHT}}</span>
+  </div>
+</body>
+</html>

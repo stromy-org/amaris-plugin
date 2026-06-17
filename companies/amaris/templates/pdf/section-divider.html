@@ -1,0 +1,66 @@
+<!--
+  Amaris Consulting — PDF page shell (Section divider).
+  Build script injects: {{HERO_URL}} {{PART_LABEL}} {{SECTION_TITLE}}
+                        {{TOKENS_CSS}} {{FONT_FACES}}
+  Carries one orbit arc + one stepping-stone dot under the section title.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{TOKENS_CSS}}
+{{FONT_FACES}}
+
+@page { size: A4; margin: 0; }
+html, body { margin: 0; padding: 0; }
+body {
+  width: 210mm; height: 297mm;
+  color: #fff;
+  background:
+    linear-gradient(rgba(39,38,116,0.80), rgba(39,38,116,0.80)),
+    url("{{HERO_URL}}") center/cover, var(--color-primary, #272674);
+  font-family: var(--font-body);
+  position: relative;
+  overflow: hidden;
+}
+.orbit-layer { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.orbit-layer svg { width: 100%; height: 100%; display: block; }
+.orbit-layer .arc {
+  fill: none;
+  stroke: var(--motif-arc-color-dark, rgba(255,255,255,0.30));
+  stroke-width: var(--motif-line-weight, 0.9px);
+  stroke-linecap: round;
+}
+.orbit-layer .stepping-stone .dot {
+  filter: drop-shadow(var(--orbit-dot-glow, 0 0 18px rgba(65,130,255,0.45)));
+}
+.content { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: 0 40mm; }
+.part-label {
+  font-family: var(--font-mono); font-size: 11pt; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--color-secondary, #f5e2da); margin-bottom: 14pt;
+}
+h1 {
+  font-family: var(--font-display, var(--font-heading));
+  font-weight: var(--font-weight-bold, 700);
+  font-size: 54pt; line-height: 1.05; margin: 0; color: #fff;
+}
+.rule { margin-top: 20pt; border-top: 6px solid var(--color-secondary, #f5e2da); width: 60mm; }
+</style>
+</head>
+<body>
+  <div class="orbit-layer">
+    <svg viewBox="0 0 794 1123" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="arc" d="M 880 -60 A 920 920 0 0 0 -80 760"/>
+      <g class="stepping-stone">
+        <circle class="dot" cx="620" cy="200" r="14" fill="var(--orbit-dot-3, #ffdd77)"/>
+      </g>
+    </svg>
+  </div>
+  <div class="content">
+    <div class="part-label">{{PART_LABEL}}</div>
+    <h1>{{SECTION_TITLE}}</h1>
+    <div class="rule"></div>
+  </div>
+</body>
+</html>

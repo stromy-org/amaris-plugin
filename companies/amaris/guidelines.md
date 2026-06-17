@@ -111,6 +111,41 @@ For Microsoft Office, PDF, and tools that cannot render SVG.
 
 ---
 
+## Motif system
+
+The recovered signature layer from the official PowerPoint master — the literal
+visual of the tagline *"Your stepping stone."* It is a **grammar**, not a fixed
+template: composed freshly per deck within the caps below, never reproducing the
+source layout. Two motif families coexist with bounded discipline (no third
+family):
+
+| Mark | What it is | Where | Tokens / asset |
+|------|------------|-------|----------------|
+| **Orbit arc** | Hairline arc on a large off-canvas radius, sweeping across the slide | cover, section-divider, closing | `--motif-line-weight`, `--motif-arc-color-{dark,light}`; `assets/svg/motif-orbit.svg` (`.orbit-layer`) |
+| **Stepping-stone dot** | Solid accent-colour circle sitting *on* an arc, soft glow | cover, section-divider | `--orbit-dot-1..4`, `--orbit-dot-glow`; `assets/svg/motif-stepping-stones.svg` (`.stepping-stone`) |
+| **Ghost wordmark** | Oversized outline AMARIS bleeding off the right edge | content | `--motif-ghost-opacity`; `assets/svg/motif-wordmark-ghost.svg` (`.ghost-wordmark`) |
+| **Ring bullet** | Outline ring with navy numeral for numbered lists | content, DOCX | `assets/svg/bullet-ring.svg` (`.ring-bullet`) |
+| **Blush rule** | The original thin blush/peach top rule | all | `--color-secondary` (`.accent-rule`) |
+
+**Caps (enforced as the bounded-ornament rule):** ≤2 orbit arcs + ≤3 stepping-stone
+dots per slide; ghost wordmark ≤10 % opacity; dots ≤0.8 in diameter.
+
+**Semantic vs. decorative accent split.** Sector accent colours keep their
+semantic meaning **only in data/UI tag contexts** (life-sciences green,
+engineering purple, telecom yellow, digital blue). The stepping-stone dots use
+the *same* palette **decoratively** — rotating, non-semantic — and are exempt
+from the "accent = tags only" rule. They are never a background field.
+
+**Canvas gradients.** Dark canvas `--gradient-dark` (#272674 → #000); light canvas
+`--gradient-canvas-light` (#fff → #f5e2da). Two extra source-deck accents are
+available for motif art: warm `--accent-warm` (#FBAE40) and coral `--accent-coral`
+(#F26B43).
+
+The canonical brand-primary is **#272674** (confirmed against live amaris.com).
+The source PPTX's `#272774` is a deck-internal rounding, not the canonical value.
+
+---
+
 ## Business lines
 
 Life Sciences · IS & Digital · Telecom · Engineering · Centers of Excellence

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Tileable faint orbit dot-on-arc pattern">
+  <!--
+    Tileable faint dot-on-arc field for large-fill / deck-motif-dominant use.
+    Hairline arcs + small accent dots at low opacity so a full-bleed fill reads
+    as texture, not noise. Recolour arcs via currentColor; dots use the
+    decorative palette. Use sparingly (one dominant surface per deck).
+  -->
+  <defs>
+    <pattern id="orbit-tile" width="240" height="240" patternUnits="userSpaceOnUse">
+      <path d="M -40 200 A 320 320 0 0 1 280 40" fill="none"
+            stroke="currentColor" stroke-width="0.8" stroke-opacity="0.14"/>
+      <path d="M -40 280 A 320 320 0 0 1 280 120" fill="none"
+            stroke="currentColor" stroke-width="0.8" stroke-opacity="0.10"/>
+      <circle cx="96" cy="120" r="6" fill="#4182ff" fill-opacity="0.22"/>
+      <circle cx="200" cy="74" r="4" fill="#7ddeb8" fill-opacity="0.20"/>
+    </pattern>
+  </defs>
+  <rect width="240" height="240" fill="url(#orbit-tile)"/>
+</svg>

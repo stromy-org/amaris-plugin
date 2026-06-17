@@ -29,7 +29,21 @@ body {
     linear-gradient(rgba(39,39,116,0.78), rgba(39,39,116,0.78)),
     url("{{HERO_URL}}") center/cover;
 }
+/* Orbit + stepping-stone motif — one arc + one accent dot, over the hero wash
+   but under the section text. Bounded-ornament rule (<=2 arcs + <=3 dots). */
+.orbit-layer { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.orbit-layer svg { width: 100%; height: 100%; display: block; }
+.orbit-layer .arc {
+  fill: none;
+  stroke: var(--motif-arc-color-dark, rgba(255,255,255,0.30));
+  stroke-width: var(--motif-line-weight, 0.9px);
+  stroke-linecap: round;
+}
+.orbit-layer .stepping-stone .dot {
+  filter: drop-shadow(var(--orbit-dot-glow, 0 0 24px rgba(65,130,255,0.45)));
+}
 .section-number {
+  z-index: 2;
   position: absolute;
   top: 64px;
   left: 64px;
@@ -40,6 +54,7 @@ body {
 }
 .section-title {
   position: absolute;
+  z-index: 2;
   top: 50%;
   left: 64px;
   right: 64px;
@@ -58,7 +73,7 @@ body {
   margin-top: 28px;
   background: var(--color-secondary, #EBC4B4);
 }
-.logo  { position: absolute; bottom: 44px; left: 64px; }
+.logo  { position: absolute; bottom: 44px; left: 64px; z-index: 2; }
 .logo img { height: 28pt; width: auto; opacity: 0.85; }
 .meta {
   position: absolute;
@@ -72,6 +87,15 @@ body {
 </head>
 <body>
   <div class="hero"></div>
+  <!-- Orbit motif: 1 arc + 1 stepping-stone dot (within the cap) -->
+  <div class="orbit-layer">
+    <svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="arc" d="M 1400 -80 A 1180 1180 0 0 0 -120 620"/>
+      <g class="stepping-stone">
+        <circle class="dot" cx="980" cy="150" r="20" fill="var(--orbit-dot-3, #ffdd77)"/>
+      </g>
+    </svg>
+  </div>
   <div class="section-number">{{SECTION_NUMBER}}</div>
   <div class="section-title">{{SECTION_TITLE}}</div>
   <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
