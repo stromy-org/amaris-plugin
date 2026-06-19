@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "destination": { "tenant": "stromy" },
+  "taxonomy": [
+    { "key": "workstream", "label": "Workstream", "naming": "kebab" },
+    { "key": "project", "label": "Project", "naming": "kebab" }
+  ],
+  "context_bundle": ["brand_context.json", "company_context.json"],
+  "manifest": { "enabled": true, "filename": "WORKSPACE.md" }
+}
