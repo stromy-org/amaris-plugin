@@ -97,6 +97,65 @@
   },
   "expression": {
     "sourceLevel": "expression",
+    "status": "approved",
+    "confidence": "approved",
+    "source": "co_created",
+    "evidence": [
+      {
+        "path": "clients/amaris/guidelines.md",
+        "kind": "brand_guidelines",
+        "sourceAuthority": "co_created",
+        "confidence": "high",
+        "surface": "all",
+        "freshness": "current",
+        "note": "Synthesized from amaris.com public brand surface; Tier 4–6 for colours and typography, Tier 8 for photography."
+      },
+      {
+        "path": "clients/amaris/.build-history/source-Amaris-Consulting-Template.pptx",
+        "kind": "pptx_master",
+        "sourceAuthority": "client_supplied",
+        "confidence": "high",
+        "surface": "all",
+        "freshness": "current",
+        "note": "Official Amaris Consulting PowerPoint blank; user-supplied 2026-06-01. Confirms Century Gothic, #272774 primary, blush #EBC4B4 accent2, 'Your stepping stone' tagline, oversized-wordmark background motif, ~2,194 custom icon shapes."
+      },
+      {
+        "path": "clients/amaris/tokens.css",
+        "kind": "design_tokens",
+        "sourceAuthority": "co_created",
+        "confidence": "high",
+        "surface": "all",
+        "freshness": "current",
+        "note": "CSS custom-property token set generated from charter.json + live amaris.com :root vars. Confirms palette, typography scale, spacing, and layout widths."
+      },
+      {
+        "path": "clients/amaris/templates/pptx/cover.html",
+        "kind": "pptx_master",
+        "sourceAuthority": "co_created",
+        "confidence": "high",
+        "surface": "presentation",
+        "freshness": "current",
+        "note": "Co-created anchor template derived from official PPTX master. Encodes blush accent rule, navy scrim, white logo position, monospace overline, and 64 px margin discipline."
+      },
+      {
+        "path": "clients/amaris/templates/pptx/content.html",
+        "kind": "pptx_master",
+        "sourceAuthority": "co_created",
+        "confidence": "high",
+        "surface": "presentation",
+        "freshness": "current",
+        "note": "Content slide anchor. Encodes brand-strip (4 px navy + 88 px blush tick), footer-bar with logo mark, 64 px margins."
+      },
+      {
+        "path": "clients/amaris/templates/pptx/section-divider.html",
+        "kind": "pptx_master",
+        "sourceAuthority": "co_created",
+        "confidence": "high",
+        "surface": "presentation",
+        "freshness": "current",
+        "note": "Section-divider anchor. Confirms navy full-field or photo-with-indigo-wash, blush rule under section title, white logo bottom-left."
+      }
+    ],
     "principles": [
       "Lead with expertise: substance before style — professional depth is never sacrificed for visual flair.",
       "Human over abstract: favour real workplace photography with controlled treatment over illustration or pure abstraction.",
