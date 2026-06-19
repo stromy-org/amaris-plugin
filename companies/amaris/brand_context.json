@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "version": "1.0",
   "generatedFrom": {
-    "charterSha": "c616ebc59483457d40b336aabcbfdfd1f768adc18ae0edf34bbce49c3295a9d1",
+    "charterSha": "5fdedd80b0929727b1934cf4b5d880b1afc9d1c3d45f7243b1f28126d967846a",
     "compiler": "1.0"
   },
   "tier": "producer",
@@ -210,7 +210,11 @@
       "motifs": {
         "name": "Orbit + Stepping-Stone",
         "tagline": "Your stepping stone.",
-        "evidence": "Recovered from the official Amaris Consulting PowerPoint master (clients/amaris/.build-history/source-Amaris-Consulting-Template.pptx, SHA-256 match to the brand build source) and its rendered visual analysis: hairline orbit arcs, accent-colour planet dots on those arcs, an oversized ghost AMARIS wordmark, and outline-ring numbered bullets.",
+        "status": "approved",
+        "evidence": {
+          "tier": "source-artifact",
+          "source": "Recovered from the official Amaris Consulting PowerPoint master (clients/amaris/.build-history/source-Amaris-Consulting-Template.pptx, SHA-256 match to the brand build source) and its rendered visual analysis: hairline orbit arcs, accent-colour planet dots on those arcs, an oversized ghost AMARIS wordmark, and outline-ring numbered bullets."
+        },
         "tokenPrefix": "--orbit-",
         "tokenDependencies": [
           "--motif-line-weight",

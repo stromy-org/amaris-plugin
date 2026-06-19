@@ -309,7 +309,11 @@
       "motifs": {
         "name": "Orbit + Stepping-Stone",
         "tagline": "Your stepping stone.",
-        "evidence": "Recovered from the official Amaris Consulting PowerPoint master (clients/amaris/.build-history/source-Amaris-Consulting-Template.pptx, SHA-256 match to the brand build source) and its rendered visual analysis: hairline orbit arcs, accent-colour planet dots on those arcs, an oversized ghost AMARIS wordmark, and outline-ring numbered bullets.",
+        "status": "approved",
+        "evidence": {
+          "tier": "source-artifact",
+          "source": "Recovered from the official Amaris Consulting PowerPoint master (clients/amaris/.build-history/source-Amaris-Consulting-Template.pptx, SHA-256 match to the brand build source) and its rendered visual analysis: hairline orbit arcs, accent-colour planet dots on those arcs, an oversized ghost AMARIS wordmark, and outline-ring numbered bullets."
+        },
         "tokenPrefix": "--orbit-",
         "tokenDependencies": [
           "--motif-line-weight",
