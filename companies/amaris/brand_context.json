@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "version": "1.0",
   "generatedFrom": {
-    "charterSha": "75032cd71375ee5cfbe7b872868075e7ca00800d89b748222f93fce986559cf5",
+    "charterSha": "58f65ea0edde79c6f45df0cf98dcff06836e0f3aaa008a72dfdd60519c2571a5",
     "compiler": "1.0"
   },
   "tier": "producer",
@@ -35,18 +35,18 @@
     "heading": {
       "family": "Century Gothic",
       "weight": "700",
-      "embedFamily": "General Sans"
+      "embedFamily": "Jost"
     },
     "body": {
       "family": "Century Gothic",
       "weight": "400",
       "fallback": "'CenturyGothic', 'Avenir Next', 'Futura', 'Apple SD Gothic Neo', sans-serif",
-      "embedFamily": "General Sans"
+      "embedFamily": "Jost"
     },
     "label": {
       "family": "Century Gothic",
       "weight": "700",
-      "embedFamily": "General Sans",
+      "embedFamily": "Jost",
       "case": "uppercase",
       "tracking": "0.2em"
     },
@@ -851,11 +851,13 @@
   "logo": {
     "primary": "logos/logo.svg",
     "primaryBlue": "logos/logo-blue.svg",
+    "white": "logos/logo-white.svg",
     "favicon": "logos/favicon-32.png",
     "appIcon180": "logos/apple-touch-icon.png",
     "appIcon192": "logos/favicon-192.png",
     "appIcon270": "logos/favicon-270.png",
-    "notes": "Primary SVG uses currentColor stroke — renders white on dark backgrounds, navy on light. No separate white variant needed.",
+    "notes": "Solid white wordmark for dark/image backgrounds is logo-white.svg (use on titles/covers over dark). logo.svg uses currentColor stroke (white on dark, navy on light) but is thin line-art and can read incomplete at large/video scale — prefer white on dark surfaces. The tagline is NOT baked into the default mark: 'Your stepping stone.' is a campaign tagline (identity.campaignTagline) composed as separate text when wanted. whiteTaglineLockup is an optional pre-made raster lockup, not a default.",
+    "whiteTaglineLockup": "logos/logo-white-tagline.png",
     "png": "logos/logo-black.png",
     "mark": "logos/favicon-192.png"
   },

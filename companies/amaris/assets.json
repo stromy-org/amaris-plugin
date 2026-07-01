@@ -112,6 +112,30 @@
       "sha256": "4aa0c20dbb593ad82b41f090fbbc8efb1bfe3df85ca895c08092f77d467fea60",
       "mime": "font/ttf",
       "name": "GeneralSans-VariableItalic.ttf"
+    },
+    {
+      "family": "Jost",
+      "weight": 700,
+      "style": "normal",
+      "sha256": "d0e3f79fb1c94ea338f09f7a3d9ce664ad5f06756f887ec4bc85b93d696f3a97",
+      "mime": "font/ttf",
+      "name": "Jost-Bold.ttf"
+    },
+    {
+      "family": "Jost",
+      "weight": 500,
+      "style": "normal",
+      "sha256": "a50384db8b25d2d3ae107a17fd15f9a7d93566cc0d6c5ff86e45c635cd2e24b3",
+      "mime": "font/ttf",
+      "name": "Jost-Medium.ttf"
+    },
+    {
+      "family": "Jost",
+      "weight": 400,
+      "style": "normal",
+      "sha256": "c54731b1a6880f2debab5a44806a05546c9759cd982cc6ce3164bfedc7e5a363",
+      "mime": "font/ttf",
+      "name": "Jost-Regular.ttf"
     }
   ],
   "logos": [
