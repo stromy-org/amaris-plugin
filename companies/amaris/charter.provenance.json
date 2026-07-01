@@ -130,5 +130,97 @@
       ],
       "notes": "Sector-coded palette: engineering-purple/life-sciences-green/telecom-yellow/pink-secondary. Logo file 'amaris-logo-blue.svg' (blue=#272674)."
     }
-  }
+  },
+  "visual_grammar_review": [
+    {
+      "dimension": "backgrounds",
+      "chosen_option": "indigo-canvas",
+      "rationale": "GATE A board approved by operator (William); recs accepted. Navy-scrim-over-photo + midnight + blush wash — reads as Amaris; indexed rhythm intact",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "source-artifact",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "gradients",
+      "chosen_option": "linear-directional",
+      "rationale": "GATE A board approved by operator (William); recs accepted. Linear directional (midnight/dark/canvas) — amaris actively uses gradients, distinct from stromy radial-glow / Duke none",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "source-artifact",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "grid",
+      "chosen_option": "asymmetric-measure",
+      "rationale": "GATE A board approved by operator (William); recs accepted. 985px controlled-asymmetry + monospace footer rail + blush left-tick",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "source-artifact",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "iconography",
+      "chosen_option": "geometric-orbit-dot",
+      "rationale": "GATE A board approved by operator (William); recs accepted. Round-join geometric + accent-blue orbit dot; OPEN/extensible set per operator directive",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "proposed",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "elevation",
+      "chosen_option": "flat-indexed-border",
+      "rationale": "GATE A board approved by operator (William); recs accepted. Flat systematic surfaces + sector-indexed left border — no shadow (distinct from Duke soft-lift)",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "proposed",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "patterns",
+      "chosen_option": "orbit-tile",
+      "rationale": "GATE A board approved by operator (William); recs accepted. Real orbit-ring tile asset, low-opacity panels",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "source-artifact",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "typography.smallTitle (label role)",
+      "chosen_option": "brand-face-caps",
+      "rationale": "Operator flagged shared-mono eyebrow sameness; amaris owns no mono. Set label = Century Gothic caps + wide tracking + blush tick.",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "derived",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    }
+  ]
 }

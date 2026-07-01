@@ -100,3 +100,42 @@
   --motion-stagger:             60ms;    /* tight per-child step (neutral 70) */
   --motion-distance:            12px;    /* small entrance travel (neutral 16) */
 }
+
+/* --- visual grammar tokens (brand-visual-grammar; 2026-07-01) ---
+   backgrounds + iconography + elevation. gradients / content-width / orbit
+   already tokenized above. Applied downstream, reference-not-bind. --- */
+:root {
+  --canvas-navy:  #272674;
+  --canvas-paper: #FFFFFF;
+  --canvas-blush: #F5E2DA;
+  --icon-stroke:  1.5px;
+  --elev-border:  1px solid rgba(39,38,116,0.14);
+  --card-index-border: 3px;
+}
+
+/* --- image treatment system (Component T; ORG-PLAN-045) ---
+   Definition of record: charter.expression.treatments. Applied downstream
+   (format-MCP render + website .img-treatment), never pre-baked. --- */
+:root {
+  --treatment-default: documentary-muted;
+  --treatment-documentary-muted-filter: saturate(0.72) contrast(1.03);
+  --treatment-documentary-muted-grain:  0.05;
+  --treatment-navy-duotone-filter:      grayscale(1) contrast(1.05);
+  --treatment-navy-duotone-shadow:      #131257;
+  --treatment-navy-duotone-mid:         #3A5B9F;
+  --treatment-navy-duotone-highlight:   #F5E2DA;
+  --treatment-navy-duotone-strength:    0.42;
+  --treatment-navy-duotone-grain:       0.05;
+  --treatment-midnight-graded-filter:   saturate(0.5) contrast(1.05);
+  --treatment-midnight-graded-shadow:   #020381;
+  --treatment-midnight-graded-mid:      #2874fc;
+  --treatment-midnight-graded-highlight:#DCE8FF;
+  --treatment-midnight-graded-strength: 0.30;
+  --treatment-midnight-graded-grain:    0.05;
+  --treatment-blush-warm-filter:        saturate(0.6) contrast(1.02);
+  --treatment-blush-warm-shadow:        #2A1512;
+  --treatment-blush-warm-mid:           #8A6A5C;
+  --treatment-blush-warm-highlight:     #FFF0EA;
+  --treatment-blush-warm-strength:      0.26;
+  --treatment-blush-warm-grain:         0.06;
+}

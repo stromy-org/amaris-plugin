@@ -99,6 +99,16 @@
       "general-sans-semibold": "fonts/otf/GeneralSans-Semibold.otf",
       "general-sans-bold": "fonts/otf/GeneralSans-Bold.otf",
       "general-sans-bolditalic": "fonts/otf/GeneralSans-BoldItalic.otf"
+    },
+    "label": {
+      "family": "Century Gothic",
+      "cssName": "Century Gothic",
+      "embedFamily": "General Sans",
+      "weight": "700",
+      "case": "uppercase",
+      "tracking": "0.2em",
+      "role": "eyebrow / kicker / overline / footer rail",
+      "note": "Small-title identity: the brand face (Century Gothic Bold) set uppercase with wide tracking, paired with the blush accent tick. amaris owns NO monospace font — do NOT default small titles to mono; the mono footer in legacy notes is superseded by this label role."
     }
   },
   "logo": {
@@ -340,14 +350,22 @@
             "asset": "assets/svg/motif-orbit.svg",
             "role": "transition / hero arc — hairline arc sweeping across the composition behind hero text",
             "cssClass": "orbit-layer",
-            "surfaces": ["cover", "section-divider", "closing"]
+            "surfaces": [
+              "cover",
+              "section-divider",
+              "closing"
+            ]
           },
           {
             "id": "stepping-stone",
             "asset": "assets/svg/motif-stepping-stones.svg",
             "role": "hero / cover accent — solid accent-colour dot sitting on an orbit arc, rotating the decorative palette",
             "cssClass": "stepping-stone",
-            "surfaces": ["cover", "section-divider", "docx"],
+            "surfaces": [
+              "cover",
+              "section-divider",
+              "docx"
+            ],
             "docxRaster": "templates/docx/orbit-corner-{light,dark}.png"
           },
           {
@@ -355,35 +373,77 @@
             "asset": "assets/svg/motif-wordmark-ghost.svg",
             "role": "content watermark — oversized outline AMARIS bleeding off the right edge at low opacity",
             "cssClass": "ghost-wordmark",
-            "surfaces": ["content"]
+            "surfaces": [
+              "content"
+            ]
           },
           {
             "id": "bullet-ring",
             "asset": "assets/svg/bullet-ring.svg",
             "role": "numbered-list marker — outline ring with navy numeral for ordered lists",
             "cssClass": "ring-bullet",
-            "surfaces": ["content", "docx"]
+            "surfaces": [
+              "content",
+              "docx"
+            ]
           },
           {
             "id": "orbit-pattern",
             "asset": "assets/svg/pattern-orbit-tile.svg",
             "role": "large-fill / dominant background — tileable faint dot-on-arc field for full-bleed motif use",
             "cssClass": "orbit-tile",
-            "surfaces": ["cover", "section-divider"]
+            "surfaces": [
+              "cover",
+              "section-divider"
+            ]
           }
         ],
         "roles": {
-          "cover": ["orbit-arc", "stepping-stone"],
-          "section-divider": ["orbit-arc", "stepping-stone"],
-          "content": ["ghost-wordmark", "bullet-ring"],
-          "closing": ["orbit-arc"]
+          "cover": [
+            "orbit-arc",
+            "stepping-stone"
+          ],
+          "section-divider": [
+            "orbit-arc",
+            "stepping-stone"
+          ],
+          "content": [
+            "ghost-wordmark",
+            "bullet-ring"
+          ],
+          "closing": [
+            "orbit-arc"
+          ]
         },
-        "allowedSurfaces": ["pptx", "pdf", "html-reveal", "html-hd", "docx"],
+        "allowedSurfaces": [
+          "pptx",
+          "pdf",
+          "html-reveal",
+          "html-hd",
+          "docx"
+        ],
         "usageCaps": {
           "maxArcsPerSlide": 2,
           "maxDotsPerSlide": 3,
           "ghostWordmarkMaxOpacity": 0.1,
           "dotMaxDiameterInches": 0.8
+        },
+        "spec": {
+          "family": "orbital",
+          "elements": [
+            "orbit-layer (arcs sweeping the frame)",
+            "stepping-stone (indexed dots)",
+            "ghost-wordmark",
+            "accent-rule (blush/peach thin rule)"
+          ],
+          "assets": [
+            "assets/svg/motif-orbit.svg",
+            "assets/svg/motif-stepping-stones.svg",
+            "assets/svg/motif-wordmark-ghost.svg",
+            "assets/svg/bullet-ring.svg"
+          ],
+          "prominence": "accent",
+          "dotGlow": "decorative orbit dots (<=0.8 dia) rotate the palette non-semantically; never a background field"
         }
       },
       "motion": {
@@ -413,12 +473,386 @@
           "intensity": "subtle",
           "entranceRhythm": "staggered",
           "transitionFamily": "fade",
-          "allowedSurfaces": ["deck", "html-hd", "html-reveal", "website"],
+          "allowedSurfaces": [
+            "deck",
+            "html-hd",
+            "html-reveal",
+            "website"
+          ],
           "requiredFor": [],
-          "usageCaps": { "perView": 1 },
+          "usageCaps": {
+            "perView": 1
+          },
           "tokenPrefix": "--motion-",
           "rationale": "Fade + a short staggered entrance is the house idiom; the orbit arc may draw on a cover or divider as an 'explain' line-draw (one per view, echoing the motif family). prefers-reduced-motion collapses all of it to static. required:false keeps motion available but advisory — a static deck is never failed for omitting it."
         }
+      },
+      "backgrounds": {
+        "status": "approved",
+        "required": true,
+        "evidence": {
+          "tier": "source-artifact",
+          "source": "signatureElements (navy #272674 field/scrim 55-78%, midnight gradient hero, blush light canvas) + dark-light-indexed colorRhythm"
+        },
+        "selected": "indigo-canvas",
+        "candidates": [
+          {
+            "id": "indigo-canvas",
+            "label": "Indigo canvas (indexed)",
+            "spec": {
+              "canvases": [
+                {
+                  "name": "navy-field",
+                  "role": "primary-dark",
+                  "css": "#272674"
+                },
+                {
+                  "name": "midnight-hero",
+                  "role": "hero-dark",
+                  "css": "linear-gradient(135deg,#020381,#2874fc)"
+                },
+                {
+                  "name": "paper",
+                  "role": "primary-light",
+                  "css": "#FFFFFF"
+                },
+                {
+                  "name": "blush-wash",
+                  "role": "surface-light",
+                  "css": "#F5E2DA"
+                }
+              ],
+              "rhythm": "dark-light-indexed",
+              "darkFrequency": 3,
+              "photo": {
+                "treatment": "documentary-muted, full-bleed hero",
+                "overlay": "navy #272674 scrim at 55-78%, never a sector colour"
+              }
+            },
+            "tokens": [
+              "--canvas-navy",
+              "--canvas-paper",
+              "--canvas-blush"
+            ],
+            "evidence": {
+              "tier": "source-artifact"
+            }
+          },
+          {
+            "id": "midnight-immersive",
+            "label": "Midnight immersive",
+            "spec": {
+              "canvases": [
+                {
+                  "name": "midnight",
+                  "role": "primary-dark",
+                  "css": "linear-gradient(135deg,#020381,#2874fc)"
+                }
+              ],
+              "note": "gradient-led throughout; heavier, less indexed rhythm"
+            },
+            "evidence": {
+              "tier": "proposed"
+            }
+          },
+          {
+            "id": "blush-forward",
+            "label": "Blush-forward light",
+            "spec": {
+              "canvases": [
+                {
+                  "name": "blush",
+                  "role": "primary-light",
+                  "css": "#F5E2DA"
+                },
+                {
+                  "name": "navy-accent",
+                  "role": "accent-dark",
+                  "css": "#272674"
+                }
+              ],
+              "note": "warm light-led; navy demoted to accent"
+            },
+            "evidence": {
+              "tier": "proposed"
+            }
+          }
+        ]
+      },
+      "gradients": {
+        "status": "approved",
+        "required": false,
+        "evidence": {
+          "tier": "source-artifact",
+          "source": "three tokenized gradients already in the brand (midnight/dark/canvasLight); amaris ACTIVELY uses linear directional gradients"
+        },
+        "selected": "linear-directional",
+        "candidates": [
+          {
+            "id": "linear-directional",
+            "label": "Linear directional",
+            "spec": {
+              "gradients": [
+                {
+                  "name": "midnight",
+                  "stops": "linear-gradient(135deg,#020381 0%,#2874fc 100%)",
+                  "usage": "hero / full-bleed cover"
+                },
+                {
+                  "name": "dark",
+                  "stops": "linear-gradient(135deg,#272674 0%,#000000 100%)",
+                  "usage": "photo scrim / section-dark"
+                },
+                {
+                  "name": "canvas-light",
+                  "stops": "linear-gradient(180deg,#FFFFFF 0%,#F5E2DA 100%)",
+                  "usage": "content wash, subtle"
+                }
+              ],
+              "geometry": "linear/directional (135deg heroes, 180deg washes) — NOT radial glow"
+            },
+            "tokens": [
+              "--gradient-midnight",
+              "--gradient-dark",
+              "--gradient-canvas-light"
+            ],
+            "evidence": {
+              "tier": "source-artifact"
+            }
+          },
+          {
+            "id": "midnight-only",
+            "label": "Midnight-only",
+            "spec": {
+              "gradients": [
+                {
+                  "name": "midnight",
+                  "stops": "linear-gradient(135deg,#020381,#2874fc)",
+                  "usage": "the single hero gradient; flat everywhere else"
+                }
+              ]
+            },
+            "evidence": {
+              "tier": "proposed"
+            }
+          },
+          {
+            "id": "flat-none",
+            "label": "Flat, no gradient",
+            "spec": {
+              "policy": "restrained — flat fields only",
+              "canvasGradients": "none",
+              "note": "explicitly NOT amaris — the brand's midnight gradient is signature (contrast option only)"
+            },
+            "evidence": {
+              "tier": "proposed"
+            }
+          }
+        ]
+      },
+      "grid": {
+        "status": "approved",
+        "required": false,
+        "evidence": {
+          "tier": "source-artifact",
+          "source": "signatureElements: 985px content-width on 1280 canvas, controlled-asymmetry, left-margin tick, monospace footer bar"
+        },
+        "selected": "asymmetric-measure",
+        "candidates": [
+          {
+            "id": "asymmetric-measure",
+            "label": "Asymmetric measure",
+            "spec": {
+              "columns": "12-col base, controlled-asymmetry (left-biased content column)",
+              "contentWidth": "985px max on 1280px canvas",
+              "margins": "wide lateral, disciplined",
+              "footer": "monospace rail 8-9pt: logo mark · client · confidentiality · page count",
+              "leftTick": "blush/accent left-margin tick on content slides",
+              "symmetry": "controlled-asymmetry",
+              "dividers": "thin accent rules"
+            },
+            "tokens": [
+              "--content-width",
+              "--wide-width"
+            ],
+            "evidence": {
+              "tier": "source-artifact"
+            }
+          },
+          {
+            "id": "centered-measure",
+            "label": "Centered measure",
+            "spec": {
+              "columns": "12-col centered",
+              "symmetry": "symmetric",
+              "note": "rejected — symmetric-centered is Duke's register, not amaris's controlled-asymmetry"
+            },
+            "evidence": {
+              "tier": "proposed"
+            }
+          },
+          {
+            "id": "wide-split",
+            "label": "Wide 2/3–1/3 split",
+            "spec": {
+              "columns": "asymmetric 2/3 content · 1/3 sidebar rail",
+              "symmetry": "strong-asymmetry"
+            },
+            "evidence": {
+              "tier": "proposed"
+            }
+          }
+        ]
+      },
+      "iconography": {
+        "status": "approved",
+        "required": false,
+        "evidence": {
+          "tier": "proposed",
+          "source": "seeded from rectilinear geometry + systematic type + orbit-dot signature; OPEN/extensible set — not brand-bound (operator directive 2026-07-01)"
+        },
+        "selected": "geometric-orbit-dot",
+        "candidates": [
+          {
+            "id": "geometric-orbit-dot",
+            "label": "Geometric + orbit dot",
+            "spec": {
+              "style": "stroke-led geometric, rectilinear",
+              "strokeWeight": "1.5px",
+              "caps": "round",
+              "joins": "round",
+              "fillVsLine": "line-dominant + ONE small filled accent-blue orbit dot as an optional signature flourish per glyph",
+              "extensible": true,
+              "setPolicy": "OPEN set — icons are drawn to this STYLE on demand per slide need. The sample is representative, not a closed brand-bound set; the agent may add/select as many icons as a deck requires, keeping the style.",
+              "sample": [
+                "target-orbit",
+                "layers",
+                "route-steps",
+                "handshake",
+                "shield-check",
+                "trend-up"
+              ]
+            },
+            "tokens": [
+              "--icon-stroke"
+            ],
+            "evidence": {
+              "tier": "proposed"
+            }
+          },
+          {
+            "id": "flat-rect",
+            "label": "Flat rectilinear (square cap)",
+            "spec": {
+              "style": "rectilinear, square caps, miter joins, no dot",
+              "note": "rejected — reads as Duke; loses the orbit signature",
+              "extensible": true
+            },
+            "evidence": {
+              "tier": "proposed"
+            }
+          },
+          {
+            "id": "duotone-chip",
+            "label": "Duotone chip",
+            "spec": {
+              "style": "filled two-tone navy+blush rounded chips",
+              "fillVsLine": "fill-dominant",
+              "note": "heavier; competes with sector-colour tags",
+              "extensible": true
+            },
+            "evidence": {
+              "tier": "proposed"
+            }
+          }
+        ]
+      },
+      "elevation": {
+        "status": "approved",
+        "required": false,
+        "evidence": {
+          "tier": "proposed",
+          "source": "seeded from high-contrast + systematic + rules/ticks-not-shadows signature; moderate ornament"
+        },
+        "selected": "flat-indexed-border",
+        "candidates": [
+          {
+            "id": "flat-indexed-border",
+            "label": "Flat + indexed border",
+            "spec": {
+              "shadows": "none — systematic flat surfaces",
+              "borders": "1px hairline navy at low opacity + a 3px sector/accent-indexed LEFT border tick on cards",
+              "radius": "2px (crisp)",
+              "surface": "matte",
+              "depth": "via indexed border + rule, never shadow"
+            },
+            "tokens": [
+              "--elev-border",
+              "--card-index-border"
+            ],
+            "evidence": {
+              "tier": "proposed"
+            }
+          },
+          {
+            "id": "soft-lift",
+            "label": "Soft card lift",
+            "spec": {
+              "shadows": "medium soft card shadow, hover lift",
+              "note": "rejected — that is Duke's engineered-luxury register"
+            },
+            "evidence": {
+              "tier": "proposed"
+            }
+          },
+          {
+            "id": "glow-panel",
+            "label": "Accent glow panel",
+            "spec": {
+              "glows": "accent-blue glow behind hero cards",
+              "note": "on-motif but noisy at content density"
+            },
+            "evidence": {
+              "tier": "proposed"
+            }
+          }
+        ]
+      },
+      "patterns": {
+        "status": "approved",
+        "required": false,
+        "evidence": {
+          "tier": "source-artifact",
+          "source": "real asset assets/svg/pattern-orbit-tile.svg"
+        },
+        "selected": "orbit-tile",
+        "candidates": [
+          {
+            "id": "orbit-tile",
+            "label": "Orbit-ring tile",
+            "spec": {
+              "name": "Orbit-ring tile",
+              "usage": "low-opacity texture panels <=12%, hero/divider only",
+              "tile": "assets/svg/pattern-orbit-tile.svg"
+            },
+            "assets": [
+              "assets/svg/pattern-orbit-tile.svg"
+            ],
+            "evidence": {
+              "tier": "source-artifact"
+            }
+          }
+        ]
+      },
+      "photo": {
+        "status": "n-a",
+        "required": false,
+        "evidence": {
+          "tier": "derived",
+          "source": "documentary-muted imageTreatment; redundant with compiled images.overlay / images.manifest"
+        },
+        "selected": null,
+        "candidates": []
       }
     },
     "evidence": [
@@ -476,6 +910,75 @@
         "freshness": "current",
         "note": "Section-divider anchor. Confirms navy full-field or photo-with-indigo-wash, blush rule under section title, white logo bottom-left."
       }
-    ]
+    ],
+    "typography": {
+      "smallTitle": {
+        "face": "label",
+        "case": "uppercase",
+        "tracking": "0.2em",
+        "marker": "blush accent tick (#EBC4B4)",
+        "usage": "eyebrows/kickers above headings, section overlines, footer rail — the brand-specific alternative to a generic mono eyebrow"
+      }
+    },
+    "treatments": {
+      "default": "documentary-muted",
+      "note": "Named brand 'house looks' applied to photography DOWNSTREAM (format-MCP render + website CSS) — never pre-baked into the shipped library. Restrained, palette-derived. Overlays (navy #272674 scrim at N%, never a sector colour) are separate text-safety layers, not treatments. ORG-PLAN-045.",
+      "looks": {
+        "documentary-muted": {
+          "label": "Documentary Muted",
+          "usage": "Lightly desaturated editorial colour — the timeless default for content, section, and dense slides. Keeps corporate colour alive without going candid.",
+          "css_filter": "saturate(0.72) contrast(1.03)",
+          "grain": {
+            "opacity": 0.05,
+            "blend": "overlay"
+          }
+        },
+        "navy-duotone": {
+          "label": "Navy Duotone",
+          "usage": "Signature structural duotone for covers + hero moments — deep midnight shadows through indigo mids to blush highlights. The Amaris engineered-yet-warm signature; pairs with the navy scrim.",
+          "css_filter": "grayscale(1) contrast(1.05)",
+          "duotone": {
+            "shadows": "#131257",
+            "mid": "#3A5B9F",
+            "highlights": "#F5E2DA",
+            "strength": 0.42
+          },
+          "grain": {
+            "opacity": 0.05,
+            "blend": "overlay"
+          }
+        },
+        "midnight-graded": {
+          "label": "Midnight Graded",
+          "usage": "Cool cinematic grade for technology/engineering imagery — indigo shadows, cool-blue highlights echoing the midnight gradient. Restrained, systematic.",
+          "css_filter": "saturate(0.5) contrast(1.05)",
+          "duotone": {
+            "shadows": "#020381",
+            "mid": "#2874fc",
+            "highlights": "#DCE8FF",
+            "strength": 0.3
+          },
+          "grain": {
+            "opacity": 0.05,
+            "blend": "overlay"
+          }
+        },
+        "blush-warm": {
+          "label": "Blush Warm",
+          "usage": "Warm grade for people / life-sciences / softer section imagery — warm shadows to blush highlights. The human counterweight to the navy register; use sparingly.",
+          "css_filter": "saturate(0.6) contrast(1.02)",
+          "duotone": {
+            "shadows": "#2A1512",
+            "mid": "#8A6A5C",
+            "highlights": "#FFF0EA",
+            "strength": 0.26
+          },
+          "grain": {
+            "opacity": 0.06,
+            "blend": "overlay"
+          }
+        }
+      }
+    }
   }
 }
