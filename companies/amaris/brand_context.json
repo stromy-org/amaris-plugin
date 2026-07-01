@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "version": "1.0",
   "generatedFrom": {
-    "charterSha": "58f65ea0edde79c6f45df0cf98dcff06836e0f3aaa008a72dfdd60519c2571a5",
+    "charterSha": "62a81ba144a2b4660387d09d4d01a4c5db0a263ade297880a7245ffe2fc1f585",
     "compiler": "1.0"
   },
   "tier": "producer",
@@ -401,6 +401,11 @@
           "tier": "source-artifact"
         },
         "selected": "indigo-canvas",
+        "cssTokens": {
+          "--bg-navy": "#272674",
+          "--bg-paper": "#FFFFFF",
+          "--bg-blush": "#F5E2DA"
+        },
         "spec": {
           "canvases": [
             {
@@ -444,6 +449,11 @@
           "tier": "source-artifact"
         },
         "selected": "linear-directional",
+        "cssTokens": {
+          "--gradient-midnight": "linear-gradient(135deg,#020381 0%,#2874fc 100%)",
+          "--gradient-dark": "linear-gradient(135deg,#272674 0%,#000000 100%)",
+          "--gradient-canvas-light": "linear-gradient(180deg,#FFFFFF 0%,#F5E2DA 100%)"
+        },
         "spec": {
           "gradients": [
             {
@@ -477,6 +487,12 @@
           "tier": "source-artifact"
         },
         "selected": "asymmetric-measure",
+        "cssTokens": {
+          "--grid-max": "985px",
+          "--grid-canvas": "1280px",
+          "--grid-gutter": "2rem",
+          "--grid-margin": "6vw"
+        },
         "spec": {
           "columns": "12-col base, controlled-asymmetry (left-biased content column)",
           "contentWidth": "985px max on 1280px canvas",
@@ -526,6 +542,11 @@
           "tier": "proposed"
         },
         "selected": "flat-indexed-border",
+        "cssTokens": {
+          "--radius-card": "2px",
+          "--border-hairline": "1px solid rgba(39,38,116,0.14)",
+          "--border-tick": "3px solid #4182ff"
+        },
         "spec": {
           "shadows": "none — systematic flat surfaces",
           "borders": "1px hairline navy at low opacity + a 3px sector/accent-indexed LEFT border tick on cards",

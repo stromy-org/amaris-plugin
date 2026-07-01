@@ -576,7 +576,12 @@
               "tier": "proposed"
             }
           }
-        ]
+        ],
+        "cssTokens": {
+          "--bg-navy": "#272674",
+          "--bg-paper": "#FFFFFF",
+          "--bg-blush": "#F5E2DA"
+        }
       },
       "gradients": {
         "status": "approved",
@@ -647,7 +652,12 @@
               "tier": "proposed"
             }
           }
-        ]
+        ],
+        "cssTokens": {
+          "--gradient-midnight": "linear-gradient(135deg,#020381 0%,#2874fc 100%)",
+          "--gradient-dark": "linear-gradient(135deg,#272674 0%,#000000 100%)",
+          "--gradient-canvas-light": "linear-gradient(180deg,#FFFFFF 0%,#F5E2DA 100%)"
+        }
       },
       "grid": {
         "status": "approved",
@@ -701,7 +711,13 @@
               "tier": "proposed"
             }
           }
-        ]
+        ],
+        "cssTokens": {
+          "--grid-max": "985px",
+          "--grid-canvas": "1280px",
+          "--grid-gutter": "2rem",
+          "--grid-margin": "6vw"
+        }
       },
       "iconography": {
         "status": "approved",
@@ -815,7 +831,12 @@
               "tier": "proposed"
             }
           }
-        ]
+        ],
+        "cssTokens": {
+          "--radius-card": "2px",
+          "--border-hairline": "1px solid rgba(39,38,116,0.14)",
+          "--border-tick": "3px solid #4182ff"
+        }
       },
       "patterns": {
         "status": "approved",
