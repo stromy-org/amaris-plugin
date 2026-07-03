@@ -8,6 +8,7 @@
   },
   "tier": "producer",
   "warnings": [
+    "font substitution: body, heading, label declared 'Century Gothic' but renders as 'Jost' (original not embeddable) — on-screen face is 'Jost'",
     "visual_grammar.photo: candidates present but no `selected` — dimension degrades"
   ],
   "colors": {
