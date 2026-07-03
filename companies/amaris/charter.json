@@ -906,7 +906,6 @@
           "tier": "derived",
           "source": "documentary-muted imageTreatment; redundant with compiled images.overlay / images.manifest"
         },
-        "selected": null,
         "candidates": []
       }
     },
