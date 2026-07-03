@@ -136,6 +136,14 @@
       "sha256": "c54731b1a6880f2debab5a44806a05546c9759cd982cc6ce3164bfedc7e5a363",
       "mime": "font/ttf",
       "name": "Jost-Regular.ttf"
+    },
+    {
+      "family": "Quicksand",
+      "weight": 300,
+      "style": "normal",
+      "sha256": "39c9b64223561f56aaff6062a6f04063c4fc86809ad6768722c06614d977e1cc",
+      "mime": "font/ttf",
+      "name": "Quicksand[wght].ttf"
     }
   ],
   "logos": [
