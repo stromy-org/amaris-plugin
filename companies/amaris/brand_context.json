@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "version": "1.0",
   "generatedFrom": {
-    "charterSha": "62a81ba144a2b4660387d09d4d01a4c5db0a263ade297880a7245ffe2fc1f585",
+    "charterSha": "d82f30a0e7a14b96bf3823b36d0aa943a6b6c02857da51c8d9675ee89fac6e97",
     "compiler": "1.0"
   },
   "tier": "producer",
@@ -35,18 +35,39 @@
     "heading": {
       "family": "Century Gothic",
       "weight": "700",
-      "embedFamily": "Jost"
+      "embedFamily": "Jost",
+      "fallbackStack": [
+        "Century Gothic",
+        "Questrial",
+        "Futura",
+        "sans-serif"
+      ],
+      "webSafe": "Century Gothic"
     },
     "body": {
       "family": "Century Gothic",
       "weight": "400",
       "fallback": "'CenturyGothic', 'Avenir Next', 'Futura', 'Apple SD Gothic Neo', sans-serif",
-      "embedFamily": "Jost"
+      "embedFamily": "Jost",
+      "fallbackStack": [
+        "Century Gothic",
+        "Questrial",
+        "Futura",
+        "sans-serif"
+      ],
+      "webSafe": "Century Gothic"
     },
     "label": {
       "family": "Century Gothic",
       "weight": "700",
       "embedFamily": "Jost",
+      "fallbackStack": [
+        "Century Gothic",
+        "Questrial",
+        "Futura",
+        "sans-serif"
+      ],
+      "webSafe": "Century Gothic",
       "case": "uppercase",
       "tracking": "0.2em"
     },
