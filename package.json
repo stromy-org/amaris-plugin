@@ -5,7 +5,7 @@
   "description": "Claude Code plugin for Amaris Consulting branded deliverables and brand tools",
   "dependencies": {
     "@excalidraw/mermaid-to-excalidraw": "^0.3.0",
-    "docx": "^9.5.3",
+    "docx": "^9.7.1",
     "playwright": "^1.58.1",
     "pptxgenjs": "^4.0.1",
     "sharp": "^0.34.5"
