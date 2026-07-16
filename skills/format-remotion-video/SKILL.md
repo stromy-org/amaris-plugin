@@ -2,6 +2,15 @@
 name: format-remotion-video
 description: "Create animated videos using Remotion (React-based video framework) with optional company branding from charter.json. Provides branded components, animation utilities, chart/diagram primitives, and a scaffold-to-render workflow. Use when creating videos, explainer animations, data visualizations, or corporate presentations in video format."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/stromy-format-mcp/skills/format-remotion-video/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # Remotion Video (MCP-hosted skill)
 

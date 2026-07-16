@@ -2,6 +2,15 @@
 name: format-diagram
 description: "Generate branded diagrams (process flows, architecture views, stakeholder maps, org charts, timelines, funnels, matrices, mind maps) as SVG/PNG for embedding in deliverables. TWO routes: (1) the DEFAULT for flow/relationship diagrams — author Mermaid text and call the server-side `render_diagram` MCP tool (auto-layout + deep brand theming, works in a deployed sandbox, brand-gated); (2) hand-authored Excalidraw JSON for bespoke structural art (operator environment only). Use when asked to create a diagram, draw a process flow, make an architecture diagram, visualize a workflow, create a stakeholder map, org chart, funnel diagram, timeline, or any structural visual."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/stromy-format-mcp/skills/format-diagram/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # Diagram Skill — Branded Consulting-Quality Diagrams (MCP-hosted skill)
 

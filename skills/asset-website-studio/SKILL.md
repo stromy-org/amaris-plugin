@@ -2,6 +2,15 @@
 name: asset-website-studio
 description: "Guide a client through broker-mediated website build work after brand sign-off, using content-only site-bootstrap proposals and live Azure SWA preview URLs."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/asset-broker-mcp/skills/asset-website-studio/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # asset-website-studio (MCP-hosted skill)
 

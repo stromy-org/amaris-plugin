@@ -2,6 +2,15 @@
 name: asset-feedback
 description: "Capture structured client, operator, and agent-execution feedback through the asset-broker MCP and write it to the scoped feedback lane in the shared `client-feedback` repo. Use when the user wants to record product feedback on a deliverable or when the agent should file an infra-quality retrospective about the skill/tooling it just used."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/asset-broker-mcp/skills/asset-feedback/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # asset-feedback (MCP-hosted skill)
 

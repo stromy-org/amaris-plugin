@@ -2,6 +2,15 @@
 name: format-pptx-hd
 description: "TRIGGER on **net-new branded deck creation** (a client charter exists) — pitch/investor/executive **and** ordinary branded new decks — plus explicit HD cues and `render-anchors`. Server-renders via `render_pptx` in the brand fonts with a brand gate, web-openable by default (no local build-script path). HTML-first design with full web stack. Deeply integrated with the invoking plugin's brand overlay (`charter.json`, `tokens.css`, `assets.json`, hero images, boilerplate.json, anchor templates in `templates/pptx/`). **Editing or analyzing an existing deck (branded or not) stays on `format-pptx`** — `pptx-hd` regenerates from HTML and cannot edit in place. Unbranded quick decks also go to `format-pptx`."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/stromy-format-mcp/skills/format-pptx-hd/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # PPTX-HD: High-Fidelity Branded Presentations (MCP-hosted skill)
 

@@ -2,6 +2,15 @@
 name: format-pptx
 description: "DEFAULT PPTX skill for **unbranded deck creation** and **editing / analysis / OOXML / comments / speaker-notes of any existing deck** (branded or not — in-place OOXML edits, not a branded render). For a **net-new branded deck**, use `format-pptx-hd` (server-rendered + brand-gated). This skill does not render a branded deck from scratch. Also supports `render-anchors` mode (materialises brand anchor templates from spec files)."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/stromy-format-mcp/skills/format-pptx/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # PPTX creation, editing, and analysis (MCP-hosted skill)
 

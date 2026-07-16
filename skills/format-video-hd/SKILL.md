@@ -2,6 +2,15 @@
 name: format-video-hd
 description: "Author a premium branded explainer / educational VIDEO — a server-rendered MP4 with animated titles, kinetic typography, animated diagrams (process-flow), animated data (data-bars + KPI count-ups), image reveals, captions, and optional voiceover/music. Storyboard-first and accuracy-gated: plans a scene-by-scene shot list with a per-scene source citation, runs the voice cascade, then renders via the async `render_video` MCP tool with a brand gate + a per-scene visual-review pass before delivery. Deeply integrated with the invoking plugin's brand overlay (`brand_context.json`, `assets.json`). USE THIS whenever someone wants a video, explainer video, animated explainer, motion-graphics video, product / strategy / plan walkthrough, or to turn a brief, plan, or report into a branded video — even if they don't say 'video'. Content is condensed, accurate, and well-structured — never fabricated. Server-rendered (Playwright + ffmpeg), brand-required (no unbranded path). SIBLINGS — pick the right one: a low-level HTML→MP4 clip to drop into a deck/PDF → format-motion; generative AI footage (Veo/Kling talking-head/b-roll) → video-production; an editable branded deck → format-pptx-hd."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/stromy-format-mcp/skills/format-video-hd/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # Video-HD: Branded Explainer Videos (MCP-hosted skill)
 

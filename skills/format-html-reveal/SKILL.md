@@ -2,6 +2,15 @@
 name: format-html-reveal
 description: "Create a premium, self-contained reveal.js HTML slide deck — ONE downloadable .html (reveal.js + brand fonts + images all inlined) that opens offline in any browser and shares as a file or link, SERVER-RENDERED via the `render_deck` MCP tool (brand gate, no local build). Premium-floor layout archetypes + a deterministic variance engine (brand_context.expression.visualAxes + surfaceExpression.presentation) keep every deck premium AND visibly each client's own. TRIGGER on: 'reveal.js deck', 'server-rendered web deck', 'interactive presentation', 'shareable web slides'. SIBLINGS — pick the right one: a hand-authored client-side self-contained HTML deck (no reveal.js, full pixel control) → format-html-hd; an editable .pptx → format-pptx-hd; a paginated print PDF → format-pdf-hd."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/stromy-format-mcp/skills/format-html-reveal/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # HTML-REVEAL: Premium Self-Contained reveal.js Slide Decks (server-rendered) (MCP-hosted skill)
 

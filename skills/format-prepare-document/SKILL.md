@@ -2,6 +2,15 @@
 name: format-prepare-document
 description: "Plan a multi-section document before rendering it. Use when a branded PPTX, DOCX, or PDF needs structure-first collaboration: section plan, substrate choice, complementary charts/diagrams, sign-off, then handoff to the correct `format-*` renderer. This skill is generic and client-agnostic apart from the invoking plugin's brand overlay."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/stromy-format-mcp/skills/format-prepare-document/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # Format Prepare Document (MCP-hosted skill)
 

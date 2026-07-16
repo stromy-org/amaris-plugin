@@ -2,6 +2,15 @@
 name: format-html-hd
 description: "Author a premium, fully self-contained branded HTML slide deck — ONE .html the agent writes directly on the client (no server render, no reveal.js): container-query 16:9 stages, scroll-snap + keyboard nav, inline-SVG brand motifs & diagrams, and the client's real fonts/logos base64-inlined so it opens offline and shares as a single file. Deeply brand-integrated from the invoking plugin's companies/<slug>/ overlay — a deterministic design system keeps every deck unmistakably THIS client's, while a seeded variance engine makes each deck fresh. USE THIS whenever someone wants an HTML / web / browser slide deck, a shareable single-file presentation, an interactive deck, a good-looking or on-brand web deck, or to turn a topic, brief, or report into branded slides — even if they don't say 'HTML'. Siblings: editable PowerPoint → format-pptx-hd; paginated print PDF → format-pdf-hd; the older server-rendered reveal.js deck → format-html-reveal."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/stromy-format-mcp/skills/format-html-hd/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # format-html-hd — hand-authored, self-contained branded HTML decks (MCP-hosted skill)
 

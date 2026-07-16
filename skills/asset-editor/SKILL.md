@@ -2,6 +2,15 @@
 name: asset-editor
 description: "Draft, preview, and propose reviewed website or brand edits through the asset-broker MCP without direct GitHub access. Use when a client wants to add or edit their own website content (blog, case studies, intel, capabilities, images) or brand/charter data and have it land as a reviewed GitHub pull request with a truthful preview."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/asset-broker-mcp/skills/asset-editor/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # asset-editor (MCP-hosted skill)
 

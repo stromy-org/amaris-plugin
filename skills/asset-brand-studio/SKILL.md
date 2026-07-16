@@ -2,6 +2,15 @@
 name: asset-brand-studio
 description: "Guide a client through broker-mediated brand build, refresh, or extension work with review boards, server-side brand compilation, font-contract resolution, and reviewed pull requests."
 ---
+<!--
+  GENERATED FILE — DO NOT EDIT.
+  Owner:       scripts/sync-mcp-skill-stubs.py (via sync-on-mcp-skill-change.yml)
+  Source:      MCPs/asset-broker-mcp/skills/asset-brand-studio/SKILL.md
+  This workflow pushes DIRECT to this repo's main — a local edit here will be
+  overwritten or rejected non-fast-forward. Edit the source, push, then:
+    gh workflow run sync-on-mcp-skill-change.yml -R stromy-org/stromy-org
+  Hand-authored skill? Set `_local: true` in frontmatter instead.
+-->
 
 # asset-brand-studio (MCP-hosted skill)
 
