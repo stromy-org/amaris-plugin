@@ -13,7 +13,7 @@
     "domain": "amaris.com",
     "twitter": "@amaris",
     "parent": "Mantu",
-    "essence": "A partner that turns ambition into concrete outcomes \u2014 grounded in human expertise, global reach, and a collaborative spirit that makes complex growth achievable.",
+    "essence": "A partner that turns ambition into concrete outcomes — grounded in human expertise, global reach, and a collaborative spirit that makes complex growth achievable.",
     "positioning": "Independent global technology and management consulting subsidiary of Mantu, positioned between generalist system integrators and niche boutiques: broad enough to serve across industries and geographies, focused enough to embed real expertise at every engagement.",
     "personalityTraits": [
       "Ambitious but grounded",
@@ -114,11 +114,11 @@
       ],
       "webSafe": "Century Gothic"
     },
-    "note": "Century Gothic is the named brand face (licensed system/Office font, ships Regular 400 + Bold 700) \u2014 kept first in the stack and relied on for client-side editing, but cannot be embedded (non-redistributable). Jost (OFL, a Futura revival) is the embeddable substitute used by server-side render_* tools and web \u2014 chosen 2026-07-01 as a close geometric match for Century Gothic's look, replacing the poorer-matching General Sans. See fontFiles + embedFamily.",
+    "note": "Century Gothic is the named brand face (licensed system/Office font, ships Regular 400 + Bold 700) — kept first in the stack and relied on for client-side editing, but cannot be embedded (non-redistributable). Jost (OFL, a Futura revival) is the embeddable substitute used by server-side render_* tools and web — chosen 2026-07-01 as a close geometric match for Century Gothic's look, replacing the poorer-matching General Sans. See fontFiles + embedFamily.",
     "fontFiles": {
-      "embed": "fonts/ttf/Jost-*.ttf \u2014 Jost, OFL, embeddable (static Regular/Medium/Bold)",
-      "web": "fonts/web/Jost-*.woff2 \u2014 Jost woff2",
-      "note": "Century Gothic (the named brand face) is a licensed system/Office font \u2014 present on the client's own machines but NOT redistributable, so it cannot be embedded server-side. Jost is the OFL embeddable substitute (a Futura revival chosen to match Century Gothic's geometric look): server-rendered deliverables embed it (self-contained everywhere); when the client edits on a licensed machine the named Century Gothic still resolves; web uses the Jost woff2 set."
+      "embed": "fonts/ttf/Jost-*.ttf — Jost, OFL, embeddable (static Regular/Medium/Bold)",
+      "web": "fonts/web/Jost-*.woff2 — Jost woff2",
+      "note": "Century Gothic (the named brand face) is a licensed system/Office font — present on the client's own machines but NOT redistributable, so it cannot be embedded server-side. Jost is the OFL embeddable substitute (a Futura revival chosen to match Century Gothic's geometric look): server-rendered deliverables embed it (self-contained everywhere); when the client edits on a licensed machine the named Century Gothic still resolves; web uses the Jost woff2 set."
     },
     "embed": {
       "jost-regular": "fonts/ttf/Jost-Regular.ttf",
@@ -133,7 +133,7 @@
       "case": "uppercase",
       "tracking": "0.2em",
       "role": "eyebrow / kicker / overline / footer rail",
-      "note": "Small-title identity: the brand face (Century Gothic Bold) set uppercase with wide tracking, paired with the blush accent tick. amaris owns NO monospace font \u2014 do NOT default small titles to mono; the mono footer in legacy notes is superseded by this label role.",
+      "note": "Small-title identity: the brand face (Century Gothic Bold) set uppercase with wide tracking, paired with the blush accent tick. amaris owns NO monospace font — do NOT default small titles to mono; the mono footer in legacy notes is superseded by this label role.",
       "fallbackStack": [
         "Century Gothic",
         "Questrial",
@@ -151,7 +151,7 @@
     "appIcon180": "logos/apple-touch-icon.png",
     "appIcon192": "logos/favicon-192.png",
     "appIcon270": "logos/favicon-270.png",
-    "notes": "Solid white wordmark for dark/image backgrounds is logo-white.svg (use on titles/covers over dark). logo.svg uses currentColor stroke (white on dark, navy on light) but is thin line-art and can read incomplete at large/video scale \u2014 prefer white on dark surfaces. The tagline is NOT baked into the default mark: 'Your stepping stone.' is a campaign tagline (identity.campaignTagline) composed as separate text when wanted. whiteTaglineLockup is an optional pre-made raster lockup, not a default.",
+    "notes": "Solid white wordmark for dark/image backgrounds is logo-white.svg (use on titles/covers over dark). logo.svg uses currentColor stroke (white on dark, navy on light) but is thin line-art and can read incomplete at large/video scale — prefer white on dark surfaces. The tagline is NOT baked into the default mark: 'Your stepping stone.' is a campaign tagline (identity.campaignTagline) composed as separate text when wanted. whiteTaglineLockup is an optional pre-made raster lockup, not a default.",
     "whiteTaglineLockup": "logos/logo-white-tagline.png",
     "png": "logos/logo-black.png",
     "mark": "logos/favicon-192.png"
@@ -266,7 +266,7 @@
         "mood": "branded",
         "orientation": "landscape",
         "source_page": "/insights/",
-        "notes": "Thought leadership report cover \u2014 already in brand blue, use without overlay"
+        "notes": "Thought leadership report cover — already in brand blue, use without overlay"
       }
     ]
   },
@@ -300,13 +300,13 @@
     "confidence": "approved",
     "status": "approved",
     "principles": [
-      "Lead with expertise: substance before style \u2014 professional depth is never sacrificed for visual flair.",
+      "Lead with expertise: substance before style — professional depth is never sacrificed for visual flair.",
       "Human over abstract: favour real workplace photography with controlled treatment over illustration or pure abstraction.",
       "Systematic clarity: a strict two-weight typographic system (Regular / Bold Century Gothic) enforces hierarchy without decorative variation.",
       "Navy as foundation: dark indigo (#272674) anchors every composition; warmth and sector colour are deliberate relief, not competition.",
-      "Motif as signature: the orbit + stepping-stone family (hairline arcs, accent-colour dots, ghost AMARIS wordmark, ring bullets) and the thin blush/peach rule are the recurring decorative motifs \u2014 both used with bounded discipline (\u22642 arcs + \u22643 dots per slide; ghost wordmark \u226410 % opacity), never inventively, never a third family.",
+      "Motif as signature: the orbit + stepping-stone family (hairline arcs, accent-colour dots, ghost AMARIS wordmark, ring bullets) and the thin blush/peach rule are the recurring decorative motifs — both used with bounded discipline (≤2 arcs + ≤3 dots per slide; ghost wordmark ≤10 % opacity), never inventively, never a third family.",
       "Generous margins: 64 px (or 40 pt) interior margins create breathing room; content never crowds the frame.",
-      "Colour indexing by sector: accent colours carry semantic meaning (life-sciences green, engineering purple, telecom yellow, digital blue) \u2014 respect the mapping."
+      "Colour indexing by sector: accent colours carry semantic meaning (life-sciences green, engineering purple, telecom yellow, digital blue) — respect the mapping."
     ],
     "visualAxes": {
       "density": "balanced",
@@ -321,26 +321,26 @@
     },
     "signatureElements": [
       "Thin horizontal accent rule in blush/peach (#EBC4B4 / --color-secondary) anchoring top edge of cover and section-divider slides and left-margin tick on content slides.",
-      "Dark navy (#272674) full-field or gradient scrim over hero photographs at 55\u201378 % opacity, ensuring white-text legibility.",
-      "Century Gothic in Bold 700 only for all display/heading use \u2014 no intermediate weights.",
+      "Dark navy (#272674) full-field or gradient scrim over hero photographs at 55–78 % opacity, ensuring white-text legibility.",
+      "Century Gothic in Bold 700 only for all display/heading use — no intermediate weights.",
       "White logo (currentColor SVG variant) positioned top-left on dark/image slides.",
-      "Monospace footer bar (8\u20139 pt) at slide bottom with logo mark, client name, confidentiality note, and page count.",
+      "Monospace footer bar (8–9 pt) at slide bottom with logo mark, client name, confidentiality note, and page count.",
       "Sector-indexed accent colours used exclusively as data/UI tags, not as background fields.",
-      "Midnight gradient (135 deg, #020381 \u2192 #2874fc) for hero/full-bleed alternative to flat navy.",
+      "Midnight gradient (135 deg, #020381 → #2874fc) for hero/full-bleed alternative to flat navy.",
       "Content-width constraint (985 px max on 1280 px canvas) maintaining lateral margin discipline.",
-      "Orbit arc \u2014 hairline arc (--motif-line-weight, ~0.75\u20131 px) on a large off-canvas radius, 1\u20132 per slide, sweeping across cover and section-divider; white @ 25\u201340 % on dark, navy/blush @ 12\u201318 % on light.",
-      "Stepping-stone dot \u2014 solid accent-colour circle sitting on an orbit arc with a soft glow, rotating the non-semantic decorative palette (--orbit-dot-1..4: blue/mint/yellow/purple); the literal visual of the 'Your stepping stone' tagline.",
-      "Ghost wordmark \u2014 oversized outline AMARIS letterform bleeding off the right edge of content slides at \u226410 % opacity (--motif-ghost-opacity), navy/blush outline only.",
-      "Circle ring bullet \u2014 small outline ring with a navy numeral for numbered lists (bullet-ring asset), a vertical stack echoing the stepping-stone path."
+      "Orbit arc — hairline arc (--motif-line-weight, ~0.75–1 px) on a large off-canvas radius, 1–2 per slide, sweeping across cover and section-divider; white @ 25–40 % on dark, navy/blush @ 12–18 % on light.",
+      "Stepping-stone dot — solid accent-colour circle sitting on an orbit arc with a soft glow, rotating the non-semantic decorative palette (--orbit-dot-1..4: blue/mint/yellow/purple); the literal visual of the 'Your stepping stone' tagline.",
+      "Ghost wordmark — oversized outline AMARIS letterform bleeding off the right edge of content slides at ≤10 % opacity (--motif-ghost-opacity), navy/blush outline only.",
+      "Circle ring bullet — small outline ring with a navy numeral for numbered lists (bullet-ring asset), a vertical stack echoing the stepping-stone path."
     ],
     "antiPatterns": [
-      "Using sector accent colours as slide background fields or large colour blocks \u2014 they are semantic tags only in data/UI contexts. The decorative orbit dots (\u22640.8 in dia) are exempt: they rotate the palette non-semantically and are never a background field.",
-      "Applying intermediate font weights (Medium 500, SemiBold 600) \u2014 Century Gothic has no true intermediate; these silently revert to Regular in Office.",
+      "Using sector accent colours as slide background fields or large colour blocks — they are semantic tags only in data/UI contexts. The decorative orbit dots (≤0.8 in dia) are exempt: they rotate the palette non-semantically and are never a background field.",
+      "Applying intermediate font weights (Medium 500, SemiBold 600) — Century Gothic has no true intermediate; these silently revert to Regular in Office.",
       "Placing logos on low-contrast backgrounds without the prescribed indigo overlay.",
-      "Unbounded ornament: exceeding the motif cap (\u22642 orbit arcs + \u22643 stepping-stone dots per slide; ghost wordmark \u226410 % opacity), or introducing a third decorative motif family beyond the orbit family and the blush rule.",
+      "Unbounded ornament: exceeding the motif cap (≤2 orbit arcs + ≤3 stepping-stone dots per slide; ghost wordmark ≤10 % opacity), or introducing a third decorative motif family beyond the orbit family and the blush rule.",
       "Using Quicksand outside web Elementor contexts (it is a web-only secondary face, not a slide/document face).",
-      "Full-bleed photography without the navy overlay \u2014 raw photos break white-text legibility.",
-      "Expanding content beyond the 985 px / 64 px margin zone \u2014 crowding the frame."
+      "Full-bleed photography without the navy overlay — raw photos break white-text legibility.",
+      "Expanding content beyond the 985 px / 64 px margin zone — crowding the frame."
     ],
     "requiredMotifs": [
       "--motif-line-weight",
@@ -382,7 +382,7 @@
           {
             "id": "orbit-arc",
             "asset": "assets/svg/motif-orbit.svg",
-            "role": "transition / hero arc \u2014 hairline arc sweeping across the composition behind hero text",
+            "role": "transition / hero arc — hairline arc sweeping across the composition behind hero text",
             "cssClass": "orbit-layer",
             "surfaces": [
               "cover",
@@ -393,7 +393,7 @@
           {
             "id": "stepping-stone",
             "asset": "assets/svg/motif-stepping-stones.svg",
-            "role": "hero / cover accent \u2014 solid accent-colour dot sitting on an orbit arc, rotating the decorative palette",
+            "role": "hero / cover accent — solid accent-colour dot sitting on an orbit arc, rotating the decorative palette",
             "cssClass": "stepping-stone",
             "surfaces": [
               "cover",
@@ -405,7 +405,7 @@
           {
             "id": "ghost-wordmark",
             "asset": "assets/svg/motif-wordmark-ghost.svg",
-            "role": "content watermark \u2014 oversized outline AMARIS bleeding off the right edge at low opacity",
+            "role": "content watermark — oversized outline AMARIS bleeding off the right edge at low opacity",
             "cssClass": "ghost-wordmark",
             "surfaces": [
               "content"
@@ -414,7 +414,7 @@
           {
             "id": "bullet-ring",
             "asset": "assets/svg/bullet-ring.svg",
-            "role": "numbered-list marker \u2014 outline ring with navy numeral for ordered lists",
+            "role": "numbered-list marker — outline ring with navy numeral for ordered lists",
             "cssClass": "ring-bullet",
             "surfaces": [
               "content",
@@ -424,7 +424,7 @@
           {
             "id": "orbit-pattern",
             "asset": "assets/svg/pattern-orbit-tile.svg",
-            "role": "large-fill / dominant background \u2014 tileable faint dot-on-arc field for full-bleed motif use",
+            "role": "large-fill / dominant background — tileable faint dot-on-arc field for full-bleed motif use",
             "cssClass": "orbit-tile",
             "surfaces": [
               "cover",
@@ -485,7 +485,7 @@
         "required": false,
         "evidence": {
           "tier": "derived",
-          "note": "No motion was captured from the static source PPTX. Derived from the brand's restraint principles (substance before style; systematic clarity; motif used with bounded discipline) and visualAxes (ornament: moderate, density: balanced) \u2014 Amaris leads with expertise, not flair, so motion is a quiet reveal/transition layer, never cinematic. Reference instance for the cross-surface motion dimension (PLAN_motion-capability)."
+          "note": "No motion was captured from the static source PPTX. Derived from the brand's restraint principles (substance before style; systematic clarity; motif used with bounded discipline) and visualAxes (ornament: moderate, density: balanced) — Amaris leads with expertise, not flair, so motion is a quiet reveal/transition layer, never cinematic. Reference instance for the cross-surface motion dimension (PLAN_motion-capability)."
         },
         "tokens": [
           "--motion-duration-reveal",
@@ -518,7 +518,7 @@
             "perView": 1
           },
           "tokenPrefix": "--motion-",
-          "rationale": "Fade + a short staggered entrance is the house idiom; the orbit arc may draw on a cover or divider as an 'explain' line-draw (one per view, echoing the motif family). prefers-reduced-motion collapses all of it to static. required:false keeps motion available but advisory \u2014 a static deck is never failed for omitting it."
+          "rationale": "Fade + a short staggered entrance is the house idiom; the orbit arc may draw on a cover or divider as an 'explain' line-draw (one per view, echoing the motif family). prefers-reduced-motion collapses all of it to static. required:false keeps motion available but advisory — a static deck is never failed for omitting it."
         }
       },
       "backgrounds": {
@@ -648,7 +648,7 @@
                   "usage": "content wash, subtle"
                 }
               ],
-              "geometry": "linear/directional (135deg heroes, 180deg washes) \u2014 NOT radial glow"
+              "geometry": "linear/directional (135deg heroes, 180deg washes) — NOT radial glow"
             },
             "tokens": [
               "--gradient-midnight",
@@ -679,9 +679,9 @@
             "id": "flat-none",
             "label": "Flat, no gradient",
             "spec": {
-              "policy": "restrained \u2014 flat fields only",
+              "policy": "restrained — flat fields only",
               "canvasGradients": "none",
-              "note": "explicitly NOT amaris \u2014 the brand's midnight gradient is signature (contrast option only)"
+              "note": "explicitly NOT amaris — the brand's midnight gradient is signature (contrast option only)"
             },
             "evidence": {
               "tier": "proposed"
@@ -710,7 +710,7 @@
               "columns": "12-col base, controlled-asymmetry (left-biased content column)",
               "contentWidth": "985px max on 1280px canvas",
               "margins": "wide lateral, disciplined",
-              "footer": "monospace rail 8-9pt: logo mark \u00b7 client \u00b7 confidentiality \u00b7 page count",
+              "footer": "monospace rail 8-9pt: logo mark · client · confidentiality · page count",
               "leftTick": "blush/accent left-margin tick on content slides",
               "symmetry": "controlled-asymmetry",
               "dividers": "thin accent rules"
@@ -729,7 +729,7 @@
             "spec": {
               "columns": "12-col centered",
               "symmetry": "symmetric",
-              "note": "rejected \u2014 symmetric-centered is Duke's register, not amaris's controlled-asymmetry"
+              "note": "rejected — symmetric-centered is Duke's register, not amaris's controlled-asymmetry"
             },
             "evidence": {
               "tier": "proposed"
@@ -737,9 +737,9 @@
           },
           {
             "id": "wide-split",
-            "label": "Wide 2/3\u20131/3 split",
+            "label": "Wide 2/3–1/3 split",
             "spec": {
-              "columns": "asymmetric 2/3 content \u00b7 1/3 sidebar rail",
+              "columns": "asymmetric 2/3 content · 1/3 sidebar rail",
               "symmetry": "strong-asymmetry"
             },
             "evidence": {
@@ -759,7 +759,7 @@
         "required": false,
         "evidence": {
           "tier": "proposed",
-          "source": "seeded from rectilinear geometry + systematic type + orbit-dot signature; OPEN/extensible set \u2014 not brand-bound (operator directive 2026-07-01)"
+          "source": "seeded from rectilinear geometry + systematic type + orbit-dot signature; OPEN/extensible set — not brand-bound (operator directive 2026-07-01)"
         },
         "selected": "geometric-orbit-dot",
         "candidates": [
@@ -773,7 +773,7 @@
               "joins": "round",
               "fillVsLine": "line-dominant + ONE small filled accent-blue orbit dot as an optional signature flourish per glyph",
               "extensible": true,
-              "setPolicy": "OPEN set \u2014 icons are drawn to this STYLE on demand per slide need. The sample is representative, not a closed brand-bound set; the agent may add/select as many icons as a deck requires, keeping the style.",
+              "setPolicy": "OPEN set — icons are drawn to this STYLE on demand per slide need. The sample is representative, not a closed brand-bound set; the agent may add/select as many icons as a deck requires, keeping the style.",
               "sample": [
                 "target-orbit",
                 "layers",
@@ -795,7 +795,7 @@
             "label": "Flat rectilinear (square cap)",
             "spec": {
               "style": "rectilinear, square caps, miter joins, no dot",
-              "note": "rejected \u2014 reads as Duke; loses the orbit signature",
+              "note": "rejected — reads as Duke; loses the orbit signature",
               "extensible": true
             },
             "evidence": {
@@ -830,7 +830,7 @@
             "id": "flat-indexed-border",
             "label": "Flat + indexed border",
             "spec": {
-              "shadows": "none \u2014 systematic flat surfaces",
+              "shadows": "none — systematic flat surfaces",
               "borders": "1px hairline navy at low opacity + a 3px sector/accent-indexed LEFT border tick on cards",
               "radius": "2px (crisp)",
               "surface": "matte",
@@ -849,7 +849,7 @@
             "label": "Soft card lift",
             "spec": {
               "shadows": "medium soft card shadow, hover lift",
-              "note": "rejected \u2014 that is Duke's engineered-luxury register"
+              "note": "rejected — that is Duke's engineered-luxury register"
             },
             "evidence": {
               "tier": "proposed"
@@ -917,7 +917,7 @@
         "confidence": "high",
         "surface": "all",
         "freshness": "current",
-        "note": "Synthesized from amaris.com public brand surface; Tier 4\u20136 for colours and typography, Tier 8 for photography."
+        "note": "Synthesized from amaris.com public brand surface; Tier 4–6 for colours and typography, Tier 8 for photography."
       },
       {
         "path": "clients/amaris/.build-history/source-Amaris-Consulting-Template.pptx",
@@ -971,16 +971,16 @@
         "case": "uppercase",
         "tracking": "0.2em",
         "marker": "blush accent tick (#EBC4B4)",
-        "usage": "eyebrows/kickers above headings, section overlines, footer rail \u2014 the brand-specific alternative to a generic mono eyebrow"
+        "usage": "eyebrows/kickers above headings, section overlines, footer rail — the brand-specific alternative to a generic mono eyebrow"
       }
     },
     "treatments": {
       "default": "documentary-muted",
-      "note": "Named brand 'house looks' applied to photography DOWNSTREAM (format-MCP render + website CSS) \u2014 never pre-baked into the shipped library. Restrained, palette-derived. Overlays (navy #272674 scrim at N%, never a sector colour) are separate text-safety layers, not treatments. ORG-PLAN-045.",
+      "note": "Named brand 'house looks' applied to photography DOWNSTREAM (format-MCP render + website CSS) — never pre-baked into the shipped library. Restrained, palette-derived. Overlays (navy #272674 scrim at N%, never a sector colour) are separate text-safety layers, not treatments. ORG-PLAN-045.",
       "looks": {
         "documentary-muted": {
           "label": "Documentary Muted",
-          "usage": "Lightly desaturated editorial colour \u2014 the timeless default for content, section, and dense slides. Keeps corporate colour alive without going candid.",
+          "usage": "Lightly desaturated editorial colour — the timeless default for content, section, and dense slides. Keeps corporate colour alive without going candid.",
           "css_filter": "saturate(0.72) contrast(1.03)",
           "grain": {
             "opacity": 0.05,
@@ -989,7 +989,7 @@
         },
         "navy-duotone": {
           "label": "Navy Duotone",
-          "usage": "Signature structural duotone for covers + hero moments \u2014 deep midnight shadows through indigo mids to blush highlights. The Amaris engineered-yet-warm signature; pairs with the navy scrim.",
+          "usage": "Signature structural duotone for covers + hero moments — deep midnight shadows through indigo mids to blush highlights. The Amaris engineered-yet-warm signature; pairs with the navy scrim.",
           "css_filter": "grayscale(1) contrast(1.05)",
           "duotone": {
             "shadows": "#131257",
@@ -1004,7 +1004,7 @@
         },
         "midnight-graded": {
           "label": "Midnight Graded",
-          "usage": "Cool cinematic grade for technology/engineering imagery \u2014 indigo shadows, cool-blue highlights echoing the midnight gradient. Restrained, systematic.",
+          "usage": "Cool cinematic grade for technology/engineering imagery — indigo shadows, cool-blue highlights echoing the midnight gradient. Restrained, systematic.",
           "css_filter": "saturate(0.5) contrast(1.05)",
           "duotone": {
             "shadows": "#020381",
@@ -1019,7 +1019,7 @@
         },
         "blush-warm": {
           "label": "Blush Warm",
-          "usage": "Warm grade for people / life-sciences / softer section imagery \u2014 warm shadows to blush highlights. The human counterweight to the navy register; use sparingly.",
+          "usage": "Warm grade for people / life-sciences / softer section imagery — warm shadows to blush highlights. The human counterweight to the navy register; use sparingly.",
           "css_filter": "saturate(0.6) contrast(1.02)",
           "duotone": {
             "shadows": "#2A1512",
@@ -1033,6 +1033,12 @@
           }
         }
       }
+    }
+  },
+  "templates": {
+    "docx": {
+      "styles": "templates/docx/styles.docx",
+      "letterhead": "templates/docx/letterhead.docx"
     }
   }
 }
