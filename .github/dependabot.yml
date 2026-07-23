@@ -6,14 +6,6 @@ updates:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 5
-    groups:
-      remotion:
-        patterns: ["remotion", "@remotion/*"]
-      # react + react-dom MUST bump together — react-dom@N requires react@N, so a
-      # split bump opens two PRs that each fail peer-resolution. One group → one
-      # resolvable PR. (No-op for plugins without React deps.)
-      react:
-        patterns: ["react", "react-dom"]
 
   - package-ecosystem: "pip"
     directory: "/"
