@@ -78,8 +78,7 @@ def resolve_output_dir(
     Precedence:
         1. output_dir kwarg (explicit — for external agents)
         2. OUTPUT_DIR env var
-        3. .remotion-project marker → <projectRoot>/out/
-        4. Convention → <projectRoot>/output/<deliverable>/
+        3. Convention → <projectRoot>/output/<deliverable>/
     """
     if output_dir is not None:
         return Path(output_dir).resolve()
@@ -91,9 +90,6 @@ def resolve_output_dir(
     p = Path(build_path).resolve()
     if p.is_file():
         p = p.parent
-
-    if (project_root / ".remotion-project").exists():
-        return project_root / "out"
 
     # Walk up to find the 'build' directory and extract the deliverable name
     d = p
