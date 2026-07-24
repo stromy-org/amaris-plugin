@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "version": "1.0",
   "generatedFrom": {
-    "charterSha": "cc932c0c452d94b6b07b3ef28005c4752c00f9b5d39a44590dbe35fd7a98bfb1",
+    "charterSha": "2e18071167c5d49863f3f142f58ce672fa56801b6d65eff009fe07d94558ce35",
     "compiler": "1.0"
   },
   "tier": "producer",
@@ -903,6 +903,12 @@
     "whiteTaglineLockup": "logos/logo-white-tagline.png",
     "png": "logos/logo-black.png",
     "mark": "logos/favicon-192.png"
+  },
+  "templates": {
+    "docx": {
+      "styles": "templates/docx/styles.docx",
+      "letterhead": "templates/docx/letterhead.docx"
+    }
   },
   "fallbacksUsed": []
 }
