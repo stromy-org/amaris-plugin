@@ -1,10 +1,43 @@
 {
-  "schemaVersion": 1,
-  "destination": { "tenant": "stromy" },
-  "taxonomy": [
-    { "key": "workstream", "label": "Workstream", "naming": "kebab" },
-    { "key": "project", "label": "Project", "naming": "kebab" }
-  ],
-  "context_bundle": ["brand_context.json", "company_context.json"],
-  "manifest": { "enabled": true, "filename": "WORKSPACE.md" }
+  "schemaVersion": 3,
+  "destination": {
+    "tenant": "stromy",
+    "sharepoint": {
+      "site": "stromy.sharepoint.com:/sites/amaris-collab",
+      "base_path": "",
+      "link_mode": "webUrl"
+    }
+  },
+  "structure": {
+    "levels": [
+      {
+        "key": "project",
+        "label": "Project",
+        "naming": "title",
+        "required": true
+      },
+      {
+        "key": "workstream",
+        "label": "Workstream",
+        "naming": "title",
+        "required": false
+      }
+    ],
+    "stages": {
+      "intake": "01 Intake",
+      "working": "02 Working",
+      "deliverables": "03 Deliverables"
+    },
+    "default_stage": "working"
+  },
+  "memory": {
+    "enabled": true,
+    "index_filename": "WORKSPACE.md",
+    "events_dirname": "workspace-events",
+    "max_events_returned": 50
+  },
+  "context_bundle": [
+    "brand_context.json",
+    "company_context.json"
+  ]
 }
