@@ -1,6 +1,6 @@
 ---
 name: asset-guide
-description: "Getting-started guide for editing your brand and website through the asset-broker connector — what each skill does, how a draft becomes a truthful preview and a reviewed pull request, and how to give feedback. Use whenever someone asks \"how do I get started\", \"what can this plugin do\", \"how do I edit my brand/website/logo/colours\", \"how do I give feedback\", or any orientation question about brand or website edits."
+description: "Product guide for editing your brand and website through the asset-broker connector — what each skill does, how a draft becomes a truthful preview and a reviewed pull request, and how to give feedback. Use whenever someone asks \"how do I edit my brand/website/logo/colours\", \"how do I give feedback\", \"how do I change my site content\", or any orientation question specifically about brand or website edits. For first-time install, switching on connectors, or a general \"how do I get started\", the `getting-started` skill is the entry point."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.
@@ -15,6 +15,16 @@ description: "Getting-started guide for editing your brand and website through t
 # Asset Guide — getting started with your brand, website, and assets (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `asset-broker` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
+
+## Before you start — this skill needs the `asset-broker` connector
+
+This skill's instructions live on the `asset-broker` MCP, which reaches you as an **authorized connector** rather than as part of the plugin. Before step 1 below, check whether this conversation actually has the `asset-broker` MCP's tools (`fs_read` / `fs_list`) available to call.
+
+**If those tools are not present at all, STOP — and do not retry.** A missing tool is not a slow server: it means the connector is either not added to this workspace or not switched on for this conversation. Retrying cannot fix it. Tell the user plainly what to do, naming the connector:
+
+> This needs the **Asset Broker** connector, which isn't switched on for this chat. Open your connector settings, check it's connected and enabled for this conversation, then ask me again.
+
+Then stop and wait. Never fall back to a local or identically-named base skill, and never answer from your own knowledge instead — an unsourced answer is **wrong output, not a fallback**.
 
 ## Loading instructions
 
