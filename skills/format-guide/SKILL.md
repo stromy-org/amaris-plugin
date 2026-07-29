@@ -1,6 +1,6 @@
 ---
 name: format-guide
-description: "Getting-started guide for producing documents, decks, and other deliverables — what to ask for, which format to pick, how the skills hand off to each other, and where finished work lands. Use whenever someone asks \"how do I get started\", \"what can this plugin do\", \"how do I make a document/deck/PDF\", \"how do I create a proposal/presentation\", or any orientation question about producing a deliverable. Routes to the right renderer; does not render anything itself."
+description: "Product guide for producing documents, decks, and other deliverables — what to ask for, which format to pick, how the skills hand off to each other, and where finished work lands. Use whenever someone asks \"how do I make a document/deck/PDF\", \"how do I create a proposal/presentation\", \"which format should I use\", or any orientation question specifically about producing a deliverable. For first-time install, switching on connectors, or a general \"how do I get started\", the `getting-started` skill is the entry point. Routes to the right renderer; does not render anything itself."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.
