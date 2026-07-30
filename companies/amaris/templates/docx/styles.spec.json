@@ -2,7 +2,8 @@
   "$schema": "../../../../schema/docx-style-spec.schema.json",
   "spec": "styles",
   "version": "1.0",
-  "description": "Brand-token-driven DOCX style base. Materialised to styles.docx by the Workspace Studio `docx` skill via `render-anchors --client <slug>`. Tokens resolve from the brand's charter.json at render time.",
+  "description": "Brand-token-driven DOCX style base. Tokens resolve from the brand's charter.json at render time. NOTE: this brand's styles.docx is deliberately hand-authored (bespoke corner motif that render-anchors.js cannot reproduce), so it is NOT materialised from this spec — see specDerived below. The letterhead IS spec-derived, but --check renders both, so the drift gate skips this client wholly and the binaries are reviewed by hand.",
+  "specDerived": false,
   "page": {
     "size": "{{document.paperSize|A4}}",
     "margins": { "top": "2.5cm", "bottom": "2.5cm", "left": "2.5cm", "right": "2.5cm" }
