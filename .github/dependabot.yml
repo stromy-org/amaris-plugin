@@ -7,7 +7,12 @@ updates:
       day: "monday"
     open-pull-requests-limit: 5
 
-  - package-ecosystem: "pip"
+  # "uv", not "pip": this project is uv-managed with a committed uv.lock. The pip
+  # ecosystem edits pyproject.toml and has no knowledge of uv.lock, so it lands a
+  # dependency change with no matching relock; the two then disagree and any local
+  # `uv run` rewrites the lock and dirties the checkout. That is what happened to
+  # the ruff bound in stromy-org/Stromy#42. "uv" updates both files in one commit.
+  - package-ecosystem: "uv"
     directory: "/"
     schedule:
       interval: "weekly"
