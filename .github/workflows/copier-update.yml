@@ -50,7 +50,7 @@ jobs:
       - name: Mint stromy-ci App token
         id: app-token
         continue-on-error: true # public repo: CI_APP secrets are private-repos-only (see header)
-        uses: actions/create-github-app-token@v2
+        uses: actions/create-github-app-token@v3
         with:
           app-id: ${{ secrets.CI_APP_ID }}
           private-key: ${{ secrets.CI_APP_PRIVATE_KEY }}
@@ -65,7 +65,7 @@ jobs:
             ${{ github.event.repository.name }}
             claude-plugin-template
 
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token || github.token }}
@@ -89,7 +89,7 @@ jobs:
 
       - name: Install uv
         if: steps.app-token.outputs.token != ''
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v7
 
       - name: Run copier update
         if: steps.app-token.outputs.token != ''
