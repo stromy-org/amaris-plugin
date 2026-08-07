@@ -39,7 +39,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
+  issues: write
 
 jobs:
   copier-update:
@@ -53,6 +55,15 @@ jobs:
           app-id: ${{ secrets.CI_APP_ID }}
           private-key: ${{ secrets.CI_APP_PRIVATE_KEY }}
           owner: ${{ github.repository_owner }}
+          # Explicit scope: the token pushes/opens a PR on THIS repo and
+          # clones the private `claude-plugin-template` — both must be listed.
+          # With create-github-app-token@v2, `owner` without `repositories`
+          # does NOT grant the whole installation (unlike @v1) — verified
+          # live 2026-08-07: the minted token could not see the template
+          # and copier's clone failed with "Repository not found".
+          repositories: |
+            ${{ github.event.repository.name }}
+            claude-plugin-template
 
       - uses: actions/checkout@v5
         with:
@@ -113,16 +124,24 @@ jobs:
           fi
 
       - name: Ensure scheduled-routine label exists
-        if: steps.app-token.outputs.token != '' && (steps.conflicts.outputs.conflict == 'true' || steps.changes.outputs.changed == 'true')
+        if: steps.conflicts.outputs.conflict == 'true' || steps.changes.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          # In-repo issue/label writes use the workflow's own token — the
+          # permissions block grants it; the stromy-ci App deliberately lacks
+          # Issues permission (verified 2026-08-06: createIssue 403'd on
+          # fetch-kit-mcp's copier-update conflict path).
+          GH_TOKEN: ${{ github.token }}
         run: |
           gh label create scheduled-routine --color BFD4F2 --description "Opened by an unattended scheduled routine" || true
 
       - name: Open or update tracking issue for conflicts
-        if: steps.app-token.outputs.token != '' && steps.conflicts.outputs.conflict == 'true'
+        if: steps.conflicts.outputs.conflict == 'true'
         env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          # In-repo issue/label writes use the workflow's own token — the
+          # permissions block grants it; the stromy-ci App deliberately lacks
+          # Issues permission (verified 2026-08-06: createIssue 403'd on
+          # fetch-kit-mcp's copier-update conflict path).
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           title="copier update produced merge conflicts"
