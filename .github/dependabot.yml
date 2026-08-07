@@ -1,3 +1,16 @@
+# Volume is the thing to control here. Ungrouped, Dependabot opens one PR per
+# dependency per week; across the org that reached 89 open PRs on 2026-07-27, which
+# is well past the point where anyone reads them.
+#
+# Grouping is by UPDATE TYPE rather than dependency-type, so the same scheme holds in
+# every ecosystem (`dependency-type` in a group is only supported by
+# bundler/composer/mix/maven/npm/pip, and is silently ignored elsewhere):
+#
+#   patch  → one PR per ecosystem per week, auto-merged once CI is green
+#   minor  → one PR per ecosystem per week, one human review
+#   major  → an individual PR each, always reviewed
+#
+# The pattern groups come FIRST so peer-coupled packages still travel together.
 version: 2
 updates:
   - package-ecosystem: "npm"
@@ -6,6 +19,18 @@ updates:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 5
+    groups:
+      remotion:
+        patterns: ["remotion", "@remotion/*"]
+      # react + react-dom MUST bump together — react-dom@N requires react@N, so a
+      # split bump opens two PRs that each fail peer-resolution. One group → one
+      # resolvable PR. (No-op for plugins without React deps.)
+      react:
+        patterns: ["react", "react-dom"]
+      patch:
+        update-types: ["patch"]
+      minor:
+        update-types: ["minor"]
 
   # "uv", not "pip": this project is uv-managed with a committed uv.lock. The pip
   # ecosystem edits pyproject.toml and has no knowledge of uv.lock, so it lands a
@@ -18,3 +43,19 @@ updates:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 5
+    groups:
+      patch:
+        update-types: ["patch"]
+      minor:
+        update-types: ["minor"]
+
+  # Action bumps are pure CI plumbing and arrive constantly; one grouped PR a week.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 3
+    groups:
+      actions:
+        patterns: ["*"]

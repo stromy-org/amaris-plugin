@@ -1,0 +1,159 @@
+# Weekly pull of template improvements via `copier update`, so this satellite
+# doesn't silently drift from stromy-org/claude-plugin-template (2026-08 template
+# convergence work — CHANGELOG.md in the template repo tracks what each tag adds).
+# Plugins run Tuesday 06:00 UTC; the sibling marketplace-template workflow runs
+# 06:30 UTC so the two cadences don't collide if a change touches both.
+#
+# TAG CADENCE (load-bearing): `copier update` with no `--vcs-ref` advances to the
+# template's latest git TAG when the template carries tags — that IS the intended
+# behavior here, not an accident to work around. Each `vX.Y.Z` tag on the template
+# is the version satellites converge toward; an untagged template HEAD is never
+# pulled. Tag discipline on the template is therefore load-bearing for this workflow
+# to mean anything.
+#
+# AUTH: this repo is PUBLIC, but stromy-org/claude-plugin-template is PRIVATE — a
+# bare `copier update` here would fail to clone it. We mint the org-wide `stromy-ci`
+# GitHub App token (secrets CI_APP_ID / CI_APP_PRIVATE_KEY) exactly like this
+# template's own notify-parent.yml, then use it both for `actions/checkout` and for
+# a global `insteadOf` rewrite so any `https://github.com/stromy-org/...` clone
+# (i.e. the template clone copier performs internally) is authenticated too.
+#
+# KNOWN GAP (as of 2026-08): CI_APP_ID/CI_APP_PRIVATE_KEY are org secrets scoped
+# `visibility: private` (private repos only), so on this PUBLIC repo the mint step
+# currently returns no token — this job then degrades loudly (an annotation, not a
+# silent skip) instead of failing. Making this workflow actually run requires a
+# deliberate, separate access decision (widen that secret's visibility, or mint via
+# a differently-scoped credential) — not something this workflow file does on its
+# own. See infra-docs/ai/cross-repo-pats.md.
+#
+# CONFLICTS: copier's default `--conflict` mode is `inline` (we do not pass
+# `--conflict rej`), so an unresolvable 3-way merge shows up as inline
+# `<<<<<<<`/`=======`/`>>>>>>>` markers in the affected files, never as separate
+# `.rej` files. We grep the working tree for those markers, not for `*.rej`.
+
+name: Scheduled copier update
+
+on:
+  schedule:
+    - cron: "0 6 * * 2" # Tuesday 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  copier-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mint stromy-ci App token
+        id: app-token
+        continue-on-error: true # public repo: CI_APP secrets are private-repos-only (see header)
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.CI_APP_ID }}
+          private-key: ${{ secrets.CI_APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token || github.token }}
+
+      - name: Degrade if no App token
+        if: steps.app-token.outputs.token == ''
+        run: |
+          echo "::warning title=Copier update skipped::No stromy-ci App token available for $GITHUB_REPOSITORY (expected on a public repo -- CI_APP_ID/CI_APP_PRIVATE_KEY are private-repos-only org secrets, see header comment). copier update needs authenticated access to clone the private template repo, so this run cannot check for template updates."
+          {
+            echo "### Scheduled copier update: SKIPPED"
+            echo ""
+            echo "No \`stromy-ci\` App token available on this public repo -- cannot clone the private template. See the workflow file header for the known gap and remedy."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Allow git to clone/push stromy-org repos with the App token
+        if: steps.app-token.outputs.token != ''
+        run: |
+          git config --global url."https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/stromy-org/".insteadOf "https://github.com/stromy-org/"
+          git config user.name "stromy-ci[bot]"
+          git config user.email "stromy-ci[bot]@users.noreply.github.com"
+
+      - name: Install uv
+        if: steps.app-token.outputs.token != ''
+        uses: astral-sh/setup-uv@v6
+
+      - name: Run copier update
+        if: steps.app-token.outputs.token != ''
+        run: |
+          set -euo pipefail
+          # No failure-swallow here: a real copier error (broken jinja in a new
+          # template version, an invalid answer, a missing dependency) fails this
+          # job like any other step -- only the auth-unavailable path above
+          # degrades gracefully.
+          uvx copier update --trust --skip-answered --defaults
+
+      - name: Detect unresolved conflicts
+        if: steps.app-token.outputs.token != ''
+        id: conflicts
+        run: |
+          set -euo pipefail
+          if grep -rlE '^<{7}( |$)' --exclude-dir=.git . 2>/dev/null | grep -q .; then
+            echo "conflict=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "conflict=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Detect changes
+        if: steps.app-token.outputs.token != '' && steps.conflicts.outputs.conflict != 'true'
+        id: changes
+        run: |
+          set -euo pipefail
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Ensure scheduled-routine label exists
+        if: steps.app-token.outputs.token != '' && (steps.conflicts.outputs.conflict == 'true' || steps.changes.outputs.changed == 'true')
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh label create scheduled-routine --color BFD4F2 --description "Opened by an unattended scheduled routine" || true
+
+      - name: Open or update tracking issue for conflicts
+        if: steps.app-token.outputs.token != '' && steps.conflicts.outputs.conflict == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          set -euo pipefail
+          title="copier update produced merge conflicts"
+          run_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          body="Scheduled \`copier update\` on $(date -u +%Y-%m-%d) left inline conflict markers (\`<<<<<<<\`) in the working tree -- copier's default \`--conflict inline\` mode, not \`.rej\` files. Resolve by hand: run \`uvx copier update --trust\` locally against a fresh checkout, fix the conflicts, and open a PR yourself. Run: $run_url"
+          existing="$(gh issue list --search "$title in:title" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body" --label scheduled-routine
+          fi
+
+      - name: Open PR with template updates
+        if: steps.app-token.outputs.token != '' && steps.conflicts.outputs.conflict != 'true' && steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          set -euo pipefail
+          branch="chore/copier-update"
+          git checkout -B "$branch"
+          git add -A
+          git commit -m "chore(template): 🔧 Pull copier template updates"
+          git push --force-with-lease origin "$branch"
+          if gh pr view "$branch" >/dev/null 2>&1; then
+            gh pr edit "$branch" --add-label scheduled-routine
+          else
+            gh pr create --title "chore(template): 🔧 Pull copier template updates" \
+              --body "Automated weekly \`copier update\` pull from stromy-org/claude-plugin-template. Review the diff before merging -- this workflow never auto-merges." \
+              --base main --head "$branch" --label scheduled-routine
+          fi
+
+      - name: No changes
+        if: steps.app-token.outputs.token != '' && steps.conflicts.outputs.conflict != 'true' && steps.changes.outputs.changed != 'true'
+        run: echo "Already at the latest template tag -- nothing to update."
