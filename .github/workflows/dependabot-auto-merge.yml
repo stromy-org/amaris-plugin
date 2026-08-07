@@ -1,8 +1,17 @@
 name: dependabot-auto-merge
 
-# Auto-merges patch-version Dependabot PRs once required CI checks pass.
-# Minor/major bumps are left for human review. Security-grouped PRs of any
-# severity also wait for human review (Dependabot marks them).
+# Auto-merges low-risk Dependabot PRs once required CI checks pass:
+#   * any patch bump, and
+#   * minor bumps that are NOT a direct production dependency (dev tooling and
+#     transitive pins) — those cannot change this package's runtime behaviour.
+# Minor bumps of direct production deps, and every major, stay for human review.
+# Security-grouped PRs of any severity also wait for review (Dependabot marks them).
+#
+# REQUIRES `allow_auto_merge: true` ON THE REPO. That setting defaults to FALSE on
+# every newly created GitHub repo, and `gh pr merge --auto` is a SILENT no-op without
+# it — the job still reports success, so the breakage is invisible. On 2026-07-27 it
+# was off on 7 of the 8 plugins shipping this workflow, which is why 89 Dependabot PRs
+# had accumulated org-wide. `scripts/audit-repo-branch-hygiene.py` now checks it.
 
 on:
   pull_request:
@@ -23,8 +32,11 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Enable auto-merge for patch updates
-        if: ${{ steps.meta.outputs.update-type == 'version-update:semver-patch' }}
+      - name: Enable auto-merge for low-risk updates
+        if: >-
+          ${{ steps.meta.outputs.update-type == 'version-update:semver-patch' ||
+              (steps.meta.outputs.update-type == 'version-update:semver-minor' &&
+               steps.meta.outputs.dependency-type != 'direct:production') }}
         run: |
           # `gh pr merge --auto` needs TWO preconditions, not the one documented
           # above:
