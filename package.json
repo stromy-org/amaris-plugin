@@ -4,7 +4,7 @@
   "private": true,
   "description": "Claude Code plugin for Amaris Consulting branded deliverables and brand tools",
   "dependencies": {
-    "docx": "^9.5.3",
+    "docx": "^9.7.1",
     "playwright": "^1.62.1",
     "pptxgenjs": "^4.0.1",
     "sharp": "^0.35.3"
