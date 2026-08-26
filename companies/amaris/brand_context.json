@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "version": "1.0",
   "generatedFrom": {
-    "charterSha": "2e18071167c5d49863f3f142f58ce672fa56801b6d65eff009fe07d94558ce35",
+    "charterSha": "3833ba074435748fdfa4c5956167e2a4bceff5673162d845e8ef2f53f75fae16",
     "compiler": "1.0"
   },
   "tier": "producer",
@@ -230,6 +230,7 @@
       "Ghost wordmark — oversized outline AMARIS letterform bleeding off the right edge of content slides at ≤10 % opacity (--motif-ghost-opacity), navy/blush outline only.",
       "Circle ring bullet — small outline ring with a navy numeral for numbered lists (bullet-ring asset), a vertical stack echoing the stepping-stone path."
     ],
+    "signatureMotion": "The hairline orbit arc draws itself once across the frame in a single unhurried stroke, while the stepping-stone dot and headline settle in behind it in a quiet staggered fade.",
     "antiPatterns": [
       "Using sector accent colours as slide background fields or large colour blocks — they are semantic tags only in data/UI contexts. The decorative orbit dots (≤0.8 in dia) are exempt: they rotate the palette non-semantically and are never a background field.",
       "Applying intermediate font weights (Medium 500, SemiBold 600) — Century Gothic has no true intermediate; these silently revert to Regular in Office.",
@@ -454,7 +455,7 @@
           "rhythm": "dark-light-indexed",
           "darkFrequency": 3,
           "photo": {
-            "treatment": "documentary-muted, full-bleed hero",
+            "treatment": "documentary-muted, navy-anchored full-bleed hero",
             "overlay": "navy #272674 scrim at 55-78%, never a sector colour"
           }
         },
@@ -537,7 +538,7 @@
         },
         "selected": "geometric-orbit-dot",
         "spec": {
-          "style": "stroke-led geometric, rectilinear",
+          "style": "stroke-led geometric with the orbit-dot terminal",
           "strokeWeight": "1.5px",
           "caps": "round",
           "joins": "round",
@@ -783,13 +784,15 @@
       {
         "file": "photo-cover-03.webp",
         "roles": [
-          "cover"
+          "cover",
+          "hero"
         ],
         "mood": "bold",
         "orientation": "landscape",
         "source_page": "/",
         "source_url": "https://amaris.com/wp-content/uploads/2024/12/AdobeStock_481395384-scaled.webp",
-        "confidence": "medium"
+        "confidence": "medium",
+        "hero": true
       },
       {
         "file": "photo-cover-04.png",
@@ -805,14 +808,16 @@
       {
         "file": "photo-cover-05.jpg",
         "roles": [
-          "cover"
+          "cover",
+          "hero"
         ],
         "mood": "technology",
         "orientation": "landscape",
         "source_page": "/client-stories/",
         "source_url": "https://amaris.com/wp-content/uploads/2025/06/AdobeStock_1507492423-1024x683.jpeg",
         "confidence": "medium",
-        "notes": "AI/chatbot consulting"
+        "notes": "AI/chatbot consulting",
+        "hero": true
       },
       {
         "file": "photo-closing-01.png",

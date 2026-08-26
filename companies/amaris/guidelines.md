@@ -62,10 +62,24 @@ Medium 500, Semibold 600, or other intermediate weights — they will silently
 fall back to Regular in PowerPoint, Word, and most browsers. Use Bold (700)
 wherever you need emphasis above body weight.
 
-No font files need to be embedded or distributed: Century Gothic is preinstalled
-on macOS and on Windows machines with any Office install. PDFs and PPTX files
-created with Century Gothic render identically on the presenter's machine
-without any setup.
+**Century Gothic cannot be embedded — Jost is the embeddable substitute.**
+Century Gothic is a licensed system/Office font: present on the client's own
+machines, but **not redistributable**, so server-side renders cannot embed it.
+Since 2026-07-01 the embed stand-in is **Jost** (OFL, a Futura revival chosen as
+a close geometric match), shipped at `fonts/ttf/Jost-*.ttf` and
+`fonts/web/Jost-*.woff2`.
+
+Which face a reader actually sees:
+
+| Surface | Face |
+|---|---|
+| Client editing on a licensed machine | Century Gothic (resolves by name) |
+| Server-rendered PPTX / DOCX / PDF (`render_*`) | Jost, embedded — self-contained everywhere |
+| Web | Jost woff2 |
+
+So a server-rendered deliverable is set in Jost, not Century Gothic. Say so when
+the distinction matters. (Source of record: `charter.fonts.note` +
+`charter.fonts.fontFiles`.)
 
 CSS fallback stack: `'Century Gothic', 'CenturyGothic', 'Avenir Next', 'Futura', 'Apple SD Gothic Neo', sans-serif`.
 
@@ -80,7 +94,13 @@ CSS fallback stack: `'Century Gothic', 'CenturyGothic', 'Avenir Next', 'Futura',
 ## Logo
 
 **Primary wordmark:** `logos/logo.svg`  
-Uses `currentColor` stroke — automatically white on dark backgrounds, navy on light. No separate white logo file is needed.
+Uses `currentColor` stroke — automatically white on dark backgrounds, navy on light.
+
+**On dark or image backgrounds, prefer `logos/logo-white.svg`.** `logo.svg` is
+thin line-art and can read incomplete at large or video scale, so the solid
+white wordmark is the correct mark for titles and covers over dark surfaces —
+the `currentColor` trick is not a substitute for it. (Source of record:
+`charter.logo.notes`.)
 
 **Blue variant:** `logos/logo-blue.svg`  
 Full-colour wordmark with "CONSULTING" tagline in fixed brand colours. Use for print and situations where CSS context is unavailable.
