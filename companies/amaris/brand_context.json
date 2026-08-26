@@ -763,6 +763,7 @@
         "roles": [
           "cover"
         ],
+        "theme": "digital-network-abstract",
         "mood": "bold",
         "orientation": "landscape",
         "source_page": "/",
@@ -772,8 +773,10 @@
       {
         "file": "photo-cover-02.webp",
         "roles": [
-          "cover"
+          "cover",
+          "texture"
         ],
+        "theme": "digital-network-abstract",
         "mood": "abstract-tech",
         "orientation": "landscape",
         "source_page": "/",
@@ -787,6 +790,7 @@
           "cover",
           "hero"
         ],
+        "theme": "people-data-overlay",
         "mood": "bold",
         "orientation": "landscape",
         "source_page": "/",
@@ -797,8 +801,10 @@
       {
         "file": "photo-cover-04.png",
         "roles": [
-          "cover"
+          "cover",
+          "background"
         ],
+        "theme": "smart-city-future",
         "mood": "bold",
         "orientation": "landscape",
         "source_page": "/",
@@ -811,6 +817,7 @@
           "cover",
           "hero"
         ],
+        "theme": "workplace-culture",
         "mood": "technology",
         "orientation": "landscape",
         "source_page": "/client-stories/",
@@ -824,6 +831,7 @@
         "roles": [
           "closing"
         ],
+        "theme": "brand-collateral",
         "mood": "aspirational",
         "orientation": "landscape",
         "source_page": "/about-us/",
@@ -835,6 +843,7 @@
         "roles": [
           "divider"
         ],
+        "theme": "people-data-overlay",
         "mood": "professional",
         "orientation": "landscape",
         "source_page": "/amaris-in-action/",
@@ -847,6 +856,7 @@
         "roles": [
           "section"
         ],
+        "theme": "people-data-overlay",
         "mood": "research",
         "orientation": "landscape",
         "source_page": "/amaris-in-action/",
@@ -858,6 +868,7 @@
         "roles": [
           "section"
         ],
+        "theme": "workplace-culture",
         "mood": "technology",
         "orientation": "landscape",
         "source_page": "/amaris-in-action/",
@@ -868,8 +879,10 @@
       {
         "file": "photo-section-03.png",
         "roles": [
-          "section"
+          "section",
+          "background"
         ],
+        "theme": "smart-city-future",
         "mood": "inclusive",
         "orientation": "landscape",
         "source_page": "/amaris-in-action/",
@@ -882,6 +895,7 @@
         "roles": [
           "section"
         ],
+        "theme": "brand-collateral",
         "mood": "branded",
         "orientation": "landscape",
         "source_page": "/insights/",
