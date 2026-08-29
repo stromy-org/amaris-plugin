@@ -1,5 +1,18 @@
 {
   "version": 1,
   "_doc": "Advisories explicitly accepted by review. Each entry needs a review_by date. CI fails if any entry is past its review date.",
-  "advisories": []
+  "advisories": [
+    {
+      "ghsa": "GHSA-w3rx-r6r6-pgpr",
+      "package": "image-size",
+      "reason": "Transitive via pptxgenjs@4.0.1 (image-size@^1.2.1, resolves 1.2.1/2.0.2). DoS via a crafted ICNS buffer causing an infinite loop in the ICNS parser. No patched version exists (first_patched_version: null as of 2026-08-29; latest 2.0.2 is still listed vulnerable). This plugin only feeds pptxgenjs images it generates/selects from client-data brand assets, never untrusted client-uploaded image bytes, so the DoS surface is not reachable here. Re-check on the next review date for an upstream fix; forcing an npm override to 2.0.2 does not resolve this (still in the vulnerable range) and downgrading pptxgenjs to 1.1.5 (npm audit fix --force) is a larger breaking change than the risk warrants.",
+      "review_by": "2027-02-01"
+    },
+    {
+      "ghsa": "GHSA-5p2g-fcmc-qvqq",
+      "package": "image-size",
+      "reason": "Transitive via pptxgenjs@4.0.1 (image-size@^1.2.1, resolves 1.2.1/2.0.2). DoS via a crafted JXL/HEIF buffer causing an infinite loop in those parsers. No patched version exists (first_patched_version: null as of 2026-08-29). Same reasoning and mitigation as GHSA-w3rx-r6r6-pgpr — no untrusted image input reaches pptxgenjs in this plugin.",
+      "review_by": "2027-02-01"
+    }
+  ]
 }
