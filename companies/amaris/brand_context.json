@@ -43,7 +43,8 @@
         "Futura",
         "sans-serif"
       ],
-      "webSafe": "Century Gothic"
+      "webSafe": "Century Gothic",
+      "rightsStatus": "unknown"
     },
     "body": {
       "family": "Century Gothic",
@@ -56,7 +57,8 @@
         "Futura",
         "sans-serif"
       ],
-      "webSafe": "Century Gothic"
+      "webSafe": "Century Gothic",
+      "rightsStatus": "unknown"
     },
     "label": {
       "family": "Century Gothic",
@@ -69,6 +71,7 @@
         "sans-serif"
       ],
       "webSafe": "Century Gothic",
+      "rightsStatus": "unknown",
       "case": "uppercase",
       "tracking": "0.2em"
     },
@@ -929,5 +932,55 @@
       "letterhead": "templates/docx/letterhead.docx"
     }
   },
-  "fallbacksUsed": []
+  "fallbacksUsed": [],
+  "token_roles": {
+    "surface": null,
+    "surfaceAlt": null,
+    "elevation": null,
+    "radius": null,
+    "lineWeight": "--motif-line-weight",
+    "tracking": null,
+    "textStrong": "--color-text",
+    "textMuted": "--color-text-light",
+    "edge": null
+  },
+  "integrity": {
+    "compiler": "brand_compile.py",
+    "compiler_version": "1.0",
+    "key_set": [
+      "boilerplate",
+      "client_slug",
+      "colors",
+      "excalidraw_theme",
+      "expression",
+      "fallbacksUsed",
+      "formatting",
+      "generatedFrom",
+      "identity",
+      "images",
+      "logo",
+      "plotly_theme",
+      "schemaVersion",
+      "surfaceExpression",
+      "templates",
+      "tier",
+      "token_roles",
+      "tokens_css",
+      "typography",
+      "version",
+      "warnings"
+    ],
+    "visual_grammar_dimensions": [
+      "backgrounds",
+      "elevation",
+      "gradients",
+      "grid",
+      "iconography",
+      "motifs",
+      "motion",
+      "patterns",
+      "photo"
+    ],
+    "sha256": "e2ba59309a172945ac9225c3898c9f718f16ea74d55dd3ecb1d65edcee302945"
+  }
 }
