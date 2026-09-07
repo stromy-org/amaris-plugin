@@ -18,8 +18,8 @@ Via marketplace:
 
 For local development:
 ```bash
-git clone https://github.com/stromy-org/amaris-consulting.git
-cd amaris-consulting
+git clone https://github.com/stromy-org/amaris-plugin.git
+cd amaris-plugin
 npm install
 uv sync
 claude --plugin-dir .
