@@ -2,6 +2,7 @@
 name: format-mermaid
 description: "Creates Mermaid diagrams for Markdown-based documentation (GitHub, GitLab, wikis, blogs) and visual explanations. Supports 25+ diagram types including flowcharts, sequence/class/state diagrams, ERDs, Gantt charts, mindmaps, timelines, architecture views, Kanban boards, Sankey diagrams, and newer types (Wardley maps, Venn, Ishikawa). When the `mermaid` MCP is available, uses live browser preview and PNG/SVG/PDF export. Use this skill when users ask for Mermaid syntax, Markdown-renderable diagrams, visual architecture, or quick text-to-diagram output."
 client_summary: "Sketch a quick diagram for documentation or a wiki, written as text rather than drawn by hand."
+allowed-tools: mcp__mermaid__mermaid_preview, mcp__mermaid__mermaid_save
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.
