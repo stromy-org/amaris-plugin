@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "version": "1.0",
   "generatedFrom": {
-    "charterSha": "3833ba074435748fdfa4c5956167e2a4bceff5673162d845e8ef2f53f75fae16",
+    "charterSha": "c5df5ccaaab2f3c0c30028b22f3fc14156a7cfe669ac4fc5415d2b6df094b953",
     "compiler": "1.0"
   },
   "tier": "producer",
@@ -44,7 +44,16 @@
         "sans-serif"
       ],
       "webSafe": "Century Gothic",
-      "rightsStatus": "unknown"
+      "webSafeAvailability": "office-cloud",
+      "rightsStatus": "restricted",
+      "rights": {
+        "licensee": "client",
+        "permits": [
+          "embed-office"
+        ],
+        "evidence": "Amaris licenses Century Gothic as an installed system/Office face on their own machines; Stromy holds no redistribution right. Not re-verified with the client — see ORG-PLAN-312/R5.",
+        "verified": "2026-09-18"
+      }
     },
     "body": {
       "family": "Century Gothic",
@@ -58,7 +67,16 @@
         "sans-serif"
       ],
       "webSafe": "Century Gothic",
-      "rightsStatus": "unknown"
+      "webSafeAvailability": "office-cloud",
+      "rightsStatus": "restricted",
+      "rights": {
+        "licensee": "client",
+        "permits": [
+          "embed-office"
+        ],
+        "evidence": "Amaris licenses Century Gothic as an installed system/Office face on their own machines; Stromy holds no redistribution right. Not re-verified with the client — see ORG-PLAN-312/R5.",
+        "verified": "2026-09-18"
+      }
     },
     "label": {
       "family": "Century Gothic",
@@ -71,7 +89,16 @@
         "sans-serif"
       ],
       "webSafe": "Century Gothic",
-      "rightsStatus": "unknown",
+      "webSafeAvailability": "office-cloud",
+      "rightsStatus": "restricted",
+      "rights": {
+        "licensee": "client",
+        "permits": [
+          "embed-office"
+        ],
+        "evidence": "Amaris licenses Century Gothic as an installed system/Office face on their own machines; Stromy holds no redistribution right. Not re-verified with the client — see ORG-PLAN-312/R5.",
+        "verified": "2026-09-18"
+      },
       "case": "uppercase",
       "tracking": "0.2em"
     },
@@ -981,6 +1008,6 @@
       "patterns",
       "photo"
     ],
-    "sha256": "e6bda21022565425b880efef4bb0cb5037d4c378e591ba012960cc70ebc24c44"
+    "sha256": "c43580caab62fa246c2a7dda08585e6a3f8117fd92e06c0173c9e1b36803f88a"
   }
 }
