@@ -1,0 +1,44 @@
+General Sans — licence notice
+=============================
+
+General Sans is published by the Indian Type Foundry (ITF) through Fontshare and
+is NOT an SIL Open Font License family. Its terms are the Fontshare / ITF free
+font licence, published at the URL the font itself carries.
+
+The notice below is reproduced verbatim from the shipped binaries' OpenType name
+table, which is the authoritative licence notice the foundry attached to these
+bytes. It is recorded here rather than as a copy of the terms page, because
+https://www.fontshare.com/terms is a JavaScript application with no
+server-rendered text: a scraped copy could not be verified and would rot
+silently. The notice below can be re-derived from any GeneralSans-*.otf/.ttf in
+this directory at any time:
+
+    python3 -c "from fontTools.ttLib import TTFont; n=TTFont('fonts/otf/GeneralSans-Regular.otf')['name']; print(n.getDebugName(0)); print(n.getDebugName(13)); print(n.getDebugName(14))"
+
+-----------------------------------------------------------
+Copyright notice (name ID 0)
+-----------------------------------------------------------
+
+Copyright 2017-2021 Indian Type Foundry. All rights reserved.
+
+-----------------------------------------------------------
+Licence description (name ID 13)
+-----------------------------------------------------------
+
+This Font Software is protected under domestic and international trademark and
+copyright law. You agree to identify the ITF fonts by name and credit the ITF's
+ownership of the trademarks and copyrights in any design or production credits.
+
+-----------------------------------------------------------
+Licence URL (name ID 14)
+-----------------------------------------------------------
+
+https://fontshare.com/terms
+
+-----------------------------------------------------------
+Embedding permissions
+-----------------------------------------------------------
+
+The shipped binaries carry OS/2 fsType = 0 (installable embedding).
+
+Recorded 2026-09-17 under ORG-PLAN-312/R6.
