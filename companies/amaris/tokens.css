@@ -145,7 +145,7 @@
 }
 
 /* ============================================================================
-   PRESENTATION GRAMMAR — styling source of truth (2026-09-22)
+   PRESENTATION GRAMMAR — styling source of truth (2026-09-22, re-extracted 09-23)
 
    Machine-readable projection of clients/amaris/presentation-grammar.md, measured
    from .build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx — the deck
@@ -161,13 +161,15 @@
   --canvas-navy:           #002060;   /* cover / divider / closing FIELD       */
   --canvas-light:          linear-gradient(180deg, #ffffff 0%, #fbf5f2 100%);
   --canvas-light-top:      #ffffff;
-  --canvas-light-bottom:   #fbf5f2;   /* a whisper of blush, not full #f5e2da  */
+  --canvas-light-bottom:   #fbf5f2;   /* a whisper of blush, not the full secondary */
   --surface-paper:         #ffffff;
   --surface-warm:          #fdf9f7;   /* warm off-white card fill              */
-  --surface-lilac:         #f6eef7;   /* icon-chip fill                        */
+  --surface-lilac:         #f6eef7;   /* medallion / icon-chip fill            */
+  --surface-blush:         #faf0ec;   /* blush card fill (the inverted card's twin) */
 
   /* --- ink ramp ---------------------------------------------------------- */
   --ink-title:             #1e1e5e;
+  --ink-deep:              #1c1c3a;   /* densest ink — headings on light       */
   --ink-primary:           #272774;   /* ink + keyline — NOT a canvas colour   */
   --ink-body:              #3a3a52;
   --ink-body-alt:          #494951;
@@ -184,26 +186,40 @@
   --accent-3:              #7ddeb8;  --accent-3-tint80: #e5f8f1;  --accent-3-tint60: #b1ebd4;
   --accent-4:              #ffdd77;  --accent-4-tint80: #fff8e4;  --accent-4-tint60: #ffebad;
   --accent-indigo:         #272774;  --accent-indigo-tint80: #cacaed; --accent-indigo-tint60: #6060c9;
+  --indigo-tint80:         #cacaed;  --indigo-tint60:        #6060c9;  /* short aliases */
+  /* theme-defined and deliberately UNUSED: the theme accent2 warm peach.
+     Present in the theme, absent from all 34 layouts and 23 slides. Not in rotation. */
 
-  /* --- circle field (the signature motif) --------------------------------
-     2-3 per slide. One large bleeding off a corner, one opposite, optionally one
-     small fully inside. One accent each, never repeated on a slide. */
+  /* --- ambient layer — ONE circle system, TWO treatments (grammar §2) -----
+     RING (hairline, unfilled) and WASH (soft fill) are the same geometry; the
+     ring is the MORE common of the two (44 vs 25 measured). The old grammar
+     called the rings "orbit arcs" and treated them as a separate, secondary
+     motif — they are not. 1-5 per surface, any corner, always bleeding. */
   --circle-1:              #4182ff;
   --circle-2:              #b880ff;
   --circle-3:              #7ddeb8;
   --circle-4:              #ffdd77;
-  --circle-opacity-large:  0.20;      /* range 0.15-0.25                       */
-  --circle-opacity-small:  0.40;      /* range 0.35-0.45                       */
-  --circle-opacity-dark-white: 0.09;  /* white circle on the navy canvas       */
-  --circle-dia-large:      5.33in;    /* range 2.4-7.0in                       */
+  --ring-ink:              rgba(39, 39, 116, 0.25);   /* indigo @25% — the ring  */
+  --ring-on-dark:          rgba(255, 255, 255, 0.25);
+  --ring-weight:           0.25pt;                    /* hairline, up to 1pt     */
+  --circle-opacity-large:  0.20;      /* washes measured 0.10-0.35              */
+  --circle-opacity-small:  1;         /* the saturated dot is 100%              */
+  --circle-opacity-dark-white: 0.09;  /* white circle on the navy canvas        */
+  --circle-dia-ring-max:   12.07in;   /* near-slide-scale sweep; range 2.2-12.1 */
+  --circle-dia-large:      5.33in;    /* washes range 2.0-7.0in                 */
   --circle-dia-medium:     2.67in;
-  --circle-dia-small:      1in;       /* range 0.8-1.1in                       */
-  --circle-max-per-slide:  3;
+  --circle-dia-small:      1in;       /* the dot; 0.8-1.1in                     */
+  --circle-min-per-slide:  0;
+  --circle-max-per-slide:  5;         /* measured 1-5 across 31 of 34 layouts   */
+  --medallion-dia-min:     0.37in;    /* FUNCTIONAL circles — icon holders      */
+  --medallion-dia-max:     1.97in;
 
   /* --- keylines (elevation is a hairline, not a shadow) ------------------- */
   --keyline:               #272774;
+  --keyline-faint:         rgba(39, 39, 116, 0.25);  /* the QUIET third register */
+  --keyline-navy:          #002060;
   --keyline-on-dark:       rgba(255, 255, 255, 0.20);
-  --keyline-weight:        0.25pt;
+  --keyline-weight:        0.25pt;   /* hairline and 1pt are BOTH first-class   */
   --keyline-weight-emphasis: 0.75pt;
   --keyline-weight-container: 1pt;
   --motif-keyline-weight:  0.25pt;    /* generic alias read by shared renderers */
@@ -244,6 +260,7 @@
   --track-tight:           0.67pt;
   --track-medium:          1.33pt;
   --track-wide:            2pt;
+  --track-ultra:           6pt;       /* small standalone labels only           */
 
   /* --- components --------------------------------------------------------- */
   --accent-cap-height:     5pt;       /* the bar across a card's top edge       */
@@ -253,10 +270,18 @@
   --icon-chip-ring:        0.25pt solid #272774;
   --phrase-bar-radius:     8.6pt;
   --divider-rule:          2pt solid #4182ff;
+  --watermark-opacity:     0.22;      /* oversized faint mark low in a card     */
+  --connector-dash:        2pt dashed #272774;  /* the timeline / axis spine     */
+  --split-ratio:           60/40;     /* asymmetric split, list-side left       */
 
   /* --- imagery ------------------------------------------------------------
      Photography is REMOVED from this brand's render path (client instruction,
-     2026-09-22). Substitutes, in order: diagram, chart, icon tile, tinted panel,
-     whitespace. See expression.visual_grammar.photo. */
+     2026-09-22), and NO image from the source deck is reused. The imagery
+     devices are SLOTS — a shape, a tint and a reserved area — never shipped
+     assets; rendered empty they are a sized, on-brand void, which is a valid
+     finished state. Substitutes in order: diagram, chart, medallion row, tinted
+     panel, whitespace. See expression.visual_grammar.photo. */
   --photo-policy:          none;
+  --imagery-mode:          slots;     /* spot | watermark | medallion | visual-block */
+  --spot-min-height:       2.7in;
 }

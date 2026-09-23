@@ -1,20 +1,29 @@
 <!--
-  Amaris Consulting — PPTX content slide anchor (FRAME ONLY).
+  Amaris Consulting — PPTX content slide anchor (FRAME + ZONES).
   Consumed by the `pptx` / `pptx-hd` render-anchors mode.
 
-  Rebuilt 2026-09-22 from the styling source of truth
-  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx).
-  Extraction of record: clients/amaris/presentation-grammar.md.
+  Rebuilt 2026-09-23 from the styling source of truth
+  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx), re-extracted
+  across all three OOXML layers. Extraction of record:
+  clients/amaris/presentation-grammar.md.
 
-  Encodes ONLY the brand-consistent frame — canvas, circle field, title zone,
-  margins, corner wordmark, page number. The body zone is intentionally empty:
-  the LLM authoring a real deck fills it. Do NOT add prescriptive body layout here.
-  For the component vocabulary that body should be built from, see the sibling
-  reference sheet `components.html` (a swatch, not a slide).
+  WHAT CHANGED, AND WHY IT MATTERS. The previous anchor shipped an intentionally
+  EMPTY body zone — "the LLM fills it" — which is freedom without vocabulary, i.e.
+  a blank page. That is how a correctly-coloured deck comes out bland. This anchor
+  now declares the zones and names the vocabulary each one draws from; the
+  primitives themselves live in the sibling reference sheet `components.html`.
+  Proportion, order and emphasis inside a zone remain the authoring model's call —
+  that is the part that should answer to the content.
 
-  CHANGED: the canvas is a white -> #FBF5F2 vertical gradient, never flat white.
-  The navy+blush header strip and the monospace footer bar are retired — neither
-  appears on any of the 23 source slides.
+  THE AMBIENT LAYER (grammar §2) is one circle system with two treatments, and the
+  RING is the more common one. 1-5 circles per surface, any corner, always
+  bleeding. The svg below is the DEFAULT draw; vary it per surface along axes
+  B (ring / wash / both / none) and C (count) rather than repeating it 40 times.
+
+  NO var() FALLBACKS. Every colour resolves through a token and carries no hex
+  fallback: the render gate's brand lint rejects a brand colour literal even when
+  it sits in a var() fallback slot, and {{TOKENS_CSS}} is always injected, so a
+  fallback buys nothing and fails the render.
 
   Injected: {{TITLE}} {{SUBTITLE}} {{LOGO_MONO_URL}} {{WORDMARK_GHOST_URL}}
             {{CLIENT_NAME}} {{CONFIDENTIALITY}} {{PAGE}} {{PAGES}}
@@ -31,69 +40,96 @@
 html, body { margin: 0; padding: 0; }
 body {
   width: 1280px; height: 720px;
-  background: var(--canvas-light, linear-gradient(180deg, #ffffff 0%, #fbf5f2 100%));
-  color: var(--ink-body, #3a3a52);
-  font-family: var(--font-body, 'Century Gothic', sans-serif);
+  background: var(--canvas-light);
+  color: var(--ink-body);
+  font-family: 'Century Gothic', sans-serif;
   position: relative;
   overflow: hidden;
 }
 
-/* --- circle field: 2 per content slide. Behind everything. ---------------- */
-.circle-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-.circle-field circle.lg { opacity: var(--circle-opacity-large, 0.18); }
-.circle-field circle.sm { opacity: var(--circle-opacity-small, 0.85); }
+/* --- ambient layer: rings + washes, behind everything (grammar §2) -------- */
+/* The svg CONTAINER keeps the motif's registered name — `circle-field` on a light
+   surface, `circle-field-dark` on the navy one — because expression.requiredMotifs
+   is projected from the motif ASSET basenames and matched against rendered CSS
+   CLASSES. Drop the name and every render reports the motif MISSING while painting
+   it correctly. `ring` / `wash` / `dot` are the per-circle treatments inside it. */
+.ambient { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.ambient circle.ring       { fill: none; stroke: var(--ring-ink); stroke-width: 1; }
+.ambient circle.ring-light { fill: none; stroke: var(--ring-on-dark); stroke-width: 1; }
+.ambient circle.wash       { opacity: var(--circle-opacity-large); }
+.ambient circle.dot        { opacity: var(--circle-opacity-small); }
 
-/* --- ghost wordmark, bleeding off the bottom-right ------------------------ */
+/* --- ghost wordmark, bleeding off a lower corner -------------------------- */
 .ghost-wordmark {
   position: absolute; right: -80px; bottom: -40px; z-index: 0;
-  width: 520px; opacity: var(--motif-ghost-opacity, 0.08);
+  width: 520px; opacity: var(--motif-ghost-opacity);
   pointer-events: none;
 }
 
 /* --- title zone ----------------------------------------------------------- */
 .head {
-  position: absolute; top: var(--slide-title-top, 67px);
-  left: var(--slide-margin, 56px); right: var(--slide-margin, 56px); z-index: 2;
+  position: absolute; top: var(--slide-title-top);
+  left: var(--slide-margin); right: var(--slide-margin); z-index: 2;
 }
 .title {
   margin: 0;
-  font-size: var(--pt-slide-title, 32pt);
+  font-size: var(--pt-slide-title);
   font-weight: 700;
   line-height: 1.12;
-  color: var(--ink-title, #1e1e5e);
+  color: var(--ink-title);
 }
 .subtitle {
   margin: 10px 0 0;
-  font-size: var(--pt-subtitle, 12pt);
+  font-size: var(--pt-subtitle);
   font-weight: 400;
-  color: var(--ink-muted, #4a4a7a);
+  color: var(--ink-muted);
 }
 
-/* --- body zone — LLM-authored. Left empty on purpose. --------------------- */
+/* --- body zone ------------------------------------------------------------
+   Authored per slide from the components.html vocabulary. The scaffolds below
+   are the E-axis structures; pick ONE and fill it.
+   -------------------------------------------------------------------------- */
 .body {
   position: absolute;
-  top: var(--slide-content-top, 154px);
-  left: var(--slide-margin, 56px); right: var(--slide-margin, 56px);
-  bottom: 68px;
+  top: var(--slide-content-top);
+  left: var(--slide-margin); right: var(--slide-margin);
+  bottom: 88px;
   z-index: 1;
+  display: flex; flex-direction: column;
+  gap: 18px;
 }
+/* E-axis scaffolds — proportions inside them are the author's */
+.zone         { display: grid; gap: var(--grid-gutter-3); flex: 1 1 auto; align-content: start; }
+.zone--2      { grid-template-columns: repeat(2, 1fr); gap: var(--grid-gutter-2); }
+.zone--3      { grid-template-columns: repeat(3, 1fr); }
+.zone--4      { grid-template-columns: repeat(4, 1fr); gap: var(--grid-gutter-4); }
+.zone--5      { grid-template-columns: repeat(5, 1fr); gap: var(--grid-gutter-5); }
+.zone--split  { grid-template-columns: 6fr 4fr; gap: var(--grid-gutter-2); }
+.zone--stack  { grid-auto-flow: row; gap: 14px; }
+.zone--single { grid-template-columns: 1fr; }
+
+/* --- emphasis zone: at most ONE phrase-bar, and only for a real takeaway --- */
+.emphasis { flex: 0 0 auto; }
 
 /* --- foot: corner wordmark + page number --------------------------------- */
-.wordmark { position: absolute; right: var(--slide-margin, 56px); bottom: 26px; z-index: 2; }
+.wordmark { position: absolute; right: var(--slide-margin); bottom: 26px; z-index: 2; }
 .wordmark img { height: 26px; width: auto; opacity: 0.75; }
 .page {
-  position: absolute; left: var(--slide-margin, 56px); bottom: 30px; z-index: 2;
+  position: absolute; left: var(--slide-margin); bottom: 30px; z-index: 2;
   font-size: 9pt; font-weight: 400;
-  letter-spacing: var(--track-tight, 0.67pt);
-  color: var(--ink-meta, #6c757d);
+  letter-spacing: var(--track-tight);
+  color: var(--ink-meta);
 }
 </style>
 </head>
 <body>
 
-  <svg class="circle-field" viewBox="0 0 1280 720" aria-hidden="true">
-    <circle class="lg" cx="1095" cy="160" r="335" fill="var(--circle-2, #b880ff)"/>
-    <circle class="lg" cx="26"   cy="523" r="169" fill="var(--circle-1, #4182ff)"/>
+  <!-- DEFAULT ambient draw: one bleeding ring + one wash + one dot.
+       Vary count (0-5), treatment (ring/wash/both/none) and corner per surface. -->
+  <svg class="ambient circle-field" viewBox="0 0 1280 720" aria-hidden="true">
+    <circle class="ring" cx="1180" cy="120" r="470"/>
+    <circle class="wash" cx="26"   cy="523" r="169" fill="var(--circle-1)"/>
+    <circle class="dot"  cx="1200" cy="80"  r="24"  fill="var(--circle-2)"/>
   </svg>
 
   <img class="ghost-wordmark" src="{{WORDMARK_GHOST_URL}}" alt="">
@@ -103,8 +139,18 @@ body {
     <div class="subtitle">{{SUBTITLE}}</div>
   </div>
 
-  <!-- body zone — the authoring LLM owns this. See components.html. -->
-  <div class="body"></div>
+  <div class="body">
+    <!-- Content zone. Swap the modifier for the E-axis structure this slide needs:
+         zone--2 | zone--3 | zone--4 | zone--5 | zone--split | zone--stack | zone--single
+         Fill with primitives from components.html (cap-card, bar-card, rule-row,
+         soft-row, panel, spot, medallion, statement, compare, axis, lv, ...).
+         Set the accent with .a1 / .a2 / .a3 / .a4 on each item, rotating by position. -->
+    <div class="zone zone--3"></div>
+
+    <!-- Emphasis zone. AT MOST ONE of: .phrase | .phrase--navy | .statement.
+         Leave empty when the slide has no genuine takeaway — that is the norm. -->
+    <div class="emphasis"></div>
+  </div>
 
   <div class="page">{{PAGE}} / {{PAGES}} · {{CONFIDENTIALITY}}</div>
   <div class="wordmark"><img src="{{LOGO_MONO_URL}}" alt="Amaris Consulting"></div>

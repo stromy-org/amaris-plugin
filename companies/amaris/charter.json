@@ -395,31 +395,36 @@
       "ornament": "restrained"
     },
     "signatureElements": [
-      "Circle field — 2-3 soft accent circles per slide: one large (2.4-7.0 in) bleeding off a corner at 15-25 % opacity, one opposite corner also bleeding, optionally one small (0.8-1.1 in) fully inside at 35-45 %. One accent per circle, never repeated on a slide, always behind content.",
-      "Hairline indigo keyline — 0.25 pt #272774 around every card and panel (0.75-1.0 pt for an outer container, 0.5 pt white @20 % on dark). 89 occurrences in the source.",
+      "Ambient circle layer — ONE geometry, TWO treatments, and the ring is the more common (44 rings vs 25 washes measured). Rings: hairline, unfilled, 2.2-12.1 in, indigo @25% or white @25-50%. Washes: soft fill, 2.0-7.0 in, 10-35% opacity, one accent each. Plus a saturated 0.8-1.1 in dot at 100%. 1-5 per surface, any corner, always bleeding, always behind content. Present on 31 of 34 layouts.",
+      "Keylines in three registers, all first-class — 0.25 pt #272774 hairline (31), 1.0 pt container (21), and #272774 at 25% (20), the quiet one that does most of the structural work. 0.5 pt white @20-50% on dark.",
       "Accent-capped card — a 4-6 pt solid accent bar across the card's top edge, white or #FDF9F7 body, 8.6 pt radius, accent rotating blue/purple/mint/yellow.",
-      "Header-bar card — a solid accent block as the card header carrying white bold text, with a keylined white body beneath it.",
-      "Left-rule row — full-width white row with a 5-6 pt accent bar on its left edge, a 29-36 pt accent numeral, a bold indigo label and a grey meta line. The agenda and key-takeaways shape.",
-      "Numbered step badge — a solid accent square (6 pt radius) carrying a white bold numeral, with the step label set in the matching accent.",
-      "Icon tile — a circular chip (#F6EEF7 or accent tint-80) with a hairline indigo ring, holding one single-accent icon, phrase set alongside.",
-      "Phrase bar — a full-width 8.6 pt-radius bar at the slide foot, tint- or navy-filled, text centred bold italic at 12-16 pt. At most one per slide.",
+      "Header-bar card — a solid accent block as the card header carrying bold text, with a keylined body beneath it. Text polarity inside is a choice, not a luminance rule: the source sets white on mint in one composite and navy ink on mint in another.",
+      "Left-rule row — full-width row with a 5-6 pt accent bar on its left edge, a 29-36 pt accent numeral and a bold indigo label. Its twin WITHOUT keyline or rule (soft shadow only) is equally attested.",
+      "Numbered step badge — a square (6 pt radius) carrying a bold numeral, filled either solid accent or tint-60.",
+      "Medallion — a functional circle, 0.37-1.97 in, accent-tint or #F6EEF7 lilac with a hairline ring, holding one icon. 89 of the deck's 164 circles are functional like this.",
+      "Nested tonal composition — a tint-80 panel containing tint-60 chips beside a white card: one hue at three depths. The monochrome-tonal accent mode.",
+      "Comparison pair — two mirrored cards with a circular connector straddling the gutter, label/value rows inside each, and a per-card tinted footer strip.",
+      "Asymmetric split — roughly 60/40, a row stack left and a visual slot right, with a large mixed-weight uppercase phrase beneath.",
+      "Inverted block — a solid #272674 card on the light canvas, often beside its identical blush twin. Rare and deliberate: 3 instances in the source.",
+      "Axis / timeline — medallions alternating above and below a 2 pt dashed indigo spine, each with an accent numeral and step label.",
+      "Phrase bar — a full-width 8.6 pt-radius bar, tint- or solid-navy-filled, text centred bold italic at 12-16 pt. At most one per surface.",
       "Pill label — a fully-rounded solid-yellow chip carrying 10.5 pt bold indigo uppercase text; the cover's eyebrow.",
       "Ghost numeral — 106 pt bold white at low opacity behind a section-divider title.",
-      "Ghost wordmark — the oversized outline AMARIS lockup cropped and bleeding off an edge at very low opacity; the small outline lockup sits bottom-right on light slides.",
-      "Tracked uppercase eyebrow — 10-12 pt bold, typed uppercase (never an auto-caps attribute), letter-spaced 0.67 / 1.33 / 2.0 pt.",
+      "Ghost wordmark — the oversized outline AMARIS lockup cropped and bleeding off an edge at very low opacity; part of the ambient layer, not the footer.",
+      "Tracked uppercase eyebrow — 10-12 pt bold, typed uppercase (never an auto-caps attribute), letter-spaced 0.67 / 1.33 / 2.0 pt, plus a wide 6.0 pt register for small standalone labels.",
       "Dark canvas #002060 flat for cover, section divider and closing; light canvas a vertical #FFFFFF → #FBF5F2 gradient everywhere else, never flat white."
     ],
     "antiPatterns": [
-      "Photography of any kind — stock, sourced or generated. Removed from this brand's render path on 2026-09-22. A slide that needs a visual gets a diagram, a chart, an icon tile, a tinted panel, or whitespace.",
+      "Photography of any kind — stock, sourced or generated. Removed from this brand's render path on 2026-09-22, and no image from the source deck is reused. A surface needing a visual gets a diagram, a chart, a medallion row, a tinted panel, or whitespace.",
       "A flat white slide background — the light canvas is always the #FFFFFF → #FBF5F2 vertical gradient.",
       "Using #272774 (or #272674) as a full-slide canvas — that is the ink and keyline colour; the dark canvas is #002060.",
-      "More than three circles on a slide, a circle repeating an accent already used on that slide, a circle fully inside the frame at large diameter, or a circle carrying text or acting as a container.",
+      "Filling an entire canvas with an accent — measured across 21 full-bleed canvases (17 light gradient, 4 navy), zero are accent. Accents cap, bar, badge, tint and fill CARDS; they are never the field.",
       "A second type family — monospace footers, serif pull-quotes, or an intermediate Century Gothic weight (500/600 silently revert to Regular in Office).",
       "Drop shadows used to express elevation — the keyline does that. A soft tight shadow on a stacked card is the only permitted shadow.",
-      "Mixing the two accent modes on one slide: positional rotation (01/02/03/04) and the sector mapping are alternatives, never simultaneous.",
-      "A phrase bar on a slide with no real takeaway, or more than one phrase bar per slide.",
-      "The retired corporate-blank inferences: a 6 px blush rule on the cover's top edge, a monospace footer bar, or a navy scrim over a hero photograph. None appear in the styling source of truth.",
-      "Filling an entire slide with an accent — accents cap, bar, badge and tint; they are never the field."
+      "Mixing the two accent modes on one surface: positional rotation (01/02/03/04) and the sector mapping are alternatives, never simultaneous.",
+      "More than one phrase bar on a surface, or a phrase bar where there is no real takeaway.",
+      "An AMBIENT circle used as a container or carrying text — the ambient layer sits strictly behind content. (Functional medallions and badges ARE containers; they are a different primitive.)",
+      "The retired corporate-blank inferences: a 6 px blush rule on the cover's top edge, a monospace footer bar, or a navy scrim over a hero photograph. None appear anywhere in the 34 layouts or 23 slides."
     ],
     "requiredMotifs": [
       "circle-field",
@@ -444,15 +449,23 @@
             "id": "circle-field",
             "label": "Circle field",
             "spec": {
-              "construction": "2-3 circles per slide. One large (2.4-7.0 in) originating outside the frame so it bleeds off a corner; one more on the opposite corner, also bleeding; optionally one small (0.8-1.1 in) fully inside, upper-right.",
+              "construction": "ONE circle geometry with TWO treatments. RING: hairline, unfilled, 2.2-12.1 in, #272774 @25% on light or #FFFFFF @25-50% on dark — the more common of the two (44 vs 25). WASH: soft fill, 2.0-7.0 in, 10-35% opacity, one accent each. DOT: 0.8-1.1 in, one accent, 100%. 1-5 per surface, originating outside the frame so they bleed; all four corners available.",
               "opacity": {
-                "large": [
-                  0.15,
+                "ringOnLight": [
+                  0.25,
                   0.25
                 ],
-                "small": [
-                  0.35,
-                  0.45
+                "ringOnDark": [
+                  0.25,
+                  0.5
+                ],
+                "wash": [
+                  0.1,
+                  0.35
+                ],
+                "dot": [
+                  1.0,
+                  1.0
                 ],
                 "onDarkWhite": [
                   0.08,
@@ -460,17 +473,21 @@
                 ]
               },
               "diameterIn": {
-                "large": [
-                  2.4,
+                "ring": [
+                  2.2,
+                  12.07
+                ],
+                "wash": [
+                  2.0,
                   7.0
                 ],
-                "medium": [
-                  2.0,
-                  2.9
-                ],
-                "small": [
+                "dot": [
                   0.8,
                   1.1
+                ],
+                "medallion": [
+                  0.37,
+                  1.97
                 ]
               },
               "palette": [
@@ -480,11 +497,12 @@
                 "#FFDD77"
               ],
               "rules": [
-                "one accent per circle; never the same accent twice on a slide",
-                "always behind content; never a container, never carries text",
-                "never more than three"
+                "1-5 per surface; measured across 31 of 34 layouts (1x14, 2x13, 3x1, 4x1, 5x2)",
+                "rings and washes combine freely on one surface",
+                "the AMBIENT layer is always behind content and never a container",
+                "functional medallions and badges ARE containers — a different primitive, not this one",
+                "all four corners are used roughly evenly; no corner is reserved"
               ],
-              "secondary": "Hairline ambient arcs survive from the earlier orbit motif but are demoted: <=2 per slide, 0.9 px, indigo at 12-18 % on light / white at 25-40 % on dark.",
               "marks": [
                 {
                   "id": "circle-field",
@@ -508,6 +526,29 @@
                     "content"
                   ],
                   "name": "ghost-wordmark"
+                },
+                {
+                  "id": "circle-ring",
+                  "name": "circle-ring",
+                  "asset": "assets/svg/circle-field.svg",
+                  "role": "ambient hairline ring — the sweeping arc treatment of the circle system",
+                  "cssClass": "ring",
+                  "surfaces": [
+                    "cover",
+                    "section-divider",
+                    "content",
+                    "closing"
+                  ]
+                },
+                {
+                  "id": "medallion",
+                  "name": "medallion",
+                  "asset": null,
+                  "role": "functional circle holding an icon — a container, not ambient",
+                  "cssClass": "medallion",
+                  "surfaces": [
+                    "content"
+                  ]
                 }
               ],
               "roles": {
@@ -519,7 +560,9 @@
                 ],
                 "content": [
                   "circle-field",
-                  "ghost-wordmark"
+                  "circle-ring",
+                  "ghost-wordmark",
+                  "medallion"
                 ],
                 "closing": [
                   "circle-field"
@@ -533,15 +576,20 @@
                 "docx"
               ],
               "usageCaps": {
-                "maxCirclesPerSlide": 3,
-                "maxArcsPerSlide": 2,
-                "circleLargeMaxOpacity": 0.25,
-                "circleSmallMaxOpacity": 0.45,
+                "minCirclesPerSurface": 0,
+                "maxCirclesPerSurface": 5,
+                "ringMaxOpacity": 0.5,
+                "washMaxOpacity": 0.35,
                 "ghostWordmarkMaxOpacity": 0.1,
-                "accentRepeatPerSlide": 1
+                "accentRepeatPerSurface": 2
               },
               "name": "Circle field",
-              "tagline": "Your stepping stone."
+              "tagline": "Your stepping stone.",
+              "treatments": {
+                "ring": "hairline unfilled circle; this is what the pre-2026-09-23 grammar mislabelled 'orbit arcs' and demoted to a secondary motif. It is the same system.",
+                "wash": "soft-filled circle; the alpha ramp and the tint ramp are identical (accent @20% over white == PowerPoint 'Lighter 80%').",
+                "dot": "small saturated accent circle, fully inside the frame."
+              }
             },
             "tokenPrefix": "--circle-",
             "tokenDependencies": [
@@ -1201,7 +1249,15 @@
                 "whitespace"
               ],
               "reinstatement": "Only with client-chosen imagery. The retired library and its source URLs are recorded in images/manifest.json under `retired`.",
-              "enforcement": "Not machine-enforceable as a motif token — 'no photography' is an absence. It is enforced by the empty image library (brand_context.images is null) and by the expression principles/antiPatterns, which the authoring skill reads."
+              "enforcement": "Not machine-enforceable as a motif token — 'no photography' is an absence. It is enforced by the empty image library (brand_context.images is null) and by the expression principles/antiPatterns, which the authoring skill reads.",
+              "imageryMode": "slots",
+              "slots": [
+                "spot",
+                "watermark",
+                "medallion",
+                "visual-block"
+              ],
+              "note": "Photography removed at the client's instruction and NO image from the source deck is reused. The imagery DEVICES survive as slots — a shape, a tint and a reserved area — never shipped assets. Rendered empty, a slot is a sized, on-brand void: a valid finished state."
             },
             "tokens": [],
             "evidence": {
@@ -1320,7 +1376,88 @@
         }
       }
     },
-    "signatureMotion": "The hairline orbit arc draws itself once across the frame in a single unhurried stroke, while the stepping-stone dot and headline settle in behind it in a quiet staggered fade."
+    "signatureMotion": "The hairline orbit arc draws itself once across the frame in a single unhurried stroke, while the stepping-stone dot and headline settle in behind it in a quiet staggered fade.",
+    "compositionAxes": {
+      "note": "Primitives x axes x budget, NOT a template catalogue. Every combination these permit is evidenced in the source; layout (what sits where, in what proportion) is deliberately left to the authoring model. Reference, never bind — see presentation-grammar.md §0.",
+      "axes": {
+        "canvas": [
+          "light-gradient",
+          "dark-navy"
+        ],
+        "ambientTreatment": [
+          "ring",
+          "wash",
+          "both",
+          "none"
+        ],
+        "ambientCount": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "accentMode": [
+          "rotate",
+          "paired",
+          "monochrome-tonal",
+          "neutral"
+        ],
+        "structure": [
+          "single",
+          "2-up",
+          "3-up",
+          "4-up",
+          "asymmetric-split",
+          "row-stack",
+          "axis",
+          "comparison"
+        ],
+        "surfacePolarity": [
+          "light-on-light",
+          "inverted-block",
+          "mixed-pair"
+        ],
+        "emphasis": [
+          "none",
+          "phrase-bar",
+          "statement",
+          "watermark"
+        ],
+        "density": [
+          "airy",
+          "regular",
+          "dense"
+        ]
+      },
+      "budget": {
+        "ambientCirclesPerSurface": [
+          0,
+          5
+        ],
+        "distinctAccentsPerSurface": [
+          1,
+          4
+        ],
+        "maxPhraseBarsPerSurface": 1,
+        "maxStatementsPerSurface": 1,
+        "maxInvertedRegionsPerSurface": 1,
+        "deckRules": [
+          "no two consecutive content surfaces take the same `structure` value",
+          "the accent rotation advances across surfaces so item colour reads as sequence",
+          "at most ~1 in 5 content surfaces uses inverted-block or statement — they are punctuation"
+        ]
+      },
+      "defaults": {
+        "canvas": "light-gradient",
+        "ambientTreatment": "both",
+        "ambientCount": 2,
+        "accentMode": "rotate",
+        "surfacePolarity": "light-on-light",
+        "emphasis": "none"
+      }
+    }
   },
   "templates": {
     "docx": {
