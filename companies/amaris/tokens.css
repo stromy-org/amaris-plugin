@@ -28,7 +28,11 @@
   --color-telecom:         #ffdd77;   /* Yellow */
   --color-digital:         #4182ff;   /* Blue (same as accent) */
 
-  /* Gradient */
+  /* Gradient
+     RETIRED FOR PRESENTATION (2026-09-22): --gradient-midnight / --gradient-dark /
+     --gradient-accent are valid brand colours but the styling source of truth uses
+     NO component gradients — the light canvas is the only gradient in the system.
+     See expression.visual_grammar.gradients. Web/other surfaces may still use them. */
   --gradient-midnight:     linear-gradient(135deg, #020381 0%, #2874fc 100%);
   --gradient-dark:         linear-gradient(135deg, #272674 0%, #000000 100%);
   --gradient-accent:       linear-gradient(135deg, #4182ff 0%, #272674 100%);
@@ -81,7 +85,7 @@
   --orbit-dot-3:           #ffdd77;                  /* yellow */
   --orbit-dot-4:           #b880ff;                  /* purple */
   --orbit-dot-glow:        0 0 24px rgba(65, 130, 255, 0.45);
-  --gradient-canvas-light: linear-gradient(180deg, #ffffff 0%, #f5e2da 100%);
+  --gradient-canvas-light: linear-gradient(180deg, #ffffff 0%, #fbf5f2 100%);
   --accent-warm:           #FBAE40;
   --accent-coral:          #F26B43;
 
@@ -138,4 +142,121 @@
   --treatment-blush-warm-highlight:     #FFF0EA;
   --treatment-blush-warm-strength:      0.26;
   --treatment-blush-warm-grain:         0.06;
+}
+
+/* ============================================================================
+   PRESENTATION GRAMMAR — styling source of truth (2026-09-22)
+
+   Machine-readable projection of clients/amaris/presentation-grammar.md, measured
+   from .build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx — the deck
+   Amaris themselves nominated as what "good" looks like.
+
+   Supersedes the composition rules previously inferred from the corporate blank
+   (hero photography + navy scrim, the blush top rule, the monospace footer bar).
+   Those are RETIRED; the atoms they were built from (palette, Century Gothic,
+   the wordmark) are unchanged.
+   ========================================================================== */
+:root {
+  /* --- canvas ------------------------------------------------------------ */
+  --canvas-navy:           #002060;   /* cover / divider / closing FIELD       */
+  --canvas-light:          linear-gradient(180deg, #ffffff 0%, #fbf5f2 100%);
+  --canvas-light-top:      #ffffff;
+  --canvas-light-bottom:   #fbf5f2;   /* a whisper of blush, not full #f5e2da  */
+  --surface-paper:         #ffffff;
+  --surface-warm:          #fdf9f7;   /* warm off-white card fill              */
+  --surface-lilac:         #f6eef7;   /* icon-chip fill                        */
+
+  /* --- ink ramp ---------------------------------------------------------- */
+  --ink-title:             #1e1e5e;
+  --ink-primary:           #272774;   /* ink + keyline — NOT a canvas colour   */
+  --ink-body:              #3a3a52;
+  --ink-body-alt:          #494951;
+  --ink-muted:             #4a4a7a;
+  --ink-meta:              #6c757d;
+  --ink-on-dark:           #ffffff;
+  --ink-on-dark-soft:      #f5e2da;   /* blush subtitle on the navy canvas     */
+
+  /* --- accent ramp -------------------------------------------------------
+     Rotation order: blue -> purple -> mint -> yellow. tint80 is BOTH the card
+     tint and the 20 %-alpha circle value — one ramp, two uses, identical bytes. */
+  --accent-1:              #4182ff;  --accent-1-tint80: #d9e6ff;  --accent-1-tint60: #8db4ff;
+  --accent-2:              #b880ff;  --accent-2-tint80: #f1e6ff;  --accent-2-tint60: #d4b3ff;
+  --accent-3:              #7ddeb8;  --accent-3-tint80: #e5f8f1;  --accent-3-tint60: #b1ebd4;
+  --accent-4:              #ffdd77;  --accent-4-tint80: #fff8e4;  --accent-4-tint60: #ffebad;
+  --accent-indigo:         #272774;  --accent-indigo-tint80: #cacaed; --accent-indigo-tint60: #6060c9;
+
+  /* --- circle field (the signature motif) --------------------------------
+     2-3 per slide. One large bleeding off a corner, one opposite, optionally one
+     small fully inside. One accent each, never repeated on a slide. */
+  --circle-1:              #4182ff;
+  --circle-2:              #b880ff;
+  --circle-3:              #7ddeb8;
+  --circle-4:              #ffdd77;
+  --circle-opacity-large:  0.20;      /* range 0.15-0.25                       */
+  --circle-opacity-small:  0.40;      /* range 0.35-0.45                       */
+  --circle-opacity-dark-white: 0.09;  /* white circle on the navy canvas       */
+  --circle-dia-large:      5.33in;    /* range 2.4-7.0in                       */
+  --circle-dia-medium:     2.67in;
+  --circle-dia-small:      1in;       /* range 0.8-1.1in                       */
+  --circle-max-per-slide:  3;
+
+  /* --- keylines (elevation is a hairline, not a shadow) ------------------- */
+  --keyline:               #272774;
+  --keyline-on-dark:       rgba(255, 255, 255, 0.20);
+  --keyline-weight:        0.25pt;
+  --keyline-weight-emphasis: 0.75pt;
+  --keyline-weight-container: 1pt;
+  --motif-keyline-weight:  0.25pt;    /* generic alias read by shared renderers */
+  --elev-card-shadow:      0 1px 3px rgba(39, 39, 116, 0.10);  /* stacked cards only */
+
+  /* --- radii -------------------------------------------------------------- */
+  --radius-chip:           4.5pt;
+  --radius-badge:          6pt;
+  --radius-card:           8.6pt;     /* THE card radius — 23 of 51 in source   */
+  --radius-panel:          14pt;
+  --radius-pill:           999px;
+
+  /* --- grid --------------------------------------------------------------- */
+  --slide-margin:          0.58in;    /* 42pt, symmetric                        */
+  --slide-title-top:       0.7in;
+  --slide-content-top:     1.6in;
+  --card-padding:          0.25in;    /* range 0.20-0.30in                      */
+  --grid-gutter-2:         0.50in;
+  --grid-gutter-3:         0.40in;
+  --grid-gutter-4:         0.20in;
+  --grid-gutter-5:         0.30in;
+
+  /* --- presentation type scale (pt on a 13.333x7.5in stage) ---------------- */
+  --pt-cover-title:        80pt;
+  --pt-ghost-numeral:     106pt;
+  --pt-closing:            96pt;
+  --pt-divider-title:      66pt;
+  --pt-slide-title:        32pt;
+  --pt-statement:          28pt;
+  --pt-index-numeral:      32pt;
+  --pt-card-heading:       17pt;
+  --pt-badge-numeral:      18pt;
+  --pt-body:               13pt;
+  --pt-eyebrow:            11pt;
+  --pt-subtitle:           12pt;
+  --lh-body:               1.12;      /* range 104-118%                         */
+  --lh-statement:          1.35;      /* up to 150% for a centred statement     */
+  --track-tight:           0.67pt;
+  --track-medium:          1.33pt;
+  --track-wide:            2pt;
+
+  /* --- components --------------------------------------------------------- */
+  --accent-cap-height:     5pt;       /* the bar across a card's top edge       */
+  --left-rule-width:       5.5pt;     /* the bar on an agenda row's left edge   */
+  --icon-chip-dia:         1in;
+  --icon-chip-fill:        #f6eef7;
+  --icon-chip-ring:        0.25pt solid #272774;
+  --phrase-bar-radius:     8.6pt;
+  --divider-rule:          2pt solid #4182ff;
+
+  /* --- imagery ------------------------------------------------------------
+     Photography is REMOVED from this brand's render path (client instruction,
+     2026-09-22). Substitutes, in order: diagram, chart, icon tile, tinted panel,
+     whitespace. See expression.visual_grammar.photo. */
+  --photo-policy:          none;
 }

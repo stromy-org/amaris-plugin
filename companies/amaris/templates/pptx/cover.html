@@ -1,19 +1,25 @@
 <!--
-  Amaris Consulting — PPTX cover slide anchor template (HTML page shell).
+  Amaris Consulting — PPTX cover slide anchor (FRAME ONLY).
   Consumed by the `pptx` / `pptx-hd` render-anchors mode.
 
-  Encodes the brand-consistent visible frame only. Slide body layout is the
-  LLM's creative space — anchors are a brand-consistency reference, not a
-  prescriptive deck.
+  Rebuilt 2026-09-22 from the client-supplied styling source of truth
+  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx, slide 1).
+  Extraction of record: clients/amaris/presentation-grammar.md.
+
+  CHANGED from the previous anchor — read this before "restoring" anything:
+    - NO hero photograph and no navy scrim. This brand renders without photography
+      (client instruction, 2026-09-22). {{HERO_URL}} is deliberately not accepted.
+    - The field is flat #002060, NOT the #272674 ink colour.
+    - The 6 px blush top rule is gone — it appears on none of the 23 source slides.
+    - The overline is a solid-yellow PILL in Century Gothic, not a monospace line.
 
   Build script injects:
-    {{HERO_URL}}        — absolute file:// URL to images/<cover photo> (optional)
     {{LOGO_WHITE_URL}}  — absolute file:// URL to logos/logo-white.svg
-    {{TITLE}}           — slide title
-    {{SUBTITLE}}        — one-sentence subtitle (optional)
-    {{OVERLINE}}        — short uppercase label (optional)
+    {{TITLE}}           — slide title (typed uppercase)
+    {{SUBTITLE}}        — one-line tagline (optional)
+    {{OVERLINE}}        — short uppercase pill label (optional)
     {{TOKENS_CSS}}      — full contents of tokens.css
-    {{FONT_FACES}}      — @font-face declarations / Google Fonts @import
+    {{FONT_FACES}}      — @font-face declarations
     {{CONFIDENTIALITY}} — confidentiality text from boilerplate.json (may be empty)
     {{DATE}}            — render date
 -->
@@ -28,96 +34,83 @@
 html, body { margin: 0; padding: 0; }
 body {
   width: 1280px; height: 720px;
-  color: #fff;
-  background:
-    linear-gradient(120deg, rgba(39,39,116,0.92) 0%, rgba(39,39,116,0.70) 55%, rgba(39,39,116,0.55) 100%),
-    url("{{HERO_URL}}") center/cover;
-  font-family: var(--font-display, var(--font-heading));
+  background: var(--canvas-navy, #002060);
+  color: var(--ink-on-dark, #fff);
+  font-family: var(--font-heading, 'Century Gothic', sans-serif);
   position: relative;
   overflow: hidden;
 }
-/* Amaris geometric accent — thin blush rule echoing the wordmark baseline */
-.accent-rule {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 6px;
-  background: var(--color-secondary, #EBC4B4);
-  z-index: 2;
-}
-/* Orbit + stepping-stone motif layer — hairline arc + accent dots behind the
-   hero text. Bounded-ornament rule: <=2 arcs + <=3 dots. z-index 0 keeps it
-   under the title block; dots rotate the decorative palette + carry a glow. */
-.orbit-layer { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-.orbit-layer svg { width: 100%; height: 100%; display: block; }
-.orbit-layer .arc {
-  fill: none;
-  stroke: var(--motif-arc-color-dark, rgba(255,255,255,0.30));
-  stroke-width: var(--motif-line-weight, 0.9px);
-  stroke-linecap: round;
-}
-.orbit-layer .stepping-stone .dot {
-  filter: drop-shadow(var(--orbit-dot-glow, 0 0 24px rgba(65,130,255,0.45)));
-}
-.logo  { position: absolute; top: 52px; left: 64px; z-index: 2; }
-.logo img { height: 42pt; width: auto; }
-.block { position: absolute; bottom: 120px; left: 64px; right: 64px; max-width: 960px; z-index: 2; }
-.overline {
-  font-family: var(--font-mono, monospace);
-  font-size: 11pt;
-  letter-spacing: 0.22em;
+
+/* --- circle field: 2 bleeding + 1 inside. Never more than three. ----------- */
+.circle-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.circle-field circle.lg { opacity: var(--circle-opacity-large, 0.20); }
+.circle-field circle.sm { opacity: var(--circle-opacity-small, 0.40); }
+
+/* --- logo, top right ------------------------------------------------------ */
+.logo { position: absolute; top: 46px; right: 56px; z-index: 2; }
+.logo img { height: 40px; width: auto; }
+
+/* --- pill label ----------------------------------------------------------- */
+.pill {
+  position: absolute; top: 200px; left: var(--slide-margin, 56px); z-index: 2;
+  display: inline-block;
+  padding: 9px 26px;
+  border-radius: var(--radius-pill, 999px);
+  background: var(--accent-4, #ffdd77);
+  color: var(--ink-title, #1e1e5e);
+  font-size: var(--pt-eyebrow, 11pt);
+  font-weight: 700;
+  letter-spacing: var(--track-medium, 1.33pt);
   text-transform: uppercase;
-  color: var(--color-secondary, #EBC4B4);
-  margin-bottom: 18pt;
 }
-h1 {
-  font-family: var(--font-display, var(--font-heading));
-  font-weight: var(--font-weight-semibold, 600);
-  font-size: 54pt;
-  line-height: 1.06;
+
+/* --- title block ---------------------------------------------------------- */
+.block { position: absolute; top: 330px; left: var(--slide-margin, 56px); right: 56px; z-index: 2; }
+.title {
   margin: 0;
-  color: #fff;
+  font-size: var(--pt-cover-title, 80pt);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.5pt;
+  text-transform: uppercase;
+  color: var(--ink-on-dark, #fff);
 }
-.subtitle {
-  font-family: var(--font-body);
-  font-size: 16pt;
-  opacity: 0.88;
-  margin-top: 20pt;
-  max-width: 78%;
+.tagline {
+  margin: 56px 0 0;
+  font-size: var(--pt-subtitle, 18pt);
+  font-weight: 400;
+  letter-spacing: 0.4pt;
+  text-transform: uppercase;
+  color: var(--ink-on-dark-soft, #f5e2da);
 }
-.meta {
-  position: absolute;
-  bottom: 34px;
-  left: 64px;
-  right: 64px;
-  font-family: var(--font-mono, monospace);
-  font-size: 9pt;
-  opacity: 0.72;
-  display: flex;
-  justify-content: space-between;
+
+/* --- confidentiality, bottom left ----------------------------------------- */
+.confidential {
+  position: absolute; bottom: 30px; left: var(--slide-margin, 56px); z-index: 2;
+  font-size: 8.5pt; font-weight: 400;
+  letter-spacing: var(--track-tight, 0.67pt);
+  color: rgba(255,255,255,0.55);
 }
 </style>
 </head>
 <body>
-  <div class="accent-rule"></div>
-  <!-- Orbit motif: 1 hairline arc + 2 stepping-stone dots (within the cap) -->
-  <div class="orbit-layer">
-    <svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <path class="arc" d="M -120 820 A 1140 1140 0 0 1 1440 160"/>
-      <g class="stepping-stone">
-        <circle class="dot" cx="300" cy="430" r="22" fill="var(--orbit-dot-1, #4182ff)"/>
-        <circle class="dot" cx="690" cy="300" r="16" fill="var(--orbit-dot-2, #7ddeb8)"/>
-      </g>
-    </svg>
-  </div>
+
+  <svg class="circle-field" viewBox="0 0 1280 720" aria-hidden="true">
+    <circle class="lg" cx="128"  cy="128" r="256" fill="var(--circle-1, #4182ff)"/>
+    <circle class="lg" cx="1152" cy="576" r="256" fill="var(--circle-2, #b880ff)"/>
+    <circle class="sm" cx="1200" cy="80"  r="52"  fill="var(--circle-3, #7ddeb8)"/>
+  </svg>
+
   <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
+
+  <div class="pill">{{OVERLINE}}</div>
+
   <div class="block">
-    <div class="overline">{{OVERLINE}}</div>
-    <h1>{{TITLE}}</h1>
-    <p class="subtitle">{{SUBTITLE}}</p>
+    <h1 class="title">{{TITLE}}</h1>
+    <div class="tagline">{{SUBTITLE}}</div>
   </div>
-  <div class="meta">
-    <span>{{CONFIDENTIALITY}}</span>
-    <span>{{DATE}}</span>
-  </div>
+
+  <div class="confidential">{{CONFIDENTIALITY}}</div>
+
 </body>
 </html>

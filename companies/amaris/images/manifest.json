@@ -1,5 +1,17 @@
 {
-  "images": [
+  "policy": "none",
+  "policy_since": "2026-09-22",
+  "policy_reason": "Photography removed from the Amaris render path at the client's instruction (2026-09-22): the styling source of truth contains no photography in any slide that works, and the stock imagery was the specific thing they raised. Recoverable from source_url; reinstate only with client-chosen imagery.",
+  "substitutes": [
+    "diagram",
+    "chart",
+    "icon-tile",
+    "tinted-panel",
+    "whitespace"
+  ],
+  "images": [],
+  "library": [],
+  "retired": [
     {
       "file": "photo-cover-01.png",
       "roles": [
@@ -10,7 +22,12 @@
       "orientation": "landscape",
       "source_page": "/",
       "source_url": "https://amaris.com/wp-content/uploads/2024/07/article-photo-45.png",
-      "confidence": "medium"
+      "confidence": "medium",
+      "retired_on": "2026-09-22",
+      "retired_reason": "client instruction — no photography in the render path",
+      "sha256": "16f689a68b08d1ce2b34e098c674ef705b3a0651dd08fb651d93d795c39d20b0",
+      "bytes": 1695575,
+      "derived_overlay": "pptx-assets/overlays/photo-cover-01-overlay.jpg"
     },
     {
       "file": "photo-cover-02.webp",
@@ -24,7 +41,12 @@
       "source_page": "/",
       "source_url": "https://amaris.com/wp-content/uploads/2021/06/fiber.webp",
       "confidence": "medium",
-      "notes": "Fiber/telecom abstract"
+      "notes": "Fiber/telecom abstract",
+      "retired_on": "2026-09-22",
+      "retired_reason": "client instruction — no photography in the render path",
+      "sha256": "6aa6f825a26e561de3efd8503b33ca1ce66e42815232829f2f37efdf6637b1e9",
+      "bytes": 76122,
+      "derived_overlay": "pptx-assets/overlays/photo-cover-02-overlay.jpg"
     },
     {
       "file": "photo-cover-03.webp",
@@ -38,7 +60,12 @@
       "source_page": "/",
       "source_url": "https://amaris.com/wp-content/uploads/2024/12/AdobeStock_481395384-scaled.webp",
       "confidence": "medium",
-      "hero": true
+      "hero": true,
+      "retired_on": "2026-09-22",
+      "retired_reason": "client instruction — no photography in the render path",
+      "sha256": "9053e41cea1ba7af05b6f17a13cd1b742ebf2268b84d9c6286453097aa00086b",
+      "bytes": 405726,
+      "derived_overlay": "pptx-assets/overlays/photo-cover-03-overlay.jpg"
     },
     {
       "file": "photo-cover-04.png",
@@ -51,7 +78,12 @@
       "orientation": "landscape",
       "source_page": "/",
       "source_url": "https://amaris.com/wp-content/uploads/2024/06/article-photo-27.png",
-      "confidence": "medium"
+      "confidence": "medium",
+      "retired_on": "2026-09-22",
+      "retired_reason": "client instruction — no photography in the render path",
+      "sha256": "13011d1482b8e37f8aa8da4700f7ace9cbe86024e7d4ccccf493dcc1f69151fc",
+      "bytes": 1900001,
+      "derived_overlay": "pptx-assets/overlays/photo-cover-04-overlay.jpg"
     },
     {
       "file": "photo-cover-05.jpg",
@@ -66,7 +98,12 @@
       "source_url": "https://amaris.com/wp-content/uploads/2025/06/AdobeStock_1507492423-1024x683.jpeg",
       "confidence": "medium",
       "notes": "AI/chatbot consulting",
-      "hero": true
+      "hero": true,
+      "retired_on": "2026-09-22",
+      "retired_reason": "client instruction — no photography in the render path",
+      "sha256": "95c0d88900f5b8b62037985ed9e0f925ef3db0e2b1582149421b05f32bd18315",
+      "bytes": 71512,
+      "derived_overlay": "pptx-assets/overlays/photo-cover-05-overlay.jpg"
     },
     {
       "file": "photo-closing-01.png",
@@ -78,7 +115,12 @@
       "orientation": "landscape",
       "source_page": "/about-us/",
       "source_url": "https://amaris.com/wp-content/uploads/2024/05/Free-Image-Resizer.png",
-      "confidence": "medium"
+      "confidence": "medium",
+      "retired_on": "2026-09-22",
+      "retired_reason": "client instruction — no photography in the render path",
+      "sha256": "b232d757168e030c68088bb726fe4f413ac58d9237e339dd418eb00e08fb6c47",
+      "bytes": 475939,
+      "derived_overlay": "pptx-assets/overlays/photo-closing-01-overlay.jpg"
     },
     {
       "file": "photo-divider-01.png",
@@ -91,7 +133,12 @@
       "source_page": "/amaris-in-action/",
       "source_url": "https://amaris.com/wp-content/uploads/2024/06/article-photo-26-1024x683.png",
       "confidence": "medium",
-      "notes": "Software engineering / AI"
+      "notes": "Software engineering / AI",
+      "retired_on": "2026-09-22",
+      "retired_reason": "client instruction — no photography in the render path",
+      "sha256": "844128101bb977dfc21b31a5ca88389a557e58c38507f685b0d609e21786e0dc",
+      "bytes": 363683,
+      "derived_overlay": "pptx-assets/overlays/photo-divider-01-overlay.jpg"
     },
     {
       "file": "photo-section-01.png",
@@ -103,7 +150,12 @@
       "orientation": "landscape",
       "source_page": "/amaris-in-action/",
       "source_url": "https://amaris.com/wp-content/uploads/2024/02/Photo-7-1024x724.png",
-      "confidence": "medium"
+      "confidence": "medium",
+      "retired_on": "2026-09-22",
+      "retired_reason": "client instruction — no photography in the render path",
+      "sha256": "03fc8c53dc20dbdc5a47ce5a51f96916609caca0ac5a28beb66bbf71fbb1d5cb",
+      "bytes": 446837,
+      "derived_overlay": "pptx-assets/overlays/photo-section-01-overlay.jpg"
     },
     {
       "file": "photo-section-02.png",
@@ -116,7 +168,12 @@
       "source_page": "/amaris-in-action/",
       "source_url": "https://amaris.com/wp-content/uploads/2023/10/Amar-AI-The-Shortcut-to-Faster-Smarter-Software-Testing-1024x724.png",
       "confidence": "medium",
-      "notes": "AI / software testing"
+      "notes": "AI / software testing",
+      "retired_on": "2026-09-22",
+      "retired_reason": "client instruction — no photography in the render path",
+      "sha256": "449fae85866d803c4130967079f7f1aede7d6c87b61cafe6fa17a54325c497ad",
+      "bytes": 357906,
+      "derived_overlay": "pptx-assets/overlays/photo-section-02-overlay.jpg"
     },
     {
       "file": "photo-section-03.png",
@@ -130,7 +187,12 @@
       "source_page": "/amaris-in-action/",
       "source_url": "https://amaris.com/wp-content/uploads/2023/05/Ensuring-equitable-digital-transformation-for-everyone-1024x724.png",
       "confidence": "medium",
-      "notes": "Digital transformation / inclusion"
+      "notes": "Digital transformation / inclusion",
+      "retired_on": "2026-09-22",
+      "retired_reason": "client instruction — no photography in the render path",
+      "sha256": "1b7a3393c33d768ea6284023e42c00ec188a83f9c9667ea6bc350c3cf36f5dd5",
+      "bytes": 379037,
+      "derived_overlay": "pptx-assets/overlays/photo-section-03-overlay.jpg"
     },
     {
       "file": "graphic-mockup-01.png",
@@ -143,7 +205,11 @@
       "source_page": "/insights/",
       "source_url": "https://amaris.com/wp-content/uploads/2024/05/AC_Thought_Leadership_mockup-blue-e1714722426474-1024x575.png",
       "confidence": "medium",
-      "notes": "Thought leadership report cover — brand blue, use without overlay"
+      "notes": "Thought leadership report cover — brand blue, use without overlay",
+      "retired_on": "2026-09-22",
+      "retired_reason": "client instruction — no photography in the render path",
+      "sha256": "3b3029eed96715d94539093559b57d8c33f15d41c41060183d78d7dedb1467a2",
+      "bytes": 167393
     }
   ]
 }

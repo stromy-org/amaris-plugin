@@ -1,8 +1,17 @@
 <!--
-  Amaris Consulting — PDF page shell (Section divider).
-  Build script injects: {{HERO_URL}} {{PART_LABEL}} {{SECTION_TITLE}}
-                        {{TOKENS_CSS}} {{FONT_FACES}}
-  Carries one orbit arc + one stepping-stone dot under the section title.
+  Amaris Consulting — PDF page shell (Section divider), A4 portrait.
+  Consumed by the `pdf-hd` skill / `render-anchors` mode.
+
+  Rebuilt 2026-09-22 from the client-supplied styling source of truth
+  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx, slides 8/21).
+  Extraction of record: clients/amaris/presentation-grammar.md.
+
+  CHANGED: no hero photograph and no indigo scrim ({{HERO_URL}} is deliberately
+  not accepted — photography is removed from this brand's render path), flat
+  #002060 field, ghost numeral + 2 pt blue rule, Century Gothic throughout.
+
+  Injected: {{PART_LABEL}} {{SECTION_NUMBER}} {{SECTION_TITLE}} {{SECTION_SUBTITLE}}
+            {{LOGO_WHITE_URL}} {{TOKENS_CSS}} {{FONT_FACES}}
 -->
 <!DOCTYPE html>
 <html>
@@ -16,51 +25,67 @@
 html, body { margin: 0; padding: 0; }
 body {
   width: 210mm; height: 297mm;
-  color: #fff;
-  background:
-    linear-gradient(rgba(39,38,116,0.80), rgba(39,38,116,0.80)),
-    url("{{HERO_URL}}") center/cover, var(--color-primary, #272674);
-  font-family: var(--font-body);
+  background: var(--canvas-navy, #002060);
+  color: var(--ink-on-dark, #fff);
+  font-family: var(--font-heading, 'Century Gothic', sans-serif);
   position: relative;
   overflow: hidden;
 }
-.orbit-layer { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-.orbit-layer svg { width: 100%; height: 100%; display: block; }
-.orbit-layer .arc {
-  fill: none;
-  stroke: var(--motif-arc-color-dark, rgba(255,255,255,0.30));
-  stroke-width: var(--motif-line-weight, 0.9px);
-  stroke-linecap: round;
+
+.circle-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.circle-field svg { width: 100%; height: 100%; display: block; }
+.circle-field circle.lg { opacity: var(--circle-opacity-large, 0.20); }
+.circle-field circle.sm { opacity: var(--circle-opacity-small, 0.35); }
+
+.block { position: absolute; top: 96mm; left: 18mm; right: 18mm; z-index: 2; }
+
+.part {
+  font-size: 9pt; font-weight: 700;
+  letter-spacing: var(--track-wide, 2pt);
+  text-transform: uppercase;
+  color: var(--ink-on-dark-soft, #f5e2da);
 }
-.orbit-layer .stepping-stone .dot {
-  filter: drop-shadow(var(--orbit-dot-glow, 0 0 18px rgba(65,130,255,0.45)));
+.ghost-numeral {
+  margin: 4mm 0 0;
+  font-size: 66pt; font-weight: 700; line-height: 0.92;
+  color: rgba(255,255,255,0.16);
 }
-.content { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: 0 40mm; }
-.part-label {
-  font-family: var(--font-mono); font-size: 11pt; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--color-secondary, #f5e2da); margin-bottom: 14pt;
+.title {
+  margin: 2mm 0 0;
+  font-size: 34pt; font-weight: 700; line-height: 1.08;
+  color: var(--ink-on-dark, #fff);
 }
-h1 {
-  font-family: var(--font-display, var(--font-heading));
-  font-weight: var(--font-weight-bold, 700);
-  font-size: 54pt; line-height: 1.05; margin: 0; color: #fff;
+.rule { width: 60mm; height: 0; margin: 9mm 0 0; border-top: var(--divider-rule, 2pt solid #4182ff); }
+.subtitle {
+  margin: 6mm 0 0;
+  font-size: 12pt; font-weight: 400; line-height: 1.4;
+  color: var(--ink-on-dark-soft, #f5e2da);
+  max-width: 125mm;
 }
-.rule { margin-top: 20pt; border-top: 6px solid var(--color-secondary, #f5e2da); width: 60mm; }
+
+.logo { position: absolute; bottom: 16mm; left: 18mm; z-index: 2; }
+.logo img { height: 8mm; width: auto; opacity: 0.85; }
 </style>
 </head>
 <body>
-  <div class="orbit-layer">
-    <svg viewBox="0 0 794 1123" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <path class="arc" d="M 880 -60 A 920 920 0 0 0 -80 760"/>
-      <g class="stepping-stone">
-        <circle class="dot" cx="620" cy="200" r="14" fill="var(--orbit-dot-3, #ffdd77)"/>
-      </g>
+
+  <div class="circle-field">
+    <svg viewBox="0 0 210 297" preserveAspectRatio="none" aria-hidden="true">
+      <circle class="lg" cx="18"  cy="22"  r="58" fill="var(--circle-1, #4182ff)"/>
+      <circle class="lg" cx="196" cy="252" r="62" fill="var(--circle-2, #b880ff)"/>
+      <circle class="sm" cx="105" cy="268" r="14" fill="var(--circle-3, #7ddeb8)"/>
     </svg>
   </div>
-  <div class="content">
-    <div class="part-label">{{PART_LABEL}}</div>
-    <h1>{{SECTION_TITLE}}</h1>
+
+  <div class="block">
+    <div class="part">{{PART_LABEL}}</div>
+    <div class="ghost-numeral">{{SECTION_NUMBER}}</div>
+    <h1 class="title">{{SECTION_TITLE}}</h1>
     <div class="rule"></div>
+    <div class="subtitle">{{SECTION_SUBTITLE}}</div>
   </div>
+
+  <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
+
 </body>
 </html>

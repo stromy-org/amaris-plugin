@@ -1,9 +1,17 @@
 <!--
-  Amaris Consulting — PPTX section-divider anchor template.
-  Consumed by `pptx` / `pptx-hd` render-anchors mode.
+  Amaris Consulting — PPTX section-divider anchor (FRAME ONLY).
+  Consumed by the `pptx` / `pptx-hd` render-anchors mode.
 
-  Injected: {{HERO_URL}} {{LOGO_WHITE_URL}} {{SECTION_NUMBER}} {{SECTION_TITLE}}
-            {{TOKENS_CSS}} {{FONT_FACES}} {{CONFIDENTIALITY}}
+  Rebuilt 2026-09-22 from the styling source of truth
+  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx, slides 8/21).
+  Extraction of record: clients/amaris/presentation-grammar.md.
+
+  CHANGED: no photo-with-indigo-wash variant, no blush rule under the title. The
+  field is flat #002060 with the circle field; the rule under the title is a 2 pt
+  blue line; the ghost numeral is the divider's defining element.
+
+  Injected: {{SECTION_NUMBER}} {{TITLE}} {{SUBTITLE}} {{LOGO_WHITE_URL}}
+            {{TOKENS_CSS}} {{FONT_FACES}}
 -->
 <!DOCTYPE html>
 <html>
@@ -16,89 +24,66 @@
 html, body { margin: 0; padding: 0; }
 body {
   width: 1280px; height: 720px;
-  color: #fff;
-  background: var(--color-primary, #272774);
-  font-family: var(--font-display, var(--font-heading));
+  background: var(--canvas-navy, #002060);
+  color: var(--ink-on-dark, #fff);
+  font-family: var(--font-heading, 'Century Gothic', sans-serif);
   position: relative;
   overflow: hidden;
 }
-/* Optional hero photo, dimmed under an indigo wash for legibility */
-.hero {
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(rgba(39,39,116,0.78), rgba(39,39,116,0.78)),
-    url("{{HERO_URL}}") center/cover;
+
+.circle-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.circle-field circle.lg { opacity: var(--circle-opacity-large, 0.20); }
+.circle-field circle.sm { opacity: var(--circle-opacity-small, 0.35); }
+
+.block { position: absolute; top: 150px; left: var(--slide-margin, 56px); right: 56px; z-index: 2; }
+
+/* Ghost numeral — 106 pt bold white, sitting behind and above the title. */
+.ghost-numeral {
+  margin: 0;
+  font-size: var(--pt-ghost-numeral, 106pt);
+  font-weight: 700;
+  line-height: 0.92;
+  color: rgba(255,255,255,0.16);
 }
-/* Orbit + stepping-stone motif — one arc + one accent dot, over the hero wash
-   but under the section text. Bounded-ornament rule (<=2 arcs + <=3 dots). */
-.orbit-layer { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-.orbit-layer svg { width: 100%; height: 100%; display: block; }
-.orbit-layer .arc {
-  fill: none;
-  stroke: var(--motif-arc-color-dark, rgba(255,255,255,0.30));
-  stroke-width: var(--motif-line-weight, 0.9px);
-  stroke-linecap: round;
+.title {
+  margin: 4px 0 0;
+  font-size: var(--pt-divider-title, 66pt);
+  font-weight: 700;
+  line-height: 1.04;
+  color: var(--ink-on-dark, #fff);
 }
-.orbit-layer .stepping-stone .dot {
-  filter: drop-shadow(var(--orbit-dot-glow, 0 0 24px rgba(65,130,255,0.45)));
+.rule {
+  width: 300px; height: 0;
+  margin: 34px 0 0;
+  border-top: var(--divider-rule, 2pt solid #4182ff);
 }
-.section-number {
-  z-index: 2;
-  position: absolute;
-  top: 64px;
-  left: 64px;
-  font-family: var(--font-mono, monospace);
-  font-size: 14pt;
-  color: var(--color-secondary, #EBC4B4);
-  letter-spacing: 0.24em;
+.subtitle {
+  margin: 22px 0 0;
+  font-size: var(--pt-subtitle, 18pt);
+  font-weight: 400;
+  color: var(--ink-on-dark-soft, #f5e2da);
 }
-.section-title {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 64px;
-  right: 64px;
-  transform: translateY(-50%);
-  font-family: var(--font-display, var(--font-heading));
-  font-weight: var(--font-weight-semibold, 600);
-  font-size: 60pt;
-  line-height: 1.08;
-  color: #fff;
-  max-width: 960px;
-}
-.section-title::after {
-  content: "";
-  display: block;
-  width: 96px; height: 6px;
-  margin-top: 28px;
-  background: var(--color-secondary, #EBC4B4);
-}
-.logo  { position: absolute; bottom: 44px; left: 64px; z-index: 2; }
-.logo img { height: 28pt; width: auto; opacity: 0.85; }
-.meta {
-  position: absolute;
-  bottom: 36px;
-  right: 64px;
-  font-family: var(--font-mono, monospace);
-  font-size: 9pt;
-  opacity: 0.7;
-}
+
+.logo { position: absolute; bottom: 40px; left: var(--slide-margin, 56px); z-index: 2; }
+.logo img { height: 30px; width: auto; opacity: 0.85; }
 </style>
 </head>
 <body>
-  <div class="hero"></div>
-  <!-- Orbit motif: 1 arc + 1 stepping-stone dot (within the cap) -->
-  <div class="orbit-layer">
-    <svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <path class="arc" d="M 1400 -80 A 1180 1180 0 0 0 -120 620"/>
-      <g class="stepping-stone">
-        <circle class="dot" cx="980" cy="150" r="20" fill="var(--orbit-dot-3, #ffdd77)"/>
-      </g>
-    </svg>
+
+  <svg class="circle-field" viewBox="0 0 1280 720" aria-hidden="true">
+    <circle class="lg" cx="128"  cy="128" r="256" fill="var(--circle-1, #4182ff)"/>
+    <circle class="lg" cx="1152" cy="576" r="256" fill="var(--circle-2, #b880ff)"/>
+    <circle class="sm" cx="608"  cy="608" r="96"  fill="var(--circle-3, #7ddeb8)"/>
+  </svg>
+
+  <div class="block">
+    <div class="ghost-numeral">{{SECTION_NUMBER}}</div>
+    <h1 class="title">{{TITLE}}</h1>
+    <div class="rule"></div>
+    <div class="subtitle">{{SUBTITLE}}</div>
   </div>
-  <div class="section-number">{{SECTION_NUMBER}}</div>
-  <div class="section-title">{{SECTION_TITLE}}</div>
+
   <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
-  <div class="meta">{{CONFIDENTIALITY}}</div>
+
 </body>
 </html>

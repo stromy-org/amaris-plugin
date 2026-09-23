@@ -2,12 +2,14 @@
   Amaris Consulting — PDF footer template (Playwright `footerTemplate`).
   Playwright only resolves classes: date, title, url, pageNumber, totalPages.
   Brand name / confidentiality are substituted from boilerplate before render.
-  Carries the thin blush accent rule (brand frame); the orbit motif is a
-  body-layer mark, not a Playwright footer element.
+
+  Rebuilt 2026-09-22 from the styling source of truth. CHANGED: the rule is the
+  hairline indigo keyline, not a 2 px blush rule; the face is Century Gothic,
+  not monospace.
 -->
-<div style="width:100%; padding:0 18mm; font-family:'SFMono-Regular','Menlo',monospace;">
-  <div style="border-top:2px solid #f5e2da; margin-bottom:3pt;"></div>
-  <div style="font-size:8pt; color:#6c757d; display:flex; justify-content:space-between;">
+<div style="width:100%; padding:0 18mm; font-family:'Century Gothic','Jost',sans-serif;">
+  <div style="border-top:0.5pt solid #272774; opacity:0.35; margin-bottom:4pt;"></div>
+  <div style="font-size:8pt; letter-spacing:0.4pt; color:#6c757d; display:flex; justify-content:space-between;">
     <span>{{BRAND_NAME}}</span>
     <span>{{CONFIDENTIALITY}}</span>
     <span><span class="pageNumber"></span> / <span class="totalPages"></span></span>

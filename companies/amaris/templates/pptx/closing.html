@@ -1,10 +1,16 @@
 <!--
-  Amaris Consulting — PPTX closing slide anchor template.
-  Consumed by `pptx` / `pptx-hd` render-anchors mode.
+  Amaris Consulting — PPTX closing slide anchor (FRAME ONLY).
+  Consumed by the `pptx` / `pptx-hd` render-anchors mode.
 
-  Injected: {{HERO_URL}} {{LOGO_WHITE_URL}} {{CLIENT_NAME}}
-            {{CONTACT_EMAIL}} {{CONTACT_WEBSITE}} {{CTA_TEXT}}
-            {{TOKENS_CSS}} {{FONT_FACES}} {{CONFIDENTIALITY}}
+  Rebuilt 2026-09-22 from the styling source of truth
+  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx, slide 23).
+  Extraction of record: clients/amaris/presentation-grammar.md.
+
+  CHANGED: no hero photograph, no blush rule, no monospace. Flat #002060, the
+  circle field, one very large line of Century Gothic Bold.
+
+  Injected: {{LOGO_WHITE_URL}} {{CLOSING_LINE}} {{CONTEXT_LINE}}
+            {{TOKENS_CSS}} {{FONT_FACES}}
 -->
 <!DOCTYPE html>
 <html>
@@ -17,89 +23,54 @@
 html, body { margin: 0; padding: 0; }
 body {
   width: 1280px; height: 720px;
-  color: #fff;
-  background:
-    linear-gradient(125deg, rgba(39,39,116,0.95) 0%, rgba(39,39,116,0.78) 100%),
-    url("{{HERO_URL}}") center/cover;
-  font-family: var(--font-display, var(--font-heading));
+  background: var(--canvas-navy, #002060);
+  color: var(--ink-on-dark, #fff);
+  font-family: var(--font-heading, 'Century Gothic', sans-serif);
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
-/* Orbit motif — two arcs framing the centred CTA (within the <=2 arc cap),
-   behind the content (flex children paint above the absolute layer). */
-.orbit-layer { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
-.orbit-layer svg { width: 100%; height: 100%; display: block; }
-.orbit-layer .arc {
-  fill: none;
-  stroke: var(--motif-arc-color-dark, rgba(255,255,255,0.30));
-  stroke-width: var(--motif-line-weight, 0.9px);
-  stroke-linecap: round;
+
+.circle-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.circle-field circle.lg { opacity: var(--circle-opacity-large, 0.19); }
+.circle-field circle.sm { opacity: var(--circle-opacity-small, 0.45); }
+
+.block {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  left: var(--slide-margin, 56px); right: 56px; z-index: 2;
 }
-.orbit-layer .stepping-stone .dot {
-  filter: drop-shadow(var(--orbit-dot-glow, 0 0 24px rgba(65,130,255,0.45)));
+.closing {
+  margin: 0;
+  font-size: var(--pt-closing, 96pt);
+  font-weight: 700;
+  line-height: 1.02;
+  color: var(--ink-on-dark, #fff);
 }
-.logo { margin-bottom: 40pt; position: relative; z-index: 1; }
-.logo img { height: 52pt; width: auto; }
-.cta, .contact { position: relative; z-index: 1; }
-.cta {
-  font-family: var(--font-display, var(--font-heading));
-  font-weight: var(--font-weight-semibold, 600);
-  font-size: 40pt;
-  line-height: 1.15;
-  text-align: center;
-  color: #fff;
-  max-width: 920px;
-  margin: 0 64px;
+.context {
+  margin: 40px 0 0;
+  font-size: var(--pt-body, 12pt);
+  font-weight: 400;
+  letter-spacing: var(--track-medium, 1.33pt);
+  color: rgba(255,255,255,0.55);
 }
-.cta::after {
-  content: "";
-  display: block;
-  width: 96px; height: 6px;
-  margin: 28px auto 0;
-  background: var(--color-secondary, #EBC4B4);
-}
-.contact {
-  font-family: var(--font-mono, monospace);
-  font-size: 11pt;
-  letter-spacing: 0.14em;
-  margin-top: 30pt;
-  opacity: 0.88;
-  text-align: center;
-}
-.meta {
-  position: absolute;
-  bottom: 26px;
-  left: 64px;
-  right: 64px;
-  font-family: var(--font-mono, monospace);
-  font-size: 9pt;
-  opacity: 0.6;
-  display: flex;
-  justify-content: space-between;
-}
+
+.logo { position: absolute; bottom: 40px; right: var(--slide-margin, 56px); z-index: 2; }
+.logo img { height: 30px; width: auto; opacity: 0.85; }
 </style>
 </head>
 <body>
-  <!-- Orbit motif: 2 arcs framing the centre + 1 stepping-stone dot -->
-  <div class="orbit-layer">
-    <svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <path class="arc" d="M -160 560 A 1280 1280 0 0 1 1180 -120"/>
-      <path class="arc" d="M 100 840 A 1280 1280 0 0 1 1440 160"/>
-      <g class="stepping-stone">
-        <circle class="dot" cx="1040" cy="120" r="16" fill="var(--orbit-dot-4, #b880ff)"/>
-      </g>
-    </svg>
+
+  <svg class="circle-field" viewBox="0 0 1280 720" aria-hidden="true">
+    <circle class="lg" cx="128"  cy="128" r="320" fill="var(--circle-1, #4182ff)"/>
+    <circle class="lg" cx="1152" cy="640" r="256" fill="var(--circle-2, #b880ff)"/>
+    <circle class="sm" cx="1126" cy="320" r="38"  fill="var(--circle-4, #ffdd77)"/>
+  </svg>
+
+  <div class="block">
+    <h1 class="closing">{{CLOSING_LINE}}</h1>
+    <div class="context">{{CONTEXT_LINE}}</div>
   </div>
+
   <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
-  <div class="cta">{{CTA_TEXT}}</div>
-  <div class="contact">{{CONTACT_EMAIL}} &nbsp;·&nbsp; {{CONTACT_WEBSITE}}</div>
-  <div class="meta">
-    <span>{{CLIENT_NAME}}</span>
-    <span>{{CONFIDENTIALITY}}</span>
-  </div>
+
 </body>
 </html>

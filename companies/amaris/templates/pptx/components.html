@@ -1,0 +1,261 @@
+<!--
+  Amaris Consulting — component vocabulary (REFERENCE SHEET, not a slide).
+
+  This is the answer to "what does an Amaris slide body look like". Every composite
+  below is measured from the client-supplied styling source of truth
+  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx); the extraction
+  of record is clients/amaris/presentation-grammar.md.
+
+  HOW TO USE THIS. An Amaris content slide is one of these composites, or a
+  deliberate variation on one. Copy the CSS you need into the deck you are
+  authoring and fill it with real content — do not render this file as a slide, and
+  do not treat the sample text as content.
+
+  The accent rotates blue -> purple -> mint -> yellow by POSITION (item 1 is blue,
+  item 2 purple, ...). The sector mapping (life-sciences mint, engineering purple,
+  telecom yellow, digital blue) applies only when the content is actually about
+  those sectors. Never both modes on one slide.
+
+  There is no photography in this system. A slide needing a visual gets, in order:
+  a diagram, a chart, an icon tile row, a tinted panel, or whitespace.
+
+  Injected: {{TOKENS_CSS}} {{FONT_FACES}}
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{TOKENS_CSS}}
+{{FONT_FACES}}
+
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--canvas-light, linear-gradient(180deg, #ffffff 0%, #fbf5f2 100%));
+  color: var(--ink-body, #3a3a52);
+  font-family: var(--font-body, 'Century Gothic', sans-serif);
+  padding: 48px var(--slide-margin, 56px);
+}
+
+/* ==========================================================================
+   SHARED ATOMS
+   ========================================================================== */
+
+/* The hairline that carries the whole system. Elevation is a keyline, not a shadow. */
+.keyline        { border: 1px solid var(--keyline, #272774); }   /* 0.25pt at slide scale */
+.keyline-strong { border: 2px solid var(--keyline, #272774); }
+
+.card {
+  background: var(--surface-paper, #fff);
+  border: 1px solid var(--keyline, #272774);
+  border-radius: var(--radius-card, 8.6pt);
+  padding: var(--card-padding, 24px);
+  box-shadow: var(--elev-card-shadow, 0 1px 3px rgba(39,39,116,0.10));
+}
+.card--warm { background: var(--surface-warm, #fdf9f7); }
+
+/* Tracked uppercase eyebrow. Type the uppercase — never rely on text-transform
+   alone, because PPTX has no auto-caps in this system. */
+.eyebrow {
+  font-size: var(--pt-eyebrow, 11pt);
+  font-weight: 700;
+  letter-spacing: var(--track-medium, 1.33pt);
+  text-transform: uppercase;
+  color: var(--ink-primary, #272774);
+}
+
+.statement {
+  font-size: var(--pt-statement, 28pt);
+  font-weight: 400;
+  line-height: var(--lh-statement, 1.35);
+  color: var(--ink-primary, #272774);
+  text-align: center;
+}
+.statement b { font-weight: 700; }   /* emphasise the load-bearing words only */
+
+/* ==========================================================================
+   1 — ACCENT-CAPPED CARD   (source slides 3, 5, 14)
+   A solid accent bar across the card's top edge. The workhorse.
+   ========================================================================== */
+.cap-row  { display: flex; gap: var(--grid-gutter-4, 19px); }
+.cap-card {
+  flex: 1;
+  background: var(--surface-warm, #fdf9f7);
+  border: 1px solid var(--keyline, #272774);
+  border-top: var(--accent-cap-height, 5pt) solid var(--cap, #4182ff);
+  border-radius: 0;                       /* the capped card is square-cornered */
+  padding: var(--card-padding, 24px);
+}
+.cap-card h3 { margin: 0 0 12px; font-size: var(--pt-card-heading, 17pt);
+               font-weight: 700; color: var(--ink-title, #1e1e5e); }
+.cap-card p  { margin: 0; font-size: var(--pt-body, 13pt); line-height: var(--lh-body, 1.12);
+               color: var(--ink-muted, #4a4a7a); }
+
+/* ==========================================================================
+   2 — HEADER-BAR CARD   (source slides 4, 17)
+   A solid accent block as the card header, white bold text inside it.
+   ========================================================================== */
+.bar-card { flex: 1; border: 1px solid var(--keyline, #272774); background: var(--surface-paper, #fff); }
+.bar-card > .bar {
+  background: var(--cap, #4182ff);
+  padding: 12px 20px;
+  font-size: var(--pt-card-heading, 17pt);
+  font-weight: 700;
+  color: #fff;
+}
+.bar-card > .bar--tint { background: var(--cap-tint, #d9e6ff); color: var(--ink-title, #1e1e5e); }
+.bar-card > .body { padding: var(--card-padding, 24px); }
+
+/* Chevron bullets, tinted to the card's accent. */
+.chev { list-style: none; margin: 0; padding: 0; }
+.chev li {
+  position: relative; padding-left: 20px; margin-bottom: 14px;
+  font-size: var(--pt-body, 13pt); color: var(--ink-body, #3a3a52);
+}
+.chev li::before {
+  content: "\203A"; position: absolute; left: 0;
+  color: var(--cap, #4182ff); font-weight: 700;
+}
+
+/* ==========================================================================
+   3 — LEFT-RULE ROW   (source slides 6, 22)  — agenda / key takeaways
+   ========================================================================== */
+.rule-row {
+  display: flex; align-items: center; gap: 28px;
+  background: var(--surface-paper, #fff);
+  border: 1px solid var(--keyline, #272774);
+  border-left: var(--left-rule-width, 6pt) solid var(--cap, #4182ff);
+  border-radius: var(--radius-card, 8.6pt);
+  padding: 18px 28px;
+  margin-bottom: 16px;
+}
+.rule-row .n {
+  font-size: var(--pt-index-numeral, 32pt); font-weight: 700;
+  color: var(--cap, #4182ff); min-width: 72px;
+}
+.rule-row .label { font-size: var(--pt-card-heading, 17pt); font-weight: 700;
+                   color: var(--ink-title, #1e1e5e); }
+.rule-row .meta  { font-size: var(--pt-body, 13pt); color: var(--ink-meta, #6c757d); }
+
+/* ==========================================================================
+   4 — NUMBERED STEP CARD   (source slide 5)
+   Accent-capped card + a solid accent square badge carrying a white numeral.
+   ========================================================================== */
+.step-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 58px; height: 58px;
+  background: var(--cap, #4182ff);
+  border-radius: var(--radius-badge, 6pt);
+  color: #fff; font-size: var(--pt-badge-numeral, 18pt); font-weight: 700;
+}
+.step-label { font-size: var(--pt-card-heading, 17pt); font-weight: 700;
+              color: var(--cap, #4182ff); margin-left: 16px; }
+
+/* ==========================================================================
+   5 — ICON TILE   (source slides 9, 13)
+   A circular chip with a hairline ring, one single-accent icon inside.
+   ========================================================================== */
+.tile { display: flex; align-items: center; gap: 22px;
+        background: var(--surface-paper, #fff);
+        border: 1px solid var(--keyline, #272774);
+        border-radius: var(--radius-card, 8.6pt);
+        padding: 22px 26px; }
+.chip {
+  flex: none;
+  width: var(--icon-chip-dia, 96px); height: var(--icon-chip-dia, 96px);
+  border-radius: 50%;
+  background: var(--icon-chip-fill, #f6eef7);
+  border: var(--icon-chip-ring, 1px solid #272774);
+  display: flex; align-items: center; justify-content: center;
+}
+.chip svg { width: 44%; height: 44%; fill: var(--cap, #4182ff); }
+
+/* ==========================================================================
+   6 — PHRASE / TAKEAWAY BAR   (source slides 4, 11, 12, 17)
+   At most ONE per slide, and only when there is a real takeaway.
+   ========================================================================== */
+.phrase {
+  border-radius: var(--phrase-bar-radius, 8.6pt);
+  border: 1px solid var(--keyline, #272774);
+  padding: 16px 28px;
+  text-align: center;
+  font-size: var(--pt-card-heading, 16pt);
+  font-weight: 700; font-style: italic;
+  color: var(--ink-primary, #272774);
+  background: var(--accent-4-tint60, #ffebad);
+}
+.phrase--lavender { background: var(--accent-2-tint60, #d4b3ff); }
+.phrase--navy     { background: var(--ink-primary, #272774); color: #fff; border-color: transparent; }
+
+/* ==========================================================================
+   7 — TINTED PANEL   (source slide 11) — the photography substitute
+   Nest the tint ramp: white -> tint80 -> tint60 -> solid.
+   ========================================================================== */
+.panel        { background: var(--accent-1-tint80, #d9e6ff); border-radius: var(--radius-panel, 14pt);
+                border: 1px solid var(--keyline, #272774); padding: 26px; }
+.panel .chipx { background: var(--accent-1-tint60, #8db4ff); border-radius: var(--radius-badge, 6pt);
+                padding: 14px 18px; font-weight: 700; color: var(--ink-primary, #272774);
+                font-size: var(--pt-body, 13pt); }
+
+/* --- accent rotation: set --cap (and --cap-tint) per item, by position ----- */
+.a1 { --cap: var(--accent-1, #4182ff); --cap-tint: var(--accent-1-tint80, #d9e6ff); }
+.a2 { --cap: var(--accent-2, #b880ff); --cap-tint: var(--accent-2-tint80, #f1e6ff); }
+.a3 { --cap: var(--accent-3, #7ddeb8); --cap-tint: var(--accent-3-tint80, #e5f8f1); }
+.a4 { --cap: var(--accent-4, #ffdd77); --cap-tint: var(--accent-4-tint80, #fff8e4); }
+
+/* reference-sheet chrome only — not part of the brand */
+h2.ref { font-size: 13pt; font-weight: 700; color: var(--ink-primary,#272774);
+         letter-spacing: 1pt; text-transform: uppercase; margin: 44px 0 14px; }
+</style>
+</head>
+<body>
+
+<h2 class="ref">1 · Accent-capped cards — the workhorse</h2>
+<div class="cap-row">
+  <div class="cap-card a1"><h3>Text</h3><p>Body copy sits here.</p></div>
+  <div class="cap-card a2"><h3>Text</h3><p>Body copy sits here.</p></div>
+  <div class="cap-card a3"><h3>Text</h3><p>Body copy sits here.</p></div>
+  <div class="cap-card a4"><h3>Text</h3><p>Body copy sits here.</p></div>
+</div>
+
+<h2 class="ref">2 · Header-bar cards with chevron bullets</h2>
+<div class="cap-row">
+  <div class="bar-card a4"><div class="bar">They focus on</div>
+    <div class="body"><ul class="chev"><li>Point one</li><li>Point two</li><li>Point three</li></ul></div></div>
+  <div class="bar-card a1"><div class="bar">Key principles</div>
+    <div class="body"><ul class="chev"><li>Point one</li><li>Point two</li><li>Point three</li></ul></div></div>
+</div>
+
+<h2 class="ref">3 · Left-rule rows — agenda, key takeaways</h2>
+<div class="rule-row a1"><div class="n">01</div><div><div class="label">Text</div><div class="meta">Info</div></div></div>
+<div class="rule-row a2"><div class="n">02</div><div><div class="label">Text</div><div class="meta">Info</div></div></div>
+<div class="rule-row a3"><div class="n">03</div><div><div class="label">Text</div><div class="meta">Info</div></div></div>
+<div class="rule-row a4"><div class="n">04</div><div><div class="label">Text</div><div class="meta">Info</div></div></div>
+
+<h2 class="ref">4 · Numbered step cards</h2>
+<div class="cap-row">
+  <div class="cap-card a2"><div><span class="step-badge">01</span><span class="step-label">step</span></div></div>
+  <div class="cap-card a1"><div><span class="step-badge">02</span><span class="step-label">step</span></div></div>
+  <div class="cap-card a3"><div><span class="step-badge">03</span><span class="step-label">step</span></div></div>
+</div>
+
+<h2 class="ref">5 · Icon tiles</h2>
+<div class="cap-row">
+  <div class="tile a2"><div class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg></div><div>Phrase</div></div>
+  <div class="tile a1"><div class="chip"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></div><div>Phrase</div></div>
+</div>
+
+<h2 class="ref">6 · Tinted panel — use instead of a photograph</h2>
+<div class="cap-row">
+  <div class="panel a1"><div class="eyebrow">Information</div>
+    <div class="cap-row" style="margin-top:16px"><div class="chipx">Escalate?</div><div class="chipx">Reduce scope?</div></div></div>
+</div>
+
+<h2 class="ref">7 · Phrase bar — at most one per slide</h2>
+<div class="phrase">A phrase that earns its place</div>
+
+<h2 class="ref">8 · Centred statement</h2>
+<div class="statement">This is an example of what a <b>statement</b> slide can look like</div>
+
+</body>
+</html>

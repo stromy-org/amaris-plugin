@@ -116,53 +116,72 @@ For Microsoft Office, PDF, and tools that cannot render SVG.
 
 ## Imagery
 
-11 approved photos across four roles:
+**None. Photography is removed from this brand's render path** (client instruction,
+2026-09-22).
 
-| Role | Files | Use |
-|------|-------|-----|
-| Cover | `photo-cover-01` – `05` | Hero/title slide backgrounds, full-bleed |
-| Closing | `photo-closing-01` | Final slide, about-us contexts |
-| Divider | `photo-divider-01` | Section break slides |
-| Section | `photo-section-01` – `03` | Interior content, inset use |
+The styling source of truth contains no photography in any slide that works — the
+two slides carrying stock photos and the two carrying stock persona clip-art are
+visibly its weakest pages, and they are what prompted this revision. The previous
+library of 11 scraped amaris.com photos, and the navy-scrim overlays derived from
+them, have been retired; every entry survives in `images/manifest.json` under
+`retired` with its original `source_url` and sha256, so the set is recoverable.
 
-**Overlay:** Apply `#272674` at 55% opacity over any photo before placing white text. Pre-composited overlays available in `pptx-assets/overlays/`.
+Reinstate only with imagery the client has chosen themselves.
 
-**Logo on image:** Use the white (inverted) logo variant.
+Where a deliverable needs a visual, use — in this order:
+
+1. a **diagram** (`render_diagram`) or a **chart** (`format-chart`), brand-themed;
+2. an **icon tile** row (circular chip, hairline ring, one accent per icon);
+3. a **tinted panel** carrying structured text;
+4. the **circle field** alone, with generous whitespace.
+
+An empty, well-set slide is on-brand. A stock photograph is not.
 
 ---
 
 ## Motif system
 
-The recovered signature layer from the official PowerPoint master — the literal
-visual of the tagline *"Your stepping stone."* It is a **grammar**, not a fixed
-template: composed freshly per deck within the caps below, never reproducing the
-source layout. Two motif families coexist with bounded discipline (no third
-family):
+**Definition of record: `presentation-grammar.md`**, measured from
+`.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx` — the deck Amaris
+themselves nominated as what "good" looks like. That file carries the full
+composite set, the type scale and the grid; this is the summary.
+
+The signature is the **circle field**: 2–3 soft accent circles per slide, one large
+bleeding off a corner, always behind content.
 
 | Mark | What it is | Where | Tokens / asset |
 |------|------------|-------|----------------|
-| **Orbit arc** | Hairline arc on a large off-canvas radius, sweeping across the slide | cover, section-divider, closing | `--motif-line-weight`, `--motif-arc-color-{dark,light}`; `assets/svg/motif-orbit.svg` (`.orbit-layer`) |
-| **Stepping-stone dot** | Solid accent-colour circle sitting *on* an arc, soft glow | cover, section-divider | `--orbit-dot-1..4`, `--orbit-dot-glow`; `assets/svg/motif-stepping-stones.svg` (`.stepping-stone`) |
-| **Ghost wordmark** | Oversized outline AMARIS bleeding off the right edge | content | `--motif-ghost-opacity`; `assets/svg/motif-wordmark-ghost.svg` (`.ghost-wordmark`) |
-| **Ring bullet** | Outline ring with navy numeral for numbered lists | content, DOCX | `assets/svg/bullet-ring.svg` (`.ring-bullet`) |
-| **Blush rule** | The original thin blush/peach top rule | all | `--color-secondary` (`.accent-rule`) |
+| **Circle field** | 2–3 circles; one large (2.4–7.0 in) bleeding off a corner at 15–25 %, one opposite, optionally one small (0.8–1.1 in) inside at 35–45 % | all surfaces | `--circle-1..4`, `--circle-opacity-{large,small}`; `assets/svg/circle-field{,-dark}.svg` (`.circle-field`) |
+| **Hairline keyline** | 0.25 pt indigo outline around every card and panel — 89 occurrences in the source | all | `--keyline`, `--keyline-weight` |
+| **Accent cap** | 4–6 pt solid accent bar across a card's top edge | content | `--accent-cap-height` |
+| **Left rule** | 5–6 pt accent bar on an agenda row's left edge | content | `--left-rule-width` |
+| **Ghost wordmark** | Oversized outline AMARIS bleeding off an edge at ≤10 % | content | `--motif-ghost-opacity`; `assets/svg/motif-wordmark-ghost.svg` |
+| **Ambient arc** | Hairline arc, retained from the orbit motif but **demoted** to ambient | content | `--motif-line-weight`; `assets/svg/motif-orbit.svg` |
 
-**Caps (enforced as the bounded-ornament rule):** ≤2 orbit arcs + ≤3 stepping-stone
-dots per slide; ghost wordmark ≤10 % opacity; dots ≤0.8 in diameter.
+**Caps:** ≤3 circles per slide · one accent per circle, never repeated on a slide ·
+≤2 ambient arcs · ghost wordmark ≤10 % opacity · circles always behind content,
+never a container, never carrying text.
 
-**Semantic vs. decorative accent split.** Sector accent colours keep their
-semantic meaning **only in data/UI tag contexts** (life-sciences green,
-engineering purple, telecom yellow, digital blue). The stepping-stone dots use
-the *same* palette **decoratively** — rotating, non-semantic — and are exempt
-from the "accent = tags only" rule. They are never a background field.
+**Semantic vs. positional accent split.** The default in a deck is **positional
+rotation** — item 01 blue, 02 purple, 03 mint, 04 yellow, carrying no sector claim.
+The **sector mapping** (life-sciences mint, engineering purple, telecom yellow,
+digital blue) applies only when the content is actually about those sectors.
+Never both modes on one slide.
 
-**Canvas gradients.** Dark canvas `--gradient-dark` (#272674 → #000); light canvas
-`--gradient-canvas-light` (#fff → #f5e2da). Two extra source-deck accents are
-available for motif art: warm `--accent-warm` (#FBAE40) and coral `--accent-coral`
-(#F26B43).
+**Canvas.** Dark `--canvas-navy` **#002060** (cover, section divider, closing) —
+this is *not* the brand indigo. Light `--canvas-light`, a vertical #ffffff → #fbf5f2
+gradient, never flat white. Component gradients are retired: the light canvas is the
+only gradient in the system.
 
-The canonical brand-primary is **#272674** (confirmed against live amaris.com).
-The source PPTX's `#272774` is a deck-internal rounding, not the canonical value.
+**Ink vs. canvas.** **#272674** remains the canonical brand primary (confirmed
+against live amaris.com); the source deck's **#272774** is a deck-internal rounding.
+Either way it is **ink and keyline**, never a slide field.
+
+### Retired 2026-09-22
+
+Hero photography with a navy scrim · the 6 px blush top rule · the monospace footer
+bar · "accents are never large colour blocks" (contradicted — solid accent header
+bars and caps are core) · orbit arcs as the *primary* motif (demoted to ambient).
 
 ---
 

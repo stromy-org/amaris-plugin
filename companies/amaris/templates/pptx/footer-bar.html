@@ -1,30 +1,33 @@
 <!--
   Amaris Consulting — PPTX footer-bar fragment.
-  Standalone HTML snippet for embedding into any LLM-authored content slide
-  that wants the brand-consistent footer without inheriting the rest of the
-  content.html frame.
+  Standalone snippet for an LLM-authored content slide that wants the brand
+  footer without inheriting the rest of the content.html frame.
 
-  Injected: {{LOGO_MONO_URL}} {{CLIENT_NAME}} {{CONFIDENTIALITY}}
-            {{PAGE}} {{PAGES}}
+  Rebuilt 2026-09-22 from the styling source of truth. CHANGED: Century Gothic,
+  not monospace — this brand has exactly one type family, and the monospace
+  footer was an inference from the corporate blank, not an observed element.
+
+  Injected: {{LOGO_MONO_URL}} {{CLIENT_NAME}} {{CONFIDENTIALITY}} {{PAGE}} {{PAGES}}
 -->
 <div class="footer-bar" style="
   position: absolute;
-  bottom: 18px;
-  left: 64px;
-  right: 64px;
+  bottom: 26px;
+  left: var(--slide-margin, 56px);
+  right: var(--slide-margin, 56px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: var(--font-mono, monospace);
-  font-size: 8pt;
-  color: var(--color-text-light, #6c757d);
+  font-family: var(--font-body, 'Century Gothic', sans-serif);
+  font-size: 9pt;
+  letter-spacing: var(--track-tight, 0.67pt);
+  color: var(--ink-meta, #6c757d);
 ">
   <div style="display: flex; align-items: center; gap: 10pt;">
-    <img src="{{LOGO_MONO_URL}}" alt="Amaris Consulting" style="height: 14pt; width: auto; opacity: 0.8;">
     <span>{{CLIENT_NAME}}</span>
-  </div>
-  <div style="display: flex; align-items: center; gap: 10pt;">
     <span>{{CONFIDENTIALITY}}</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12pt;">
     <span>{{PAGE}} / {{PAGES}}</span>
+    <img src="{{LOGO_MONO_URL}}" alt="Amaris Consulting" style="height: 18pt; width: auto; opacity: 0.75;">
   </div>
 </div>

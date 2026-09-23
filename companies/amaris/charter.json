@@ -53,7 +53,54 @@
     "gradient": {
       "midnight": "linear-gradient(135deg, #020381 0%, #2874fc 100%)",
       "dark": "linear-gradient(135deg, #272674 0%, #000000 100%)",
-      "canvasLight": "linear-gradient(180deg, #ffffff 0%, #f5e2da 100%)"
+      "canvasLight": "linear-gradient(180deg, #ffffff 0%, #fbf5f2 100%)"
+    },
+    "canvasDark": "#002060",
+    "canvasLightTop": "#ffffff",
+    "canvasLightBottom": "#fbf5f2",
+    "surfaceWarm": "#fdf9f7",
+    "surfaceLilac": "#f6eef7",
+    "keyline": "#272774",
+    "ink": {
+      "title": "#1e1e5e",
+      "primary": "#272774",
+      "body": "#3a3a52",
+      "bodyAlt": "#494951",
+      "muted": "#4a4a7a",
+      "meta": "#6c757d"
+    },
+    "accentRamp": {
+      "order": [
+        "blue",
+        "purple",
+        "mint",
+        "yellow"
+      ],
+      "blue": {
+        "solid": "#4182ff",
+        "tint80": "#d9e6ff",
+        "tint60": "#8db4ff"
+      },
+      "purple": {
+        "solid": "#b880ff",
+        "tint80": "#f1e6ff",
+        "tint60": "#d4b3ff"
+      },
+      "mint": {
+        "solid": "#7ddeb8",
+        "tint80": "#e5f8f1",
+        "tint60": "#b1ebd4"
+      },
+      "yellow": {
+        "solid": "#ffdd77",
+        "tint80": "#fff8e4",
+        "tint60": "#ffebad"
+      },
+      "indigo": {
+        "solid": "#272774",
+        "tint80": "#cacaed",
+        "tint60": "#6060c9"
+      }
     }
   },
   "fonts": {
@@ -200,124 +247,118 @@
     "mark": "logos/favicon-192.png"
   },
   "images": {
-    "overlay": {
-      "color": "primary",
-      "opacity": 0.55
-    },
-    "logoVariantOnImage": "white",
-    "catalog": [
-      {
-        "file": "images/photo-cover-01.png",
-        "roles": [
-          "cover"
-        ],
-        "mood": "bold",
-        "orientation": "landscape",
-        "source_page": "/"
-      },
-      {
-        "file": "images/photo-cover-02.webp",
-        "roles": [
-          "cover"
-        ],
-        "mood": "abstract-tech",
-        "orientation": "landscape",
-        "source_page": "/",
-        "notes": "Fiber/telecom abstract"
-      },
-      {
-        "file": "images/photo-cover-03.webp",
-        "roles": [
-          "cover"
-        ],
-        "mood": "bold",
-        "orientation": "landscape",
-        "source_page": "/"
-      },
-      {
-        "file": "images/photo-cover-04.png",
-        "roles": [
-          "cover"
-        ],
-        "mood": "bold",
-        "orientation": "landscape",
-        "source_page": "/"
-      },
-      {
-        "file": "images/photo-cover-05.jpg",
-        "roles": [
-          "cover"
-        ],
-        "mood": "technology",
-        "orientation": "landscape",
-        "source_page": "/client-stories/",
-        "notes": "AI/chatbot consulting"
-      },
-      {
-        "file": "images/photo-closing-01.png",
-        "roles": [
-          "closing"
-        ],
-        "mood": "aspirational",
-        "orientation": "landscape",
-        "source_page": "/about-us/"
-      },
-      {
-        "file": "images/photo-divider-01.png",
-        "roles": [
-          "divider"
-        ],
-        "mood": "professional",
-        "orientation": "landscape",
-        "source_page": "/amaris-in-action/",
-        "notes": "Software engineering / AI"
-      },
-      {
-        "file": "images/photo-section-01.png",
-        "roles": [
-          "section"
-        ],
-        "mood": "research",
-        "orientation": "landscape",
-        "source_page": "/amaris-in-action/"
-      },
-      {
-        "file": "images/photo-section-02.png",
-        "roles": [
-          "section"
-        ],
-        "mood": "technology",
-        "orientation": "landscape",
-        "source_page": "/amaris-in-action/",
-        "notes": "AI / software testing"
-      },
-      {
-        "file": "images/photo-section-03.png",
-        "roles": [
-          "section"
-        ],
-        "mood": "inclusive",
-        "orientation": "landscape",
-        "source_page": "/amaris-in-action/",
-        "notes": "Digital transformation / inclusion"
-      },
-      {
-        "file": "images/graphic-mockup-01.png",
-        "roles": [
-          "section"
-        ],
-        "mood": "branded",
-        "orientation": "landscape",
-        "source_page": "/insights/",
-        "notes": "Thought leadership report cover — already in brand blue, use without overlay"
-      }
+    "policy": "none",
+    "note": "Photography removed from the Amaris render path on 2026-09-22 at the client's instruction. Renderers must not select a photographic asset for this brand. See expression.visual_grammar.photo and images/manifest.json `retired`.",
+    "substitutes": [
+      "diagram",
+      "chart",
+      "icon-tile",
+      "tinted-panel",
+      "whitespace"
     ]
   },
   "presentation": {
     "aspectRatio": "16:9",
-    "slideMargin": "40pt",
-    "titleMargin": "60pt",
-    "contentMargin": "40pt"
+    "slideSizeIn": [
+      13.333,
+      7.5
+    ],
+    "slideMargin": "42pt",
+    "titleMargin": "42pt",
+    "contentMargin": "42pt",
+    "grid": {
+      "sideMarginIn": 0.58,
+      "titleBandTopIn": [
+        0.5,
+        0.9
+      ],
+      "contentBandTopIn": [
+        1.33,
+        1.92
+      ],
+      "cardPaddingIn": [
+        0.2,
+        0.3
+      ],
+      "gutterInByColumns": {
+        "2": 0.5,
+        "3": 0.4,
+        "4": 0.2,
+        "5": 0.3
+      }
+    },
+    "radiusPt": {
+      "chip": 4.5,
+      "badge": 6.0,
+      "card": 8.6,
+      "panel": 14.0,
+      "pill": "full"
+    },
+    "keylinePt": {
+      "default": 0.25,
+      "emphasis": 0.75,
+      "container": 1.0,
+      "onDark": 0.5
+    },
+    "typeScalePt": {
+      "coverTitle": 80,
+      "ghostNumeral": 106,
+      "closing": 96,
+      "dividerTitle": 66,
+      "slideTitle": 32,
+      "slideTitleRange": [
+        30,
+        40
+      ],
+      "statement": [
+        24,
+        30
+      ],
+      "indexNumeral": [
+        29,
+        36
+      ],
+      "cardHeading": [
+        15,
+        19
+      ],
+      "badgeNumeral": [
+        14,
+        21
+      ],
+      "body": [
+        12,
+        14.5
+      ],
+      "eyebrow": [
+        10,
+        12
+      ],
+      "subtitle": [
+        11,
+        18
+      ]
+    },
+    "lineHeightPct": {
+      "body": [
+        104,
+        118
+      ],
+      "statement": [
+        105,
+        150
+      ]
+    },
+    "trackingPt": {
+      "tight": 0.67,
+      "medium": 1.33,
+      "wide": 2.0
+    },
+    "weights": [
+      400,
+      700
+    ],
+    "photography": "none"
   },
   "pptxAssets": {
     "gradients": {
@@ -325,203 +366,204 @@
       "accent": "pptx-assets/gradient-accent.png",
       "midnight": "pptx-assets/gradient-midnight.png"
     },
-    "overlays": {
-      "photo-cover-01": "pptx-assets/overlays/photo-cover-01-overlay.jpg",
-      "photo-cover-02": "pptx-assets/overlays/photo-cover-02-overlay.jpg",
-      "photo-cover-03": "pptx-assets/overlays/photo-cover-03-overlay.jpg",
-      "photo-cover-04": "pptx-assets/overlays/photo-cover-04-overlay.jpg",
-      "photo-cover-05": "pptx-assets/overlays/photo-cover-05-overlay.jpg",
-      "photo-closing-01": "pptx-assets/overlays/photo-closing-01-overlay.jpg",
-      "photo-divider-01": "pptx-assets/overlays/photo-divider-01-overlay.jpg",
-      "photo-section-01": "pptx-assets/overlays/photo-section-01-overlay.jpg",
-      "photo-section-02": "pptx-assets/overlays/photo-section-02-overlay.jpg",
-      "photo-section-03": "pptx-assets/overlays/photo-section-03-overlay.jpg"
-    }
+    "overlays": {},
+    "note": "Photo-scrim overlays removed 2026-09-22 with the photographic library they were composited from — see images/manifest.json `retired`. The gradient PNGs remain for non-presentation surfaces; the presentation grammar uses no component gradients (expression.visual_grammar.gradients)."
   },
   "expression": {
-    "source": "co_created",
+    "source": "client_supplied",
     "confidence": "approved",
     "status": "approved",
     "principles": [
-      "Lead with expertise: substance before style — professional depth is never sacrificed for visual flair.",
-      "Human over abstract: favour real workplace photography with controlled treatment over illustration or pure abstraction.",
-      "Systematic clarity: a strict two-weight typographic system (Regular / Bold Century Gothic) enforces hierarchy without decorative variation.",
-      "Navy as foundation: dark indigo (#272674) anchors every composition; warmth and sector colour are deliberate relief, not competition.",
-      "Motif as signature: the orbit + stepping-stone family (hairline arcs, accent-colour dots, ghost AMARIS wordmark, ring bullets) and the thin blush/peach rule are the recurring decorative motifs — both used with bounded discipline (≤2 arcs + ≤3 dots per slide; ghost wordmark ≤10 % opacity), never inventively, never a third family.",
-      "Generous margins: 64 px (or 40 pt) interior margins create breathing room; content never crowds the frame.",
-      "Colour indexing by sector: accent colours carry semantic meaning (life-sciences green, engineering purple, telecom yellow, digital blue) — respect the mapping."
+      "Composition over decoration: the slide is built from a small set of named components (accent-capped card, header-bar card, left-rule row, icon tile, phrase bar, centred statement) — an Amaris slide is one of those or a deliberate variation on one, never an improvisation.",
+      "No photography. The styling source of truth contains none in any slide that works, and the client removed it deliberately (2026-09-22). Where a visual is needed the order is: diagram, chart, icon tile, tinted panel, or generous whitespace with the circle field alone.",
+      "The circle field is the signature: 2-3 soft accent circles per slide, one large and bleeding off a corner, at 15-25 % opacity, always behind content, one accent each and never the same accent twice on a slide.",
+      "The hairline carries the structure: a 0.25 pt indigo keyline defines every card and panel. Elevation is a keyline, not a shadow.",
+      "Systematic clarity: Century Gothic alone, Regular 400 and Bold 700 only. No second family anywhere — no monospace, no serif, no intermediate weight.",
+      "Navy is the canvas only where it means something: cover, section divider, closing. #002060 is that canvas; #272774 is ink and keyline. They are not interchangeable.",
+      "Accents rotate positionally by default (01 blue, 02 purple, 03 mint, 04 yellow) and carry sector meaning ONLY when the content is actually about those sectors. Never both modes on one slide.",
+      "Generous margins: 0.58 in (42 pt) symmetric side margins, content never crowds the frame, and an empty well-set slide is on-brand."
     ],
     "visualAxes": {
-      "density": "balanced",
+      "density": "airy",
       "contrast": "high",
       "symmetry": "controlled-asymmetry",
-      "geometry": "rectilinear",
+      "geometry": "soft-geometric",
       "typeExpression": "systematic",
-      "imageTreatment": "documentary-muted",
-      "motifProminence": "accent",
-      "colorRhythm": "dark-light-indexed",
-      "ornament": "moderate"
+      "imageTreatment": "none",
+      "motifProminence": "signature",
+      "colorRhythm": "dark-anchored-light-body",
+      "ornament": "restrained"
     },
     "signatureElements": [
-      "Thin horizontal accent rule in blush/peach (#EBC4B4 / --color-secondary) anchoring top edge of cover and section-divider slides and left-margin tick on content slides.",
-      "Dark navy (#272674) full-field or gradient scrim over hero photographs at 55–78 % opacity, ensuring white-text legibility.",
-      "Century Gothic in Bold 700 only for all display/heading use — no intermediate weights.",
-      "White logo (currentColor SVG variant) positioned top-left on dark/image slides.",
-      "Monospace footer bar (8–9 pt) at slide bottom with logo mark, client name, confidentiality note, and page count.",
-      "Sector-indexed accent colours used exclusively as data/UI tags, not as background fields.",
-      "Midnight gradient (135 deg, #020381 → #2874fc) for hero/full-bleed alternative to flat navy.",
-      "Content-width constraint (985 px max on 1280 px canvas) maintaining lateral margin discipline.",
-      "Orbit arc — hairline arc (--motif-line-weight, ~0.75–1 px) on a large off-canvas radius, 1–2 per slide, sweeping across cover and section-divider; white @ 25–40 % on dark, navy/blush @ 12–18 % on light.",
-      "Stepping-stone dot — solid accent-colour circle sitting on an orbit arc with a soft glow, rotating the non-semantic decorative palette (--orbit-dot-1..4: blue/mint/yellow/purple); the literal visual of the 'Your stepping stone' tagline.",
-      "Ghost wordmark — oversized outline AMARIS letterform bleeding off the right edge of content slides at ≤10 % opacity (--motif-ghost-opacity), navy/blush outline only.",
-      "Circle ring bullet — small outline ring with a navy numeral for numbered lists (bullet-ring asset), a vertical stack echoing the stepping-stone path."
+      "Circle field — 2-3 soft accent circles per slide: one large (2.4-7.0 in) bleeding off a corner at 15-25 % opacity, one opposite corner also bleeding, optionally one small (0.8-1.1 in) fully inside at 35-45 %. One accent per circle, never repeated on a slide, always behind content.",
+      "Hairline indigo keyline — 0.25 pt #272774 around every card and panel (0.75-1.0 pt for an outer container, 0.5 pt white @20 % on dark). 89 occurrences in the source.",
+      "Accent-capped card — a 4-6 pt solid accent bar across the card's top edge, white or #FDF9F7 body, 8.6 pt radius, accent rotating blue/purple/mint/yellow.",
+      "Header-bar card — a solid accent block as the card header carrying white bold text, with a keylined white body beneath it.",
+      "Left-rule row — full-width white row with a 5-6 pt accent bar on its left edge, a 29-36 pt accent numeral, a bold indigo label and a grey meta line. The agenda and key-takeaways shape.",
+      "Numbered step badge — a solid accent square (6 pt radius) carrying a white bold numeral, with the step label set in the matching accent.",
+      "Icon tile — a circular chip (#F6EEF7 or accent tint-80) with a hairline indigo ring, holding one single-accent icon, phrase set alongside.",
+      "Phrase bar — a full-width 8.6 pt-radius bar at the slide foot, tint- or navy-filled, text centred bold italic at 12-16 pt. At most one per slide.",
+      "Pill label — a fully-rounded solid-yellow chip carrying 10.5 pt bold indigo uppercase text; the cover's eyebrow.",
+      "Ghost numeral — 106 pt bold white at low opacity behind a section-divider title.",
+      "Ghost wordmark — the oversized outline AMARIS lockup cropped and bleeding off an edge at very low opacity; the small outline lockup sits bottom-right on light slides.",
+      "Tracked uppercase eyebrow — 10-12 pt bold, typed uppercase (never an auto-caps attribute), letter-spaced 0.67 / 1.33 / 2.0 pt.",
+      "Dark canvas #002060 flat for cover, section divider and closing; light canvas a vertical #FFFFFF → #FBF5F2 gradient everywhere else, never flat white."
     ],
     "antiPatterns": [
-      "Using sector accent colours as slide background fields or large colour blocks — they are semantic tags only in data/UI contexts. The decorative orbit dots (≤0.8 in dia) are exempt: they rotate the palette non-semantically and are never a background field.",
-      "Applying intermediate font weights (Medium 500, SemiBold 600) — Century Gothic has no true intermediate; these silently revert to Regular in Office.",
-      "Placing logos on low-contrast backgrounds without the prescribed indigo overlay.",
-      "Unbounded ornament: exceeding the motif cap (≤2 orbit arcs + ≤3 stepping-stone dots per slide; ghost wordmark ≤10 % opacity), or introducing a third decorative motif family beyond the orbit family and the blush rule.",
-      "Using Quicksand outside web Elementor contexts (it is a web-only secondary face, not a slide/document face).",
-      "Full-bleed photography without the navy overlay — raw photos break white-text legibility.",
-      "Expanding content beyond the 985 px / 64 px margin zone — crowding the frame."
+      "Photography of any kind — stock, sourced or generated. Removed from this brand's render path on 2026-09-22. A slide that needs a visual gets a diagram, a chart, an icon tile, a tinted panel, or whitespace.",
+      "A flat white slide background — the light canvas is always the #FFFFFF → #FBF5F2 vertical gradient.",
+      "Using #272774 (or #272674) as a full-slide canvas — that is the ink and keyline colour; the dark canvas is #002060.",
+      "More than three circles on a slide, a circle repeating an accent already used on that slide, a circle fully inside the frame at large diameter, or a circle carrying text or acting as a container.",
+      "A second type family — monospace footers, serif pull-quotes, or an intermediate Century Gothic weight (500/600 silently revert to Regular in Office).",
+      "Drop shadows used to express elevation — the keyline does that. A soft tight shadow on a stacked card is the only permitted shadow.",
+      "Mixing the two accent modes on one slide: positional rotation (01/02/03/04) and the sector mapping are alternatives, never simultaneous.",
+      "A phrase bar on a slide with no real takeaway, or more than one phrase bar per slide.",
+      "The retired corporate-blank inferences: a 6 px blush rule on the cover's top edge, a monospace footer bar, or a navy scrim over a hero photograph. None appear in the styling source of truth.",
+      "Filling an entire slide with an accent — accents cap, bar, badge and tint; they are never the field."
     ],
     "requiredMotifs": [
-      "--motif-line-weight",
-      "orbit-layer",
-      "stepping-stone",
+      "circle-field",
+      "keyline-hairline",
+      "accent-cap",
+      "phrase-bar",
       "ghost-wordmark",
-      "accent-rule"
+      "--motif-keyline-weight",
+      "--circle-opacity-large"
     ],
     "visual_grammar": {
       "motifs": {
-        "name": "Orbit + Stepping-Stone",
-        "tagline": "Your stepping stone.",
         "status": "approved",
+        "required": false,
         "evidence": {
           "tier": "source-artifact",
-          "source": "Recovered from the official Amaris Consulting PowerPoint master (clients/amaris/.build-history/source-Amaris-Consulting-Template.pptx, SHA-256 match to the brand build source) and its rendered visual analysis: hairline orbit arcs, accent-colour planet dots on those arcs, an oversized ghost AMARIS wordmark, and outline-ring numbered bullets."
+          "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
         },
-        "tokenPrefix": "--orbit-",
-        "tokenDependencies": [
-          "--motif-line-weight",
-          "--motif-arc-color-dark",
-          "--motif-arc-color-light",
-          "--motif-ghost-opacity",
-          "--orbit-dot-1",
-          "--orbit-dot-2",
-          "--orbit-dot-3",
-          "--orbit-dot-4",
-          "--orbit-dot-glow",
-          "--gradient-canvas-light"
-        ],
-        "assets": [
-          "assets/svg/motif-orbit.svg",
-          "assets/svg/motif-stepping-stones.svg",
-          "assets/svg/motif-wordmark-ghost.svg",
-          "assets/svg/pattern-orbit-tile.svg",
-          "assets/svg/bullet-ring.svg"
-        ],
-        "marks": [
+        "selected": "circle-field",
+        "candidates": [
           {
-            "id": "orbit-arc",
-            "asset": "assets/svg/motif-orbit.svg",
-            "role": "transition / hero arc — hairline arc sweeping across the composition behind hero text",
-            "cssClass": "orbit-layer",
-            "surfaces": [
-              "cover",
-              "section-divider",
-              "closing"
-            ]
-          },
-          {
-            "id": "stepping-stone",
-            "asset": "assets/svg/motif-stepping-stones.svg",
-            "role": "hero / cover accent — solid accent-colour dot sitting on an orbit arc, rotating the decorative palette",
-            "cssClass": "stepping-stone",
-            "surfaces": [
-              "cover",
-              "section-divider",
-              "docx"
+            "id": "circle-field",
+            "label": "Circle field",
+            "spec": {
+              "construction": "2-3 circles per slide. One large (2.4-7.0 in) originating outside the frame so it bleeds off a corner; one more on the opposite corner, also bleeding; optionally one small (0.8-1.1 in) fully inside, upper-right.",
+              "opacity": {
+                "large": [
+                  0.15,
+                  0.25
+                ],
+                "small": [
+                  0.35,
+                  0.45
+                ],
+                "onDarkWhite": [
+                  0.08,
+                  0.1
+                ]
+              },
+              "diameterIn": {
+                "large": [
+                  2.4,
+                  7.0
+                ],
+                "medium": [
+                  2.0,
+                  2.9
+                ],
+                "small": [
+                  0.8,
+                  1.1
+                ]
+              },
+              "palette": [
+                "#4182FF",
+                "#B880FF",
+                "#7DDEB8",
+                "#FFDD77"
+              ],
+              "rules": [
+                "one accent per circle; never the same accent twice on a slide",
+                "always behind content; never a container, never carries text",
+                "never more than three"
+              ],
+              "secondary": "Hairline ambient arcs survive from the earlier orbit motif but are demoted: <=2 per slide, 0.9 px, indigo at 12-18 % on light / white at 25-40 % on dark.",
+              "marks": [
+                {
+                  "id": "circle-field",
+                  "asset": "assets/svg/circle-field.svg",
+                  "role": "ambient background field — the signature motif",
+                  "cssClass": "circle-field",
+                  "surfaces": [
+                    "cover",
+                    "section-divider",
+                    "content",
+                    "closing"
+                  ],
+                  "name": "circle-field"
+                },
+                {
+                  "id": "ghost-wordmark",
+                  "asset": "assets/svg/motif-wordmark-ghost.svg",
+                  "role": "content watermark — oversized outline AMARIS bleeding off an edge",
+                  "cssClass": "ghost-wordmark",
+                  "surfaces": [
+                    "content"
+                  ],
+                  "name": "ghost-wordmark"
+                }
+              ],
+              "roles": {
+                "cover": [
+                  "circle-field"
+                ],
+                "section-divider": [
+                  "circle-field"
+                ],
+                "content": [
+                  "circle-field",
+                  "ghost-wordmark"
+                ],
+                "closing": [
+                  "circle-field"
+                ]
+              },
+              "allowedSurfaces": [
+                "pptx",
+                "pdf",
+                "html-reveal",
+                "html-hd",
+                "docx"
+              ],
+              "usageCaps": {
+                "maxCirclesPerSlide": 3,
+                "maxArcsPerSlide": 2,
+                "circleLargeMaxOpacity": 0.25,
+                "circleSmallMaxOpacity": 0.45,
+                "ghostWordmarkMaxOpacity": 0.1,
+                "accentRepeatPerSlide": 1
+              },
+              "name": "Circle field",
+              "tagline": "Your stepping stone."
+            },
+            "tokenPrefix": "--circle-",
+            "tokenDependencies": [
+              "--circle-opacity-large",
+              "--circle-opacity-small",
+              "--circle-1",
+              "--circle-2",
+              "--circle-3",
+              "--circle-4",
+              "--motif-keyline-weight",
+              "--motif-ghost-opacity"
             ],
-            "docxRaster": "templates/docx/orbit-corner-{light,dark}.png"
-          },
-          {
-            "id": "ghost-wordmark",
-            "asset": "assets/svg/motif-wordmark-ghost.svg",
-            "role": "content watermark — oversized outline AMARIS bleeding off the right edge at low opacity",
-            "cssClass": "ghost-wordmark",
-            "surfaces": [
-              "content"
-            ]
-          },
-          {
-            "id": "bullet-ring",
-            "asset": "assets/svg/bullet-ring.svg",
-            "role": "numbered-list marker — outline ring with navy numeral for ordered lists",
-            "cssClass": "ring-bullet",
-            "surfaces": [
-              "content",
-              "docx"
-            ]
-          },
-          {
-            "id": "orbit-pattern",
-            "asset": "assets/svg/pattern-orbit-tile.svg",
-            "role": "large-fill / dominant background — tileable faint dot-on-arc field for full-bleed motif use",
-            "cssClass": "orbit-tile",
-            "surfaces": [
-              "cover",
-              "section-divider"
-            ]
+            "assets": [
+              "assets/svg/circle-field.svg",
+              "assets/svg/circle-field-dark.svg"
+            ],
+            "evidence": {
+              "tier": "source-artifact",
+              "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
+            }
           }
-        ],
-        "roles": {
-          "cover": [
-            "orbit-arc",
-            "stepping-stone"
-          ],
-          "section-divider": [
-            "orbit-arc",
-            "stepping-stone"
-          ],
-          "content": [
-            "ghost-wordmark",
-            "bullet-ring"
-          ],
-          "closing": [
-            "orbit-arc"
-          ]
-        },
-        "allowedSurfaces": [
-          "pptx",
-          "pdf",
-          "html-reveal",
-          "html-hd",
-          "docx"
-        ],
-        "usageCaps": {
-          "maxArcsPerSlide": 2,
-          "maxDotsPerSlide": 3,
-          "ghostWordmarkMaxOpacity": 0.1,
-          "dotMaxDiameterInches": 0.8
-        },
-        "spec": {
-          "family": "orbital",
-          "elements": [
-            "orbit-layer (arcs sweeping the frame)",
-            "stepping-stone (indexed dots)",
-            "ghost-wordmark",
-            "accent-rule (blush/peach thin rule)"
-          ],
-          "assets": [
-            "assets/svg/motif-orbit.svg",
-            "assets/svg/motif-stepping-stones.svg",
-            "assets/svg/motif-wordmark-ghost.svg",
-            "assets/svg/bullet-ring.svg"
-          ],
-          "prominence": "accent",
-          "dotGlow": "decorative orbit dots (<=0.8 dia) rotate the palette non-semantically; never a background field"
-        }
+        ]
       },
       "motion": {
         "status": "approved",
@@ -566,13 +608,58 @@
       },
       "backgrounds": {
         "status": "approved",
-        "required": true,
+        "required": false,
         "evidence": {
           "tier": "source-artifact",
-          "source": "signatureElements (navy #272674 field/scrim 55-78%, midnight gradient hero, blush light canvas) + dark-light-indexed colorRhythm"
+          "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
         },
-        "selected": "indigo-canvas",
+        "selected": "navy-anchor-blush-body",
         "candidates": [
+          {
+            "id": "navy-anchor-blush-body",
+            "label": "Navy anchor, blush-washed body",
+            "spec": {
+              "canvases": [
+                {
+                  "name": "navy-field",
+                  "role": "primary-dark",
+                  "css": "#002060",
+                  "use": "cover, section divider, closing"
+                },
+                {
+                  "name": "blush-wash",
+                  "role": "primary-light",
+                  "css": "linear-gradient(180deg,#FFFFFF 0%,#FBF5F2 100%)",
+                  "use": "every content slide; never flat white"
+                },
+                {
+                  "name": "paper",
+                  "role": "surface",
+                  "css": "#FFFFFF"
+                },
+                {
+                  "name": "paper-warm",
+                  "role": "surface-alt",
+                  "css": "#FDF9F7"
+                }
+              ],
+              "rhythm": "dark-anchored-light-body",
+              "photo": {
+                "treatment": "none",
+                "note": "photography removed 2026-09-22"
+              }
+            },
+            "tokens": [
+              "--canvas-navy",
+              "--canvas-light",
+              "--surface-paper",
+              "--surface-warm"
+            ],
+            "evidence": {
+              "tier": "source-artifact",
+              "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
+            }
+          },
           {
             "id": "indigo-canvas",
             "label": "Indigo canvas (indexed)",
@@ -666,10 +753,30 @@
         "required": false,
         "evidence": {
           "tier": "source-artifact",
-          "source": "three tokenized gradients already in the brand (midnight/dark/canvasLight); amaris ACTIVELY uses linear directional gradients"
+          "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
         },
-        "selected": "linear-directional",
+        "selected": "canvas-only-gradients",
         "candidates": [
+          {
+            "id": "canvas-only-gradients",
+            "label": "Gradients are canvas-only",
+            "spec": {
+              "canvasLight": "linear-gradient(180deg,#FFFFFF 0%,#FBF5F2 100%)",
+              "rule": "The only gradient in the system is the light canvas. Cards, bars, badges and chips are flat — solid or a flat tint. No gradient on a component.",
+              "retired": [
+                "--gradient-midnight",
+                "--gradient-dark",
+                "--gradient-accent"
+              ]
+            },
+            "tokens": [
+              "--gradient-canvas-light"
+            ],
+            "evidence": {
+              "tier": "source-artifact",
+              "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
+            }
+          },
           {
             "id": "linear-directional",
             "label": "Linear directional",
@@ -742,10 +849,52 @@
         "required": false,
         "evidence": {
           "tier": "source-artifact",
-          "source": "signatureElements: 985px content-width on 1280 canvas, controlled-asymmetry, left-margin tick, monospace footer bar"
+          "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
         },
-        "selected": "asymmetric-measure",
+        "selected": "wide-margin-tightening-gutters",
         "candidates": [
+          {
+            "id": "wide-margin-tightening-gutters",
+            "label": "Wide margins, gutters tighten with column count",
+            "spec": {
+              "slideIn": [
+                13.333,
+                7.5
+              ],
+              "sideMarginIn": 0.58,
+              "titleBandTopIn": [
+                0.5,
+                0.9
+              ],
+              "contentBandTopIn": [
+                1.33,
+                1.92
+              ],
+              "gutterInByColumns": {
+                "2": 0.5,
+                "3": 0.4,
+                "4": 0.2,
+                "5": 0.3
+              },
+              "cardPaddingIn": [
+                0.2,
+                0.3
+              ],
+              "note": "Margins are symmetric. Content never crosses the side margin."
+            },
+            "tokens": [
+              "--slide-margin",
+              "--grid-gutter-2",
+              "--grid-gutter-3",
+              "--grid-gutter-4",
+              "--grid-gutter-5",
+              "--card-padding"
+            ],
+            "evidence": {
+              "tier": "source-artifact",
+              "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
+            }
+          },
           {
             "id": "asymmetric-measure",
             "label": "Asymmetric measure",
@@ -801,11 +950,44 @@
         "status": "approved",
         "required": false,
         "evidence": {
-          "tier": "proposed",
-          "source": "seeded from rectilinear geometry + systematic type + orbit-dot signature; OPEN/extensible set — not brand-bound (operator directive 2026-07-01)"
+          "tier": "source-artifact",
+          "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
         },
-        "selected": "geometric-orbit-dot",
+        "selected": "chipped-accent-icons",
         "candidates": [
+          {
+            "id": "chipped-accent-icons",
+            "label": "Single-accent icon in a circular chip",
+            "spec": {
+              "chip": {
+                "shape": "circle",
+                "diameterIn": [
+                  0.85,
+                  1.1
+                ],
+                "fill": [
+                  "#F6EEF7",
+                  "accent tint-80"
+                ],
+                "ring": "0.25pt #272774"
+              },
+              "icon": {
+                "color": "one accent, solid or duotone",
+                "weight": "1.5px stroke",
+                "sizeRatio": 0.45
+              },
+              "rule": "One accent per icon. Never multi-colour inside a single icon."
+            },
+            "tokens": [
+              "--icon-chip-fill",
+              "--icon-chip-ring",
+              "--icon-stroke"
+            ],
+            "evidence": {
+              "tier": "source-artifact",
+              "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
+            }
+          },
           {
             "id": "geometric-orbit-dot",
             "label": "Geometric + orbit dot",
@@ -864,11 +1046,55 @@
         "status": "approved",
         "required": false,
         "evidence": {
-          "tier": "proposed",
-          "source": "seeded from high-contrast + systematic + rules/ticks-not-shadows signature; moderate ornament"
+          "tier": "source-artifact",
+          "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
         },
-        "selected": "flat-indexed-border",
+        "selected": "keyline-elevation",
         "candidates": [
+          {
+            "id": "keyline-elevation",
+            "label": "Keyline elevation",
+            "spec": {
+              "principle": "Elevation is a hairline, not a shadow.",
+              "keylinePt": {
+                "default": 0.25,
+                "emphasis": 0.75,
+                "container": 1.0,
+                "onDark": 0.5
+              },
+              "keylineColor": {
+                "light": "#272774",
+                "dark": "rgba(255,255,255,0.20)"
+              },
+              "radiusPt": {
+                "chip": 4.5,
+                "badge": 6.0,
+                "card": 8.6,
+                "panel": 14.0,
+                "pill": "full"
+              },
+              "shadow": "0 1px 3px rgba(39,39,116,0.10) — stacked cards only; otherwise none",
+              "surfaceRamp": [
+                "#FFFFFF",
+                "#FDF9F7",
+                "accent tint-80",
+                "accent tint-60",
+                "accent solid"
+              ]
+            },
+            "tokens": [
+              "--keyline",
+              "--keyline-weight",
+              "--radius-card",
+              "--radius-chip",
+              "--radius-panel",
+              "--elev-card-shadow"
+            ],
+            "evidence": {
+              "tier": "source-artifact",
+              "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
+            }
+          },
           {
             "id": "flat-indexed-border",
             "label": "Flat + indexed border",
@@ -921,10 +1147,22 @@
         "required": false,
         "evidence": {
           "tier": "source-artifact",
-          "source": "real asset assets/svg/pattern-orbit-tile.svg"
+          "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
         },
-        "selected": "orbit-tile",
+        "selected": "no-pattern-fills",
         "candidates": [
+          {
+            "id": "no-pattern-fills",
+            "label": "No pattern fills",
+            "spec": {
+              "rule": "The system has no repeating pattern fill. Ambient interest comes from the circle field and the ghost wordmark only."
+            },
+            "tokens": [],
+            "evidence": {
+              "tier": "source-artifact",
+              "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
+            }
+          },
           {
             "id": "orbit-tile",
             "label": "Orbit-ring tile",
@@ -943,24 +1181,56 @@
         ]
       },
       "photo": {
-        "status": "n-a",
+        "status": "approved",
         "required": false,
         "evidence": {
-          "tier": "derived",
-          "source": "documentary-muted imageTreatment; redundant with compiled images.overlay / images.manifest"
+          "tier": "source-artifact",
+          "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
         },
-        "candidates": []
+        "candidates": [
+          {
+            "id": "no-photography",
+            "label": "No photography",
+            "spec": {
+              "rule": "Photography is removed from this brand's render path (client instruction, 2026-09-22). The styling source of truth contains none in any working slide.",
+              "substitutes": [
+                "diagram",
+                "chart",
+                "icon-tile",
+                "tinted-panel",
+                "whitespace"
+              ],
+              "reinstatement": "Only with client-chosen imagery. The retired library and its source URLs are recorded in images/manifest.json under `retired`.",
+              "enforcement": "Not machine-enforceable as a motif token — 'no photography' is an absence. It is enforced by the empty image library (brand_context.images is null) and by the expression principles/antiPatterns, which the authoring skill reads."
+            },
+            "tokens": [],
+            "evidence": {
+              "tier": "source-artifact",
+              "source": ".build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx (SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9) — the deck Amaris themselves nominated as the styling source of truth, supplied 2026-09-22. 23 slides / 34 layouts / 425 shapes / 217 text runs, extracted to clients/amaris/presentation-grammar.md."
+            }
+          }
+        ],
+        "selected": "no-photography"
       }
     },
     "evidence": [
       {
-        "path": "clients/amaris/guidelines.md",
+        "path": "clients/amaris/.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx",
+        "kind": "pptx_master",
+        "sourceAuthority": "client_supplied",
+        "confidence": "high",
+        "surface": "presentation",
+        "freshness": "current",
+        "note": "SHA-256 1ef791c6fb282e0259129645bda4bb8e0278b5725db6ae24f738148cbab1e4e9. The deck Amaris themselves nominated as the styling source of truth (supplied 2026-09-22 after the previous render output was judged off-brand). Definition of record for the presentation grammar."
+      },
+      {
+        "path": "clients/amaris/presentation-grammar.md",
         "kind": "brand_guidelines",
         "sourceAuthority": "co_created",
         "confidence": "high",
-        "surface": "all",
+        "surface": "presentation",
         "freshness": "current",
-        "note": "Synthesized from amaris.com public brand surface; Tier 4–6 for colours and typography, Tier 8 for photography."
+        "note": "Measured extraction of the source of truth: canvas, circle field, keylines, radii, ink ramp, accent ramp, type scale, grid and the nine composites."
       },
       {
         "path": "clients/amaris/.build-history/source-Amaris-Consulting-Template.pptx",
@@ -968,8 +1238,8 @@
         "sourceAuthority": "client_supplied",
         "confidence": "high",
         "surface": "all",
-        "freshness": "current",
-        "note": "Official Amaris Consulting PowerPoint blank; user-supplied 2026-06-01. Confirms Century Gothic, #272774 primary, blush #EBC4B4 accent2, 'Your stepping stone' tagline, oversized-wordmark background motif, ~2,194 custom icon shapes."
+        "freshness": "superseded-for-presentation",
+        "note": "The corporate blank. Still authoritative for logo lockups, the corporate palette and Century Gothic. NOT authoritative for composition — it is not a composed deck, so the hero-photography / blush-rule / monospace-footer rules inferred from it were inference, and are retired."
       },
       {
         "path": "clients/amaris/tokens.css",
@@ -978,34 +1248,7 @@
         "confidence": "high",
         "surface": "all",
         "freshness": "current",
-        "note": "CSS custom-property token set generated from charter.json + live amaris.com :root vars. Confirms palette, typography scale, spacing, and layout widths."
-      },
-      {
-        "path": "clients/amaris/templates/pptx/cover.html",
-        "kind": "pptx_master",
-        "sourceAuthority": "co_created",
-        "confidence": "high",
-        "surface": "presentation",
-        "freshness": "current",
-        "note": "Co-created anchor template derived from official PPTX master. Encodes blush accent rule, navy scrim, white logo position, monospace overline, and 64 px margin discipline."
-      },
-      {
-        "path": "clients/amaris/templates/pptx/content.html",
-        "kind": "pptx_master",
-        "sourceAuthority": "co_created",
-        "confidence": "high",
-        "surface": "presentation",
-        "freshness": "current",
-        "note": "Content slide anchor. Encodes brand-strip (4 px navy + 88 px blush tick), footer-bar with logo mark, 64 px margins."
-      },
-      {
-        "path": "clients/amaris/templates/pptx/section-divider.html",
-        "kind": "pptx_master",
-        "sourceAuthority": "co_created",
-        "confidence": "high",
-        "surface": "presentation",
-        "freshness": "current",
-        "note": "Section-divider anchor. Confirms navy full-field or photo-with-indigo-wash, blush rule under section title, white logo bottom-left."
+        "note": "Token set; the --circle-*, --keyline-*, --card-* and --ink-* families are the machine-readable projection of presentation-grammar.md."
       }
     ],
     "typography": {

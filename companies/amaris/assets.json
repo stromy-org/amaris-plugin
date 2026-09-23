@@ -158,6 +158,16 @@
       "mime": "image/svg+xml"
     },
     {
+      "name": "circle-field-dark.svg",
+      "sha256": "78d93951605b6f7226a4e2e6e5a75b7b4ea1a8911988389fb1e130641495c55f",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "circle-field.svg",
+      "sha256": "8b13386f063a7302474cfd1cb53728a332f17d54e6a3221b0dcde8958fabbf41",
+      "mime": "image/svg+xml"
+    },
+    {
       "name": "favicon-192.png",
       "sha256": "04bd3fb7a4ae4eee78fbe7cb53d0507781c93b09df7380085df0a71ce819c0c6",
       "mime": "image/png"
@@ -248,116 +258,11 @@
       "name": "gradient-midnight.png",
       "sha256": "4aadca007c0e23581954e1385151448558dd2a333aae5f78d79321e06c1c2f7f",
       "mime": "image/png"
-    },
-    {
-      "name": "graphic-mockup-01.png",
-      "sha256": "3b3029eed96715d94539093559b57d8c33f15d41c41060183d78d7dedb1467a2",
-      "mime": "image/png"
-    },
-    {
-      "name": "photo-closing-01-overlay.jpg",
-      "sha256": "aac8b007ca43a4c133d7f28f4f98fb950465086c691401099009bf414b0b2c9a",
-      "mime": "image/jpeg"
-    },
-    {
-      "name": "photo-closing-01.png",
-      "sha256": "b232d757168e030c68088bb726fe4f413ac58d9237e339dd418eb00e08fb6c47",
-      "mime": "image/png"
-    },
-    {
-      "name": "photo-cover-01-overlay.jpg",
-      "sha256": "6b9714624beee83f3df253056f267d65f3427f3359ee2f531e6e5af037c0987a",
-      "mime": "image/jpeg"
-    },
-    {
-      "name": "photo-cover-01.png",
-      "sha256": "16f689a68b08d1ce2b34e098c674ef705b3a0651dd08fb651d93d795c39d20b0",
-      "mime": "image/png"
-    },
-    {
-      "name": "photo-cover-02-overlay.jpg",
-      "sha256": "6a9cae56d09152c03fe69c0406e414b0401d5d582e2a7a778d50bfc22d632d43",
-      "mime": "image/jpeg"
-    },
-    {
-      "name": "photo-cover-02.webp",
-      "sha256": "6aa6f825a26e561de3efd8503b33ca1ce66e42815232829f2f37efdf6637b1e9",
-      "mime": "image/webp"
-    },
-    {
-      "name": "photo-cover-03-overlay.jpg",
-      "sha256": "71bb7acdbbeb9b8c03e2f340176cac6628e573dd1364920eadf83d2c24eddbf7",
-      "mime": "image/jpeg"
-    },
-    {
-      "name": "photo-cover-03.webp",
-      "sha256": "9053e41cea1ba7af05b6f17a13cd1b742ebf2268b84d9c6286453097aa00086b",
-      "mime": "image/webp"
-    },
-    {
-      "name": "photo-cover-04-overlay.jpg",
-      "sha256": "caf0a9b9ee1b30a16850541170c7146cbb85bcbee9903dc45e21c02673517e31",
-      "mime": "image/jpeg"
-    },
-    {
-      "name": "photo-cover-04.png",
-      "sha256": "13011d1482b8e37f8aa8da4700f7ace9cbe86024e7d4ccccf493dcc1f69151fc",
-      "mime": "image/png"
-    },
-    {
-      "name": "photo-cover-05-overlay.jpg",
-      "sha256": "9b448aedb1f4969bc8a0512d6c371b2d4ae76ec90b7466351511228ba1790e4b",
-      "mime": "image/jpeg"
-    },
-    {
-      "name": "photo-cover-05.jpg",
-      "sha256": "95c0d88900f5b8b62037985ed9e0f925ef3db0e2b1582149421b05f32bd18315",
-      "mime": "image/jpeg"
-    },
-    {
-      "name": "photo-divider-01-overlay.jpg",
-      "sha256": "f121b35fc2a14d53b38780b8d1e2f0cf73ddd2be15466ba64eb1d2032d015763",
-      "mime": "image/jpeg"
-    },
-    {
-      "name": "photo-divider-01.png",
-      "sha256": "844128101bb977dfc21b31a5ca88389a557e58c38507f685b0d609e21786e0dc",
-      "mime": "image/png"
-    },
-    {
-      "name": "photo-section-01-overlay.jpg",
-      "sha256": "f5d61bdd4d4febbaf419aee03605a948820a077e85de75a1a1b08bdb3a7a7b57",
-      "mime": "image/jpeg"
-    },
-    {
-      "name": "photo-section-01.png",
-      "sha256": "03fc8c53dc20dbdc5a47ce5a51f96916609caca0ac5a28beb66bbf71fbb1d5cb",
-      "mime": "image/png"
-    },
-    {
-      "name": "photo-section-02-overlay.jpg",
-      "sha256": "82e4ef90e1236a4ebfbcea2bc28faa7e3851a939fbcb2643d93c81cb41401502",
-      "mime": "image/jpeg"
-    },
-    {
-      "name": "photo-section-02.png",
-      "sha256": "449fae85866d803c4130967079f7f1aede7d6c87b61cafe6fa17a54325c497ad",
-      "mime": "image/png"
-    },
-    {
-      "name": "photo-section-03-overlay.jpg",
-      "sha256": "6ff415e13d8a899f86346707718078d71312c55f026917d1b25fc52e9351ad3a",
-      "mime": "image/jpeg"
-    },
-    {
-      "name": "photo-section-03.png",
-      "sha256": "1b7a3393c33d768ea6284023e42c00ec188a83f9c9667ea6bc350c3cf36f5dd5",
-      "mime": "image/png"
     }
   ],
   "brand_context": {
-    "sha256": "c9714aaf652968303c65e2e8dcdb7be1afad28fed0e7a146023701e4a9a785b6",
+    "sha256": "b1d95115f84b1d3fa969db56354b17ec7e297ee0cdd9215a64c220b4a859e8ed",
     "mime": "application/json",
-    "bytes": 46784
+    "bytes": 54252
   }
 }
