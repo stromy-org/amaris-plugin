@@ -61,14 +61,9 @@ jobs:
 
       - name: Enable auto-merge for low-risk updates
         if: >-
-<<<<<<< before updating
-          ${{ steps.meta.outputs.update-type == 'version-update:semver-patch' ||
-              steps.meta.outputs.update-type == 'version-update:semver-minor' }}
-=======
           ${{ steps.meta.outputs.package-ecosystem != 'docker' &&
               (steps.meta.outputs.update-type == 'version-update:semver-patch' ||
                steps.meta.outputs.update-type == 'version-update:semver-minor') }}
->>>>>>> after updating
         run: |
           # `gh pr merge --auto` needs TWO preconditions, not the one documented
           # above:
