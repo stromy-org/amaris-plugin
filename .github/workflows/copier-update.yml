@@ -99,7 +99,51 @@ jobs:
           # template version, an invalid answer, a missing dependency) fails this
           # job like any other step -- only the auth-unavailable path above
           # degrades gracefully.
-          uvx copier update --trust --skip-answered --defaults
+          # --skip-tasks is load-bearing, not tidiness. None of this template's three
+          # `_tasks` is gated to `copy` -- `npm install` and `uv lock` carry only
+          # `include_node` / `include_python` answers, and `render-mcp.py` carries no
+          # `when:` at all -- so without this flag copier runs all three inside BOTH
+          # of its temp renders and injects package-lock.json, uv.lock and .mcp.json
+          # into the update diff.
+          #
+          # Gating them to `copy` in this template would NOT fix it: copier
+          # re-renders the satellite's CURRENT (old) version to compute the diff, and
+          # that version's tasks are whatever it recorded. Only the flag at the call
+          # site does. Same defect fastmcp-template fixed in v0.10.0 and
+          # python-library-template in v0.3.0; measured on nl-gov-data, an ungated
+          # `uv sync` accounted for 27 of 42 rejected hunks by itself.
+          uvx copier update --trust --skip-answered --defaults --skip-tasks
+
+      # The generators `--skip-tasks` just suppressed, run ONCE against the real
+      # merged tree -- the same trade python-library-template's job makes. Without
+      # this, a template change to the MCP config or to a dependency would land a PR
+      # already in drift, which is what validate-plugin-completeness fails on.
+      #
+      # Non-fatal by design: on a conflicted run an input may carry reject residue
+      # and a generator can legitimately choke on it. That is a fact for whoever
+      # resolves the conflict, not a reason to lose the whole update.
+      - name: Regenerate generated artifacts
+        if: steps.app-token.outputs.token != ''
+        run: |
+          set -uo pipefail
+          if [ -f scripts/render-mcp.py ]; then
+            if ! python3 scripts/render-mcp.py; then
+              echo "::warning title=Generator failed::scripts/render-mcp.py exited non-zero. Expected when a conflict left residue in .agents/mcp.json; regenerate by hand while resolving."
+            fi
+          fi
+          # Keep each lockfile consistent with the manifest the merge produced. A PR
+          # whose manifest moved but whose lockfile did not is red on arrival, because
+          # CI installs frozen.
+          if [ -f pyproject.toml ]; then
+            if ! uv lock; then
+              echo "::warning title=uv lock failed::pyproject.toml and uv.lock may disagree in this PR. Re-lock by hand while resolving."
+            fi
+          fi
+          if [ -f package.json ]; then
+            if ! npm install --package-lock-only --ignore-scripts; then
+              echo "::warning title=npm lock failed::package.json and package-lock.json may disagree in this PR. Re-lock by hand while resolving."
+            fi
+          fi
 
       - name: Detect unresolved conflicts
         if: steps.app-token.outputs.token != ''
