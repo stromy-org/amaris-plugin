@@ -1,7 +1,8 @@
 ---
 name: format-workspace-cowork
 description: "Work safely on co-edited artifacts in a shared workspace or SharePoint collaboration space. Use when asked to publish to the space, fetch the latest version, review or edit a shared client deliverable, process comments, or co-edit a workspace file."
-client_summary: "Co-edit a document in your workspace without anyone's changes being lost — always work from the latest version, and write back to the same file."
+metadata:
+  stromy-client-summary: "Co-edit a document in your workspace without anyone's changes being lost — always work from the latest version, and write back to the same file."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.

@@ -1,7 +1,8 @@
 ---
 name: asset-workspace-setup
 description: "Design or change how a client's own SharePoint workspace is organised — the folder tree deliverables land in, what its stages are called, and whether the space keeps a visible project record. Interviews the client about how they actually work, then proposes the configuration as a reviewed pull request through the asset-broker MCP. Use when setting up a new client's or partner's workspace, when someone asks where their deliverables go or why something landed in the wrong place, or when they want to rename or restructure their folders."
-client_summary: "Set up how your shared workspace is organised, so deliverables land where your team expects them."
+metadata:
+  stromy-client-summary: "Set up how your shared workspace is organised, so deliverables land where your team expects them."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.

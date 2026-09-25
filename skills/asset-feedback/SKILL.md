@@ -1,7 +1,8 @@
 ---
 name: asset-feedback
 description: "Capture structured client, operator, and agent-execution feedback through the asset-broker MCP and write it to the scoped feedback lane in the shared `client-feedback` repo. Use when the user wants to record product feedback on a deliverable or when the agent should file an infra-quality retrospective about the skill/tooling it just used."
-client_summary: "Tell us what worked and what did not, so the tools and your setup keep improving."
+metadata:
+  stromy-client-summary: "Tell us what worked and what did not, so the tools and your setup keep improving."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.

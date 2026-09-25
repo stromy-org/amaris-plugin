@@ -1,7 +1,8 @@
 ---
 name: format-docx-hd
 description: "High-fidelity branded Word (.docx) creation from authored HTML. Server-renders via the `render_docx` MCP tool — Chromium parses the HTML, docx-js emits OOXML, and an OOXML layout lint plus a LibreOffice render-back contact sheet run inside the render. No local build script. Uses the invoking plugin's brand overlay. Use when GENERATING a branded Word deliverable: reports, briefs, memos, letters, policy documents, findings write-ups, any client-facing .docx where visual quality matters. Triggers on: 'branded Word doc', 'report in Word', 'branded .docx', 'HD docx', 'client-ready Word document'. NOT for editing an existing .docx, tracked changes, comments or template surgery — use `format-docx`."
-client_summary: "Produce a polished, on-brand Word document such as a report, brief or memo, ready to send."
+metadata:
+  stromy-client-summary: "Produce a polished, on-brand Word document such as a report, brief or memo, ready to send."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.

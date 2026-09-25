@@ -1,7 +1,8 @@
 ---
 name: format-workspace-memory
 description: "Load and maintain the project record in a client's SharePoint workspace — the shared, client-readable account of what a project is, what was decided, what is open, and what has been delivered. Use at the START of work on an existing project (so you continue instead of re-briefing), and again whenever a meaningful milestone, decision, client correction, risk, or delivery happens. Triggers on \"what's the status of this project\", \"pick up where we left off\", \"continue the campaign\", \"record that we agreed X\", \"log this decision\", \"update the project record\", or any request to resume or capture the state of ongoing client work."
-client_summary: "Keep a shared record of a project so work picks up where it left off instead of re-briefing."
+metadata:
+  stromy-client-summary: "Keep a shared record of a project so work picks up where it left off instead of re-briefing."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.

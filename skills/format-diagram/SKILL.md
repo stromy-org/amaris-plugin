@@ -1,7 +1,8 @@
 ---
 name: format-diagram
 description: "Generate branded diagrams (process flows, architecture views, stakeholder maps, org charts, timelines, funnels, matrices, mind maps) as SVG/PNG for embedding in deliverables. TWO routes: (1) the DEFAULT for flow/relationship diagrams — author Mermaid text and call the server-side `render_diagram` MCP tool (auto-layout + deep brand theming, works in a deployed sandbox, brand-gated); (2) hand-authored Excalidraw JSON for bespoke structural art (operator environment only). Use when asked to create a diagram, draw a process flow, make an architecture diagram, visualize a workflow, create a stakeholder map, org chart, funnel diagram, timeline, or any structural visual."
-client_summary: "Draw a process, structure or relationship as an on-brand diagram for your documents."
+metadata:
+  stromy-client-summary: "Draw a process, structure or relationship as an on-brand diagram for your documents."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.

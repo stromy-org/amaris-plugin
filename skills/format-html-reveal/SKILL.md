@@ -1,7 +1,8 @@
 ---
 name: format-html-reveal
 description: "Create a premium, self-contained reveal.js HTML slide deck — ONE downloadable .html (reveal.js + brand fonts + images all inlined) that opens offline in any browser and shares as a file or link, SERVER-RENDERED via the `render_deck` MCP tool (brand gate, no local build). Premium-floor layout archetypes + a deterministic variance engine (brand_context.expression.visualAxes + surfaceExpression.presentation) keep every deck premium AND visibly each client's own. TRIGGER on: 'reveal.js deck', 'server-rendered web deck', 'interactive presentation', 'shareable web slides'. SIBLINGS — pick the right one: a hand-authored client-side self-contained HTML deck (no reveal.js, full pixel control) → format-html-hd; an editable .pptx → format-pptx-hd; a paginated print PDF → format-pdf-hd."
-client_summary: "Build a shareable web-based slide deck you can click through in any browser, offline."
+metadata:
+  stromy-client-summary: "Build a shareable web-based slide deck you can click through in any browser, offline."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.

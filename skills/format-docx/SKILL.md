@@ -1,7 +1,8 @@
 ---
 name: format-docx
 description: "Create, read, edit, and manipulate Word documents (.docx files). Triggers on any mention of 'Word doc', 'word document', '.docx', or requests to produce documents with formatting like tables of contents, headings, page numbers, headers/footers, or letterheads. Also use when extracting or reorganizing content from .docx files, inserting or replacing images, performing find-and-replace, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'brief', or 'template' as a Word file, use this skill. When a single client overlay resolves, use it automatically for branding unless the user explicitly asks for unbranded output. Do NOT use for PDFs (use the `format-pdf` skill), spreadsheets (use `format-xlsx`), Google Docs, or coding tasks unrelated to document generation."
-client_summary: "Create or edit Word documents, including tables of contents, headers and letterheads."
+metadata:
+  stromy-client-summary: "Create or edit Word documents, including tables of contents, headers and letterheads."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.

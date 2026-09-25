@@ -1,7 +1,8 @@
 ---
 name: format-pptx-hd
 description: "TRIGGER on **net-new branded deck creation** (a client charter exists) — pitch/investor/executive **and** ordinary branded new decks — plus explicit HD cues and `render-anchors`. Server-renders via `render_pptx` in the brand fonts with a brand gate, web-openable by default (no local build-script path). HTML-first design with full web stack. Deeply integrated with the invoking plugin's brand overlay (`charter.json`, `tokens.css`, `assets.json`, hero images, boilerplate.json, anchor templates in `templates/pptx/`). **Editing or analyzing an existing deck (branded or not) stays on `format-pptx`** — `pptx-hd` regenerates from HTML and cannot edit in place. Unbranded quick decks also go to `format-pptx`."
-client_summary: "Create a new on-brand PowerPoint deck from scratch, in your own fonts and colours."
+metadata:
+  stromy-client-summary: "Create a new on-brand PowerPoint deck from scratch, in your own fonts and colours."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.

@@ -1,7 +1,8 @@
 ---
 name: format-pdf
 description: "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale."
-client_summary: "Work with existing PDF files: pull out text and tables, merge, split, or fill in forms."
+metadata:
+  stromy-client-summary: "Work with existing PDF files: pull out text and tables, merge, split, or fill in forms."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.
