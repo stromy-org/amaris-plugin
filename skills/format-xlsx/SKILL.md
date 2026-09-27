@@ -1,6 +1,6 @@
 ---
 name: format-xlsx
-description: "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas"
+description: "Comprehensive spreadsheet creation, editing, and analysis — formulas, formatting, data analysis, and visualization. Use when working with spreadsheets (.xlsx, .xlsm, .csv, .tsv) to create a new one, read or analyze data, modify an existing one while preserving formulas, recalculate formulas, or build a chart. Not for a Word document (format-docx), a PowerPoint deck (format-pptx), or a data-viz chart to embed elsewhere (format-chart)."
 metadata:
   stromy-client-summary: "Create or analyse spreadsheets, with formulas, formatting and charts."
 ---
