@@ -6,8 +6,13 @@
       "transport": "http",
       "url": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp",
       "_consumed_by": [
-        "claude",
+        "openai",
         "codex",
+        "claude",
+        "cursor",
+        "copilot",
+        "vscode",
+        "kiro",
         "gemini"
       ],
       "_codex_via": "mcp-remote",

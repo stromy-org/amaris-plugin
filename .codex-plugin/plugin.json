@@ -1,7 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "amaris-consulting",
-  "displayName": "Amaris Consulting",
   "version": "0.3.31",
   "description": "Plugin for Amaris Consulting branded deliverables, brand tools, and strategic deliverable planning",
   "author": {
@@ -10,7 +8,5 @@
   "repository": "https://github.com/stromy-org/amaris-plugin",
   "license": "UNLICENSED",
   "keywords": [],
-  "skills": [
-    "./.claude-plugin/skills"
-  ]
+  "mcpServers": "./mcp.json"
 }
