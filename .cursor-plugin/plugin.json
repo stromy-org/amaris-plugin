@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "amaris-consulting",
   "displayName": "Amaris Consulting",
   "version": "0.3.32",
@@ -11,6 +10,11 @@
   "license": "UNLICENSED",
   "keywords": [],
   "skills": [
-    "./.claude-plugin/skills"
-  ]
+    "./skills"
+  ],
+  "mcpServers": {
+    "stromy-format": {
+      "url": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp"
+    }
+  }
 }
