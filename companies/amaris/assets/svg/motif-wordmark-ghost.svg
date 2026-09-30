@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-label="Ghosted outline AMARIS wordmark watermark">
+  <!--
+    Ghost wordmark: oversized OUTLINE AMARIS letterform, used as a faint
+    watermark bleeding off the right edge of content slides. fill:none +
+    stroke:currentColor so it recolours per context; opacity is set by the
+    consumer (charter cap: at most 10%, the motif-ghost-opacity token).
+    Standalone fallback opacity is baked low. Century Gothic with safe
+    fallbacks; if the brand face is unavailable the system geometric sans is
+    close enough for a watermark.
+  -->
+  <text x="0" y="172"
+        font-family="'Century Gothic','CenturyGothic','Avenir Next','Futura',sans-serif"
+        font-weight="700" font-size="200" letter-spacing="6"
+        fill="none" stroke="currentColor" stroke-width="2"
+        stroke-opacity="0.08">AMARIS</text>
+</svg>

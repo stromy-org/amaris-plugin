@@ -1,0 +1,116 @@
+<!--
+  Amaris Consulting — PPTX cover slide anchor (FRAME ONLY).
+  Consumed by the `pptx` / `pptx-hd` render-anchors mode.
+
+  Rebuilt 2026-09-22 from the client-supplied styling source of truth
+  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx, slide 1).
+  Extraction of record: clients/amaris/presentation-grammar.md.
+
+  CHANGED from the previous anchor — read this before "restoring" anything:
+    - NO hero photograph and no navy scrim. This brand renders without photography
+      (client instruction, 2026-09-22). {{HERO_URL}} is deliberately not accepted.
+    - The field is flat #002060, NOT the #272674 ink colour.
+    - The 6 px blush top rule is gone — it appears on none of the 23 source slides.
+    - The overline is a solid-yellow PILL in Century Gothic, not a monospace line.
+
+  Build script injects:
+    {{LOGO_WHITE_URL}}  — absolute file:// URL to logos/logo-white.svg
+    {{TITLE}}           — slide title (typed uppercase)
+    {{SUBTITLE}}        — one-line tagline (optional)
+    {{OVERLINE}}        — short uppercase pill label (optional)
+    {{TOKENS_CSS}}      — full contents of tokens.css
+    {{FONT_FACES}}      — @font-face declarations
+    {{CONFIDENTIALITY}} — confidentiality text from boilerplate.json (may be empty)
+    {{DATE}}            — render date
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{TOKENS_CSS}}
+{{FONT_FACES}}
+
+html, body { margin: 0; padding: 0; }
+body {
+  width: 1280px; height: 720px;
+  background: var(--canvas-navy);
+  color: var(--ink-on-dark);
+  font-family: var(--font-heading, 'Century Gothic', sans-serif);
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- circle field: 2 bleeding + 1 inside. Never more than three. ----------- */
+.circle-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.circle-field circle.lg { opacity: var(--circle-opacity-large, 0.20); }
+.circle-field circle.sm { opacity: var(--circle-opacity-small, 0.40); }
+
+/* --- logo, top right ------------------------------------------------------ */
+.logo { position: absolute; top: 46px; right: 56px; z-index: 2; }
+.logo img { height: 40px; width: auto; }
+
+/* --- pill label ----------------------------------------------------------- */
+.pill {
+  position: absolute; top: 200px; left: var(--slide-margin, 56px); z-index: 2;
+  display: inline-block;
+  padding: 9px 26px;
+  border-radius: var(--radius-pill, 999px);
+  background: var(--accent-4);
+  color: var(--ink-title);
+  font-size: var(--pt-eyebrow, 11pt);
+  font-weight: 700;
+  letter-spacing: var(--track-medium, 1.33pt);
+  text-transform: uppercase;
+}
+
+/* --- title block ---------------------------------------------------------- */
+.block { position: absolute; top: 330px; left: var(--slide-margin, 56px); right: 56px; z-index: 2; }
+.title {
+  margin: 0;
+  font-size: var(--pt-cover-title, 80pt);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.5pt;
+  text-transform: uppercase;
+  color: var(--ink-on-dark);
+}
+.tagline {
+  margin: 56px 0 0;
+  font-size: var(--pt-subtitle, 18pt);
+  font-weight: 400;
+  letter-spacing: 0.4pt;
+  text-transform: uppercase;
+  color: var(--ink-on-dark-soft);
+}
+
+/* --- confidentiality, bottom left ----------------------------------------- */
+.confidential {
+  position: absolute; bottom: 30px; left: var(--slide-margin, 56px); z-index: 2;
+  font-size: 8.5pt; font-weight: 400;
+  letter-spacing: var(--track-tight, 0.67pt);
+  color: rgba(255,255,255,0.55);
+}
+</style>
+</head>
+<body>
+
+  <svg class="circle-field" viewBox="0 0 1280 720" aria-hidden="true">
+    <circle class="lg" cx="128"  cy="128" r="256" fill="var(--circle-1)"/>
+    <circle class="lg" cx="1152" cy="576" r="256" fill="var(--circle-2)"/>
+    <circle class="sm" cx="1200" cy="80"  r="52"  fill="var(--circle-3)"/>
+  </svg>
+
+  <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
+
+  <div class="pill">{{OVERLINE}}</div>
+
+  <div class="block">
+    <h1 class="title">{{TITLE}}</h1>
+    <div class="tagline">{{SUBTITLE}}</div>
+  </div>
+
+  <div class="confidential">{{CONFIDENTIALITY}}</div>
+
+</body>
+</html>

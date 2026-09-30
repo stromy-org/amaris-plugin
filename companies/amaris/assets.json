@@ -1,0 +1,268 @@
+{
+  "version": "1.0",
+  "fonts": [
+    {
+      "family": "General Sans",
+      "weight": 700,
+      "style": "normal",
+      "sha256": "88bff1f629ba18f1342250753648b9e74196b8a2229fbf2f53d602d787fd23fc",
+      "mime": "font/otf",
+      "name": "GeneralSans-Bold.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 700,
+      "style": "italic",
+      "sha256": "6f94e46d463ff49032a4efa9adfbd48599eeb2a9e06c2932f696769958beb30e",
+      "mime": "font/otf",
+      "name": "GeneralSans-BoldItalic.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 200,
+      "style": "normal",
+      "sha256": "0704bd53b5aa975fa9768490b52870184da515bf5c2813b4806edc263736a3f9",
+      "mime": "font/otf",
+      "name": "GeneralSans-Extralight.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 200,
+      "style": "italic",
+      "sha256": "d4582abb35bd5ae85d6ae17245a5f840dd2487dda74ed3a509df60a0768670ac",
+      "mime": "font/otf",
+      "name": "GeneralSans-ExtralightItalic.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 400,
+      "style": "italic",
+      "sha256": "7409a475032d4a83fee4af9a586730c15a1c377f3faba38d2f0147af0d8900ff",
+      "mime": "font/otf",
+      "name": "GeneralSans-Italic.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 300,
+      "style": "normal",
+      "sha256": "6e4965d3b14bb02d4123cedaf87d2b4c3da7462a195d2e5d27f361f1fcd277a4",
+      "mime": "font/otf",
+      "name": "GeneralSans-Light.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 300,
+      "style": "italic",
+      "sha256": "5007719a739e657ee16b25f05172ce30563134d21d315193c50a2a204dfbd9c6",
+      "mime": "font/otf",
+      "name": "GeneralSans-LightItalic.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 500,
+      "style": "normal",
+      "sha256": "a4c6067d3415ab1ec2e17e6bd0406c0d3f7a28c707c5ddd85ca6458cabd3dbf0",
+      "mime": "font/otf",
+      "name": "GeneralSans-Medium.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 500,
+      "style": "italic",
+      "sha256": "f2d2e4279116ed8b3a6f61609658ef01e95c7e7d1f47d5d484243fb8638deeb0",
+      "mime": "font/otf",
+      "name": "GeneralSans-MediumItalic.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 400,
+      "style": "normal",
+      "sha256": "f5cfd05c1dafa77e944670528a81958f7c21b7517bafd2a8796a3aa17e56b9ce",
+      "mime": "font/otf",
+      "name": "GeneralSans-Regular.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 600,
+      "style": "normal",
+      "sha256": "6ad3ed9661df911b511135f494805704dea322dc2ae10a9620764f56df39c30b",
+      "mime": "font/otf",
+      "name": "GeneralSans-Semibold.otf"
+    },
+    {
+      "family": "General Sans",
+      "weight": 600,
+      "style": "italic",
+      "sha256": "7d1393b5db4a2a89b07b78d1be844c45ef153c26c0ec5e4c62e02e2a7e1bbf57",
+      "mime": "font/otf",
+      "name": "GeneralSans-SemiboldItalic.otf"
+    },
+    {
+      "family": "General Sans Variable",
+      "weight": 700,
+      "style": "normal",
+      "sha256": "4b2539d9ed3367e8f55f7ddd369ab13e17bb279ff2eb7fdca6c713af13d4df84",
+      "mime": "font/ttf",
+      "name": "GeneralSans-Variable.ttf"
+    },
+    {
+      "family": "General Sans Variable",
+      "weight": 700,
+      "style": "italic",
+      "sha256": "4aa0c20dbb593ad82b41f090fbbc8efb1bfe3df85ca895c08092f77d467fea60",
+      "mime": "font/ttf",
+      "name": "GeneralSans-VariableItalic.ttf"
+    },
+    {
+      "family": "Century Gothic",
+      "weight": 700,
+      "style": "normal",
+      "sha256": "d0e3f79fb1c94ea338f09f7a3d9ce664ad5f06756f887ec4bc85b93d696f3a97",
+      "mime": "font/ttf",
+      "name": "Jost-Bold.ttf"
+    },
+    {
+      "family": "Century Gothic",
+      "weight": 500,
+      "style": "normal",
+      "sha256": "a50384db8b25d2d3ae107a17fd15f9a7d93566cc0d6c5ff86e45c635cd2e24b3",
+      "mime": "font/ttf",
+      "name": "Jost-Medium.ttf"
+    },
+    {
+      "family": "Century Gothic",
+      "weight": 400,
+      "style": "normal",
+      "sha256": "c54731b1a6880f2debab5a44806a05546c9759cd982cc6ce3164bfedc7e5a363",
+      "mime": "font/ttf",
+      "name": "Jost-Regular.ttf"
+    },
+    {
+      "family": "Quicksand",
+      "weight": 300,
+      "style": "normal",
+      "sha256": "39c9b64223561f56aaff6062a6f04063c4fc86809ad6768722c06614d977e1cc",
+      "mime": "font/ttf",
+      "name": "Quicksand[wght].ttf"
+    }
+  ],
+  "logos": [
+    {
+      "name": "apple-touch-icon.png",
+      "sha256": "938fb8820792769ed47c96ddcab3609b82f8dd28846361316520f28010f2c1da",
+      "mime": "image/png"
+    },
+    {
+      "name": "bullet-ring.svg",
+      "sha256": "3681600a08fa6f6e88188afa7b464d9b57648e4fd3a1225a4a9b8f720e0dcced",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "circle-field-dark.svg",
+      "sha256": "78d93951605b6f7226a4e2e6e5a75b7b4ea1a8911988389fb1e130641495c55f",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "circle-field.svg",
+      "sha256": "8b13386f063a7302474cfd1cb53728a332f17d54e6a3221b0dcde8958fabbf41",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "favicon-192.png",
+      "sha256": "04bd3fb7a4ae4eee78fbe7cb53d0507781c93b09df7380085df0a71ce819c0c6",
+      "mime": "image/png"
+    },
+    {
+      "name": "favicon-270.png",
+      "sha256": "1549e26bf14300f2d909ea1de45358be93702ed8c535fb190d05a91a221c494f",
+      "mime": "image/png"
+    },
+    {
+      "name": "favicon-32.png",
+      "sha256": "723c25e1833637f84b316821d03d9f8996e8bfb15a791ccadd4fe95ec3c18eb3",
+      "mime": "image/png"
+    },
+    {
+      "name": "logo-black.png",
+      "sha256": "f79059489433275dbd3895d1041986e6dda47308cfe53b665cbe68df7b8ec48d",
+      "mime": "image/png"
+    },
+    {
+      "name": "logo-blue.svg",
+      "sha256": "e589c30bdf55ce061d7063da8bc1a9b0ac614e5b11344709385569c07e1b011c",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "logo-white-tagline.png",
+      "sha256": "a55bc4be24816e822665b7f7a3fd2702af61e8843da3db913444fa2b2711cd97",
+      "mime": "image/png"
+    },
+    {
+      "name": "logo-white.svg",
+      "sha256": "6905c8cb175089a0e24b2ba8c09bcfb5e6dcf0960106e68ddba9b84e0c0de3cc",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "logo.svg",
+      "sha256": "0c5ac5db16c2e7e2061290c1b328b842f6b2c62e42c6780252bc3294d854babd",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "motif-orbit.svg",
+      "sha256": "0c624874ed819b8b5b3296d73ae4029eed49ceed3615699ba99e7f161e132328",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "motif-stepping-stones.svg",
+      "sha256": "2c5f9cd91bd1e729ff901b305316d137550589a905a6f7feae1c9e37f1c4c2a8",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "motif-wordmark-ghost.svg",
+      "sha256": "058d021419e8d38ddcf0be6d13db060c1ee590ecaeb142701e1b3662ed1ff032",
+      "mime": "image/svg+xml"
+    },
+    {
+      "name": "pattern-orbit-tile.svg",
+      "sha256": "89d20435a71dc2ace4b9185f1ef358ccab39cdf71cc7c874ccb35223d7e49c1e",
+      "mime": "image/svg+xml"
+    }
+  ],
+  "images": [
+    {
+      "name": "device-desktop.png",
+      "sha256": "941555d9065ede3d4c0ced65587289d701afb5514b92fe83d3cca2fa05c193e7",
+      "mime": "image/png"
+    },
+    {
+      "name": "device-phone.png",
+      "sha256": "2be506d440f95c39fb84d55ee4fa858c3a9caebbcb9b29957cadf553545658de",
+      "mime": "image/png"
+    },
+    {
+      "name": "device-tablet.png",
+      "sha256": "aa61d198cb3914e32819443748637678feb23c08d6b65df39a2fb4144b2836e4",
+      "mime": "image/png"
+    },
+    {
+      "name": "gradient-accent.png",
+      "sha256": "e437183eabb5ed1c3fb1a6e6f506d8b425d4ae1008b6ac3e3921786dec3b5341",
+      "mime": "image/png"
+    },
+    {
+      "name": "gradient-dark.png",
+      "sha256": "1028022aa8760d1169c0df69eb2bd554c0dc3ec1a34bb7f7d5a447d02ed7e28e",
+      "mime": "image/png"
+    },
+    {
+      "name": "gradient-midnight.png",
+      "sha256": "4aadca007c0e23581954e1385151448558dd2a333aae5f78d79321e06c1c2f7f",
+      "mime": "image/png"
+    }
+  ],
+  "brand_context": {
+    "sha256": "fc6e559365b218e741a6cbac3d5b945abfa3d7d9effba8a9a7df5713f8aac681",
+    "mime": "application/json",
+    "bytes": 59607
+  }
+}

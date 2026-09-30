@@ -1,0 +1,28 @@
+<!--
+  Amaris — circle field (navy canvas).
+
+  The cover / section-divider / closing variant, measured from the styling source of
+  truth (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx, slides
+  1/8/21/23). Same construction as the light field; on #002060 the accents read as
+  tonal navy, violet and teal rather than as colour.
+
+  Sits directly on the navy field, behind all content. Stage 1280x720.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720"
+     width="1280" height="720" preserveAspectRatio="xMidYMid slice"
+     class="circle-field circle-field--dark" aria-hidden="true" focusable="false">
+  <g>
+    <!-- large, bleeding off the top-left corner -->
+    <circle cx="128" cy="128" r="256"
+            fill="var(--circle-1, #4182ff)"
+            opacity="var(--circle-opacity-large, 0.20)"/>
+    <!-- large, bleeding off the bottom-right corner -->
+    <circle cx="1152" cy="576" r="256"
+            fill="var(--circle-2, #b880ff)"
+            opacity="var(--circle-opacity-large, 0.20)"/>
+    <!-- small accent dot, fully inside -->
+    <circle cx="608" cy="608" r="96"
+            fill="var(--circle-3, #7ddeb8)"
+            opacity="var(--circle-opacity-small, 0.35)"/>
+  </g>
+</svg>

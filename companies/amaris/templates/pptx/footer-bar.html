@@ -1,0 +1,33 @@
+<!--
+  Amaris Consulting — PPTX footer-bar fragment.
+  Standalone snippet for an LLM-authored content slide that wants the brand
+  footer without inheriting the rest of the content.html frame.
+
+  Rebuilt 2026-09-22 from the styling source of truth. CHANGED: Century Gothic,
+  not monospace — this brand has exactly one type family, and the monospace
+  footer was an inference from the corporate blank, not an observed element.
+
+  Injected: {{LOGO_MONO_URL}} {{CLIENT_NAME}} {{CONFIDENTIALITY}} {{PAGE}} {{PAGES}}
+-->
+<div class="footer-bar" style="
+  position: absolute;
+  bottom: 26px;
+  left: var(--slide-margin, 56px);
+  right: var(--slide-margin, 56px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-body, 'Century Gothic', sans-serif);
+  font-size: 9pt;
+  letter-spacing: var(--track-tight, 0.67pt);
+  color: var(--ink-meta);
+">
+  <div style="display: flex; align-items: center; gap: 10pt;">
+    <span>{{CLIENT_NAME}}</span>
+    <span>{{CONFIDENTIALITY}}</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 12pt;">
+    <span>{{PAGE}} / {{PAGES}}</span>
+    <img src="{{LOGO_MONO_URL}}" alt="Amaris Consulting" style="height: 18pt; width: auto; opacity: 0.75;">
+  </div>
+</div>

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": {
+    "profileSha": "a505c126be36b47d41f1bcb3024910752241efe9730d479579e15a74e1691baf",
+    "peopleSha": "67173f88ec2632b7ddb4bc86a91ca3bd0b811eda70d3d51b3467133329409a93",
+    "compiler": "1.0"
+  },
+  "company": {
+    "name": "Amaris Consulting",
+    "legalName": "Amaris Consulting Sàrl",
+    "shortName": "Amaris",
+    "description": "Amaris Consulting is an independent technology and management consulting firm and a wholly-owned brand of the Mantu group. Founded in Geneva in 2007 by two engineers, a lawyer and a financial expert, Amaris helps businesses grow through expert advisory, project delivery, and technology enablement across Life Sciences, Information Systems & Digital, Telecom, and Engineering.",
+    "tagline": "Make it happen, together.",
+    "website": "https://amaris.com",
+    "founded": 2007,
+    "headquarters": {
+      "city": "Chêne-Bourg",
+      "region": "Geneva",
+      "country": "Switzerland"
+    },
+    "industries": [
+      "Consumer & Retail",
+      "Energy, Resources & Utilities",
+      "Financial Services",
+      "Healthcare",
+      "Telecommunications, Media & Entertainment",
+      "Transportation & Defense"
+    ],
+    "businessLines": [
+      {
+        "id": "bl-001",
+        "name": "Life Sciences",
+        "description": "Advisory and project delivery across pharma, biotech, and medical devices — from R&D and clinical operations to regulatory compliance and manufacturing."
+      },
+      {
+        "id": "bl-002",
+        "name": "Information Systems & Digital",
+        "description": "Digital transformation, software engineering, data, cloud, and cybersecurity programmes that modernise the enterprise technology stack."
+      },
+      {
+        "id": "bl-003",
+        "name": "Telecom",
+        "description": "Network engineering, deployment, and optimisation services for telecom operators and equipment vendors."
+      },
+      {
+        "id": "bl-004",
+        "name": "Engineering",
+        "description": "Multi-sector engineering consulting spanning industrialisation, systems engineering, and product development."
+      }
+    ],
+    "values": [
+      "Pioneer Spirit",
+      "Trust",
+      "Care",
+      "Performance",
+      "Independence"
+    ],
+    "positioning": {
+      "mission": "Helping businesses grow is the reason we wake up every day",
+      "promise": "Their success is our success",
+      "philosophy": "Make it happen, together"
+    },
+    "stats": {
+      "employees": "7,600+",
+      "countries": "60+",
+      "continents": "5",
+      "clients": "1,000+"
+    },
+    "publicContact": {
+      "website": "https://amaris.com",
+      "linkedin": "https://www.linkedin.com/company/amaris",
+      "press": "press@amaris.com"
+    }
+  },
+  "people": [
+    {
+      "id": "person-001",
+      "name": "Rebeca Elmúdesi",
+      "title": "Digital Content Creator Specialist",
+      "publicRole": "spokesperson"
+    }
+  ],
+  "redactions": [
+    "company direct email",
+    "company registration numbers",
+    "personal contact (email / phone)"
+  ]
+}

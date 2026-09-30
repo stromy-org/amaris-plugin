@@ -1,0 +1,12 @@
+{
+  "name": "amaris-consulting",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Claude Code plugin for Amaris Consulting branded deliverables and brand tools",
+  "dependencies": {
+    "docx": "^9.7.2",
+    "playwright": "^1.63.0",
+    "pptxgenjs": "^4.0.1",
+    "sharp": "^0.35.4"
+  }
+}

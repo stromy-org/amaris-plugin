@@ -1,0 +1,51 @@
+{
+  "_comment": "Amaris Consulting branded XLSX style spec. Consumed by the xlsx skill's render-anchors mode to produce anchors.xlsx and to style live workbooks. Colors/fonts mirror charter.json + boilerplate.json.",
+  "brand": {
+    "primary": "272774",
+    "secondary": "EBC4B4",
+    "accent": "4182FF",
+    "text": "494951",
+    "textLight": "6C757D",
+    "background": "FFFFFF",
+    "surface": "F8F9FA"
+  },
+  "fonts": {
+    "heading": { "name": "Century Gothic", "fallback": "General Sans" },
+    "body": { "name": "Century Gothic", "fallback": "Calibri" }
+  },
+  "namedStyles": {
+    "Title":     { "font": "heading", "size": 20, "bold": true,  "color": "272774" },
+    "Heading 1": { "font": "heading", "size": 14, "bold": true,  "color": "FFFFFF", "fill": "272774" },
+    "Heading 2": { "font": "heading", "size": 12, "bold": true,  "color": "272774", "fill": "F5E2DA" },
+    "Heading 3": { "font": "heading", "size": 11, "bold": true,  "color": "272774" },
+    "Body":      { "font": "body",    "size": 11, "bold": false, "color": "494951" },
+    "Caption":   { "font": "body",    "size": 9,  "italic": true, "color": "6C757D" },
+    "Total":     { "font": "heading", "size": 11, "bold": true,  "color": "272774", "topBorder": "thin", "borderColor": "EBC4B4" }
+  },
+  "headerBand": {
+    "fill": "272774",
+    "fontColor": "FFFFFF",
+    "height": 28,
+    "accentRule": { "fill": "EBC4B4", "height": 3 }
+  },
+  "footer": {
+    "text": "Amaris Consulting Sàrl  ·  Confidential — Not for distribution",
+    "fontColor": "6C757D",
+    "size": 8,
+    "source": "boilerplate.footer.doc"
+  },
+  "numberFormats": {
+    "default": "#,##0.00",
+    "integer": "#,##0",
+    "currencyEUR": "#,##0.00\\ \"€\"",
+    "currencyCHF": "\"CHF\"\\ #,##0.00",
+    "percent": "0.0%",
+    "date": "dd/mm/yyyy"
+  },
+  "tableStyle": {
+    "headerFill": "272774",
+    "headerFontColor": "FFFFFF",
+    "bandedRowFill": "F8F9FA",
+    "borderColor": "EBC4B4"
+  }
+}

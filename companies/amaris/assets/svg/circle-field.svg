@@ -1,0 +1,31 @@
+<!--
+  Amaris — circle field (light canvas).
+
+  The signature motif, measured from the styling source of truth
+  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx, slides 2/3/6).
+
+  Construction: one large circle bleeding off the top-right, one bleeding off the
+  bottom-left, and one small accent dot fully inside the upper right. One accent per
+  circle, never repeated. Always BEHIND content — this layer never carries text.
+
+  Stage is 1280x720 (13.333x7.5in at 96 px/in). Colours and opacities are token-led;
+  the literal fallbacks are the measured values.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720"
+     width="1280" height="720" preserveAspectRatio="xMidYMid slice"
+     class="circle-field" aria-hidden="true" focusable="false">
+  <g>
+    <!-- large, bleeding off the top-right corner -->
+    <circle cx="1095" cy="160" r="335"
+            fill="var(--circle-2, #b880ff)"
+            opacity="var(--circle-opacity-large, 0.18)"/>
+    <!-- large, bleeding off the bottom-left corner -->
+    <circle cx="26" cy="523" r="169"
+            fill="var(--circle-1, #4182ff)"
+            opacity="var(--circle-opacity-large, 0.20)"/>
+    <!-- small accent dot, fully inside -->
+    <circle cx="1151" cy="91" r="24"
+            fill="var(--circle-2, #b880ff)"
+            opacity="var(--circle-opacity-small, 0.85)"/>
+  </g>
+</svg>

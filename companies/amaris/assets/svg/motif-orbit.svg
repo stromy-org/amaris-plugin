@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Amaris orbit arc motif" preserveAspectRatio="xMidYMid slice">
+  <!--
+    Orbit arc: a single hairline arc on a large off-canvas radius, sweeping
+    across the slide. Recolours per context via currentColor (set the parent
+    color to white on dark, navy/blush on light). When inlined into an HTML
+    deck, override stroke with the motif-arc-color tokens and width with the
+    motif-line-weight token. The baked stroke/width are fallbacks for
+    standalone rasterisation.
+  -->
+  <path d="M -120 860 A 1180 1180 0 0 1 1460 120"
+        fill="none" stroke="currentColor" stroke-width="0.9"
+        stroke-linecap="round" stroke-opacity="0.32"/>
+</svg>

@@ -1,0 +1,106 @@
+<!--
+  Amaris Consulting — PDF page shell (Cover), A4 portrait.
+  Consumed by the `pdf-hd` skill / `render-anchors` mode.
+
+  Rebuilt 2026-09-22 from the client-supplied styling source of truth
+  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx).
+  Extraction of record: clients/amaris/presentation-grammar.md.
+
+  CHANGED from the previous shell — read before "restoring" anything:
+    - NO hero photograph. This brand renders without photography (client
+      instruction, 2026-09-22); {{HERO_URL}} is deliberately not accepted.
+    - Flat #002060 field, not an indigo scrim over an image.
+    - The 4 mm blush top rule is gone; the circle field replaces it.
+    - Century Gothic throughout — no monospace.
+  The circle field is plain <circle> at flat opacity, so it carries no soft mask
+  and needs no pre-flatten (the PDF-HD Chromium soft-mask lesson does not bite).
+
+  Injected: {{LOGO_WHITE_URL}} {{OVERLINE}} {{TITLE}} {{SUBTITLE}}
+            {{META_LEFT}} {{META_MID}} {{META_RIGHT}} {{TOKENS_CSS}} {{FONT_FACES}}
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{TOKENS_CSS}}
+{{FONT_FACES}}
+
+@page { size: A4; margin: 0; }
+html, body { margin: 0; padding: 0; }
+body {
+  width: 210mm; height: 297mm;
+  background: var(--canvas-navy);
+  color: var(--ink-on-dark);
+  font-family: var(--font-heading, 'Century Gothic', sans-serif);
+  position: relative;
+  overflow: hidden;
+}
+
+.circle-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.circle-field svg { width: 100%; height: 100%; display: block; }
+.circle-field circle.lg { opacity: var(--circle-opacity-large, 0.20); }
+.circle-field circle.sm { opacity: var(--circle-opacity-small, 0.40); }
+
+.logo { position: absolute; top: 18mm; right: 18mm; z-index: 2; }
+.logo img { height: 11mm; width: auto; }
+
+.pill {
+  position: absolute; top: 105mm; left: 18mm; z-index: 2;
+  display: inline-block; padding: 2.4mm 7mm;
+  border-radius: var(--radius-pill, 999px);
+  background: var(--accent-4);
+  color: var(--ink-title);
+  font-size: 9pt; font-weight: 700;
+  letter-spacing: var(--track-medium, 1.33pt);
+  text-transform: uppercase;
+}
+
+.block { position: absolute; top: 128mm; left: 18mm; right: 18mm; z-index: 2; }
+.title {
+  margin: 0;
+  font-size: 40pt; font-weight: 700; line-height: 1.06;
+  color: var(--ink-on-dark);
+}
+.subtitle {
+  margin: 12mm 0 0;
+  font-size: 13pt; font-weight: 400; line-height: 1.35;
+  color: var(--ink-on-dark-soft);
+  max-width: 130mm;
+}
+
+.meta {
+  position: absolute; bottom: 16mm; left: 18mm; right: 18mm; z-index: 2;
+  display: flex; justify-content: space-between;
+  font-size: 8.5pt; letter-spacing: var(--track-tight, 0.67pt);
+  color: rgba(255,255,255,0.55);
+  border-top: 0.5pt solid rgba(255,255,255,0.20);
+  padding-top: 3mm;
+}
+</style>
+</head>
+<body>
+
+  <div class="circle-field">
+    <svg viewBox="0 0 210 297" preserveAspectRatio="none" aria-hidden="true">
+      <circle class="lg" cx="18"  cy="22"  r="58" fill="var(--circle-1)"/>
+      <circle class="lg" cx="196" cy="252" r="62" fill="var(--circle-2)"/>
+      <circle class="sm" cx="176" cy="46"  r="9"  fill="var(--circle-3)"/>
+    </svg>
+  </div>
+
+  <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
+
+  <div class="pill">{{OVERLINE}}</div>
+
+  <div class="block">
+    <h1 class="title">{{TITLE}}</h1>
+    <div class="subtitle">{{SUBTITLE}}</div>
+  </div>
+
+  <div class="meta">
+    <span>{{META_LEFT}}</span><span>{{META_MID}}</span><span>{{META_RIGHT}}</span>
+  </div>
+
+</body>
+</html>

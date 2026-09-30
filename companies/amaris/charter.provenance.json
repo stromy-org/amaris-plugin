@@ -1,0 +1,226 @@
+{
+  "brandfetch": {
+    "refreshedOn": "2026-06-15",
+    "provider": "brandfetch",
+    "brandId": "id9oZvpzZV",
+    "qualityScore": 0.6739,
+    "claimed": false,
+    "palette": [
+      {
+        "type": "dark",
+        "hex": "#69727d",
+        "brightness": 113
+      },
+      {
+        "type": "light",
+        "hex": "#f7ded8",
+        "brightness": 227
+      },
+      {
+        "type": "accent",
+        "hex": "#272674",
+        "brightness": 44
+      }
+    ],
+    "fonts": [
+      {
+        "type": "body",
+        "name": "Futura PT",
+        "origin": "custom"
+      },
+      {
+        "type": "body",
+        "name": "Futura PT",
+        "origin": "custom"
+      },
+      {
+        "type": "title",
+        "name": "General",
+        "origin": "custom"
+      }
+    ],
+    "logoVariantManifest": [
+      {
+        "type": "icon",
+        "theme": "dark",
+        "formats": [
+          "jpeg"
+        ]
+      },
+      {
+        "type": "logo",
+        "theme": "dark",
+        "formats": [
+          "png",
+          "svg"
+        ]
+      }
+    ],
+    "corroboration": {
+      "primary": {
+        "curated": "#272674",
+        "brandfetch": "#69727d",
+        "verdict": "divergent"
+      },
+      "secondary": {
+        "curated": "#f5e2da",
+        "brandfetch": null,
+        "verdict": "no-bf-value"
+      },
+      "accent": {
+        "curated": "#4182ff",
+        "brandfetch": "#272674",
+        "verdict": "divergent"
+      },
+      "background": {
+        "curated": "#ffffff",
+        "brandfetch": "#f7ded8",
+        "verdict": "divergent"
+      },
+      "fonts.heading": {
+        "curated": "Century Gothic",
+        "brandfetch": "General",
+        "verdict": "divergent"
+      },
+      "fonts.body": {
+        "curated": "Century Gothic",
+        "brandfetch": "Futura PT",
+        "verdict": "divergent"
+      }
+    },
+    "applied": null,
+    "note": "Brandfetch palette corroborates the curated charter. Curated values are authoritative unless 'applied' records a change. Auto-extracted BF colors are the dominant-pixel view and are NOT used to overwrite a curated identity except on a high-confidence claimed profile.",
+    "validation": {
+      "validatedOn": "2026-06-15",
+      "method": "website CSS (:root vars / computed styles) + brand-guideline PDF search, via parallel research subagents",
+      "bf_reliability": "low — BF returned #69727d (scraped gray) as primary and swapped primary/accent; site CSS names #272674 'blue-primary'",
+      "resolutions": [
+        {
+          "field": "color.primary",
+          "winner": "curated",
+          "truth": "#272674",
+          "source_url": "https://amaris.com/",
+          "confidence": "high",
+          "evidence": "--wp--preset--color--blue-primary: #272674; used for every CTA/heading/icon. BF #69727d absent from site."
+        },
+        {
+          "field": "color.accent",
+          "winner": "curated",
+          "truth": "#4182ff",
+          "source_url": "https://amaris.com/",
+          "confidence": "high",
+          "evidence": "--wp--preset--color--digital-blue: #4182ff. BF labelled #272674 (the primary) as accent — roles swapped."
+        },
+        {
+          "field": "employees",
+          "winner": "curated",
+          "truth": "7,600+",
+          "source_url": "https://amaris.com/",
+          "confidence": "high",
+          "evidence": "schema.org + hero copy: '7,600 people across 5 continents'. BF band 5,001-10,000 consistent but coarser."
+        }
+      ],
+      "extra_brand_colors_found": [
+        "#b882ff",
+        "#7ddeb8",
+        "#fbd545",
+        "#f5e2da",
+        "#ec3c67",
+        "#112dc3"
+      ],
+      "notes": "Sector-coded palette: engineering-purple/life-sciences-green/telecom-yellow/pink-secondary. Logo file 'amaris-logo-blue.svg' (blue=#272674)."
+    }
+  },
+  "visual_grammar_review": [
+    {
+      "dimension": "backgrounds",
+      "chosen_option": "indigo-canvas",
+      "rationale": "GATE A board approved by operator (William); recs accepted. Navy-scrim-over-photo + midnight + blush wash — reads as Amaris; indexed rhythm intact",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "source-artifact",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "gradients",
+      "chosen_option": "linear-directional",
+      "rationale": "GATE A board approved by operator (William); recs accepted. Linear directional (midnight/dark/canvas) — amaris actively uses gradients, distinct from stromy radial-glow / Duke none",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "source-artifact",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "grid",
+      "chosen_option": "asymmetric-measure",
+      "rationale": "GATE A board approved by operator (William); recs accepted. 985px controlled-asymmetry + monospace footer rail + blush left-tick",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "source-artifact",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "iconography",
+      "chosen_option": "geometric-orbit-dot",
+      "rationale": "GATE A board approved by operator (William); recs accepted. Round-join geometric + accent-blue orbit dot; OPEN/extensible set per operator directive",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "proposed",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "elevation",
+      "chosen_option": "flat-indexed-border",
+      "rationale": "GATE A board approved by operator (William); recs accepted. Flat systematic surfaces + sector-indexed left border — no shadow (distinct from Duke soft-lift)",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "proposed",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "patterns",
+      "chosen_option": "orbit-tile",
+      "rationale": "GATE A board approved by operator (William); recs accepted. Real orbit-ring tile asset, low-opacity panels",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "source-artifact",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "concept-option-board",
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    },
+    {
+      "dimension": "typography.smallTitle (label role)",
+      "chosen_option": "brand-face-caps",
+      "rationale": "Operator flagged shared-mono eyebrow sameness; amaris owns no mono. Set label = Century Gothic caps + wide tracking + blush tick.",
+      "visual_lint": "operator-visual-approved (GATE-A board + cover/divider/content slide proof, real photos + orbit mark); automated MCP visual_lint pending font-asset staging",
+      "provenance": "derived",
+      "date": "2026-07-01",
+      "reviewer": "William",
+      "review_surfaces": [
+        "slide-surface-proof (cover/divider/content)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "amaris-consulting",
+  "version": "0.3.31",
+  "description": "Plugin for Amaris Consulting branded deliverables, brand tools, and strategic deliverable planning",
+  "author": {
+    "name": "stromy-org"
+  },
+  "repository": "https://github.com/stromy-org/amaris-plugin",
+  "license": "UNLICENSED",
+  "keywords": [],
+  "mcpServers": "./mcp.json"
+}

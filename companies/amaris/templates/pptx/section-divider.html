@@ -1,0 +1,89 @@
+<!--
+  Amaris Consulting — PPTX section-divider anchor (FRAME ONLY).
+  Consumed by the `pptx` / `pptx-hd` render-anchors mode.
+
+  Rebuilt 2026-09-22 from the styling source of truth
+  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx, slides 8/21).
+  Extraction of record: clients/amaris/presentation-grammar.md.
+
+  CHANGED: no photo-with-indigo-wash variant, no blush rule under the title. The
+  field is flat #002060 with the circle field; the rule under the title is a 2 pt
+  blue line; the ghost numeral is the divider's defining element.
+
+  Injected: {{SECTION_NUMBER}} {{TITLE}} {{SUBTITLE}} {{LOGO_WHITE_URL}}
+            {{TOKENS_CSS}} {{FONT_FACES}}
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{TOKENS_CSS}}
+{{FONT_FACES}}
+
+html, body { margin: 0; padding: 0; }
+body {
+  width: 1280px; height: 720px;
+  background: var(--canvas-navy);
+  color: var(--ink-on-dark);
+  font-family: var(--font-heading, 'Century Gothic', sans-serif);
+  position: relative;
+  overflow: hidden;
+}
+
+.circle-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.circle-field circle.lg { opacity: var(--circle-opacity-large, 0.20); }
+.circle-field circle.sm { opacity: var(--circle-opacity-small, 0.35); }
+
+.block { position: absolute; top: 150px; left: var(--slide-margin, 56px); right: 56px; z-index: 2; }
+
+/* Ghost numeral — 106 pt bold white, sitting behind and above the title. */
+.ghost-numeral {
+  margin: 0;
+  font-size: var(--pt-ghost-numeral, 106pt);
+  font-weight: 700;
+  line-height: 0.92;
+  color: rgba(255,255,255,0.16);
+}
+.title {
+  margin: 4px 0 0;
+  font-size: var(--pt-divider-title, 66pt);
+  font-weight: 700;
+  line-height: 1.04;
+  color: var(--ink-on-dark);
+}
+.rule {
+  width: 300px; height: 0;
+  margin: 34px 0 0;
+  border-top: var(--divider-rule);
+}
+.subtitle {
+  margin: 22px 0 0;
+  font-size: var(--pt-subtitle, 18pt);
+  font-weight: 400;
+  color: var(--ink-on-dark-soft);
+}
+
+.logo { position: absolute; bottom: 40px; left: var(--slide-margin, 56px); z-index: 2; }
+.logo img { height: 30px; width: auto; opacity: 0.85; }
+</style>
+</head>
+<body>
+
+  <svg class="circle-field" viewBox="0 0 1280 720" aria-hidden="true">
+    <circle class="lg" cx="128"  cy="128" r="256" fill="var(--circle-1)"/>
+    <circle class="lg" cx="1152" cy="576" r="256" fill="var(--circle-2)"/>
+    <circle class="sm" cx="608"  cy="608" r="96"  fill="var(--circle-3)"/>
+  </svg>
+
+  <div class="block">
+    <div class="ghost-numeral">{{SECTION_NUMBER}}</div>
+    <h1 class="title">{{TITLE}}</h1>
+    <div class="rule"></div>
+    <div class="subtitle">{{SUBTITLE}}</div>
+  </div>
+
+  <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
+
+</body>
+</html>

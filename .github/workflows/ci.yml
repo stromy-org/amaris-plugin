@@ -1,0 +1,83 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  node-audit:
+    name: npm audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - id: detect
+        run: |
+          if [ -f package.json ]; then echo "has_node=true" >> "$GITHUB_OUTPUT"; else echo "has_node=false" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-node@v7
+        if: steps.detect.outputs.has_node == 'true'
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - uses: actions/setup-python@v7
+        if: steps.detect.outputs.has_node == 'true'
+        with:
+          python-version: '3.11'
+      - name: Install (npm ci)
+        if: steps.detect.outputs.has_node == 'true'
+        run: npm ci
+      - name: Audit with allowlist
+        if: steps.detect.outputs.has_node == 'true'
+        run: python3 .github/scripts/check-npm-audit.py
+      - name: Skip (no package.json)
+        if: steps.detect.outputs.has_node == 'false'
+        run: echo "No package.json present — skipping Node audit."
+
+  python-resolve:
+    name: uv sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - id: detect
+        run: |
+          # has_python = "lock-checkable": both a pyproject AND a committed lock.
+          # `uv sync --frozen` is a lock-DRIFT gate — meaningless (and a hard fail)
+          # without a uv.lock, so only run it when one exists. A scaffolded plugin
+          # ships pyproject.toml and no lock; that case must skip green, not fail.
+          if [ -f pyproject.toml ] && [ -f uv.lock ]; then
+            echo "has_python=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_python=false" >> "$GITHUB_OUTPUT"
+          fi
+          if [ -f pyproject.toml ] && [ ! -f uv.lock ]; then
+            echo "lock_missing=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "lock_missing=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: astral-sh/setup-uv@v7
+        if: steps.detect.outputs.has_python == 'true'
+        with:
+          python-version: '3.11'
+      - name: Verify lock is consistent
+        if: steps.detect.outputs.has_python == 'true'
+        run: uv sync --frozen
+      - name: Skip (no uv.lock)
+        if: steps.detect.outputs.lock_missing == 'true'
+        run: echo "pyproject.toml present but no uv.lock — skipping 'uv sync --frozen' (a frozen sync requires a committed lock). Commit a uv.lock when this plugin grows real Python deps."
+      - name: Skip (no pyproject.toml)
+        if: steps.detect.outputs.has_python == 'false' && steps.detect.outputs.lock_missing == 'false'
+        run: echo "No pyproject.toml present — skipping Python resolve."
+
+  skill-deps:
+    name: skill deps
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+      - name: Validate skill-declared deps match manifests
+        run: python3 .github/scripts/check-skill-deps.py

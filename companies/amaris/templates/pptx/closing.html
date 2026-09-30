@@ -1,0 +1,76 @@
+<!--
+  Amaris Consulting — PPTX closing slide anchor (FRAME ONLY).
+  Consumed by the `pptx` / `pptx-hd` render-anchors mode.
+
+  Rebuilt 2026-09-22 from the styling source of truth
+  (.build-history/source-Amaris-Nespresso-Academy-styling-SoT.pptx, slide 23).
+  Extraction of record: clients/amaris/presentation-grammar.md.
+
+  CHANGED: no hero photograph, no blush rule, no monospace. Flat #002060, the
+  circle field, one very large line of Century Gothic Bold.
+
+  Injected: {{LOGO_WHITE_URL}} {{CLOSING_LINE}} {{CONTEXT_LINE}}
+            {{TOKENS_CSS}} {{FONT_FACES}}
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+{{TOKENS_CSS}}
+{{FONT_FACES}}
+
+html, body { margin: 0; padding: 0; }
+body {
+  width: 1280px; height: 720px;
+  background: var(--canvas-navy);
+  color: var(--ink-on-dark);
+  font-family: var(--font-heading, 'Century Gothic', sans-serif);
+  position: relative;
+  overflow: hidden;
+}
+
+.circle-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.circle-field circle.lg { opacity: var(--circle-opacity-large, 0.19); }
+.circle-field circle.sm { opacity: var(--circle-opacity-small, 0.45); }
+
+.block {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  left: var(--slide-margin, 56px); right: 56px; z-index: 2;
+}
+.closing {
+  margin: 0;
+  font-size: var(--pt-closing, 96pt);
+  font-weight: 700;
+  line-height: 1.02;
+  color: var(--ink-on-dark);
+}
+.context {
+  margin: 40px 0 0;
+  font-size: var(--pt-body, 12pt);
+  font-weight: 400;
+  letter-spacing: var(--track-medium, 1.33pt);
+  color: rgba(255,255,255,0.55);
+}
+
+.logo { position: absolute; bottom: 40px; right: var(--slide-margin, 56px); z-index: 2; }
+.logo img { height: 30px; width: auto; opacity: 0.85; }
+</style>
+</head>
+<body>
+
+  <svg class="circle-field" viewBox="0 0 1280 720" aria-hidden="true">
+    <circle class="lg" cx="128"  cy="128" r="320" fill="var(--circle-1)"/>
+    <circle class="lg" cx="1152" cy="640" r="256" fill="var(--circle-2)"/>
+    <circle class="sm" cx="1126" cy="320" r="38"  fill="var(--circle-4)"/>
+  </svg>
+
+  <div class="block">
+    <h1 class="closing">{{CLOSING_LINE}}</h1>
+    <div class="context">{{CONTEXT_LINE}}</div>
+  </div>
+
+  <div class="logo"><img src="{{LOGO_WHITE_URL}}" alt="Amaris Consulting"></div>
+
+</body>
+</html>

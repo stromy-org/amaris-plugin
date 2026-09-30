@@ -1,0 +1,23 @@
+{
+  "$schema": "https://gofastmcp.com/public/schemas/mcp-config.schema.json",
+  "_notes": "Canonical MCP server config for amaris-plugin. Edit only this file. Run scripts/render-mcp.py to regenerate .mcp.json / .gemini/settings.json / .codex/config.toml / .vscode/mcp.json.",
+  "servers": {
+    "stromy-format": {
+      "transport": "http",
+      "url": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp",
+      "_consumed_by": [
+        "openai",
+        "codex",
+        "claude",
+        "cursor",
+        "copilot",
+        "vscode",
+        "kiro",
+        "gemini"
+      ],
+      "_codex_via": "mcp-remote",
+      "_gemini_via": "mcp-remote",
+      "_notes": "Hosted format skills (format-pptx, format-pptx-hd, format-docx, format-pdf, format-pdf-hd, format-xlsx, format-mermaid, format-diagram, format-chart, format-video-hd). Fetched at runtime via fs_read — see skills/<name>/SKILL.md stubs. Per-user OAuth via Microsoft Entra ID (handled by mcp-remote browser flow on first use)."
+    }
+  }
+}

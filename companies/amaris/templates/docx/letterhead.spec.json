@@ -1,0 +1,38 @@
+{
+  "$schema": "../../../../schema/docx-letterhead-spec.schema.json",
+  "spec": "letterhead",
+  "version": "1.0",
+  "description": "Brand-token-driven letterhead. Materialised to letterhead.docx by the Workspace Studio `docx` skill via `render-anchors --client <slug>`. Two-page variant: first page has full header + footer, continuation pages keep the footer only.",
+  "extendsStyles": "templates/docx/styles.spec.json",
+  "page": {
+    "size": "{{document.paperSize|A4}}",
+    "margins": { "top": "3.6cm", "bottom": "2.4cm", "left": "2.5cm", "right": "2.5cm" }
+  },
+  "firstPage": {
+    "header": {
+      "heightCm": 2.8,
+      "logo": { "src": "{{logo.png|logo.primary}}", "heightCm": 1.4, "align": "left" },
+      "rule": { "color": "accent", "widthPt": 1.5, "marginTopCm": 0.4 }
+    },
+    "footer": {
+      "heightCm": 1.6,
+      "style": "FooterText",
+      "left":   "{{boilerplate.address|}}",
+      "center": "{{meta.displayName|meta.name}}",
+      "right":  "{{boilerplate.legal.copyright|}}"
+    }
+  },
+  "continuationPage": {
+    "header": {
+      "heightCm": 1.4,
+      "logo": { "src": "{{logo.mark|logo.png}}", "heightCm": 0.9, "align": "left" }
+    },
+    "footer": {
+      "heightCm": 1.4,
+      "style": "FooterText",
+      "left":   "{{meta.displayName|meta.name}}",
+      "center": "",
+      "right":  "{page} / {pages}"
+    }
+  }
+}
