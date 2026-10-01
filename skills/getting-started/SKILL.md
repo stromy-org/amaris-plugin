@@ -1,7 +1,6 @@
 ---
 name: getting-started
-metadata:
-  stromy-client-summary: "Start here: install your plugin, switch on your tools, and find your way to the right guide."
+client_summary: "Start here: install your plugin, switch on your tools, and find your way to the right guide."
 description: >
   Day-0 setup and orientation for a Stromy plugin — install it, switch on the
   connectors it needs, confirm it worked, and find which guide answers your
