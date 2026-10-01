@@ -1,5 +1,5 @@
 # Changes here will be overwritten by Copier; DO NOT edit manually.
-_commit: v1.2.0
+_commit: v1.7.0
 _src_path: gh:stromy-org/claude-plugin-template
 author_name: Stromy
 client_name: Amaris Consulting
@@ -16,6 +16,6 @@ marketplace_slug: amaris-consulting-marketplace
 mcp_servers: []
 plugin_name: Amaris Consulting Deliverables
 plugin_slug: amaris-consulting
-provider_targets: claude
+provider_targets: openai,codex,claude,cursor,copilot,vscode,kiro,gemini
 repo_slug: amaris-consulting-plugin
 version: 0.1.0

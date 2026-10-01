@@ -1,23 +1,15 @@
 {
   "$schema": "https://gofastmcp.com/public/schemas/mcp-config.schema.json",
-  "_notes": "Canonical MCP server config for amaris-plugin. Edit only this file. Run scripts/render-mcp.py to regenerate .mcp.json / .gemini/settings.json / .codex/config.toml / .vscode/mcp.json.",
+  "_notes": "Canonical MCP server config for amaris-consulting. Edit only this file. Run scripts/render-mcp.py to regenerate .mcp.json / .gemini/settings.json / .codex/config.toml / .vscode/mcp.json.",
+  "_connection_model": "Authenticated HTTP MCPs (interactive OAuth, e.g. asset-broker) are consumed as Cowork workspace connectors — do NOT declare them here; a plugin-declared OAuth MCP can only auth via a localhost loopback that fails in remote sessions. Only no-auth HTTP MCPs (stromy-format) and stdio servers belong in a plugin. See infra-docs/ai/mcp-connection-model.md (enforced by validate-plugin-completeness.py Invariant #13).",
   "servers": {
     "stromy-format": {
       "transport": "http",
       "url": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp",
-      "_consumed_by": [
-        "openai",
-        "codex",
-        "claude",
-        "cursor",
-        "copilot",
-        "vscode",
-        "kiro",
-        "gemini"
-      ],
+      "_consumed_by": ["openai", "codex", "claude", "cursor", "copilot", "vscode", "kiro", "gemini"],
       "_codex_via": "mcp-remote",
       "_gemini_via": "mcp-remote",
-      "_notes": "Hosted format skills (format-pptx, format-pptx-hd, format-docx, format-pdf, format-pdf-hd, format-xlsx, format-mermaid, format-diagram, format-chart, format-video-hd). Fetched at runtime via fs_read — see skills/<name>/SKILL.md stubs. Per-user OAuth via Microsoft Entra ID (handled by mcp-remote browser flow on first use)."
+      "_notes": "Hosted format skills fetched at runtime via fs_read from the stromy-format MCP."
     }
   }
 }
