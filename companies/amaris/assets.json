@@ -103,7 +103,11 @@
       "style": "normal",
       "sha256": "4b2539d9ed3367e8f55f7ddd369ab13e17bb279ff2eb7fdca6c713af13d4df84",
       "mime": "font/ttf",
-      "name": "GeneralSans-Variable.ttf"
+      "name": "GeneralSans-Variable.ttf",
+      "weight_range": [
+        200,
+        700
+      ]
     },
     {
       "family": "General Sans Variable",
@@ -111,7 +115,11 @@
       "style": "italic",
       "sha256": "4aa0c20dbb593ad82b41f090fbbc8efb1bfe3df85ca895c08092f77d467fea60",
       "mime": "font/ttf",
-      "name": "GeneralSans-VariableItalic.ttf"
+      "name": "GeneralSans-VariableItalic.ttf",
+      "weight_range": [
+        200,
+        700
+      ]
     },
     {
       "family": "Century Gothic",
@@ -143,7 +151,11 @@
       "style": "normal",
       "sha256": "39c9b64223561f56aaff6062a6f04063c4fc86809ad6768722c06614d977e1cc",
       "mime": "font/ttf",
-      "name": "Quicksand[wght].ttf"
+      "name": "Quicksand[wght].ttf",
+      "weight_range": [
+        300,
+        700
+      ]
     }
   ],
   "logos": [
@@ -261,8 +273,10 @@
     }
   ],
   "brand_context": {
-    "sha256": "f5e2f9c78245edac7e39771ba46b08a9e98cdcae4250bae1bbf85b633fa988ac",
+    "sha256": null,
     "mime": "application/json",
-    "bytes": 59630
+    "bytes": 59630,
+    "pending_upload": "f5e2f9c78245edac7e39771ba46b08a9e98cdcae4250bae1bbf85b633fa988ac",
+    "reason": "no remote upload: local backend or dry-run"
   }
 }
