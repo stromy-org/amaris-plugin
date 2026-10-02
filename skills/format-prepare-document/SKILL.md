@@ -1,6 +1,6 @@
 ---
 name: format-prepare-document
-description: "Plan a multi-section document before rendering it. Use when a branded PPTX, DOCX, or PDF needs structure-first collaboration: section plan, substrate choice, complementary charts/diagrams, sign-off, then handoff to the correct `format-*` renderer. This skill is generic and client-agnostic apart from the invoking plugin's brand overlay."
+description: "Plan a multi-section document before rendering it: section plan, brand-aware structure, complementary charts and diagrams, sign-off, then handoff to the right `format-*` renderer. Use when someone asks for a proposal, pitch, report, white paper, executive brief or board deck and the structure is not yet decided, or says 'help me plan or outline the document'. Not for a one-page memo, a single slide, an edit of an existing file, or when an approved section plan or envelope already exists: go straight to format-pdf-hd, format-pptx-hd, format-docx-hd or format-html-hd. Branding comes from the invoking plugin's brand overlay."
 metadata:
   stromy-client-summary: "Start here for any substantial document: plan the structure together, then produce it in the right format."
 ---

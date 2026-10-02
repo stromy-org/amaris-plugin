@@ -1,6 +1,6 @@
 ---
 name: format-docx
-description: "Create, read, or edit Word documents (.docx) — tables of contents, headings, page numbers, headers/footers, letterheads, tracked changes, comments, find-and-replace, and reorganizing or extracting content. Use when asked for a Word doc, a report, memo, letter, brief, or template as a .docx, or to edit or analyze an existing one (branded or not). Client branding applies automatically when an overlay resolves. Not for a net-new branded deck-quality document (format-docx-hd), PDFs (format-pdf), spreadsheets (format-xlsx), or Google Docs."
+description: "Create, read, or edit Word documents (.docx) — tables of contents, headings, page numbers, headers/footers, letterheads, tracked changes, comments, find-and-replace, and reorganizing or extracting content. Use when asked for a Word doc, a report, memo, letter, brief, or template as a .docx, or to edit or analyze an existing one (branded or not). Client branding applies automatically when an overlay resolves. Not for a net-new branded report, brief or memo where visual quality matters — use format-docx-hd; not for PDFs (use format-pdf), spreadsheets (use format-xlsx), or Google Docs."
 metadata:
   stromy-client-summary: "Create or edit Word documents, including tables of contents, headers and letterheads."
 ---
