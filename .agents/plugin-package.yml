@@ -8,7 +8,7 @@ schema_version: 1
 identity:
   name: amaris-consulting
   display_name: Amaris Consulting
-  version: 0.3.34
+  version: 0.3.35
   description: Plugin for Amaris Consulting branded deliverables, brand tools, and strategic deliverable
     planning
   author:
