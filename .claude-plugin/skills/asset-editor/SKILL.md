@@ -1,6 +1,6 @@
 ---
 name: asset-editor
-description: "Draft, preview, and propose reviewed website or brand edits through the asset-broker MCP without direct GitHub access. Use when a client wants to add or edit their own website content (blog, case studies, intel, capabilities, images) or brand/charter data and have it land as a reviewed GitHub pull request with a truthful preview."
+description: "Draft, preview, and propose reviewed website or brand edits through the asset-broker MCP without direct GitHub access. Use when a client wants to add or edit their own website content (blog, case studies, intel, capabilities, images) or brand/charter data and have it land as a reviewed GitHub pull request with a truthful preview. Not for building or refreshing a whole brand (asset-brand-studio), building a new site (asset-website-studio), workspace folders (asset-workspace-setup), or orientation (asset-guide)."
 metadata:
   stromy-client-summary: "Change your own website content or brand details and send it for review, with no code needed."
 ---
