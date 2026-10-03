@@ -120,10 +120,11 @@
       "rights": {
         "licensee": "client",
         "permits": [
-          "embed-office"
+          "embed-office",
+          "embed-pdf"
         ],
-        "evidence": "Amaris licenses Century Gothic as an installed system/Office face on their own machines; Stromy holds no redistribution right. Not re-verified with the client — see ORG-PLAN-312/R5.",
-        "verified": "2026-09-18"
+        "evidence": "Amaris holds a Century Gothic licence covering the production of its own deliverables (operator attestation 2026-10-03; licence proof requested from the client the same day). Stromy embeds it only in Amaris documents (PDF and raster), through the client-licensed font lane, and holds no redistribution or web-serving right — see ORG-PLAN-312/R5.",
+        "verified": "2026-10-03"
       }
     },
     "body": {
@@ -144,10 +145,11 @@
       "rights": {
         "licensee": "client",
         "permits": [
-          "embed-office"
+          "embed-office",
+          "embed-pdf"
         ],
-        "evidence": "Amaris licenses Century Gothic as an installed system/Office face on their own machines; Stromy holds no redistribution right. Not re-verified with the client — see ORG-PLAN-312/R5.",
-        "verified": "2026-09-18"
+        "evidence": "Amaris holds a Century Gothic licence covering the production of its own deliverables (operator attestation 2026-10-03; licence proof requested from the client the same day). Stromy embeds it only in Amaris documents (PDF and raster), through the client-licensed font lane, and holds no redistribution or web-serving right — see ORG-PLAN-312/R5.",
+        "verified": "2026-10-03"
       }
     },
     "medium": {
@@ -167,10 +169,11 @@
       "rights": {
         "licensee": "client",
         "permits": [
-          "embed-office"
+          "embed-office",
+          "embed-pdf"
         ],
-        "evidence": "Amaris licenses Century Gothic as an installed system/Office face on their own machines; Stromy holds no redistribution right. Not re-verified with the client — see ORG-PLAN-312/R5.",
-        "verified": "2026-09-18"
+        "evidence": "Amaris holds a Century Gothic licence covering the production of its own deliverables (operator attestation 2026-10-03; licence proof requested from the client the same day). Stromy embeds it only in Amaris documents (PDF and raster), through the client-licensed font lane, and holds no redistribution or web-serving right — see ORG-PLAN-312/R5.",
+        "verified": "2026-10-03"
       }
     },
     "accent": {
@@ -226,10 +229,11 @@
       "rights": {
         "licensee": "client",
         "permits": [
-          "embed-office"
+          "embed-office",
+          "embed-pdf"
         ],
-        "evidence": "Amaris licenses Century Gothic as an installed system/Office face on their own machines; Stromy holds no redistribution right. Not re-verified with the client — see ORG-PLAN-312/R5.",
-        "verified": "2026-09-18"
+        "evidence": "Amaris holds a Century Gothic licence covering the production of its own deliverables (operator attestation 2026-10-03; licence proof requested from the client the same day). Stromy embeds it only in Amaris documents (PDF and raster), through the client-licensed font lane, and holds no redistribution or web-serving right — see ORG-PLAN-312/R5.",
+        "verified": "2026-10-03"
       }
     }
   },
