@@ -1,6 +1,6 @@
 ---
 name: format-chart
-description: "Render brand-aware data-visualisation charts using Plotly.js. The LLM authors any Plotly figure JSON (30+ chart types — waterfall, sankey, sunburst, treemap, funnel, parallel coords, calendar heatmap, candlestick, gauge, radar, themeRiver, marimekko-via-stacked, etc.) and this skill applies the client's brand theme from charter.plotly + tokens.css, then renders to PNG/SVG for embedding in PPTX/DOCX/PDF. Use whenever the user asks for a chart, data visualisation, plot, graph, KPI viz, or asks to add a quantitative visual to a deliverable. Defers to the `format-diagram` skill for structural visuals (process flows, org charts, stakeholder maps) — `chart` is purely numerical data-viz."
+description: "Render brand-aware data charts (bar, line, waterfall, sankey, sunburst, treemap, funnel, heatmap, gauge, radar and other Plotly types) to PNG/SVG with the client's compiled brand theme, for embedding in PPTX, DOCX, PDF or HTML deliverables. You author the Plotly figure JSON; the server `render_chart` tool applies palette and fonts and runs a palette check and visual QA. Use for any chart, plot, graph or KPI visual. Not for process flows, org charts or stakeholder maps (use format-diagram), unbranded Mermaid pie/XY in Markdown (use format-mermaid), or a chart native to an Excel workbook (use format-xlsx)."
 metadata:
   stromy-client-summary: "Turn your numbers into a clean, on-brand chart you can drop into any deliverable."
 ---

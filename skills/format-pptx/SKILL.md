@@ -1,6 +1,6 @@
 ---
 name: format-pptx
-description: "DEFAULT PPTX skill for **unbranded deck creation** and **editing / analysis / OOXML / comments / speaker-notes of any existing deck** (branded or not — in-place OOXML edits, not a branded render). For a **net-new branded deck**, use `format-pptx-hd` (server-rendered + brand-gated). This skill does not render a branded deck from scratch. Also supports `render-anchors` mode (materialises brand anchor templates from spec files)."
+description: "DEFAULT PPTX skill for **unbranded deck creation** and **editing / analysis / OOXML / comments / speaker-notes of any existing deck** (branded or not — in-place OOXML edits, not a branded render). For a **net-new branded deck** or `render-anchors`, use `format-pptx-hd` (server-rendered + brand-gated). This skill does not render a branded deck from scratch."
 metadata:
   stromy-client-summary: "Edit, review or analyse an existing PowerPoint file, including comments and speaker notes."
 ---

@@ -1,6 +1,6 @@
 ---
 name: format-workspace-cowork
-description: "Work safely on co-edited artifacts in a shared workspace or SharePoint collaboration space. Use when asked to publish to the space, fetch the latest version, review or edit a shared client deliverable, process comments, or co-edit a workspace file."
+description: "Work safely on co-edited artifacts in a shared workspace or SharePoint collaboration space. Use when asked to publish to the space, fetch the latest version, review or edit a shared client deliverable, process comments, co-edit a workspace file, or when someone else may have edited it. Not for the project record or decision log (format-workspace-memory) or for generating a new document (the format-*-hd skills)."
 metadata:
   stromy-client-summary: "Co-edit a document in your workspace without anyone's changes being lost — always work from the latest version, and write back to the same file."
 ---
