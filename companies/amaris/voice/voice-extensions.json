@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "additional_banned_phrases": [
+    "best-in-class",
+    "world-class",
+    "cutting-edge",
+    "game-changing",
+    "disruptive",
+    "revolutionary",
+    "silver bullet",
+    "one-stop shop",
+    "leading provider",
+    "unlock the power",
+    "supercharge",
+    "vendor"
+  ],
+  "additional_banned_substrings": [],
+  "notes": "Amaris Consulting L2, additive-only bans on top of L1. Basis (judgement from a sample of about a dozen amaris.com pages, 2026-10-06): the brand's own copy describes itself as craftspeople, dependable partners and teammates, and frames the firm as a guide rather than a vendor imposing solutions; hype and vendor-distance vocabulary does not appear in the pages read. Bans are therefore off-voice rather than proven-avoided. Register rules (no exclamation marks; plain first-person plural; French uses nous and vous) live in voice-profile.md as prose."
+}

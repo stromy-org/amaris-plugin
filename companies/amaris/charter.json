@@ -3,7 +3,9 @@
     "tier": "producer",
     "type": "client",
     "displayName": "Amaris Consulting",
-    "slug": "amaris"
+    "slug": "amaris",
+    "imagery": "none",
+    "imageryNote": "Operator decision 2026-10-06: Amaris outputs are type-and-colour only; the brand does not want photography in its outputs."
   },
   "identity": {
     "name": "Amaris Consulting",
