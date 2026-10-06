@@ -25,6 +25,8 @@ Schema honoured (per-server fields beyond standard MCP):
 
 Codex-only fields preserved in TOML output:
     "startup_timeout_sec": int
+    "default_tools_approval_mode": auto | prompt | writes | approve
+    "tools": {native_tool_name: {"approval_mode": ...}}
 
 Secret discipline: every value in env/headers/url that looks like a secret
 (matches password|token|secret|api[_-]?key|auth|bearer) must be a `${VAR}`
@@ -55,6 +57,19 @@ import re
 import sys
 from pathlib import Path
 
+
+#: CI_INPUTS — this script's input DOMAIN, in GitHub's `paths:` grammar.
+#: the authored MCP config and every rendered target, which `--check`
+#: reads back.
+#: Verified by scripts/audit-ci-trigger-coverage.py.
+CI_INPUTS: tuple[str, ...] = (
+    ".agents/mcp.json",
+    ".mcp.json",
+    ".gemini/settings.json",
+    ".codex/config.toml",
+    ".vscode/mcp.json",
+)
+
 GENERATED_BANNER = (
     "Rendered from .agents/mcp.json by scripts/render-mcp.py "
     "— DO NOT EDIT BY HAND. Edit .agents/mcp.json and re-run."
@@ -67,7 +82,75 @@ SECRET_KEY_RE = re.compile(r"(password|token|secret|api[_-]?key|auth|bearer)", r
 ENV_REF_RE = re.compile(r"^\$\{[A-Z_][A-Z0-9_]*(?::-[^}]*)?\}$")
 
 # Codex-specific fields preserved in the TOML output.
-CODEX_EXTRA_FIELDS = ("startup_timeout_sec",)
+CODEX_EXTRA_FIELDS = ("startup_timeout_sec", "default_tools_approval_mode", "tools")
+APPROVAL_MODES = {"auto", "prompt", "writes", "approve"}
+
+
+def approval_findings(servers: dict[str, dict], config_text: str) -> list[str]:
+    """Validate explicit MCP approval settings and impossible required prompts.
+
+    No credential, network or tool-annotation guesses: auto/writes depend on the
+    live tool. Explicit prompt overrides are provably unusable under never.
+    The top-level policy is read before the first table; profile policies and
+    launch-time/managed overrides need a separate live transaction.
+    """
+    top = re.split(r"(?m)^\s*\[", config_text, maxsplit=1)[0]
+    never = bool(re.search(r'''(?m)^\s*approval_policy\s*=\s*["']never["']\s*(?:#.*)?$''', top))
+    errors: list[str] = []
+    for name, spec in filter_for("codex", servers).items():
+        default = spec.get("default_tools_approval_mode", "auto")
+        if not isinstance(default, str) or default not in APPROVAL_MODES:
+            errors.append(f"{name}: invalid default_tools_approval_mode")
+        overrides = spec.get("tools", {})
+        if not isinstance(overrides, dict):
+            errors.append(f"{name}: tools must be a mapping of native tool names")
+            continue
+        for tool, settings in overrides.items():
+            if not isinstance(tool, str) or not tool or not isinstance(settings, dict):
+                errors.append(f"{name}: invalid tool approval override")
+                continue
+            mode = settings.get("approval_mode", default)
+            if not isinstance(mode, str) or mode not in APPROVAL_MODES:
+                errors.append(f"{name}.{tool}: invalid approval_mode")
+            elif never and mode == "prompt":
+                errors.append(f"{name}.{tool}: requires a tool approval, but approval_policy is never; use an interactive approval policy")
+        if never and default == "prompt":
+            errors.append(f"{name}: default tool prompts cannot run under approval_policy never")
+    return errors
+
+
+def parity_findings(servers: dict[str, dict]) -> tuple[list[str], list[str]]:
+    """Claude/Codex capabilities match unless a non-empty exception explains why.
+
+    Empty rosters remain valid (cost-conscious unpinning). The existing validated
+    local-loopback plugin opt-in is retained, not widened to remote Cowork.
+    This is configuration proof only; credentials and remote health are not gates.
+    """
+    errors: list[str] = []
+    notes: list[str] = []
+    for name, spec in servers.items():
+        consumers = spec.get("_consumed_by", ["claude", "codex", "gemini"])
+        if not isinstance(consumers, list) or any(
+            not isinstance(cli, str) or cli not in {"claude", "codex", "gemini"}
+            for cli in consumers
+        ):
+            errors.append(f"{name}: _consumed_by must list supported coding agents")
+            continue
+        exception = spec.get("_parity_exception")
+        if exception is not None and (not isinstance(exception, str) or not exception.strip()):
+            errors.append(f"{name}: _parity_exception must contain a reason")
+            continue
+        if ("claude" in consumers) == ("codex" in consumers):
+            continue
+        legacy_loopback = (
+            consumers == ["codex"]
+            and spec.get("_local_loopback_oauth") is True
+        )
+        if exception or legacy_loopback:
+            notes.append(f"{name}: parity exception — {exception or 'Codex-only local-CLI loopback opt-in (Inv #13)'}")
+        else:
+            errors.append(f"{name}: Claude/Codex consumers differ; mirror them or record _parity_exception")
+    return errors, notes
 
 
 # ── Schema validation ────────────────────────────────────────────────────────
@@ -83,7 +166,7 @@ def validate_secrets(servers: dict[str, dict]) -> list[str]:
                     continue
                 if SECRET_KEY_RE.search(key) and not ENV_REF_RE.match(value):
                     errors.append(
-                        f"{name}.{section}.{key}: literal value '{value[:8]}…' — must be ${{ENV_VAR}}"
+                        f"{name}.{section}.{key}: literal value (redacted) — must be ${{ENV_VAR}}"
                     )
         url = spec.get("url")
         if isinstance(url, str) and "://" in url:
@@ -165,6 +248,34 @@ def _codex_env_payload(spec: dict) -> dict | None:
     return rendered or None
 
 
+class CodexHeaderError(ValueError):
+    """An HTTP header Codex cannot carry without a literal secret in its config."""
+
+
+def _codex_env_http_headers(name: str, spec: dict) -> dict | None:
+    """Map `headers` to Codex `env_http_headers` (header -> env var NAME).
+
+    Codex reads a header's value from the named environment variable, so only a
+    value that is exactly one `${VAR}` reference can be expressed. Anything else
+    (a literal, or text around a reference such as `Basic ${X}`) would have to be
+    written into the TOML verbatim, so it is refused rather than leaked or dropped.
+    """
+    headers = spec.get("headers") or {}
+    if not headers:
+        return None
+    mapped: dict[str, str] = {}
+    for header, value in headers.items():
+        match = ENV_REF_RE.match(value) if isinstance(value, str) else None
+        if not match or ":-" in value:
+            raise CodexHeaderError(
+                f"server {name!r}: header {header!r} must be exactly one ${{VAR}} reference "
+                "to render for Codex (env_http_headers); put the whole value in the env var, "
+                "or drop 'codex' from _consumed_by"
+            )
+        mapped[header] = value[2:-1]
+    return mapped
+
+
 def render_for_claude(servers: dict[str, dict]) -> dict:
     out: dict[str, dict] = {}
     for name, spec in filter_for("claude", servers).items():
@@ -207,6 +318,9 @@ def render_for_codex(servers: dict[str, dict]) -> dict:
         else:
             # Codex 0.125+ supports native HTTP via [mcp_servers.<name>] http_url
             out[name] = {"url": spec["url"]}
+            env_headers = _codex_env_http_headers(name, spec)
+            if env_headers:
+                out[name]["env_http_headers"] = env_headers
             for field in CODEX_EXTRA_FIELDS:
                 if field in spec:
                     out[name][field] = spec[field]
@@ -277,9 +391,15 @@ def _toml_value(value) -> str:
         return "[" + ", ".join(_toml_value(v) for v in value) + "]"
     if isinstance(value, dict):
         # Inline table
-        body = ", ".join(f"{k} = {_toml_value(v)}" for k, v in value.items())
+        body = ", ".join(f"{_toml_key(k)} = {_toml_value(v)}" for k, v in value.items())
         return "{ " + body + " }"
     raise TypeError(f"unsupported TOML type: {type(value).__name__}")
+
+
+def _toml_key(key: str) -> str:
+    # Native MCP tool names may contain slash/dot/space. Quote those names so
+    # TOML does not turn a tool name into a path or fail to parse it.
+    return key if re.fullmatch(r"[A-Za-z0-9_-]+", key) else _toml_value(key)
 
 
 def _toml_render_servers(servers: dict[str, dict]) -> str:
@@ -293,9 +413,29 @@ def _toml_render_servers(servers: dict[str, dict]) -> str:
     return "\n\n".join(blocks)
 
 
+def _strip_legacy_codex_tables(text: str, server_names: list[str]) -> str:
+    """Remove legacy standalone Codex MCP tables for managed servers.
+
+    Older repos carried manual `[mcp_servers.*]` entries before the renderer
+    started managing a block at the end of `.codex/config.toml`. If those
+    legacy tables remain, adding the same server to `.agents/mcp.json` creates
+    duplicate TOML keys and Codex refuses to parse the file.
+    """
+    if not server_names:
+        return text
+
+    names_pattern = "|".join(re.escape(name) for name in server_names)
+    return re.sub(
+        rf"(?ms)^\[mcp_servers\.(?:{names_pattern})(?:\.[^\]\n]+)?\]\n.*?(?=^\[|\Z)",
+        "",
+        text,
+    )
+
+
 def write_codex_config(path: Path, servers: dict[str, dict]) -> str:
     """Render Codex MCP block inside `.codex/config.toml`, preserving the rest."""
-    rendered_block = _toml_render_servers(render_for_codex(servers))
+    codex_servers = render_for_codex(servers)
+    rendered_block = _toml_render_servers(codex_servers)
     managed = (
         f"{TOML_BEGIN_MARKER}\n"
         f"# {GENERATED_BANNER}\n"
@@ -318,6 +458,7 @@ def write_codex_config(path: Path, servers: dict[str, dict]) -> str:
         text,
         flags=re.DOTALL | re.MULTILINE,
     )
+    text = _strip_legacy_codex_tables(text, list(codex_servers))
     text = text.rstrip() + "\n\n" + managed
     return text
 
@@ -355,15 +496,25 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     servers = data.get("servers") or {}
-    if not servers:
-        print(f"{source}: no servers declared")
-        return 0
-
     errors = validate_secrets(servers)
+    codex_config = repo / ".codex/config.toml"
+    errors += approval_findings(servers, codex_config.read_text() if codex_config.exists() else "")
+    # Distribution packages are Claude/Cowork products, not coding workspaces.
+    # Their existing compiler transport/entitlement rules own that boundary.
+    parity_errors, notes = parity_findings(servers) if (repo / "AGENTS.md").is_file() else ([], [])
+    errors += parity_errors
+    for note in notes:
+        print(f"NOTE  {note}")
     if errors:
-        print(f"{source}: literal secrets detected", file=sys.stderr)
+        print(f"{source}: invalid MCP declarations", file=sys.stderr)
         for e in errors:
             print(f"  {e}", file=sys.stderr)
+        return 2
+
+    try:
+        render_for_codex(servers)
+    except CodexHeaderError as exc:
+        print(f"{source}: {exc}", file=sys.stderr)
         return 2
 
     drift = 0
@@ -373,7 +524,8 @@ def main(argv: list[str] | None = None) -> int:
         # e.g., a repo without VS Code shouldn't get .vscode/mcp.json forced on
         # it. But render unconditionally if the file already exists (matches
         # existing convention).
-        if not path.exists() and not path.parent.exists():
+        required = rel in {".mcp.json", ".codex/config.toml"} and (repo / "AGENTS.md").is_file()
+        if not required and not path.exists() and not path.parent.exists():
             continue
         rendered = writer(path, servers)
         current = path.read_text() if path.exists() else ""
