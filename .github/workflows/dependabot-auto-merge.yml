@@ -112,6 +112,8 @@ jobs:
   auto-merge:
     if: ${{ github.actor == 'dependabot[bot]' }}
     runs-on: ubuntu-latest
+    # calibrated across callers: p95 0.2 min over 21 green caller runs (ORG-PLAN-343)
+    timeout-minutes: 10
     # `secrets` is NOT a valid context in a step-level `if:`, so surface
     # CI_APP_ID through a job-level env -- `env` IS valid there. Without this
     # the workflow fails to compile rather than skipping.
