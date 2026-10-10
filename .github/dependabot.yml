@@ -2,12 +2,10 @@
 # dependency per week; across the org that reached 89 open PRs on 2026-07-27, which
 # is well past the point where anyone reads them.
 #
-# Grouping is by UPDATE TYPE rather than dependency-type, so the same scheme holds in
-# every ecosystem (`dependency-type` in a group is only supported by
-# bundler/composer/mix/maven/npm/pip, and is silently ignored elsewhere):
+# Grouping is by UPDATE TYPE so major updates stay separate across ecosystems:
 #
-#   patch  → one PR per ecosystem per week, auto-merged once CI is green
-#   minor  → one PR per ecosystem per week, one human review
+#   patch  → one PR per ecosystem per month, auto-merged once CI is green
+#   minor  → one PR per ecosystem per month, one human review
 #   major  → an individual PR each, always reviewed
 #
 # The pattern groups come FIRST so peer-coupled packages still travel together.
@@ -16,8 +14,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "monthly"
     open-pull-requests-limit: 5
     groups:
       remotion:
@@ -40,8 +37,7 @@ updates:
   - package-ecosystem: "uv"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "monthly"
     open-pull-requests-limit: 5
     groups:
       patch:
@@ -49,12 +45,11 @@ updates:
       minor:
         update-types: ["minor"]
 
-  # Action bumps are pure CI plumbing and arrive constantly; one grouped PR a week.
+  # Action bumps are pure CI plumbing; one grouped PR per month.
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
+      interval: "monthly"
     open-pull-requests-limit: 3
     groups:
       actions:
