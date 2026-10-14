@@ -4,14 +4,20 @@
 #
 # Grouping is by UPDATE TYPE so major updates stay separate across ecosystems:
 #
-#   patch  → one PR per ecosystem per month, auto-merged once CI is green
-#   minor  → one PR per ecosystem per month, one human review
-#   major  → an individual PR each, always reviewed
+#   patch  → grouped; central ordinary and product safety gates apply
+#   minor  → grouped; central eligibility and review policy apply
+#   major  → individual PRs; source canary and review policy apply
 #
 # The pattern groups come FIRST so peer-coupled packages still travel together.
 version: 2
 updates:
+
   - package-ecosystem: "npm"
+    cooldown:
+      default-days: 3
+      semver-patch-days: 3
+      semver-minor-days: 7
+      semver-major-days: 14
     directory: "/"
     schedule:
       interval: "monthly"
@@ -34,7 +40,14 @@ updates:
   # dependency change with no matching relock; the two then disagree and any local
   # `uv run` rewrites the lock and dirties the checkout. That is what happened to
   # the ruff bound in stromy-org/Stromy#42. "uv" updates both files in one commit.
+
+
   - package-ecosystem: "uv"
+    cooldown:
+      default-days: 3
+      semver-patch-days: 3
+      semver-minor-days: 7
+      semver-major-days: 14
     directory: "/"
     schedule:
       interval: "monthly"
@@ -46,7 +59,10 @@ updates:
         update-types: ["minor"]
 
   # Action bumps are pure CI plumbing; one grouped PR per month.
+
   - package-ecosystem: "github-actions"
+    cooldown:
+      default-days: 14
     directory: "/"
     schedule:
       interval: "monthly"
