@@ -4,11 +4,15 @@
 #
 # Grouping is by UPDATE TYPE so major updates stay separate across ecosystems:
 #
-#   patch  → grouped; central ordinary and product safety gates apply
-#   minor  → grouped; central eligibility and review policy apply
+#   patch + minor → ONE `version-updates` group; central merger policy applies
 #   major  → individual PRs; source canary and review policy apply
 #
 # The pattern groups come FIRST so peer-coupled packages still travel together.
+# ORG-PLAN-449 P3C (operator decision 2026-10-22): ONE monthly version-updates
+# group per ecosystem (patch + minor together; the merger treats both alike),
+# majors as individual PRs, `rebase-strategy: disabled` (no repo requires
+# up-to-date branches, and a rebase re-runs CI for no new answer). Security
+# updates are not version updates: they stay ungrouped and open immediately.
 version: 2
 updates:
 
@@ -22,18 +26,20 @@ updates:
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 5
+    rebase-strategy: "disabled"
     groups:
       remotion:
+        applies-to: version-updates
         patterns: ["remotion", "@remotion/*"]
       # react + react-dom MUST bump together — react-dom@N requires react@N, so a
       # split bump opens two PRs that each fail peer-resolution. One group → one
       # resolvable PR. (No-op for plugins without React deps.)
       react:
+        applies-to: version-updates
         patterns: ["react", "react-dom"]
-      patch:
-        update-types: ["patch"]
-      minor:
-        update-types: ["minor"]
+      version-updates:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
 
   # "uv", not "pip": this project is uv-managed with a committed uv.lock. The pip
   # ecosystem edits pyproject.toml and has no knowledge of uv.lock, so it lands a
@@ -52,11 +58,11 @@ updates:
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 5
+    rebase-strategy: "disabled"
     groups:
-      patch:
-        update-types: ["patch"]
-      minor:
-        update-types: ["minor"]
+      version-updates:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
 
   # Action bumps are pure CI plumbing; one grouped PR per month.
 
@@ -67,6 +73,8 @@ updates:
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 3
+    rebase-strategy: "disabled"
     groups:
       actions:
+        applies-to: version-updates
         patterns: ["*"]
