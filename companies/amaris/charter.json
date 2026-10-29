@@ -264,6 +264,101 @@
     ]
   },
   "presentation": {
+    "template": {
+      "file": "templates/pptx/amaris-styling-sot.pptx",
+      "slideSize": {
+        "widthPt": 960,
+        "heightPt": 540
+      },
+      "drawOn": "layouts",
+      "layoutMap": {
+        "title": "Intro Slide",
+        "section": "Intro Title",
+        "content": "Custom Layout",
+        "two-content": "9_Custom Layout",
+        "blank": "DEFAULT",
+        "closing": "Thank you"
+      },
+      "chrome": {
+        "canvasDark": "#002060",
+        "canvasLightTop": "#ffffff",
+        "canvasLightBottom": "#fbf5f2",
+        "keyline": "#272774",
+        "slideMarginPt": 42
+      },
+      "themeFonts": {
+        "heading": {
+          "family": "Century Gothic",
+          "weight": "700",
+          "embedFamily": "Jost",
+          "fallbackStack": [
+            "Century Gothic",
+            "Questrial",
+            "Futura",
+            "sans-serif"
+          ],
+          "webSafe": "Century Gothic",
+          "rights": {
+            "licensee": "client",
+            "permits": [
+              "embed-office",
+              "embed-pdf"
+            ],
+            "evidence": "Amaris holds a Century Gothic licence covering the production of its own deliverables (operator attestation 2026-10-03; licence proof requested from the client the same day). Stromy embeds it only in Amaris documents (PDF and raster), through the client-licensed font lane, and holds no redistribution or web-serving right — see ORG-PLAN-312/R5.",
+            "verified": "2026-10-03"
+          }
+        },
+        "body": {
+          "family": "Century Gothic",
+          "weight": "400",
+          "embedFamily": "Jost",
+          "fallbackStack": [
+            "Century Gothic",
+            "Questrial",
+            "Futura",
+            "sans-serif"
+          ],
+          "webSafe": "Century Gothic",
+          "rights": {
+            "licensee": "client",
+            "permits": [
+              "embed-office",
+              "embed-pdf"
+            ],
+            "evidence": "Amaris holds a Century Gothic licence covering the production of its own deliverables (operator attestation 2026-10-03; licence proof requested from the client the same day). Stromy embeds it only in Amaris documents (PDF and raster), through the client-licensed font lane, and holds no redistribution or web-serving right — see ORG-PLAN-312/R5.",
+            "verified": "2026-10-03"
+          }
+        }
+      },
+      "colorRoles": {
+        "primary": "#272674",
+        "secondary": "#f5e2da",
+        "accent": "#4182ff",
+        "ink": "#272774",
+        "body": "#3a3a52",
+        "muted": "#4a4a7a",
+        "surface": "#f8f9fa",
+        "canvasDark": "#002060",
+        "mint": "#7ddeb8",
+        "purple": "#b880ff",
+        "yellow": "#ffdd77"
+      },
+      "components": {
+        "note": "Composition vocabulary, axes and budget are in presentation-grammar.md (§4-§6); the layouts carry the canvas and the circle/arc motif system, components are drawn on them."
+      },
+      "textFit": {
+        "singleFrameStacks": true,
+        "lintFont": "Arial",
+        "widen": 1.04,
+        "lineHeight": 1.22
+      },
+      "source": {
+        "kind": "client-supplied",
+        "received": "2026-09-22",
+        "note": "The deck the client nominated as styling source of truth (adopted in client-data #46), slimmed from 12.7 MB to under 3 MB by dropping the 23 sample slides; master, 34 layouts and theme are intact (original kept in .build-history/)."
+      },
+      "notes": "Light layouts (white to #FBF5F2 gradient) carry every content surface; dark #002060 layouts carry cover, dividers and closing. The theme font is Century Gothic (licensed, client-held); Jost is the embeddable substitute for server-side renders. Layout and composition stay with the authoring model (presentation-grammar.md)."
+    },
     "aspectRatio": "16:9",
     "slideSizeIn": [
       13.333,
