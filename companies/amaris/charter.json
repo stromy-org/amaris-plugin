@@ -272,7 +272,7 @@
       },
       "drawOn": "layouts",
       "layoutMap": {
-        "title": "Intro Slide",
+        "title": "Intro Title",
         "section": "Intro Title",
         "content": "Custom Layout",
         "two-content": "9_Custom Layout",
