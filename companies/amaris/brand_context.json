@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "version": "1.0",
   "generatedFrom": {
-    "charterSha": "20f6b3fc3f015381e994032f3ccc86b21e561765b6217a05abadd5cd5b181ef7",
+    "charterSha": "f7b01db6102b9d5877fc165b90092b51b4c50468c1c6c9fcdd3c30546b3f239c",
     "compiler": "1.0"
   },
   "tier": "producer",
@@ -1012,7 +1012,7 @@
       },
       "drawOn": "layouts",
       "layoutMap": {
-        "title": "Intro Slide",
+        "title": "Intro Title",
         "section": "Intro Title",
         "content": "Custom Layout",
         "two-content": "9_Custom Layout",
@@ -1155,6 +1155,6 @@
       "photo"
     ],
     "images_count": 0,
-    "sha256": "2ce903d6ade949fdb7bf9eeab0299bcbb8ce0f13156bf5d8f8171592f7432ed4"
+    "sha256": "c488fd66b66fabc83929441f440c8a099336adbc1a7ecf52c0afb78f6d729e22"
   }
 }
