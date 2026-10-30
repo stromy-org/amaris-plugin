@@ -85,14 +85,23 @@ Some skills do their work through **connectors** — the engines that render a d
 query a data source. A connector has to be (a) **authorized** once, and (b) **on for the
 conversation** you're working in.
 
-1. In **Settings → Connectors**, find the Stromy connectors listed for you and click
-   **Connect** on each.
-2. A Stromy sign-in page opens in a new window (this is a standard **OAuth** sign-in —
-   the same "Sign in with…" flow you've used on other sites). Approve it, and the window
-   returns you to Claude with the connector showing **Connected**. Stromy never sees your
-   Claude password, and Claude never sees your connector password — the sign-in is handled
-   between you and Stromy. This is a **one-time** step per connector.
-3. In a chat, open the **`+` menu → Connectors** and make sure the ones you need are
+Your plugin brings its connectors with it, so you never type a connector address.
+
+1. Open **Customize → Plugins**, choose your plugin and open its **Connectors** tab. It
+   lists every connector the plugin uses, each marked **Connected**, **Not connected** or
+   **Not added**. Connectors that need no sign-in are ready as soon as the plugin is
+   installed.
+2. Click **Connect** next to each one marked **Not connected**. If one says **Not added**,
+   add it from the same tab; on a team or company account your workspace owner may need to
+   add it once for everyone.
+3. A sign-in page opens in a new window (this is a standard **OAuth** sign-in — the same
+   "Sign in with…" flow you've used on other sites). Sign in with your work account, and
+   the window returns you to Claude with the connector showing **Connected**. If Claude
+   first asks you to **Finish connecting a connector**, click **Continue connecting**:
+   that is Claude checking the sign-in was one you started. Stromy never sees your Claude
+   password, and Claude never sees your work password. This is a **one-time** step per
+   connector.
+4. In a chat, open the **`+` menu → Connectors** and make sure the ones you need are
    **enabled for this chat**.
 
 <!-- media: setup/03-authorize-connector -->
