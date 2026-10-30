@@ -1,6 +1,6 @@
 ---
 name: format-diagram
-description: "Generate branded diagrams (process flows, architecture views, stakeholder maps, org charts, timelines, funnels, matrices, mind maps, sequence/state/ER/gantt) as SVG/PNG for embedding in PPTX, DOCX, PDF or deck deliverables. Author Mermaid text and call the server-side `render_diagram` tool (auto-layout, deep brand theming, works in a deployed sandbox, brand-gated). Use when asked to draw, map or visualize a process, structure, workflow or relationship. Not for numeric data charts (use format-chart) or plain Mermaid syntax for a README, wiki or Markdown page (use format-mermaid)."
+description: "Draw process flows, architecture views, stakeholder maps, org charts, timelines, matrices, mind maps and sequence/state/ER/gantt diagrams from Mermaid text. Two modes: BRANDED (the server-side `render_diagram` tool returns an auto-laid-out, brand-themed SVG/PNG for PPTX, DOCX, PDF or deck deliverables) and MARKDOWN (plain fenced Mermaid for a README, wiki or any Markdown host that renders it). Use when asked to draw, map or visualize a process, structure, workflow or relationship. Not for numeric data charts (use format-chart)."
 metadata:
   stromy-client-summary: "Draw a process, structure or relationship as an on-brand diagram for your documents."
 ---
@@ -14,7 +14,7 @@ metadata:
   Hand-authored skill? Set `_local: true` in frontmatter instead.
 -->
 
-# Diagram Skill — Branded Consulting-Quality Diagrams (MCP-hosted skill)
+# Diagram: branded figures and plain Mermaid (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `stromy-format` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
 

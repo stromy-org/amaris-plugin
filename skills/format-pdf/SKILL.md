@@ -1,6 +1,6 @@
 ---
 name: format-pdf
-description: "Comprehensive PDF manipulation toolkit — extract text and tables, create new PDFs, merge or split documents, and fill in forms. Use when a PDF form needs filling, or a PDF must be programmatically processed, generated, split, merged, or analyzed at scale. Not for a new branded PDF deliverable — use format-pdf-hd instead."
+description: "Work with PDFs: extract text and tables, merge or split documents, fill in fillable forms, and make a simple unbranded PDF from data or plain text. Use when a PDF form needs filling, or a PDF must be read, searched, split, merged, analysed or generated programmatically. Not for a branded or client-facing PDF deliverable: use format-pdf-hd, which designs HTML first and renders it behind a brand gate."
 metadata:
   stromy-client-summary: "Work with existing PDF files: pull out text and tables, merge, split, or fill in forms."
 ---
@@ -14,7 +14,7 @@ metadata:
   Hand-authored skill? Set `_local: true` in frontmatter instead.
 -->
 
-# PDF Processing Guide (MCP-hosted skill)
+# format-pdf: read, split, merge and fill existing PDFs (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `stromy-format` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
 
