@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "version": "1.0",
   "generatedFrom": {
-    "charterSha": "f7b01db6102b9d5877fc165b90092b51b4c50468c1c6c9fcdd3c30546b3f239c",
+    "charterSha": "8bc5fe7438f516b0fef13c9c46fbf2135426974a3585c1fe9a889f76e4b4ab01",
     "compiler": "1.0"
   },
   "tier": "producer",
@@ -972,6 +972,27 @@
     ],
     "photography": "none"
   },
+  "document": {
+    "template": {
+      "file": "templates/docx/styles.docx",
+      "styleSpec": "templates/docx/styles.spec.json",
+      "styleMap": {
+        "title": "Title",
+        "h1": "Heading1",
+        "h2": "Heading2",
+        "h3": "Heading3",
+        "body": "BodyText",
+        "caption": "Caption",
+        "quote": "Quote"
+      },
+      "letterheadFile": "templates/docx/letterhead.docx",
+      "letterheadSpec": "templates/docx/letterhead.spec.json",
+      "source": {
+        "migratedFrom": "templates.docx",
+        "plan": "ORG-PLAN-506"
+      }
+    }
+  },
   "logo": {
     "primary": "logos/logo.svg",
     "primaryBlue": "logos/logo-blue.svg",
@@ -987,8 +1008,8 @@
   },
   "templates": {
     "docx": {
-      "styles": "templates/docx/styles.docx",
-      "letterhead": "templates/docx/letterhead.docx"
+      "letterhead": "templates/docx/letterhead.docx",
+      "styles": "templates/docx/styles.docx"
     }
   },
   "fallbacksUsed": [],
@@ -1117,13 +1138,90 @@
       "singleFrameStacks": true
     }
   },
+  "spreadsheet": {
+    "headerFill": "#272674",
+    "headerFont": "#ffffff",
+    "zebra": "#f8f9fa",
+    "numberFormats": {
+      "currency": "#,##0.00",
+      "percent": "0.0%",
+      "integer": "#,##0",
+      "decimal": "#,##0.00",
+      "date": "yyyy-mm-dd"
+    },
+    "inputStyle": {
+      "fontColor": "#1F3FBF",
+      "fill": "#f8f9fa"
+    },
+    "calcStyle": {
+      "fontColor": "#494951"
+    },
+    "outputStyle": {
+      "fontColor": "#272674",
+      "bold": true
+    },
+    "tableStyle": "TableStyleMedium2"
+  },
+  "charts": {
+    "palette": {
+      "categorical": [
+        "#272674",
+        "#FF4D4D",
+        "#4182FF",
+        "#F26B43",
+        "#7372A5",
+        "#333268"
+      ],
+      "sequential": [
+        "#DFDEEA",
+        "#BEBED5",
+        "#9392BA",
+        "#68679E",
+        "#474789",
+        "#272674"
+      ],
+      "diverging": [
+        "#FF4D4D",
+        "#F49B9C",
+        "#E9E9EA",
+        "#A8C2BA",
+        "#669B8A"
+      ],
+      "sentiment": {
+        "positive": "#669B8A",
+        "negative": "#FF4D4D",
+        "neutral": "#6C757D"
+      }
+    },
+    "font": {
+      "family": "Century Gothic",
+      "size": 12
+    },
+    "grid": {
+      "color": "#f8f9fa",
+      "width": 1
+    },
+    "highlight": "#4182FF",
+    "muted": "#6C757D",
+    "derivation": {
+      "tier": "tint",
+      "counts": {
+        "brand": 4,
+        "tint": 2,
+        "neutral": 0,
+        "fallback": 0
+      }
+    }
+  },
   "integrity": {
     "compiler": "brand_compile.py",
     "compiler_version": "1.0",
     "key_set": [
       "boilerplate",
+      "charts",
       "client_slug",
       "colors",
+      "document",
       "excalidraw_theme",
       "expression",
       "fallbacksUsed",
@@ -1134,6 +1232,7 @@
       "plotly_theme",
       "presentation",
       "schemaVersion",
+      "spreadsheet",
       "surfaceExpression",
       "templates",
       "tier",
@@ -1155,6 +1254,6 @@
       "photo"
     ],
     "images_count": 0,
-    "sha256": "c488fd66b66fabc83929441f440c8a099336adbc1a7ecf52c0afb78f6d729e22"
+    "sha256": "9cdb05216c08c8ce08144d69a8429699fd33a2e008d04c1f0dcc3fed26cae9af"
   }
 }
