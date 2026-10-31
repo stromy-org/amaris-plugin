@@ -1,6 +1,6 @@
 ---
 name: format-html-hd
-description: "Author a premium, self-contained branded HTML slide deck: ONE .html you hand-write, with responsive 16:9 stages, scroll-snap navigation, inline-SVG brand motifs and the client's fonts and logos embedded by the server at verification so it opens offline as a single file. Brand-integrated through the client overlay, with seeded variance so decks read as siblings, not clones. Use for an HTML, web or browser slide deck, a shareable single-file presentation, or turning a topic, brief or report into branded slides, even without saying 'HTML'. Not for a reveal.js deck with speaker notes (use format-html-reveal), an editable PowerPoint (use format-pptx-hd) or a paginated PDF (use format-pdf-hd)."
+description: "Author a premium branded HTML slide deck as ONE self-contained .html that opens offline, with the client's fonts and logos embedded: hand-written (16:9 stages, scroll-snap navigation, inline-SVG brand motifs) or in reveal mode, a reveal.js deck rendered by `render_deck` with a speaker view and speaker notes. Seeded variance keeps decks siblings, not clones. Use for an HTML, web or browser slide deck, a shareable single-file presentation, a reveal.js deck or web deck with speaker notes, an interactive presentation, or turning a brief or report into branded slides, even without saying 'HTML'. Not for an editable PowerPoint (use format-pptx) or a paginated PDF (use format-pdf-hd)."
 metadata:
   stromy-client-summary: "Build a polished slide deck as a single web page that opens offline and shares as one file."
 ---

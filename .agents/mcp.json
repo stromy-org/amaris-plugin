@@ -10,6 +10,12 @@
       "_codex_via": "mcp-remote",
       "_gemini_via": "mcp-remote",
       "_notes": "Hosted format skills fetched at runtime via fs_read from the stromy-format MCP."
+    },
+    "asset-broker": {
+      "transport": "http",
+      "url": "https://asset-broker-mcp.redbeach-6781a121.northeurope.azurecontainerapps.io/mcp",
+      "_consumed_by": ["claude"],
+      "_connector": true
     }
   }
 }

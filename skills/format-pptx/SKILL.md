@@ -1,8 +1,8 @@
 ---
 name: format-pptx
-description: "DEFAULT PPTX skill for **unbranded deck creation** and **editing / analysis / OOXML / comments / speaker-notes of any existing deck** (branded or not — in-place OOXML edits, not a branded render). For a **net-new branded deck** or `render-anchors`, use `format-pptx-hd` (server-rendered + brand-gated). This skill does not render a branded deck from scratch."
+description: "DEFAULT skill for ANY PowerPoint or .pptx request, branded or not: a new deck, a deck on the client's own template, editing or reviewing an existing deck, speaker notes, comments, reordering, adding slides. Builds native, editable slides server-side with `build_pptx` (python-pptx) on the client's template or a master synthesised from their brand, runs a fit lint (no overlapping or overflowing text) and a render-back of the finished file. Use `format-pptx-hd` only when the user wants web-style art direction authored as HTML."
 metadata:
-  stromy-client-summary: "Edit, review or analyse an existing PowerPoint file, including comments and speaker notes."
+  stromy-client-summary: "Create or edit an editable PowerPoint deck on your own template and brand, with speaker notes, charts and a check that nothing overlaps."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.
@@ -14,7 +14,7 @@ metadata:
   Hand-authored skill? Set `_local: true` in frontmatter instead.
 -->
 
-# PPTX creation, editing, and analysis (MCP-hosted skill)
+# PowerPoint (.pptx): create, edit, review (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `stromy-format` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
 

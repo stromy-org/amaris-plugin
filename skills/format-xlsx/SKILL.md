@@ -1,8 +1,8 @@
 ---
 name: format-xlsx
-description: "Comprehensive spreadsheet creation, editing, and analysis — formulas, formatting, data analysis, and visualization. Use when working with spreadsheets (.xlsx, .xlsm, .csv, .tsv) to create a new one, read or analyze data, modify an existing one while preserving formulas, recalculate formulas, or build a chart. Not for a Word document (format-docx), a PowerPoint deck (format-pptx), or a data-viz chart to embed elsewhere (format-chart)."
+description: "DEFAULT skill for ANY spreadsheet request (.xlsx, .xlsm, .csv, .tsv): build a new workbook, a budget or model with inputs, calculations and outputs, a data table, an analysis of an existing file, or an edit that must keep the formulas. A new workbook is built server-side with `build_xlsx` (openpyxl): real formulas, Excel Tables, brand theme and named styles, a lint for errors and ##### after a LibreOffice recalculation, and a render-back of the finished file. Not for a Word document (format-docx), a deck (format-pptx) or a picture chart for a document (format-chart)."
 metadata:
-  stromy-client-summary: "Create or analyse spreadsheets, with formulas, formatting and charts."
+  stromy-client-summary: "Build a spreadsheet in your brand with real formulas, tables and a check that nothing shows as an error or ####, or read and edit an existing workbook without breaking its formulas."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.
@@ -14,7 +14,7 @@ metadata:
   Hand-authored skill? Set `_local: true` in frontmatter instead.
 -->
 
-# Requirements for Outputs (MCP-hosted skill)
+# Excel (.xlsx): build, read, edit (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `stromy-format` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
 

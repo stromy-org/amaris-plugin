@@ -1,8 +1,8 @@
 ---
 name: format-pptx-hd
-description: "Create a new branded PowerPoint (.pptx) deck from scratch from the plugin's brand overlay, server-rendered by `render_pptx` in the brand fonts behind a brand gate (HTML-first; the deck stays editable in PowerPoint). Use when someone asks for PowerPoint, a .pptx or an editable deck, including pitch, investor or executive decks, and for `render-anchors`. Not for editing or analysing an existing deck or an unbranded quick deck (use format-pptx; this skill regenerates and cannot edit in place), a browser or offline HTML deck (use format-html-hd or format-html-reveal) or a paginated print PDF (use format-pdf-hd)."
+description: "HTML-crafted option for a new branded PowerPoint (.pptx): slides authored as HTML with bespoke art direction, converted and server-rendered by `render_pptx` behind a brand gate, with speaker notes, a fit lint and a render-back of the produced file. Use ONLY when the user wants web-style art direction in a .pptx (or `render-anchors`); every ordinary PowerPoint request, branded or not, including a client's own template and editing an existing deck, belongs to `format-pptx` (native, python-pptx). Not for a browser or offline HTML deck (use format-html-hd, which also covers a reveal deck with speaker notes) or a paginated print PDF (use format-pdf-hd)."
 metadata:
-  stromy-client-summary: "Create a new on-brand PowerPoint deck from scratch, in your own fonts and colours."
+  stromy-client-summary: "Craft a PowerPoint deck with web-style art direction authored as HTML, converted to an editable .pptx."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.

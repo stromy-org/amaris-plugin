@@ -1,8 +1,8 @@
 ---
 name: format-docx
-description: "Create, read, or edit Word documents (.docx) — tables of contents, headings, page numbers, headers/footers, letterheads, tracked changes, comments, find-and-replace, and reorganizing or extracting content. Use when asked for a Word doc, a report, memo, letter, brief, or template as a .docx, or to edit or analyze an existing one (branded or not). Client branding applies automatically when an overlay resolves. Not for a net-new branded report, brief or memo where visual quality matters — use format-docx-hd; not for PDFs (use format-pdf), spreadsheets (use format-xlsx), or Google Docs."
+description: "DEFAULT skill for ANY Word or .docx request, branded or not: a memo, report, letter, brief or proposal; a document on the client's own template or letterhead; a table of contents, headers, footers and page numbers; editing an existing .docx in place with tracked changes, comments, find-and-replace, accept or reject; reading or extracting its text. Builds native, editable Word files server-side with `build_docx` (python-docx) and edits them with `edit_docx`, with a structural lint (styles, heading order, alt text, table fit, numbering, TOC) and a render-back of the finished file. Use `format-docx-hd` only when the user wants an art-directed, web-style layout authored as HTML. Not for PDFs (format-pdf), spreadsheets (format-xlsx) or Google Docs."
 metadata:
-  stromy-client-summary: "Create or edit Word documents, including tables of contents, headers and letterheads."
+  stromy-client-summary: "Create or edit Word documents on your own template and brand: memos, reports, letters, tables of contents, tracked changes and comments."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.
@@ -14,7 +14,7 @@ metadata:
   Hand-authored skill? Set `_local: true` in frontmatter instead.
 -->
 
-# DOCX creation, editing, and analysis (MCP-hosted skill)
+# Word (.docx): create, edit, review (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `stromy-format` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
 

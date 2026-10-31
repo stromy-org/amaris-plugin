@@ -1,8 +1,8 @@
 ---
 name: format-chart
-description: "Render brand-aware data charts (bar, line, waterfall, sankey, sunburst, treemap, funnel, heatmap, gauge, radar and other Plotly types) to PNG/SVG with the client's compiled brand theme, for embedding in PPTX, DOCX, PDF or HTML deliverables. You author the Plotly figure JSON; the server `render_chart` tool applies palette and fonts and runs a palette check and visual QA. Use for any chart, plot, graph or KPI visual. Not for process flows, org charts or stakeholder maps (use format-diagram), unbranded Mermaid pie/XY in Markdown (use format-mermaid), or a chart native to an Excel workbook (use format-xlsx)."
+description: "Author ONE chart spec (bar, column, line, area, scatter, pie, doughnut, combo with a secondary axis, waterfall) and get a native, editable chart in brand colours inside a PowerPoint deck (build_pptx) or Excel workbook (build_xlsx). For HTML or PDF pages, and for exotic types (sankey, sunburst, treemap, funnel, gauge, heatmap), render a branded picture with render_chart from a Plotly figure instead. Use for any chart, plot, graph or KPI visual. Not for process flows, org charts or stakeholder maps (use format-diagram)."
 metadata:
-  stromy-client-summary: "Turn your numbers into a clean, on-brand chart you can drop into any deliverable."
+  stromy-client-summary: "Turn your numbers into a clean, on-brand chart: editable inside your PowerPoint and Excel files, or as a picture for web and PDF pages."
 ---
 <!--
   GENERATED FILE — DO NOT EDIT.
@@ -14,7 +14,7 @@ metadata:
   Hand-authored skill? Set `_local: true` in frontmatter instead.
 -->
 
-# Chart — branded data visualisation (MCP-hosted skill)
+# Chart: one spec, native in Office (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `stromy-format` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
 

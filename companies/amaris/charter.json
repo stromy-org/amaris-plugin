@@ -272,7 +272,7 @@
       },
       "drawOn": "layouts",
       "layoutMap": {
-        "title": "Intro Slide",
+        "title": "Intro Title",
         "section": "Intro Title",
         "content": "Custom Layout",
         "two-content": "9_Custom Layout",
@@ -1557,6 +1557,27 @@
         "accentMode": "rotate",
         "surfacePolarity": "light-on-light",
         "emphasis": "none"
+      }
+    }
+  },
+  "document": {
+    "template": {
+      "file": "templates/docx/styles.docx",
+      "styleSpec": "templates/docx/styles.spec.json",
+      "styleMap": {
+        "title": "Title",
+        "h1": "Heading1",
+        "h2": "Heading2",
+        "h3": "Heading3",
+        "body": "BodyText",
+        "caption": "Caption",
+        "quote": "Quote"
+      },
+      "letterheadFile": "templates/docx/letterhead.docx",
+      "letterheadSpec": "templates/docx/letterhead.spec.json",
+      "source": {
+        "migratedFrom": "templates.docx",
+        "plan": "ORG-PLAN-506"
       }
     }
   },
