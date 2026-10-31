@@ -272,6 +272,14 @@
       "mime": "image/png"
     }
   ],
+  "templates": [
+    {
+      "name": "amaris-styling-sot.pptx",
+      "sha256": "18ece0087ad15afe013cd60b6abadd96360ea989fdb777dba51a7022d57cfbfd",
+      "mime": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "role": "template"
+    }
+  ],
   "brand_context": {
     "sha256": "56a2c250e90b420aeb605ffdceaf338d25bdb5ef91110c7404bc4c82ba3b0f99",
     "mime": "application/json",
