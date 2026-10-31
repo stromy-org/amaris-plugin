@@ -1,6 +1,6 @@
 ---
 name: format-pdf-hd
-description: "Create a high-fidelity branded PDF (proposal, executive brief, brand book, policy report, case study, white paper or one-pager), designed HTML-first with CSS, web fonts, SVG and paged media, and server-rendered by `render_pdf` behind a brand gate from the plugin's brand overlay. Use when someone asks for a branded, high-quality, HD or magazine-style PDF, or any visually polished client-facing paginated output. Not for filling forms, extracting text, merging, splitting or unbranded PDFs (use format-pdf), nor for structuring a multi-section document with no agreed outline yet (start with format-prepare-document)."
+description: "Create a high-fidelity branded PDF (proposal, executive brief, brand book, policy report, case study, white paper or one-pager), designed HTML-first with CSS, web fonts, SVG and paged media, and server-rendered by `render_pdf` behind a brand gate from the plugin's brand overlay. Use when someone asks for a branded, high-quality, HD or magazine-style PDF, or any visually polished client-facing paginated output. Not for filling forms, extracting text, merging or splitting PDFs, or a plain unbranded PDF (use format-pdf), nor for structuring a multi-section document with no agreed outline yet (start with format-prepare-document)."
 metadata:
   stromy-client-summary: "Produce a polished, on-brand PDF such as a proposal, report or one-pager, ready to send."
 ---

@@ -1,6 +1,6 @@
 ---
 name: format-docx-hd
-description: "High-fidelity branded Word (.docx) creation from authored HTML. Server-renders via the `render_docx` MCP tool — Chromium parses the HTML, docx-js emits OOXML, and an OOXML layout lint plus a LibreOffice render-back contact sheet run inside the render. No local build script. Uses the invoking plugin's brand overlay. Use when GENERATING a branded Word deliverable: reports, briefs, memos, letters, policy documents, findings write-ups, any client-facing .docx where visual quality matters. Triggers on: 'branded Word doc', 'report in Word', 'branded .docx', 'HD docx', 'client-ready Word document'. NOT for editing an existing .docx, tracked changes, comments or template surgery — use `format-docx`."
+description: "The ART-DIRECTED option for Word: a .docx authored as HTML and server-rendered by `render_docx` (Chromium parses the HTML, an OOXML layout lint and a LibreOffice render-back run inside the render). Use only when the user wants a web-style, designed layout that Word's own styles cannot express (bespoke motifs, magazine-style pages) and accepts a lossy HTML conversion. It ignores the client's Word template and has no TOC field. Triggers on: 'art-directed Word doc', 'designed .docx', 'HD docx', 'magazine-style Word document'. For a standard memo, report, letter or brief, a client template, a table of contents, or ANY edit, tracked change or comment, use `format-docx` (the default Word route)."
 metadata:
   stromy-client-summary: "Produce a polished, on-brand Word document such as a report, brief or memo, ready to send."
 ---
@@ -14,7 +14,7 @@ metadata:
   Hand-authored skill? Set `_local: true` in frontmatter instead.
 -->
 
-# DOCX-HD: High-Fidelity Branded Word Documents (MCP-hosted skill)
+# DOCX-HD: art-directed Word documents (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `stromy-format` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
 

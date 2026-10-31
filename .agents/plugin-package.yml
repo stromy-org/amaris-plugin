@@ -8,7 +8,7 @@ schema_version: 1
 identity:
   name: amaris-consulting
   display_name: Amaris Consulting
-  version: 0.3.42
+  version: 0.3.47
   description: Plugin for Amaris Consulting branded deliverables, brand tools, and strategic deliverable
     planning
   author:
@@ -35,9 +35,7 @@ portable_capabilities:
     - format-docx-hd
     - format-guide
     - format-html-hd
-    - format-html-reveal
     - format-i18n
-    - format-mermaid
     - format-motion
     - format-pdf
     - format-pdf-hd
@@ -60,9 +58,7 @@ skills:
   - format-docx-hd
   - format-guide
   - format-html-hd
-  - format-html-reveal
   - format-i18n
-  - format-mermaid
   - format-motion
   - format-pdf
   - format-pdf-hd
