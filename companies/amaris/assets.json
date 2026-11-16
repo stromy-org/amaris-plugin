@@ -278,6 +278,13 @@
       "sha256": "18ece0087ad15afe013cd60b6abadd96360ea989fdb777dba51a7022d57cfbfd",
       "mime": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
       "role": "template"
+    },
+    {
+      "name": "styles.docx",
+      "sha256": "ce734826ad2b186aed61ec47a779859d1a0e6f3af608fe5a67d5e1d3b210a303",
+      "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "role": "template",
+      "kind": "docx"
     }
   ],
   "brand_context": {
