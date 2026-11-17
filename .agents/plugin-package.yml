@@ -8,7 +8,7 @@ schema_version: 1
 identity:
   name: amaris-consulting
   display_name: Amaris Consulting
-  version: 0.3.48
+  version: 0.3.51
   description: Plugin for Amaris Consulting branded deliverables, brand tools, and strategic deliverable
     planning
   author:
@@ -25,48 +25,12 @@ targets:
 - kiro
 - gemini
 portable_capabilities:
-  branded-deliverables:
-    summary: Branded documents, decks, charts, diagrams and video rendered server-side in the client's
-      brand
-    skills:
-    - format-chart
-    - format-diagram
-    - format-docx
-    - format-docx-hd
-    - format-guide
-    - format-html-hd
-    - format-i18n
-    - format-motion
-    - format-pdf
-    - format-pdf-hd
-    - format-pptx
-    - format-pptx-hd
-    - format-prepare-document
-    - format-video-hd
-    - format-xlsx
-    mcp_servers:
-    - stromy-format
   plugin-workflows:
     summary: Workflows authored for this plugin and shipped inside it
     skills:
     - getting-started
 skills:
   include:
-  - format-chart
-  - format-diagram
-  - format-docx
-  - format-docx-hd
-  - format-guide
-  - format-html-hd
-  - format-i18n
-  - format-motion
-  - format-pdf
-  - format-pdf-hd
-  - format-pptx
-  - format-pptx-hd
-  - format-prepare-document
-  - format-video-hd
-  - format-xlsx
   - getting-started
   provider_extras:
   - skill: asset-editor
@@ -105,6 +69,111 @@ skills:
     capability: cowork-workspace
     reason: Reads and writes the client's SharePoint workspace record through workspace-scoped tools that
       exist only in a Cowork workspace session.
+  - skill: format-chart
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-diagram
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-docx
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-docx-hd
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-guide
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-html-hd
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-i18n
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-motion
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-pdf
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-pdf-hd
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-pptx
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-pptx-hd
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-prepare-document
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-video-hd
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
+  - skill: format-xlsx
+    providers:
+    - claude
+    capability: stromy-format-connector
+    reason: 'Hosted on the OAuth-gated ''stromy-format'' MCP, which the plugin bundles as a Claude connector
+      (Connectors tab, hosted sign-in); the other hosts have no hosted sign-in, so it stays Claude-only
+      (Invariant #13).'
 marketplace:
   name: amaris-marketplace
   repository: https://github.com/stromy-org/amaris-marketplace

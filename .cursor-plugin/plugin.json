@@ -1,7 +1,7 @@
 {
   "name": "amaris-consulting",
   "displayName": "Amaris Consulting",
-  "version": "0.3.48",
+  "version": "0.3.51",
   "description": "Plugin for Amaris Consulting branded deliverables, brand tools, and strategic deliverable planning",
   "author": {
     "name": "stromy-org"
@@ -11,10 +11,5 @@
   "keywords": [],
   "skills": [
     "./skills"
-  ],
-  "mcpServers": {
-    "stromy-format": {
-      "url": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp"
-    }
-  }
+  ]
 }

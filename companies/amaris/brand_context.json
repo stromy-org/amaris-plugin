@@ -1213,6 +1213,74 @@
       }
     }
   },
+  "libraryHandles": [
+    {
+      "path": "pptx-assets/gradient-accent.png",
+      "sha256": "e437183eabb5ed1c3fb1a6e6f506d8b425d4ae1008b6ac3e3921786dec3b5341",
+      "mime": "image/png",
+      "libraryId": "pptx-assets-gradient-accent.png"
+    },
+    {
+      "path": "pptx-assets/gradient-dark.png",
+      "sha256": "1028022aa8760d1169c0df69eb2bd554c0dc3ec1a34bb7f7d5a447d02ed7e28e",
+      "mime": "image/png",
+      "libraryId": "pptx-assets-gradient-dark.png"
+    },
+    {
+      "path": "pptx-assets/gradient-midnight.png",
+      "sha256": "4aadca007c0e23581954e1385151448558dd2a333aae5f78d79321e06c1c2f7f",
+      "mime": "image/png",
+      "libraryId": "pptx-assets-gradient-midnight.png"
+    },
+    {
+      "path": "pptx-assets/mockups/device-desktop.png",
+      "sha256": "941555d9065ede3d4c0ced65587289d701afb5514b92fe83d3cca2fa05c193e7",
+      "mime": "image/png",
+      "libraryId": "pptx-assets-mockups-device-desktop.png"
+    },
+    {
+      "path": "pptx-assets/mockups/device-phone.png",
+      "sha256": "2be506d440f95c39fb84d55ee4fa858c3a9caebbcb9b29957cadf553545658de",
+      "mime": "image/png",
+      "libraryId": "pptx-assets-mockups-device-phone.png"
+    },
+    {
+      "path": "pptx-assets/mockups/device-tablet.png",
+      "sha256": "aa61d198cb3914e32819443748637678feb23c08d6b65df39a2fb4144b2836e4",
+      "mime": "image/png",
+      "libraryId": "pptx-assets-mockups-device-tablet.png"
+    },
+    {
+      "path": "templates/docx/letterhead.docx",
+      "sha256": "591559dca6e4976b408b73b2aa54595d2bbf1c5ab998d3c4a51a34cde5dff192",
+      "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "libraryId": "templates-docx-letterhead.docx"
+    },
+    {
+      "path": "templates/docx/orbit-corner-dark.png",
+      "sha256": "c97d397c4ab29876385d9f42212aa1d0f28614219bcfac029933c1eee577b39f",
+      "mime": "image/png",
+      "libraryId": "templates-docx-orbit-corner-dark.png"
+    },
+    {
+      "path": "templates/docx/orbit-corner-light.png",
+      "sha256": "c2c401fa9476f3f3573c18bf51e05e4ffa7b1d545d6d94b8351e1d02d4a9183a",
+      "mime": "image/png",
+      "libraryId": "templates-docx-orbit-corner-light.png"
+    },
+    {
+      "path": "templates/docx/styles.docx",
+      "sha256": "ce734826ad2b186aed61ec47a779859d1a0e6f3af608fe5a67d5e1d3b210a303",
+      "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "libraryId": "templates-docx-styles.docx"
+    },
+    {
+      "path": "templates/pptx/amaris-styling-sot.pptx",
+      "sha256": "18ece0087ad15afe013cd60b6abadd96360ea989fdb777dba51a7022d57cfbfd",
+      "mime": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "libraryId": "templates-pptx-amaris-styling-sot.pptx"
+    }
+  ],
   "integrity": {
     "compiler": "brand_compile.py",
     "compiler_version": "1.0",
@@ -1228,6 +1296,7 @@
       "formatting",
       "generatedFrom",
       "identity",
+      "libraryHandles",
       "logo",
       "plotly_theme",
       "presentation",
@@ -1254,6 +1323,6 @@
       "photo"
     ],
     "images_count": 0,
-    "sha256": "9cdb05216c08c8ce08144d69a8429699fd33a2e008d04c1f0dcc3fed26cae9af"
+    "sha256": "e0c81b7e932dfbcffbf1ae3c2620a2557849ae9fd19dc1a21c4ea4fa4fd37dcc"
   }
 }

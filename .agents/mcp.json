@@ -1,15 +1,14 @@
 {
   "$schema": "https://gofastmcp.com/public/schemas/mcp-config.schema.json",
   "_notes": "Canonical MCP server config for amaris-consulting. Edit only this file. Run scripts/render-mcp.py to regenerate .mcp.json / .gemini/settings.json / .codex/config.toml / .vscode/mcp.json.",
-  "_connection_model": "No-auth HTTP MCPs (stromy-format) and stdio servers reach every target. An authenticated HTTP MCP (interactive OAuth, e.g. toolkit, asset-broker) is declared only as a bundled Claude connector (`_connector: true`, `_consumed_by: [\"claude\"]`, its catalog hosted_url, no headers): Claude lists it on the plugin's Connectors tab and the user signs in once with Connect, through Claude's hosted OAuth callback, so it works in Cowork too. See infra-docs/ai/mcp-connection-model.md (enforced by validate-plugin-completeness.py Invariant #13).",
+  "_connection_model": "No-auth HTTP MCPs and stdio servers reach every target. An authenticated HTTP MCP (interactive OAuth, e.g. stromy-format, toolkit, asset-broker) is declared only as a bundled Claude connector (`_connector: true`, `_consumed_by: [\"claude\"]`, its catalog hosted_url, no headers): Claude lists it on the plugin's Connectors tab and the user signs in once with Connect, through Claude's hosted OAuth callback, so it works in Cowork too. See infra-docs/ai/mcp-connection-model.md (enforced by validate-plugin-completeness.py Invariant #13).",
   "servers": {
     "stromy-format": {
       "transport": "http",
       "url": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp",
-      "_consumed_by": ["openai", "codex", "claude", "cursor", "copilot", "vscode", "kiro", "gemini"],
-      "_codex_via": "mcp-remote",
-      "_gemini_via": "mcp-remote",
-      "_notes": "Hosted format skills fetched at runtime via fs_read from the stromy-format MCP."
+      "_consumed_by": ["claude"],
+      "_connector": true,
+      "_notes": "Signed-in Claude connector (Entra, ORG-PLAN-598): hosted format skills fetched at runtime via fs_read from the stromy-format MCP."
     },
     "asset-broker": {
       "transport": "http",
