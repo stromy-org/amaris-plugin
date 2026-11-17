@@ -11,10 +11,5 @@
   "keywords": [],
   "skills": [
     "./skills"
-  ],
-  "mcpServers": {
-    "stromy-format": {
-      "url": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp"
-    }
-  }
+  ]
 }
