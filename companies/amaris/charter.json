@@ -1579,6 +1579,21 @@
         "migratedFrom": "templates.docx",
         "plan": "ORG-PLAN-506"
       }
+    },
+    "masters": {
+      "default": {
+        "html": "templates/pdf/cover.html",
+        "divider": "templates/pdf/section-divider.html",
+        "footer": {
+          "left": "{{BRAND_NAME}}",
+          "center": "{{CONFIDENTIALITY}}"
+        },
+        "pageNumbers": {
+          "format": "{{page}} / {{pages}}",
+          "position": "bottom-right"
+        },
+        "note": "Migrated from templates/pdf/ (ORG-508, ORG-PLAN-598 B2): cover and divider shells as authored; the old Playwright footer.html is now static margin-box text plus folios."
+      }
     }
   },
   "templates": {
