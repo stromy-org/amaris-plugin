@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "version": "1.0",
   "generatedFrom": {
-    "charterSha": "8bc5fe7438f516b0fef13c9c46fbf2135426974a3585c1fe9a889f76e4b4ab01",
+    "charterSha": "052bab494e6732aa3b958065f5877dd97a824c0f1755ccacdd4187bde794a204",
     "compiler": "1.0"
   },
   "tier": "producer",
@@ -991,6 +991,35 @@
         "migratedFrom": "templates.docx",
         "plan": "ORG-PLAN-506"
       }
+    },
+    "masters": {
+      "default": {
+        "size": "A4",
+        "margins": {
+          "top": "22mm",
+          "right": "18mm",
+          "bottom": "22mm",
+          "left": "18mm"
+        },
+        "footer": {
+          "left": "{{BRAND_NAME}}",
+          "center": "{{CONFIDENTIALITY}}"
+        },
+        "pageNumbers": {
+          "format": "{{page}} / {{pages}}",
+          "position": "bottom-right"
+        },
+        "html": {
+          "content": "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<style>\n{{TOKENS_CSS}}\n{{FONT_FACES}}\n\n@page { size: A4; margin: 0; }\nhtml, body { margin: 0; padding: 0; }\nbody {\n  width: 210mm; height: 297mm;\n  background: var(--canvas-navy);\n  color: var(--ink-on-dark);\n  font-family: var(--font-heading, 'Century Gothic', sans-serif);\n  position: relative;\n  overflow: hidden;\n}\n\n.circle-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }\n.circle-field svg { width: 100%; height: 100%; display: block; }\n.circle-field circle.lg { opacity: var(--circle-opacity-large, 0.20); }\n.circle-field circle.sm { opacity: var(--circle-opacity-small, 0.40); }\n\n.logo { position: absolute; top: 18mm; right: 18mm; z-index: 2; }\n.logo img { height: 11mm; width: auto; }\n\n.pill {\n  position: absolute; top: 105mm; left: 18mm; z-index: 2;\n  display: inline-block; padding: 2.4mm 7mm;\n  border-radius: var(--radius-pill, 999px);\n  background: var(--accent-4);\n  color: var(--ink-title);\n  font-size: 9pt; font-weight: 700;\n  letter-spacing: var(--track-medium, 1.33pt);\n  text-transform: uppercase;\n}\n\n.block { position: absolute; top: 128mm; left: 18mm; right: 18mm; z-index: 2; }\n.title {\n  margin: 0;\n  font-size: 40pt; font-weight: 700; line-height: 1.06;\n  color: var(--ink-on-dark);\n}\n.subtitle {\n  margin: 12mm 0 0;\n  font-size: 13pt; font-weight: 400; line-height: 1.35;\n  color: var(--ink-on-dark-soft);\n  max-width: 130mm;\n}\n\n.meta {\n  position: absolute; bottom: 16mm; left: 18mm; right: 18mm; z-index: 2;\n  display: flex; justify-content: space-between;\n  font-size: 8.5pt; letter-spacing: var(--track-tight, 0.67pt);\n  color: rgba(255,255,255,0.55);\n  border-top: 0.5pt solid rgba(255,255,255,0.20);\n  padding-top: 3mm;\n}\n</style>\n</head>\n<body>\n\n  <div class=\"circle-field\">\n    <svg viewBox=\"0 0 210 297\" preserveAspectRatio=\"none\" aria-hidden=\"true\">\n      <circle class=\"lg\" cx=\"18\"  cy=\"22\"  r=\"58\" fill=\"var(--circle-1)\"/>\n      <circle class=\"lg\" cx=\"196\" cy=\"252\" r=\"62\" fill=\"var(--circle-2)\"/>\n      <circle class=\"sm\" cx=\"176\" cy=\"46\"  r=\"9\"  fill=\"var(--circle-3)\"/>\n    </svg>\n  </div>\n\n  <div class=\"logo\"><img src=\"{{LOGO_WHITE_URL}}\" alt=\"Amaris Consulting\"></div>\n\n  <div class=\"pill\">{{OVERLINE}}</div>\n\n  <div class=\"block\">\n    <h1 class=\"title\">{{TITLE}}</h1>\n    <div class=\"subtitle\">{{SUBTITLE}}</div>\n  </div>\n\n  <div class=\"meta\">\n    <span>{{META_LEFT}}</span><span>{{META_MID}}</span><span>{{META_RIGHT}}</span>\n  </div>\n\n</body>\n</html>",
+          "sha256": "133cf4f0282b535f1a98fcdf3d96495d9bce262ab14ad443038e972c13c34f68",
+          "source": "templates/pdf/cover.html"
+        },
+        "divider": {
+          "content": "<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<style>\n{{TOKENS_CSS}}\n{{FONT_FACES}}\n\n@page { size: A4; margin: 0; }\nhtml, body { margin: 0; padding: 0; }\nbody {\n  width: 210mm; height: 297mm;\n  background: var(--canvas-navy);\n  color: var(--ink-on-dark);\n  font-family: var(--font-heading, 'Century Gothic', sans-serif);\n  position: relative;\n  overflow: hidden;\n}\n\n.circle-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }\n.circle-field svg { width: 100%; height: 100%; display: block; }\n.circle-field circle.lg { opacity: var(--circle-opacity-large, 0.20); }\n.circle-field circle.sm { opacity: var(--circle-opacity-small, 0.35); }\n\n.block { position: absolute; top: 96mm; left: 18mm; right: 18mm; z-index: 2; }\n\n.part {\n  font-size: 9pt; font-weight: 700;\n  letter-spacing: var(--track-wide, 2pt);\n  text-transform: uppercase;\n  color: var(--ink-on-dark-soft);\n}\n.ghost-numeral {\n  margin: 4mm 0 0;\n  font-size: 66pt; font-weight: 700; line-height: 0.92;\n  color: rgba(255,255,255,0.16);\n}\n.title {\n  margin: 2mm 0 0;\n  font-size: 34pt; font-weight: 700; line-height: 1.08;\n  color: var(--ink-on-dark);\n}\n.rule { width: 60mm; height: 0; margin: 9mm 0 0; border-top: var(--divider-rule); }\n.subtitle {\n  margin: 6mm 0 0;\n  font-size: 12pt; font-weight: 400; line-height: 1.4;\n  color: var(--ink-on-dark-soft);\n  max-width: 125mm;\n}\n\n.logo { position: absolute; bottom: 16mm; left: 18mm; z-index: 2; }\n.logo img { height: 8mm; width: auto; opacity: 0.85; }\n</style>\n</head>\n<body>\n\n  <div class=\"circle-field\">\n    <svg viewBox=\"0 0 210 297\" preserveAspectRatio=\"none\" aria-hidden=\"true\">\n      <circle class=\"lg\" cx=\"18\"  cy=\"22\"  r=\"58\" fill=\"var(--circle-1)\"/>\n      <circle class=\"lg\" cx=\"196\" cy=\"252\" r=\"62\" fill=\"var(--circle-2)\"/>\n      <circle class=\"sm\" cx=\"105\" cy=\"268\" r=\"14\" fill=\"var(--circle-3)\"/>\n    </svg>\n  </div>\n\n  <div class=\"block\">\n    <div class=\"part\">{{PART_LABEL}}</div>\n    <div class=\"ghost-numeral\">{{SECTION_NUMBER}}</div>\n    <h1 class=\"title\">{{SECTION_TITLE}}</h1>\n    <div class=\"rule\"></div>\n    <div class=\"subtitle\">{{SECTION_SUBTITLE}}</div>\n  </div>\n\n  <div class=\"logo\"><img src=\"{{LOGO_WHITE_URL}}\" alt=\"Amaris Consulting\"></div>\n\n</body>\n</html>",
+          "sha256": "f7f9076f127d9b0f81e65666cb1f47b3a38a2ddc6076f730551add39a46d5aa6",
+          "source": "templates/pdf/section-divider.html"
+        }
+      }
     }
   },
   "logo": {
@@ -1323,6 +1352,6 @@
       "photo"
     ],
     "images_count": 0,
-    "sha256": "e0c81b7e932dfbcffbf1ae3c2620a2557849ae9fd19dc1a21c4ea4fa4fd37dcc"
+    "sha256": "651947b2e1ba7317321d98199c1fb22ab7dcb48ad597ace499e729862f5883bf"
   }
 }
