@@ -1,6 +1,6 @@
 ---
 name: format-pptx
-description: "DEFAULT skill for ANY PowerPoint or .pptx request, branded or not: a new deck, a deck on the client's own template, editing or reviewing an existing deck, speaker notes, comments, reordering, adding slides. Builds native, editable slides server-side with `build_pptx` (python-pptx) on the client's template or a master synthesised from their brand, runs a fit lint (no overlapping or overflowing text) and a render-back of the finished file. For a web-style art-directed deck use `format-html-hd`."
+description: "DEFAULT skill for ANY PowerPoint or .pptx request, branded or not: a new deck, a deck on the client's own template, editing or reviewing an existing deck, speaker notes, comments, reordering, adding slides. Builds native, editable slides server-side with `render` (python-pptx) on the client's template or a master synthesised from their brand, runs a fit lint (no overlapping or overflowing text) and a render-back of the finished file. For a web-style art-directed deck use `format-html-hd`."
 metadata:
   stromy-client-summary: "Create or edit an editable PowerPoint deck on your own template and brand, with speaker notes, charts and a check that nothing overlaps."
 ---

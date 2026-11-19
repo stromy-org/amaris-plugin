@@ -1,6 +1,6 @@
 ---
 name: format-diagram
-description: "Draw process flows, architecture views, stakeholder maps, org charts, timelines, matrices, mind maps and sequence/state/ER/gantt diagrams from Mermaid text. Two modes: BRANDED (the server-side `render_diagram` tool returns an auto-laid-out, brand-themed SVG/PNG for PPTX, DOCX, PDF or deck deliverables) and MARKDOWN (plain fenced Mermaid for a README, wiki or any Markdown host that renders it). Use when asked to draw, map or visualize a process, structure, workflow or relationship. Not for numeric data charts (use format-chart)."
+description: "Draw process flows, architecture views, stakeholder maps, org charts, timelines, matrices, mind maps and sequence/state/ER/gantt diagrams from Mermaid text. Two modes: BRANDED (the server-side `render` tool returns an auto-laid-out, brand-themed SVG/PNG, or draws the diagram inside a PPTX, DOCX, PDF or deck deliverable) and MARKDOWN (plain fenced Mermaid for a README, wiki or any Markdown host that renders it). Use when asked to draw, map or visualize a process, structure, workflow or relationship. Not for numeric data charts (use format-chart)."
 metadata:
   stromy-client-summary: "Draw a process, structure or relationship as an on-brand diagram for your documents."
 ---
