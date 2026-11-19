@@ -1,6 +1,6 @@
 ---
 name: format-xlsx
-description: "DEFAULT skill for ANY spreadsheet request (.xlsx, .xlsm, .csv, .tsv): build a new workbook, a budget or model with inputs, calculations and outputs, a data table, an analysis of an existing file, or an edit that must keep the formulas. A new workbook is built server-side with `build_xlsx` (openpyxl): real formulas, Excel Tables, brand theme and named styles, a lint for errors and ##### after a LibreOffice recalculation, and a render-back of the finished file. Not for a Word document (format-docx), a deck (format-pptx) or a picture chart for a document (format-chart)."
+description: "DEFAULT skill for ANY spreadsheet request (.xlsx, .xlsm, .csv, .tsv): build a new workbook, a budget or model with inputs, calculations and outputs, a data table, an analysis of an existing file, or an edit that must keep the formulas. A new workbook is built server-side with `render` (openpyxl): real formulas, Excel Tables, brand theme and named styles, a lint for errors and ##### after a LibreOffice recalculation, and a render-back of the finished file. Not for a Word document (format-docx), a deck (format-pptx) or a picture chart for a document (format-chart)."
 metadata:
   stromy-client-summary: "Build a spreadsheet in your brand with real formulas, tables and a check that nothing shows as an error or ####, or read and edit an existing workbook without breaking its formulas."
 ---

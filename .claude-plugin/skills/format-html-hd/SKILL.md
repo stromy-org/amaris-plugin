@@ -1,6 +1,6 @@
 ---
 name: format-html-hd
-description: "Author a premium branded HTML slide deck as ONE self-contained .html that opens offline, with the client's fonts and logos embedded: hand-written (16:9 stages, scroll-snap navigation, inline-SVG brand motifs) or in reveal mode, a reveal.js deck rendered by `render_deck` with a speaker view and speaker notes. Seeded variance keeps decks siblings, not clones. Use for an HTML, web or browser slide deck, a shareable single-file presentation, a reveal.js deck or web deck with speaker notes, an interactive presentation, or turning a brief or report into branded slides, even without saying 'HTML'. Not for an editable PowerPoint (use format-pptx) or a paginated PDF (use format-pdf-hd)."
+description: "Create a premium branded HTML slide deck as ONE self-contained .html that opens offline, with the client's fonts and logos embedded: by default a document spec rendered by `render(format=\"html-deck\")` as a reveal.js deck with speaker notes (an authored slide is an `html` block), or a hand-written scroll-snap deck. Seeded variance keeps decks siblings, not clones. Use for an HTML, web or browser slide deck, a reveal.js deck or web deck with speaker notes, an interactive presentation, or turning a brief or report into branded slides, even without saying 'HTML'. Not for an editable PowerPoint (use format-pptx) or a paginated PDF (use format-pdf-hd)."
 metadata:
   stromy-client-summary: "Build a polished slide deck as a single web page that opens offline and shares as one file."
 ---
@@ -14,7 +14,7 @@ metadata:
   Hand-authored skill? Set `_local: true` in frontmatter instead.
 -->
 
-# format-html-hd — hand-authored, self-contained branded HTML decks (MCP-hosted skill)
+# format-html-hd — self-contained branded HTML decks (MCP-hosted skill)
 
 This skill's full instructions are hosted on the `stromy-format` MCP server. Do not hardcode workflow logic locally — always fetch the live version from the MCP.
 
