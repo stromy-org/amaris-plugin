@@ -86,6 +86,11 @@ CODEX_EXTRA_FIELDS = ("startup_timeout_sec", "default_tools_approval_mode", "too
 APPROVAL_MODES = {"auto", "prompt", "writes", "approve"}
 
 
+PACKAGE_TARGETS = frozenset(
+    {"openai", "codex", "claude", "cursor", "copilot", "vscode", "kiro", "gemini"}
+)
+
+
 def approval_findings(servers: dict[str, dict], config_text: str) -> list[str]:
     """Validate explicit MCP approval settings and impossible required prompts.
 
@@ -122,8 +127,11 @@ def approval_findings(servers: dict[str, dict], config_text: str) -> list[str]:
 def parity_findings(servers: dict[str, dict]) -> tuple[list[str], list[str]]:
     """Claude/Codex capabilities match unless a non-empty exception explains why.
 
-    Empty rosters remain valid (cost-conscious unpinning). The existing validated
-    local-loopback plugin opt-in is retained, not widened to remote Cowork.
+    Empty rosters remain valid (cost-conscious unpinning). `_consumed_by` may name
+    any package target (openai, codex, claude, cursor, copilot, vscode, kiro,
+    gemini). An OAuth connector lists every target, so Claude and Codex match.
+    A plugin that still carries `_local_loopback_oauth` keeps its Codex-only
+    opt-in (backward compatibility; retired by Invariant #13 of 2026-11-20).
     This is configuration proof only; credentials and remote health are not gates.
     """
     errors: list[str] = []
@@ -131,7 +139,7 @@ def parity_findings(servers: dict[str, dict]) -> tuple[list[str], list[str]]:
     for name, spec in servers.items():
         consumers = spec.get("_consumed_by", ["claude", "codex", "gemini"])
         if not isinstance(consumers, list) or any(
-            not isinstance(cli, str) or cli not in {"claude", "codex", "gemini"}
+            not isinstance(cli, str) or cli not in PACKAGE_TARGETS
             for cli in consumers
         ):
             errors.append(f"{name}: _consumed_by must list supported coding agents")
@@ -147,7 +155,7 @@ def parity_findings(servers: dict[str, dict]) -> tuple[list[str], list[str]]:
             and spec.get("_local_loopback_oauth") is True
         )
         if exception or legacy_loopback:
-            notes.append(f"{name}: parity exception — {exception or 'Codex-only local-CLI loopback opt-in (Inv #13)'}")
+            notes.append(f"{name}: parity exception — {exception or 'legacy Codex-only local loopback opt-in (_local_loopback_oauth)'}")
         else:
             errors.append(f"{name}: Claude/Codex consumers differ; mirror them or record _parity_exception")
     return errors, notes
