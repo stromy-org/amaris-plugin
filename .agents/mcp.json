@@ -6,14 +6,14 @@
     "stromy-format": {
       "transport": "http",
       "url": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp",
-      "_consumed_by": ["claude"],
+      "_consumed_by": ["openai", "codex", "claude", "cursor", "copilot", "vscode", "kiro", "gemini"],
       "_connector": true,
       "_notes": "Signed-in Claude connector (Entra, ORG-PLAN-598): hosted format skills fetched at runtime via fs_read from the stromy-format MCP."
     },
     "asset-broker": {
       "transport": "http",
       "url": "https://asset-broker-mcp.redbeach-6781a121.northeurope.azurecontainerapps.io/mcp",
-      "_consumed_by": ["claude"],
+      "_consumed_by": ["openai", "codex", "claude", "cursor", "copilot", "vscode", "kiro", "gemini"],
       "_connector": true
     }
   }
