@@ -1,6 +1,6 @@
 ---
 name: format-chart
-description: "Author ONE chart spec (bar, column, line, area, scatter, pie, doughnut, combo with a secondary axis, waterfall) and get a native, editable chart in brand colours inside a PowerPoint deck (build_pptx) or Excel workbook (build_xlsx). For HTML or PDF pages, and for exotic types (sankey, sunburst, treemap, funnel, gauge, heatmap), render a branded picture with render_chart from a Plotly figure instead. Use for any chart, plot, graph or KPI visual. Not for process flows, org charts or stakeholder maps (use format-diagram)."
+description: "Author ONE chart spec (bar, column, line, area, scatter, pie, doughnut, combo with a secondary axis, waterfall) and get a native, editable chart in brand colours inside a PowerPoint deck or Excel workbook. For HTML, PDF or Word pages, and for exotic types (sankey, sunburst, treemap, funnel, gauge, heatmap), render a branded picture from a Plotly figure instead. Use for any chart, plot, graph or KPI visual. Not for process flows, org charts or stakeholder maps (use format-diagram)."
 metadata:
   stromy-client-summary: "Turn your numbers into a clean, on-brand chart: editable inside your PowerPoint and Excel files, or as a picture for web and PDF pages."
 ---
