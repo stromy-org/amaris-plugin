@@ -1,5 +1,13 @@
 {
   "name": "amaris-consulting",
-  "version": "0.3.57",
-  "description": "Plugin for Amaris Consulting branded deliverables, brand tools, and strategic deliverable planning"
+  "version": "0.3.58",
+  "description": "Plugin for Amaris Consulting branded deliverables, brand tools, and strategic deliverable planning",
+  "mcpServers": {
+    "stromy-format": {
+      "httpUrl": "https://stromy-format-mcp.whitetree-762cff59.westeurope.azurecontainerapps.io/mcp"
+    },
+    "asset-broker": {
+      "httpUrl": "https://asset-broker-mcp.redbeach-6781a121.northeurope.azurecontainerapps.io/mcp"
+    }
+  }
 }

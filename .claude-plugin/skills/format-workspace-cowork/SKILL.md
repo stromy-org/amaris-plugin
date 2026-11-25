@@ -24,7 +24,13 @@ This skill's instructions live on the `stromy-format` MCP, a sign-in connector t
 
 **If those tools are not present at all, STOP — and do not retry.** A missing tool is not a slow server: it means the connector is not connected yet, or not switched on for this conversation. Retrying cannot fix it. Tell the user plainly what to do, naming the connector:
 
-> This needs the **Stromy Format** connector, which isn't connected for this chat. Open Customize, then Plugins, choose this plugin and open its **Connectors** tab. Click **Connect** next to **Stromy Format** and sign in with your work account (if it says **Not added**, add it there first, or ask your workspace owner to). Then make sure it is switched on for this conversation and ask me again.
+> This needs the **Stromy Format** connector, which isn't connected for this chat. Sign in once with your work account, in the place your assistant keeps it:
+>
+> - **Claude app:** open Customize, then Plugins, choose this plugin and open its **Connectors** tab. Click **Connect** next to **Stromy Format** (if it says **Not added**, add it there first, or ask your workspace owner to), then make sure it is switched on for this conversation.
+> - **Codex:** run `codex mcp login stromy-format` (a browser window opens once).
+> - **ChatGPT, Gemini, VS Code, Cursor or another assistant:** open its MCP or connector settings, find **Stromy Format** and choose sign in or authenticate.
+>
+> Then ask me again.
 
 Then stop and wait. Never fall back to a local or identically-named base skill, and never answer from your own knowledge instead — an unsourced answer is **wrong output, not a fallback**.
 
